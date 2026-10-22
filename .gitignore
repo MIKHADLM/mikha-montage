@@ -16,3 +16,20 @@ a_monter/*/transcription/brut*/
 a_monter/*/transcription/.tmp*/
 a_monter/*/transcription/.hesitations/
 CHARTE/a_ranger/
+
+# Secrets : ne jamais versionner
+.env
+.env.*
+*.pem
+*.key
+*.p12
+id_rsa*
+credentials*.json
+
+# Rushes
+**/rushes/
+
+# Vidéos lourdes (rendus et références) : passent par AirDrop, Drive ou disque
+motion_design/*/export/
+CHARTE/08_references/videos/*
+!CHARTE/08_references/videos/README.md
