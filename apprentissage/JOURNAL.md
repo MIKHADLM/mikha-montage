@@ -1,0 +1,70 @@
+# JOURNAL D'APPRENTISSAGE
+
+> **Rôle :** toutes les leçons des montages, dans l'ordre, avec leur destination et leur statut. **Lecteurs :** les agents (au début de chaque montage) et Michaël (validation des règles en attente).
+
+Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attente** (à proposer ou à confirmer par Michaël) · **refusée**.
+
+## 1. Règles en attente de validation
+
+| # | Proposition | Origine | À confirmer par |
+|---|---|---|---|
+| A2 | Ombre du titre d'accroche : 5 px vers le bas, 7 px de flou, noir à 60 % (valeurs de l'agent, la VF montre une ombre sombre sans valeurs lisibles) | Montage automatique de la vidéo 1 | Michaël (utilisée sans remarque dans la vidéo 2, validée) |
+| A3 | Ombre des photos produit : 12 px à droite, 16 px vers le bas, 40 px de flou, noir à 35 % | Estimée sur la VF | Michaël (utilisée sans remarque dans la vidéo 2, validée) |
+| A4 | Couleur du curseur de la barre de recherche : rouge (asset v01), jaune (peu visible sur le verre blanc) ou noir | Passage au jaune | Michaël |
+| A5 | Usage des whoosh et de la caisse enregistreuse | Non utilisés dans la VF | Michaël, quand l'occasion se présente |
+| A6 | Rebonds dans les animations (goutte de la barre de recherche) : autorisés ailleurs ? | Asset barre de recherche | Michaël |
+
+## 2. Leçons
+
+| Date | Vidéo | Leçon | Source | Destination | Statut |
+|---|---|---|---|---|---|
+| 2026-09-29 | 1 | Transcrire morceau par morceau : d'un bloc, whisper perd les reprises | Premier essai | Outil `transcrire.py`, skill (pièges) | appliquée |
+| 2026-09-29 | 1 | Musique à partir du point donné par Michaël (1:16), jamais pendant le riser : elle démarre après le hook | Retour v01 | Charte `SON.md` | appliquée |
+| 2026-09-29 | 1 | Un écran reste affiché au moins jusqu'à la fin du mot qui le clôt | Retour v01 (« ouvertes ») | Charte `MOTION.md` | appliquée |
+| 2026-09-29 | 1 | Un texte peut rester pendant les mots qui le suivent sans les écrire | Retour v01 (« pour nous ») | Charte `MOTION.md` | appliquée |
+| 2026-09-29 | 1 | Sous-titres plus grands et plus bas que la v01 | Retour v01 | Remplacé par le style de la VF | appliquée puis remplacée |
+| 2026-09-29 | 1 | Michaël veut pouvoir finir lui-même : face cam seul, EDL et SRT pour DaVinci | Demande | Outils `exporter_facecam.py`, `exporter_sous_titres.py` | appliquée |
+| 2026-09-29 | 1 | Un sous-titre ne doit jamais durer une seule image : 4 images au moins | Analyse du SRT | Outils (SRT, montage) | appliquée |
+| 2026-09-29 | — | Motion design : propositions d'abord, rien de produit avant son accord | Demande | Skill (`motion-design.md`) | appliquée |
+| 2026-09-29 | — | Assets de motion design : fond transparent (ProRes 4444), sans texte | Demande | Charte `DESIGN.md`, skill | appliquée |
+| 2026-09-29 | — | Téléphone qui monte du bas avec une petite rotation 3D, site qui s'allume dessus | Idée de Michaël | Asset `site-mobile` | appliquée |
+| 2026-09-30 | 1 | Direction artistique de la VF : jaune `#FFB900`, fond blanc, Gilroy seule, hook en 3 lignes, un cadrage par phrase, clic, musique ≈ 8,5 dB sous la voix | VF de Michaël (`a_monter/1/ANALYSE_VF.md`) | Charte (toutes les sections) | appliquée |
+| 2026-09-30 | 1 | Le jaune met en avant les mots importants du hook | Réponse de Michaël | Charte `DESIGN.md` | appliquée |
+| 2026-09-30 | 1 | Sous-titres en Gilroy ExtraBold, incrustés ; nombres en chiffres | Réponse de Michaël, VF | Charte `SOUS-TITRES.md` | appliquée |
+| 2026-09-30 | 1 | Pic vrai -1 dBTP au plus (la VF était à +0,6) | Réponse de Michaël | Charte `SON.md`, outil `controler_export.py` | appliquée |
+| 2026-09-30 | 1 | Séquence du site sous la zone sûre : gardée « pour l'instant » | Réponse de Michaël | Charte `DESIGN.md` §7 (exception) | appliquée |
+| 2026-09-30 | 1 | Vérifier que l'étiquette correspond au produit montré | Erreur « BOXY TEE » sur le Baby Tee (1re VF) | Charte (checklist), skill (pièges) | appliquée |
+| 2026-09-30 | 1 | Le découpage automatique des sous-titres ne connaît pas le sens : relire les groupes, corriger avec « | » | Test du montage automatique | Outil `decouper_transcription.py`, skill | appliquée |
+| 2026-09-30 | — | Un fichier utilisé par un projet DaVinci se copie, ne se déplace pas | Rangement de `a_ranger` | Skill (pièges) | appliquée |
+| 2026-10-01 | 2 | Zoom progressif à partir d'environ 4 s, recadrage fixe en dessous ; fixe aussi pour une phrase coupée par le fond blanc | Plan de la vidéo 2 (« ok ») | Charte `MOTION.md` §4, skill (`plan-de-montage.md`) | appliquée |
+| 2026-10-01 | 2 | Bruit de pièce à -40 dB : relever le seuil de silence à -36 dB | Transcription de la vidéo 2 | Skill (pièges) | appliquée |
+| 2026-10-01 | 2 | Nom coupé par la reconnaissance (« Meo Miss Flag ») : notation « Mehomies[2] » | Découpage de la vidéo 2 | Outil `decouper_transcription.py`, skill | appliquée |
+| 2026-10-01 | 2 | Rush remplacé après la transcription (son recalé de 4 images) : mesurer le décalage par corrélation et décaler les temps, sans retranscrire | Retour de Michaël | Skill (pièges) | appliquée |
+| 2026-10-01 | 2 | L'encodage AAC fait remonter le pic vrai : plafond du limiteur baissé par paliers | Contrôle de la v01 | Outil `finaliser_son.py` | appliquée |
+| 2026-10-01 | 2 | Les illustrations doivent être cohérentes avec ce qui est dit | Consigne de Michaël | Skill (`plan-de-montage.md`) | à proposer comme règle |
+| 2026-10-01 | 2 | Un seul jaune `#FFB900` dans le titre d'accroche ; jaune pâle abandonné | Retour v01 (« le jaune plus clair, on peut l'oublier ») | Charte `DESIGN.md`, `tokens.json`, checklist ; skill | appliquée |
+| 2026-10-01 | 2 | Chasser les hésitations que la reconnaissance efface (bouts redits, « euh », fin où l'on regarde ses notes, blanc entre deux phrases) : étape obligatoire | Retour v01 (« un point qu'il va falloir améliorer… pour les autres montages ») | Skill (étape 2, pièges), outils `reperer_hesitations.py`, `redecouper_morceau.py` | appliquée |
+| 2026-10-01 | 2 | Chaque plan commence sur le premier mot et finit sur le dernier : le seuil de silence (-36 dB) laisse passer souffles et bruits faibles ; mesurer la voix franche (-27 dB) et les temps de mots alignés | Retour v02 (« des plans qui pourraient être coupés plus rapidement au début ou à la fin ») | Skill (étape 2, pièges), outil `reperer_hesitations.py` | appliquée |
+| 2026-10-01 | 2 | Sous-titres en avance quand une prise commence par un souffle ou quand la reconnaissance a fusionné des prises : retranscrire la prise dès le premier mot | Retour v02 (« je ne peux pas » en avance) | Skill (pièges) | appliquée |
+| 2026-10-01 | 2 | Défilé de visuels non nommés : même temps d'affichage pour chacun, déclencheur à -6 dB | Retour v02, confirmé comme règle (« ajoute les flashs et le rythme régulier à la charte ») | Charte `MOTION.md` §2, `SON.md`, `DESIGN.md` §4, checklist ; skill (`plan-de-montage.md`) | appliquée |
+| 2026-10-01 | 2 | Ombre du titre d'accroche sous les sous-titres blancs quand la tenue est claire | v03 (« On garde l'ombre ») | Charte `SOUS-TITRES.md` | appliquée |
+| 2026-10-01 | 2 | Type « photo » : affiche 16:9 + étiquette (date, lieu), détourés posés en entier dans le cadre, image 16:9 seule centrée | v03 validée | Outils, skill (`chaine-technique.md`) | appliquée |
+| 2026-10-01 | 2 | Orthographe : « les reufs », « move », « Condition Publique », « Space Jam » | Réponses de Michaël | Charte `TON.md` | appliquée |
+
+## 3. Bilan par vidéo
+
+| Vidéo | Versions | Retours de Michaël | Règles acceptées | Remarque |
+|---|---|---|---|---|
+| 1 (fin des précommandes) | v01, v02 (agent), VF (Michaël) | 6 sur la v01 | 5 | Michaël a trouvé la direction artistique en montant lui-même |
+| 2 (annonce du pop-up) | plan, v01, v02, v03 (agent, **v03 validée**) | 10 sur le plan, 9 sur la v01, 6 sur la v02 | 5 (cadrages, un seul jaune, chasse aux hésitations, plans coupés au mot, défilé régulier) | Premier montage complet par le skill ; rush remplacé en cours ; 45,9 → 33,3 → 31,7 s ; v02 « beaucoup mieux » |
+
+## 4. Évolutions du skill et des outils
+
+| Date | Changement | Pourquoi |
+|---|---|---|
+| 2026-09-30 | Création du skill `montage-facecam` ; composition générique `Montage` pilotée par `plan.json` ; composants du style de la VF ; scripts `transcrire.py`, `controler_export.py`, `apercu_telephone.py`, `apercu_asset.py` ; banque de motion design et ce journal | Demande de Michaël : monter entièrement les vidéos face cam, apprendre à chaque montage, proposer du motion design et le garder en banque |
+| 2026-09-30 | Test : la vidéo 1 remontée automatiquement d'après sa VF ; rendu conforme au contrôle technique et très proche de la VF (seul écart : quelques groupes de sous-titres) | Vérifier le skill sur une vraie vidéo |
+| 2026-10-01 | Type de séquence « photo » (sans étiquette, 4:5 ou 16:9, détourés), option `sousTitres.ombreSurFacecam`, notation « [n] » du texte relu, plafond par paliers dans `finaliser_son.py` | Vidéo 2 |
+| 2026-10-01 | `reperer_hesitations.py` (bouts entre micro-pauses retranscrits seuls) et `redecouper_morceau.py` (sous-morceaux, lus par `decouper_transcription.py`) ; étiquette facultative du type « photo » et réduction automatique des étiquettes trop larges | Retours de Michaël sur la v01 de la vidéo 2 |
+| 2026-10-01 | Type « photo » : options `regulier` et `declencheurDb` ; `reperer_hesitations.py` signale les débuts lents et les fins qui traînent | Retours de Michaël sur la v02 de la vidéo 2 |
+| 2026-10-01 | Passe d'ensemble du skill après la vidéo 2 : principe « le rythme avant tout » ; étape 1 (rush définitif ? étalonné et synchronisé) ; étape 2 réécrite en 6 temps (transcription, choix, texte relu, chasse aux hésitations, règles de coupe, découpage) ; contrôle des sous-titres sur la tenue ; corriger la cause et chercher le même défaut ailleurs ; résumé du style à jour (un seul jaune, ombre si tenue claire, affiche, défilé) ; pièges « échanges avec Michaël » ; modèles `choix.json` et `PLAN_MONTAGE.md` ; règles de cohérence des illustrations | Question de Michaël : « est-ce qu'il ne faudrait pas remettre à jour le skill ? » |

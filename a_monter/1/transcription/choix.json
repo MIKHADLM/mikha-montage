@@ -1,0 +1,118 @@
+{
+ "_comment": "Choix de montage de cette vidéo, validés par Michaël le 2026-09-29 (v01) et mis à jour après ses retours sur la v01. Lu par remotion/scripts/decouper_transcription.py (phrases, sous-titres) et remotion/scripts/preparer_medias.py (musique). 'texte' = texte relu : il donne l'orthographe et la casse des sous-titres ; la reconnaissance vocale ne donne que les temps. Mise à jour du 2026-09-30 (direction artistique de la VF) : nombres en chiffres (« 6 variantes »), musique à -22,7 LUFS (niveau de la VF, ≈ 8,5 dB sous la voix).",
+ "rush": "fin_précommande.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "sousTitres": {
+  "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf",
+  "taillePx": 75,
+  "largeurMaxPx": 880,
+  "motsMax": 3,
+  "_note": "Style de la VF (2026-09-30) : Gilroy ExtraBold ≈ 75 px ; la largeur sert au découpage en groupes"
+ },
+ "musique": {
+  "fichier": "assets/[FREE] Green Montana x Brazil Funk Type Beat - Visions.mp3",
+  "debutDansLaPisteS": 76.0,
+  "niveauLufs": -22.7,
+  "_note": "Piste prise à partir de 1:16, démarre juste après le hook (pas de musique pendant le riser). Niveau : -22,7 LUFS depuis la VF de Michaël (v02 : -27 LUFS)."
+ },
+ "phrases": [
+  {
+   "id": "P1",
+   "morceaux": [
+    "c01"
+   ],
+   "garderApresMot": "Mehomiz",
+   "debutForceS": 5.96,
+   "_note": "2e prise de l'accroche ; 5,96 s = attaque mesurée sur le son",
+   "texte": "C'est la dernière chance pour toi de commander ton t-shirt Mehomies."
+  },
+  {
+   "id": "P2",
+   "morceaux": [
+    "c03"
+   ],
+   "texte": "Ça va faire maintenant un mois que les précommandes sont ouvertes, et il est temps pour nous de clôturer, histoire de passer à la production."
+  },
+  {
+   "id": "P3",
+   "morceaux": [
+    "c04"
+   ],
+   "texte": "Avec BAG, on tenait à vous remercier | pour | votre soutien général | autour de ce projet."
+  },
+  {
+   "id": "P4",
+   "morceaux": [
+    "c06",
+    "c07"
+   ],
+   "texte": "Que ce soit vos retours, vos messages d'encouragement et bien sûr les commandes."
+  },
+  {
+   "id": "P5",
+   "morceaux": [
+    "c09"
+   ],
+   "texte": "En vrai les gars, chaque petit geste, c'est quelque chose de très concret pour nous, et ça nous permet de développer le projet sur du long terme."
+  },
+  {
+   "id": "P6",
+   "morceaux": [
+    "c10"
+   ],
+   "texte": "Donc merci à toi si tu soutiens le projet."
+  },
+  {
+   "id": "P7",
+   "morceaux": [
+    "c11",
+    "c12"
+   ],
+   "texte": "Pour ceux qui ne l'ont pas encore fait et qui veulent commander leur t-shirt, vous avez jusqu'à ce soir minuit sur le site mehomies.com."
+  },
+  {
+   "id": "P8",
+   "morceaux": [
+    "c15",
+    "c16"
+   ],
+   "texte": "Normalement, vous avez du choix, que ce soit en termes de design avec 6 variantes, mais aussi en coupe avec le Boxy Tee ou le Baby Tee."
+  },
+  {
+   "id": "P9",
+   "morceaux": [
+    "c17"
+   ],
+   "texte": "Dans tous les cas, pour les deux modèles, ça va du XS au XXL."
+  },
+  {
+   "id": "P10",
+   "morceaux": [
+    "c18"
+   ],
+   "texte": "C'est le moment, faites-vous plaisir !"
+  },
+  {
+   "id": "P11",
+   "morceaux": [
+    "c19"
+   ],
+   "texte": "Merci à vous, let's go !"
+  }
+ ],
+ "coupes": {
+  "c00": "bruit avant la prise (le modèle y invente « Merci d'avoir regardé cette vidéo ! »)",
+  "c01-debut": "1re prise de l'accroche ; la 2e, plus rapide, est gardée",
+  "c02": "faux départ",
+  "c05": "faux départ",
+  "c08": "1re prise, reprise en entier juste après",
+  "c13": "1re prise (« avec plus de 6 variantes »), reprise ensuite",
+  "c14": "faux départ",
+  "c20": "bruit : tu te lèves (le modèle y invente « Sous-titrage ST' 501 »)"
+ }
+}

@@ -1,0 +1,545 @@
+{
+ "_comment": "Découpage du rush : segments gardés, dans l'ordre du montage. Généré par remotion/scripts/decouper_transcription.py depuis choix.json. Temps en secondes et en images.",
+ "source": "a_monter/2/annonce_popup_mehomies.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -36,
+  "dureeMinS": 0.3,
+  "_note": "Seuil relevé de -40 à -36 dB pour ce rush : le bruit de la pièce tourne autour de -40 dB, à -40 les fins de phrase gardaient jusqu'à 2 s de blanc. Transcription à -40 gardée dans brut_seuil-40/."
+ },
+ "dureeMontageS": 31.667,
+ "dureeMontageFrames": 950,
+ "phrases": [
+  {
+   "id": "P1",
+   "montageDebutS": 0.0,
+   "montageFinS": 2.867,
+   "texte": "Les reufs, actuellement je prépare le premier pop-up de ma marque Mehomies."
+  },
+  {
+   "id": "P2",
+   "montageDebutS": 2.867,
+   "montageFinS": 7.0,
+   "texte": "Ça va se passer le 7 novembre à la Condition Publique de Roubaix à l'occasion de la nouvelle édition de Space Jam."
+  },
+  {
+   "id": "P3",
+   "montageDebutS": 7.0,
+   "montageFinS": 10.2,
+   "texte": "Passer du virtuel au physique, c'est un objectif que j'ai depuis longtemps avec Mehomies."
+  },
+  {
+   "id": "P4",
+   "montageDebutS": 10.2,
+   "montageFinS": 15.1,
+   "texte": "Je trouve que c'est un move qui est cohérent avec l'ADN de la marque et les valeurs qu'on cherche à véhiculer, etc etc."
+  },
+  {
+   "id": "P5",
+   "montageDebutS": 15.1,
+   "montageFinS": 18.6,
+   "texte": "Grâce aux commandes qu'il y a eu sur le drop Mehomies Flag, on a pu se permettre des petites folies, les reufs."
+  },
+  {
+   "id": "P6",
+   "montageDebutS": 18.6,
+   "montageFinS": 23.867,
+   "texte": "Parce que forcément, organiser un événement public, ça implique d'avoir du stock. Je ne peux pas arriver là-bas, les mains vides, les reufs."
+  },
+  {
+   "id": "P7",
+   "montageDebutS": 23.867,
+   "montageFinS": 26.267,
+   "texte": "Voilà, en tout cas, je suis trop content, je sens que ça avance dans le bon sens."
+  },
+  {
+   "id": "P8",
+   "montageDebutS": 26.267,
+   "montageFinS": 29.4,
+   "texte": "Maintenant, je vais essayer de tout mettre en place pour vous proposer quelque chose de qualitatif."
+  },
+  {
+   "id": "P9",
+   "montageDebutS": 29.4,
+   "montageFinS": 31.667,
+   "texte": "Dans tous les cas, je vous en parlerai dans les semaines qui arrivent, let's go!"
+  }
+ ],
+ "segments": [
+  {
+   "id": 1,
+   "phrase": "P1",
+   "morceau": "c03",
+   "paroleDebutS": 14.293,
+   "paroleFinS": 16.973,
+   "sourceDebutFrame": 426,
+   "sourceFinFrame": 512,
+   "dureeFrames": 86,
+   "montageDebutFrame": 0,
+   "sourceDebutS": 14.2,
+   "sourceFinS": 17.067,
+   "montageDebutS": 0.0,
+   "montageFinS": 2.867
+  },
+  {
+   "id": 2,
+   "phrase": "P2",
+   "morceau": "c09b",
+   "paroleDebutS": 53.0,
+   "paroleFinS": 57.0,
+   "sourceDebutFrame": 1588,
+   "sourceFinFrame": 1712,
+   "dureeFrames": 124,
+   "montageDebutFrame": 86,
+   "sourceDebutS": 52.933,
+   "sourceFinS": 57.067,
+   "montageDebutS": 2.867,
+   "montageFinS": 7.0
+  },
+  {
+   "id": 3,
+   "phrase": "P3",
+   "morceau": "c11b",
+   "paroleDebutS": 66.76,
+   "paroleFinS": 69.773,
+   "sourceDebutFrame": 2000,
+   "sourceFinFrame": 2096,
+   "dureeFrames": 96,
+   "montageDebutFrame": 210,
+   "sourceDebutS": 66.667,
+   "sourceFinS": 69.867,
+   "montageDebutS": 7.0,
+   "montageFinS": 10.2
+  },
+  {
+   "id": 4,
+   "phrase": "P4",
+   "morceau": "c14b",
+   "paroleDebutS": 79.86,
+   "paroleFinS": 84.593,
+   "sourceDebutFrame": 2393,
+   "sourceFinFrame": 2540,
+   "dureeFrames": 147,
+   "montageDebutFrame": 306,
+   "sourceDebutS": 79.767,
+   "sourceFinS": 84.667,
+   "montageDebutS": 10.2,
+   "montageFinS": 15.1
+  },
+  {
+   "id": 5,
+   "phrase": "P5",
+   "morceau": "c25b",
+   "paroleDebutS": 155.27,
+   "paroleFinS": 158.62,
+   "sourceDebutFrame": 4656,
+   "sourceFinFrame": 4761,
+   "dureeFrames": 105,
+   "montageDebutFrame": 453,
+   "sourceDebutS": 155.2,
+   "sourceFinS": 158.7,
+   "montageDebutS": 15.1,
+   "montageFinS": 18.6
+  },
+  {
+   "id": 6,
+   "phrase": "P6",
+   "morceau": "c32b",
+   "paroleDebutS": 195.3,
+   "paroleFinS": 198.8,
+   "sourceDebutFrame": 5857,
+   "sourceFinFrame": 5966,
+   "dureeFrames": 109,
+   "montageDebutFrame": 558,
+   "sourceDebutS": 195.233,
+   "sourceFinS": 198.867,
+   "montageDebutS": 18.6,
+   "montageFinS": 22.233
+  },
+  {
+   "id": 7,
+   "phrase": "P6",
+   "morceau": "c33b",
+   "paroleDebutS": 199.84,
+   "paroleFinS": 201.333,
+   "sourceDebutFrame": 5993,
+   "sourceFinFrame": 6042,
+   "dureeFrames": 49,
+   "montageDebutFrame": 667,
+   "sourceDebutS": 199.767,
+   "sourceFinS": 201.4,
+   "montageDebutS": 22.233,
+   "montageFinS": 23.867
+  },
+  {
+   "id": 8,
+   "phrase": "P7",
+   "morceau": "c37b",
+   "paroleDebutS": 227.22,
+   "paroleFinS": 229.47,
+   "sourceDebutFrame": 6814,
+   "sourceFinFrame": 6886,
+   "dureeFrames": 72,
+   "montageDebutFrame": 716,
+   "sourceDebutS": 227.133,
+   "sourceFinS": 229.533,
+   "montageDebutS": 23.867,
+   "montageFinS": 26.267
+  },
+  {
+   "id": 9,
+   "phrase": "P8",
+   "morceau": "c39b",
+   "paroleDebutS": 240.69,
+   "paroleFinS": 243.64,
+   "sourceDebutFrame": 7218,
+   "sourceFinFrame": 7312,
+   "dureeFrames": 94,
+   "montageDebutFrame": 788,
+   "sourceDebutS": 240.6,
+   "sourceFinS": 243.733,
+   "montageDebutS": 26.267,
+   "montageFinS": 29.4
+  },
+  {
+   "id": 10,
+   "phrase": "P9",
+   "morceau": "c40b",
+   "paroleDebutS": 252.94,
+   "paroleFinS": 255.053,
+   "sourceDebutFrame": 7586,
+   "sourceFinFrame": 7654,
+   "dureeFrames": 68,
+   "montageDebutFrame": 882,
+   "sourceDebutS": 252.867,
+   "sourceFinS": 255.133,
+   "montageDebutS": 29.4,
+   "montageFinS": 31.667
+  }
+ ],
+ "coupes": [
+  {
+   "morceau": "c00",
+   "sourceDebutS": 1.5333,
+   "sourceFinS": 3.9733,
+   "texte": "Un, deux, un, deux.",
+   "raison": "test du micro (« un, deux, un, deux »)"
+  },
+  {
+   "morceau": "c01",
+   "sourceDebutS": 6.0933,
+   "sourceFinS": 9.3733,
+   "texte": "Les reufs, actuellement je prépare le premier pop-up de ma marque Mehomiz.",
+   "raison": "1re prise de l'accroche"
+  },
+  {
+   "morceau": "c02",
+   "sourceDebutS": 10.0533,
+   "sourceFinS": 13.3333,
+   "texte": "Les reufs, actuellement, je prépare le premier pop-up de ma marque, Mehomiz.",
+   "raison": "2e prise de l'accroche"
+  },
+  {
+   "morceau": "c04",
+   "sourceDebutS": 20.8533,
+   "sourceFinS": 26.0133,
+   "texte": "Ça se passe le 7 novembre à la condition publique de Roubaix à l'occasion de la 7ème édition de Space Jam.",
+   "raison": "1re prise (« Ça se passe… la 7ème édition de Space Jam »)"
+  },
+  {
+   "morceau": "c05",
+   "sourceDebutS": 29.5133,
+   "sourceFinS": 35.2133,
+   "texte": "Ça va se passer le 7 novembre à la Condition Publique de Roubaix à l'occasion de la nouvelle émission.",
+   "raison": "prise ratée (« la nouvelle émission »)"
+  },
+  {
+   "morceau": "c06",
+   "sourceDebutS": 37.2933,
+   "sourceFinS": 41.2133,
+   "texte": "Cela va se passer le 7 novembre, cela va se passer le 7 novembre.",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c07",
+   "sourceDebutS": 44.9133,
+   "sourceFinS": 50.3533,
+   "texte": "Ca va se passer le 7 novembre à la condition publique de Roubaix à l'occasion de la nouvelle édition de Space Jam.",
+   "raison": "avant-dernière prise complète"
+  },
+  {
+   "morceau": "c08",
+   "sourceDebutS": 51.2333,
+   "sourceFinS": 52.4133,
+   "texte": "Ça va se passer le 7 novembre.",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c09-debut",
+   "sourceDebutS": 52.7533,
+   "sourceFinS": 53.0,
+   "texte": "Ça va se passer le 7 novembre à la condition publique de Roubaix à l'occasion de la nouvelle édition de Space Jam.",
+   "raison": "bruit et blanc avant « Ça va se passer » (repéré par reperer_hesitations.py)"
+  },
+  {
+   "morceau": "c09-fin",
+   "sourceDebutS": 57.0,
+   "sourceFinS": 57.1533,
+   "texte": "Ça va se passer le 7 novembre à la condition publique de Roubaix à l'occasion de la nouvelle édition de Space Jam.",
+   "raison": "fin de « Jam » qui traîne (v03)"
+  },
+  {
+   "morceau": "c10",
+   "sourceDebutS": 58.5933,
+   "sourceFinS": 58.9733,
+   "texte": "Merci.",
+   "raison": "bruit (le modèle y entend « Merci »)"
+  },
+  {
+   "morceau": "c11-debut",
+   "sourceDebutS": 62.2533,
+   "sourceFinS": 66.76,
+   "texte": "Passer du virtuel au physique, c'est un objectif que j'ai depuis longtemps avec Mehomys.",
+   "raison": "« Passer du… » puis une 1re prise complète (reprises effacées par la reconnaissance ; retour de Michaël, 0:07–0:11 de la v01)"
+  },
+  {
+   "morceau": "c12",
+   "sourceDebutS": 70.5333,
+   "sourceFinS": 70.7533,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit (le modèle y invente « Sous-titrage »)"
+  },
+  {
+   "morceau": "c13",
+   "sourceDebutS": 75.3933,
+   "sourceFinS": 78.1533,
+   "texte": "Je trouve que c'est un... Je trouve que c'est un mou...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c14-debut",
+   "sourceDebutS": 79.5133,
+   "sourceFinS": 79.86,
+   "texte": "Je trouve que c'est un move qui est cohérent avec l'ADN de la marque et les valeurs qu'on cherche à véhiculer, etc., etc.",
+   "raison": "souffle avant « Je trouve » (v03)"
+  },
+  {
+   "morceau": "c15",
+   "sourceDebutS": 85.3933,
+   "sourceFinS": 85.6333,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c16",
+   "sourceDebutS": 86.0333,
+   "sourceFinS": 86.3133,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c17",
+   "sourceDebutS": 90.4533,
+   "sourceFinS": 93.3333,
+   "texte": "Sous-titrage ST' 501",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c18",
+   "sourceDebutS": 94.7733,
+   "sourceFinS": 95.8733,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c19",
+   "sourceDebutS": 125.2733,
+   "sourceFinS": 126.4933,
+   "texte": "Grâce aux commandes qu'il a eues sur le...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c20",
+   "sourceDebutS": 127.2533,
+   "sourceFinS": 134.2333,
+   "texte": "Grâce aux commandes qu'il y a eu sur le... Ok. DRA... Ok. Grâce aux commandes qu'il y a eu sur le drop mais omise. Grâce aux commandes... Ahem.",
+   "raison": "faux départs et hésitations (« Ok… »)"
+  },
+  {
+   "morceau": "c21",
+   "sourceDebutS": 134.7533,
+   "sourceFinS": 138.8733,
+   "texte": "Grâce aux commandes qu'il y a eu sur le drop Mehomie's Flag, on a pu se permettre un petit",
+   "raison": "prise interrompue (« on a pu se permettre un petit »)"
+  },
+  {
+   "morceau": "c22",
+   "sourceDebutS": 140.0733,
+   "sourceFinS": 140.2533,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c23",
+   "sourceDebutS": 143.1933,
+   "sourceFinS": 143.8133,
+   "texte": "Grâce aux commandes...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c24",
+   "sourceDebutS": 150.1533,
+   "sourceFinS": 150.2733,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c25-debut",
+   "sourceDebutS": 151.7733,
+   "sourceFinS": 155.27,
+   "texte": "Grâce aux commandes qu'il y a eu sur le drop Meo Miss Flag, on a pu se permettre des petites folies les reufs.",
+   "raison": "deux « Grâce aux commandes qu'il y a eu sur le drop… » abandonnés, puis souffle avant « Grâce » (retours de Michaël sur la v01, 0:20–0:23, et la v02)"
+  },
+  {
+   "morceau": "c25-fin",
+   "sourceDebutS": 158.62,
+   "sourceFinS": 159.1533,
+   "texte": "Grâce aux commandes qu'il y a eu sur le drop Meo Miss Flag, on a pu se permettre des petites folies les reufs.",
+   "raison": "blanc après « les reufs » (retour de Michaël sur la v02)"
+  },
+  {
+   "morceau": "c26",
+   "sourceDebutS": 159.7733,
+   "sourceFinS": 160.1733,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c27",
+   "sourceDebutS": 163.5733,
+   "sourceFinS": 167.6533,
+   "texte": "Parce que forcément, organiser un événement...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c28",
+   "sourceDebutS": 170.0933,
+   "sourceFinS": 170.3133,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c29",
+   "sourceDebutS": 173.7733,
+   "sourceFinS": 176.4533,
+   "texte": "Parce que forcément...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c30",
+   "sourceDebutS": 177.4333,
+   "sourceFinS": 179.1733,
+   "texte": "Sous-titrage ST' 501",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c31",
+   "sourceDebutS": 180.6133,
+   "sourceFinS": 185.8733,
+   "texte": "Parce que forcément, un pop-up physique, ça applique d'avoir du stock.",
+   "raison": "1re prise (« un pop-up physique, ça implique d'avoir du stock »)"
+  },
+  {
+   "morceau": "c32-debut",
+   "sourceDebutS": 193.9733,
+   "sourceFinS": 195.3,
+   "texte": "Parce que forcément organiser un événement public, ça implique d'avoir du stock.",
+   "raison": "1er « Parce que forcément » (retour de Michaël, 0:27–0:29 de la v01)"
+  },
+  {
+   "morceau": "c32-fin",
+   "sourceDebutS": 198.8,
+   "sourceFinS": 199.1133,
+   "texte": "Parce que forcément organiser un événement public, ça implique d'avoir du stock.",
+   "raison": "blanc et bruit après « stock » (retour de Michaël : enchaîner plus vite)"
+  },
+  {
+   "morceau": "c33-debut",
+   "sourceDebutS": 199.5933,
+   "sourceFinS": 199.84,
+   "texte": "Je ne peux pas arriver là-bas, les mains vident les reufs.",
+   "raison": "blanc et souffle avant « Je » (retours de Michaël : enchaîner plus vite, sous-titre en avance)"
+  },
+  {
+   "morceau": "c34",
+   "sourceDebutS": 207.3133,
+   "sourceFinS": 209.2333,
+   "texte": "Voilà, je suis trop content, ça…",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c35",
+   "sourceDebutS": 210.2933,
+   "sourceFinS": 214.2733,
+   "texte": "Voilà, dans les grandes lignes, je suis trop content, je suis trop content, ça avance dans les...",
+   "raison": "faux départ (« dans les grandes lignes »)"
+  },
+  {
+   "morceau": "c36",
+   "sourceDebutS": 218.1333,
+   "sourceFinS": 223.0333,
+   "texte": "Voilà, en tout cas, je suis trop content. Ça avance dans le bon sens et franchement, ça me fait trop plaisir les reufs.",
+   "raison": "prise précédente (« …et franchement, ça me fait trop plaisir les reufs »)"
+  },
+  {
+   "morceau": "c37-debut",
+   "sourceDebutS": 226.6133,
+   "sourceFinS": 227.22,
+   "texte": "Voilà, en tout cas, je suis trop content, je sens que ça avance dans le bon sens.",
+   "raison": "bruit et blanc de 0,6 s avant « Voilà » (repéré par reperer_hesitations.py)"
+  },
+  {
+   "morceau": "c37-fin",
+   "sourceDebutS": 229.47,
+   "sourceFinS": 229.5733,
+   "texte": "Voilà, en tout cas, je suis trop content, je sens que ça avance dans le bon sens.",
+   "raison": "fin de « sens » qui traîne (v03)"
+  },
+  {
+   "morceau": "c38",
+   "sourceDebutS": 230.2733,
+   "sourceFinS": 230.3933,
+   "texte": "Sous-titrage Société Radio-Canada",
+   "raison": "bruit"
+  },
+  {
+   "morceau": "c39-debut",
+   "sourceDebutS": 235.7133,
+   "sourceFinS": 240.69,
+   "texte": "Maintenant, je vais essayer de tout mettre en place pour vous proposer quelque chose de qualitatif. Maintenant, je vais essayer de tout mettre en place pour vous proposer quelque chose de qualitatif.",
+   "raison": "1re prise"
+  },
+  {
+   "morceau": "c39-fin",
+   "sourceDebutS": 243.64,
+   "sourceFinS": 244.7133,
+   "texte": "Maintenant, je vais essayer de tout mettre en place pour vous proposer quelque chose de qualitatif. Maintenant, je vais essayer de tout mettre en place pour vous proposer quelque chose de qualitatif.",
+   "raison": "après « qualitatif » : regard vers les notes (retour de Michaël)"
+  },
+  {
+   "morceau": "c40-debut",
+   "sourceDebutS": 247.5133,
+   "sourceFinS": 252.94,
+   "texte": "Dans tous les cas, je vous en parlerai dans les semaines qui arrivent, merci, let's go. Dans tous les cas, je vous en parlerai dans les semaines qui arrivent, let's go.",
+   "raison": "1re prise (« …merci, let's go »), puis « Dans tous les cas, je vous en parl… » abandonné (retour de Michaël, 0:42 de la v01)"
+  },
+  {
+   "morceau": "c41",
+   "sourceDebutS": 255.6533,
+   "sourceFinS": 256.8333,
+   "texte": "Sous-titrage ST' 501",
+   "raison": "bruit"
+  }
+ ]
+}

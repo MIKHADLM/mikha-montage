@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/bin/bash \"/Users/michaelphilibert/Documents/MIKHA/IA STUDIO/AUTOMATISATIONS/scripts/publier_etat_montage.sh\" >/dev/null 2>&1 || true",
+            "async": true,
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

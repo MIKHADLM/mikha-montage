@@ -1,0 +1,1917 @@
+{
+ "_comment": "Tous les mots reconnus dans le rush, en temps rush. 'garde' = présent dans le montage. Texte brut du modèle.",
+ "mots": [
+  {
+   "brut": "*sad",
+   "debutS": 0.07,
+   "finS": 0.9,
+   "confiance": 0.6,
+   "morceau": "c00",
+   "garde": false
+  },
+  {
+   "brut": "music*",
+   "debutS": 0.91,
+   "finS": 2.24,
+   "confiance": 0.691,
+   "morceau": "c00",
+   "garde": false
+  },
+  {
+   "brut": "C'est",
+   "debutS": 2.29,
+   "finS": 2.55,
+   "confiance": 0.965,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "la",
+   "debutS": 2.64,
+   "finS": 2.74,
+   "confiance": 0.998,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "dernière",
+   "debutS": 2.74,
+   "finS": 3.05,
+   "confiance": 0.993,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "chance",
+   "debutS": 3.32,
+   "finS": 3.67,
+   "confiance": 0.976,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "pour",
+   "debutS": 3.67,
+   "finS": 3.87,
+   "confiance": 0.998,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "toi",
+   "debutS": 3.97,
+   "finS": 4.17,
+   "confiance": 0.999,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "de",
+   "debutS": 4.17,
+   "finS": 4.26,
+   "confiance": 0.987,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "commander",
+   "debutS": 4.26,
+   "finS": 4.67,
+   "confiance": 0.993,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "ton",
+   "debutS": 4.67,
+   "finS": 4.8,
+   "confiance": 0.997,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "t-shirt",
+   "debutS": 4.8,
+   "finS": 5.02,
+   "confiance": 0.634,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "Mehomiz,",
+   "debutS": 5.12,
+   "finS": 5.58,
+   "confiance": 0.043,
+   "morceau": "c01",
+   "garde": false
+  },
+  {
+   "brut": "c'est",
+   "debutS": 5.59,
+   "finS": 5.96,
+   "confiance": 0.817,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "la",
+   "debutS": 5.97,
+   "finS": 6.13,
+   "confiance": 0.973,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "dernière",
+   "debutS": 6.13,
+   "finS": 6.35,
+   "confiance": 0.959,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "chance",
+   "debutS": 6.35,
+   "finS": 6.54,
+   "confiance": 0.832,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "pour",
+   "debutS": 6.6,
+   "finS": 6.76,
+   "confiance": 0.931,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "toi",
+   "debutS": 6.76,
+   "finS": 6.9,
+   "confiance": 0.998,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 6.9,
+   "finS": 6.93,
+   "confiance": 0.996,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "commander",
+   "debutS": 6.98,
+   "finS": 7.41,
+   "confiance": 0.995,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "ton",
+   "debutS": 7.41,
+   "finS": 7.56,
+   "confiance": 0.999,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "t-shirt",
+   "debutS": 7.56,
+   "finS": 7.88,
+   "confiance": 0.999,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "Mehomiz.",
+   "debutS": 7.88,
+   "finS": 8.26,
+   "confiance": 0.903,
+   "morceau": "c01",
+   "garde": true
+  },
+  {
+   "brut": "Ça",
+   "debutS": 8.9,
+   "finS": 8.94,
+   "confiance": 0.955,
+   "morceau": "c02",
+   "garde": false
+  },
+  {
+   "brut": "va",
+   "debutS": 9.01,
+   "finS": 9.01,
+   "confiance": 0.996,
+   "morceau": "c02",
+   "garde": false
+  },
+  {
+   "brut": "faire",
+   "debutS": 9.05,
+   "finS": 9.15,
+   "confiance": 0.949,
+   "morceau": "c02",
+   "garde": false
+  },
+  {
+   "brut": "bientôt.",
+   "debutS": 9.18,
+   "finS": 9.51,
+   "confiance": 0.778,
+   "morceau": "c02",
+   "garde": false
+  },
+  {
+   "brut": "Ça",
+   "debutS": 10.15,
+   "finS": 10.15,
+   "confiance": 0.588,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "va",
+   "debutS": 10.21,
+   "finS": 10.23,
+   "confiance": 0.97,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "faire",
+   "debutS": 10.23,
+   "finS": 10.43,
+   "confiance": 0.998,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "maintenant",
+   "debutS": 10.43,
+   "finS": 10.69,
+   "confiance": 0.984,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "un",
+   "debutS": 10.83,
+   "finS": 10.91,
+   "confiance": 0.923,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "mois",
+   "debutS": 10.91,
+   "finS": 11.09,
+   "confiance": 1.0,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "que",
+   "debutS": 11.09,
+   "finS": 11.12,
+   "confiance": 0.987,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "les",
+   "debutS": 11.21,
+   "finS": 11.33,
+   "confiance": 0.999,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "précommandes",
+   "debutS": 11.33,
+   "finS": 11.78,
+   "confiance": 0.938,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "sont",
+   "debutS": 11.78,
+   "finS": 11.94,
+   "confiance": 0.99,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "ouvertes",
+   "debutS": 11.94,
+   "finS": 12.22,
+   "confiance": 0.978,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "et",
+   "debutS": 12.32,
+   "finS": 12.37,
+   "confiance": 0.452,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "il",
+   "debutS": 12.37,
+   "finS": 12.45,
+   "confiance": 0.996,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "est",
+   "debutS": 12.45,
+   "finS": 12.55,
+   "confiance": 0.998,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "temps",
+   "debutS": 12.59,
+   "finS": 12.68,
+   "confiance": 0.975,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "pour",
+   "debutS": 12.74,
+   "finS": 12.81,
+   "confiance": 0.915,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "nous",
+   "debutS": 12.81,
+   "finS": 12.93,
+   "confiance": 0.952,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 12.93,
+   "finS": 13.05,
+   "confiance": 0.881,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "clôturer",
+   "debutS": 13.19,
+   "finS": 13.57,
+   "confiance": 0.972,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "histoire",
+   "debutS": 13.57,
+   "finS": 13.96,
+   "confiance": 0.839,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 13.96,
+   "finS": 14.05,
+   "confiance": 0.999,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "passer",
+   "debutS": 14.05,
+   "finS": 14.3,
+   "confiance": 0.999,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "à",
+   "debutS": 14.38,
+   "finS": 14.38,
+   "confiance": 1.0,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "la",
+   "debutS": 14.4,
+   "finS": 14.47,
+   "confiance": 1.0,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "production.",
+   "debutS": 14.47,
+   "finS": 15.15,
+   "confiance": 0.921,
+   "morceau": "c03",
+   "garde": true
+  },
+  {
+   "brut": "Avec",
+   "debutS": 16.47,
+   "finS": 16.48,
+   "confiance": 0.966,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "BAG,",
+   "debutS": 16.48,
+   "finS": 16.67,
+   "confiance": 0.719,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "on",
+   "debutS": 16.68,
+   "finS": 16.76,
+   "confiance": 0.993,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "tenez",
+   "debutS": 16.76,
+   "finS": 16.96,
+   "confiance": 0.642,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "à",
+   "debutS": 17.0,
+   "finS": 17.01,
+   "confiance": 0.994,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "vous",
+   "debutS": 17.01,
+   "finS": 17.18,
+   "confiance": 0.978,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "remercier",
+   "debutS": 17.18,
+   "finS": 17.63,
+   "confiance": 0.997,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "pour",
+   "debutS": 17.63,
+   "finS": 17.84,
+   "confiance": 0.971,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "votre",
+   "debutS": 17.84,
+   "finS": 18.08,
+   "confiance": 0.994,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "soutien",
+   "debutS": 18.11,
+   "finS": 18.47,
+   "confiance": 0.998,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "général",
+   "debutS": 18.47,
+   "finS": 18.75,
+   "confiance": 0.986,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "autour",
+   "debutS": 18.89,
+   "finS": 19.29,
+   "confiance": 0.98,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 19.29,
+   "finS": 19.43,
+   "confiance": 0.997,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "ce",
+   "debutS": 19.43,
+   "finS": 19.5,
+   "confiance": 0.996,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "projet.",
+   "debutS": 19.59,
+   "finS": 20.0,
+   "confiance": 0.617,
+   "morceau": "c04",
+   "garde": true
+  },
+  {
+   "brut": "Que",
+   "debutS": 20.45,
+   "finS": 20.64,
+   "confiance": 0.888,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "ce",
+   "debutS": 20.64,
+   "finS": 20.76,
+   "confiance": 0.994,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "soit",
+   "debutS": 20.76,
+   "finS": 21.01,
+   "confiance": 0.637,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "vos",
+   "debutS": 21.01,
+   "finS": 21.2,
+   "confiance": 0.978,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "retours,",
+   "debutS": 21.2,
+   "finS": 21.76,
+   "confiance": 0.959,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "vos",
+   "debutS": 21.76,
+   "finS": 21.95,
+   "confiance": 0.988,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "messages.",
+   "debutS": 21.95,
+   "finS": 22.5,
+   "confiance": 0.578,
+   "morceau": "c05",
+   "garde": false
+  },
+  {
+   "brut": "Que",
+   "debutS": 23.25,
+   "finS": 23.3,
+   "confiance": 0.9,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "ce",
+   "debutS": 23.39,
+   "finS": 23.48,
+   "confiance": 0.995,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "soit",
+   "debutS": 23.48,
+   "finS": 23.67,
+   "confiance": 0.67,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "vos",
+   "debutS": 23.67,
+   "finS": 23.8,
+   "confiance": 0.984,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "retours,",
+   "debutS": 23.81,
+   "finS": 24.25,
+   "confiance": 0.99,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "vos",
+   "debutS": 24.25,
+   "finS": 24.4,
+   "confiance": 0.982,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "messages",
+   "debutS": 24.4,
+   "finS": 24.78,
+   "confiance": 0.999,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "d'encouragement,",
+   "debutS": 24.86,
+   "finS": 25.58,
+   "confiance": 0.372,
+   "morceau": "c06",
+   "garde": true
+  },
+  {
+   "brut": "Et",
+   "debutS": 25.73,
+   "finS": 25.73,
+   "confiance": 0.957,
+   "morceau": "c07",
+   "garde": true
+  },
+  {
+   "brut": "bien",
+   "debutS": 25.76,
+   "finS": 25.98,
+   "confiance": 0.994,
+   "morceau": "c07",
+   "garde": true
+  },
+  {
+   "brut": "sûr",
+   "debutS": 25.98,
+   "finS": 26.17,
+   "confiance": 0.997,
+   "morceau": "c07",
+   "garde": true
+  },
+  {
+   "brut": "les",
+   "debutS": 26.17,
+   "finS": 26.36,
+   "confiance": 0.523,
+   "morceau": "c07",
+   "garde": true
+  },
+  {
+   "brut": "commandes.",
+   "debutS": 26.36,
+   "finS": 26.96,
+   "confiance": 0.733,
+   "morceau": "c07",
+   "garde": true
+  },
+  {
+   "brut": "En",
+   "debutS": 30.75,
+   "finS": 30.75,
+   "confiance": 0.977,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "vrai",
+   "debutS": 30.83,
+   "finS": 30.91,
+   "confiance": 0.998,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "les",
+   "debutS": 30.91,
+   "finS": 31.03,
+   "confiance": 0.732,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "gars,",
+   "debutS": 31.03,
+   "finS": 31.25,
+   "confiance": 0.642,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "chaque",
+   "debutS": 31.27,
+   "finS": 31.41,
+   "confiance": 0.996,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "petit",
+   "debutS": 31.51,
+   "finS": 31.71,
+   "confiance": 0.996,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "geste",
+   "debutS": 31.71,
+   "finS": 31.88,
+   "confiance": 0.999,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "c'est",
+   "debutS": 31.97,
+   "finS": 32.13,
+   "confiance": 0.771,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "quelque",
+   "debutS": 32.13,
+   "finS": 32.42,
+   "confiance": 0.998,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "chose",
+   "debutS": 32.42,
+   "finS": 32.62,
+   "confiance": 0.999,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "de",
+   "debutS": 32.63,
+   "finS": 32.71,
+   "confiance": 0.997,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "très",
+   "debutS": 32.71,
+   "finS": 32.88,
+   "confiance": 0.998,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "concret",
+   "debutS": 32.88,
+   "finS": 33.17,
+   "confiance": 0.998,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "pour",
+   "debutS": 33.17,
+   "finS": 33.34,
+   "confiance": 0.999,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "nous.",
+   "debutS": 33.34,
+   "finS": 33.54,
+   "confiance": 0.667,
+   "morceau": "c08",
+   "garde": false
+  },
+  {
+   "brut": "En",
+   "debutS": 34.58,
+   "finS": 34.62,
+   "confiance": 0.966,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "vrai",
+   "debutS": 34.72,
+   "finS": 34.78,
+   "confiance": 0.988,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "les",
+   "debutS": 34.78,
+   "finS": 34.88,
+   "confiance": 0.779,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "gars",
+   "debutS": 34.88,
+   "finS": 34.99,
+   "confiance": 0.999,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "chaque",
+   "debutS": 35.02,
+   "finS": 35.23,
+   "confiance": 0.51,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "petit",
+   "debutS": 35.23,
+   "finS": 35.4,
+   "confiance": 0.973,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "geste",
+   "debutS": 35.4,
+   "finS": 35.57,
+   "confiance": 0.989,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "c'est",
+   "debutS": 35.57,
+   "finS": 35.68,
+   "confiance": 0.768,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "quelque",
+   "debutS": 35.76,
+   "finS": 35.97,
+   "confiance": 0.993,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "chose",
+   "debutS": 35.97,
+   "finS": 36.14,
+   "confiance": 0.998,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 36.14,
+   "finS": 36.21,
+   "confiance": 0.996,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "très",
+   "debutS": 36.21,
+   "finS": 36.35,
+   "confiance": 0.987,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "concret",
+   "debutS": 36.35,
+   "finS": 36.67,
+   "confiance": 0.989,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "pour",
+   "debutS": 36.67,
+   "finS": 36.85,
+   "confiance": 0.982,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "nous",
+   "debutS": 36.85,
+   "finS": 37.01,
+   "confiance": 0.976,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "et",
+   "debutS": 37.01,
+   "finS": 37.17,
+   "confiance": 0.552,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "ça",
+   "debutS": 37.17,
+   "finS": 37.27,
+   "confiance": 0.696,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "nous",
+   "debutS": 37.27,
+   "finS": 37.39,
+   "confiance": 0.806,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "permet",
+   "debutS": 37.43,
+   "finS": 37.61,
+   "confiance": 0.923,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 37.61,
+   "finS": 37.73,
+   "confiance": 0.989,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "développer",
+   "debutS": 37.73,
+   "finS": 38.3,
+   "confiance": 0.983,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "le",
+   "debutS": 38.45,
+   "finS": 38.54,
+   "confiance": 0.977,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "projet",
+   "debutS": 38.54,
+   "finS": 38.93,
+   "confiance": 0.997,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "sur",
+   "debutS": 38.93,
+   "finS": 39.02,
+   "confiance": 0.997,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "du",
+   "debutS": 39.12,
+   "finS": 39.25,
+   "confiance": 0.998,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "long",
+   "debutS": 39.25,
+   "finS": 39.48,
+   "confiance": 0.999,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "terme.",
+   "debutS": 39.54,
+   "finS": 39.86,
+   "confiance": 0.971,
+   "morceau": "c09",
+   "garde": true
+  },
+  {
+   "brut": "Donc",
+   "debutS": 40.79,
+   "finS": 40.82,
+   "confiance": 0.846,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "merci",
+   "debutS": 40.82,
+   "finS": 41.04,
+   "confiance": 0.746,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "à",
+   "debutS": 41.04,
+   "finS": 41.08,
+   "confiance": 1.0,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "toi",
+   "debutS": 41.08,
+   "finS": 41.21,
+   "confiance": 1.0,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "si",
+   "debutS": 41.21,
+   "finS": 41.29,
+   "confiance": 0.988,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "tu",
+   "debutS": 41.29,
+   "finS": 41.37,
+   "confiance": 1.0,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "soutiens",
+   "debutS": 41.37,
+   "finS": 41.71,
+   "confiance": 0.998,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "le",
+   "debutS": 41.71,
+   "finS": 41.79,
+   "confiance": 0.999,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "projet.",
+   "debutS": 41.79,
+   "finS": 42.25,
+   "confiance": 0.967,
+   "morceau": "c10",
+   "garde": true
+  },
+  {
+   "brut": "Pour",
+   "debutS": 43.96,
+   "finS": 43.96,
+   "confiance": 0.928,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "ceux",
+   "debutS": 43.97,
+   "finS": 44.11,
+   "confiance": 0.996,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "qui",
+   "debutS": 44.11,
+   "finS": 44.21,
+   "confiance": 0.997,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "ne",
+   "debutS": 44.27,
+   "finS": 44.29,
+   "confiance": 0.976,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "l'ont",
+   "debutS": 44.29,
+   "finS": 44.46,
+   "confiance": 0.995,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "pas",
+   "debutS": 44.46,
+   "finS": 44.57,
+   "confiance": 0.996,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "encore",
+   "debutS": 44.57,
+   "finS": 44.77,
+   "confiance": 0.992,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "fait",
+   "debutS": 44.91,
+   "finS": 45.01,
+   "confiance": 0.97,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "et",
+   "debutS": 45.01,
+   "finS": 45.05,
+   "confiance": 0.859,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "qui",
+   "debutS": 45.11,
+   "finS": 45.19,
+   "confiance": 0.992,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "veulent",
+   "debutS": 45.19,
+   "finS": 45.44,
+   "confiance": 0.993,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "commander",
+   "debutS": 45.44,
+   "finS": 45.77,
+   "confiance": 0.966,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "leur",
+   "debutS": 45.77,
+   "finS": 45.86,
+   "confiance": 0.812,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "t-shirt,",
+   "debutS": 45.93,
+   "finS": 46.25,
+   "confiance": 0.484,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "vous",
+   "debutS": 46.28,
+   "finS": 46.39,
+   "confiance": 0.814,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "avez",
+   "debutS": 46.39,
+   "finS": 46.57,
+   "confiance": 0.952,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "jusqu'à",
+   "debutS": 46.57,
+   "finS": 47.1,
+   "confiance": 0.929,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "ce",
+   "debutS": 47.1,
+   "finS": 47.2,
+   "confiance": 0.983,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "soir",
+   "debutS": 47.27,
+   "finS": 47.56,
+   "confiance": 0.989,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "minuit.",
+   "debutS": 47.56,
+   "finS": 48.06,
+   "confiance": 0.827,
+   "morceau": "c11",
+   "garde": true
+  },
+  {
+   "brut": "Sur",
+   "debutS": 48.31,
+   "finS": 48.36,
+   "confiance": 0.709,
+   "morceau": "c12",
+   "garde": true
+  },
+  {
+   "brut": "le",
+   "debutS": 48.37,
+   "finS": 48.5,
+   "confiance": 1.0,
+   "morceau": "c12",
+   "garde": true
+  },
+  {
+   "brut": "site",
+   "debutS": 48.5,
+   "finS": 48.72,
+   "confiance": 1.0,
+   "morceau": "c12",
+   "garde": true
+  },
+  {
+   "brut": "meomis.com",
+   "debutS": 48.83,
+   "finS": 49.52,
+   "confiance": 0.78,
+   "morceau": "c12",
+   "garde": true
+  },
+  {
+   "brut": "Normalement",
+   "debutS": 51.59,
+   "finS": 51.91,
+   "confiance": 0.887,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "vous",
+   "debutS": 51.91,
+   "finS": 52.09,
+   "confiance": 0.58,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "avez",
+   "debutS": 52.09,
+   "finS": 52.26,
+   "confiance": 0.984,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "du",
+   "debutS": 52.26,
+   "finS": 52.36,
+   "confiance": 0.78,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "choix",
+   "debutS": 52.36,
+   "finS": 52.54,
+   "confiance": 0.998,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "que",
+   "debutS": 52.59,
+   "finS": 52.69,
+   "confiance": 0.683,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "ce",
+   "debutS": 52.71,
+   "finS": 52.77,
+   "confiance": 0.979,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "soit",
+   "debutS": 52.83,
+   "finS": 52.97,
+   "confiance": 0.991,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "en",
+   "debutS": 53.01,
+   "finS": 53.07,
+   "confiance": 0.968,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "terme",
+   "debutS": 53.07,
+   "finS": 53.29,
+   "confiance": 0.613,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "de",
+   "debutS": 53.29,
+   "finS": 53.38,
+   "confiance": 0.996,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "design",
+   "debutS": 53.38,
+   "finS": 53.64,
+   "confiance": 0.927,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "avec",
+   "debutS": 53.64,
+   "finS": 53.76,
+   "confiance": 0.941,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "plus",
+   "debutS": 53.88,
+   "finS": 54.0,
+   "confiance": 0.983,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "de",
+   "debutS": 54.01,
+   "finS": 54.08,
+   "confiance": 0.988,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "6",
+   "debutS": 54.1,
+   "finS": 54.22,
+   "confiance": 0.732,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "variantes,",
+   "debutS": 54.22,
+   "finS": 54.66,
+   "confiance": 0.371,
+   "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "Normalement,",
+   "debutS": 55.08,
+   "finS": 55.38,
+   "confiance": 0.779,
+   "morceau": "c14",
+   "garde": false
+  },
+  {
+   "brut": "vous",
+   "debutS": 55.38,
+   "finS": 55.5,
+   "confiance": 0.997,
+   "morceau": "c14",
+   "garde": false
+  },
+  {
+   "brut": "avez",
+   "debutS": 55.51,
+   "finS": 55.66,
+   "confiance": 0.999,
+   "morceau": "c14",
+   "garde": false
+  },
+  {
+   "brut": "du",
+   "debutS": 55.66,
+   "finS": 55.73,
+   "confiance": 0.993,
+   "morceau": "c14",
+   "garde": false
+  },
+  {
+   "brut": "choix...",
+   "debutS": 55.73,
+   "finS": 56.1,
+   "confiance": 0.662,
+   "morceau": "c14",
+   "garde": false
+  },
+  {
+   "brut": "Normalement",
+   "debutS": 56.32,
+   "finS": 56.82,
+   "confiance": 0.914,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "vous",
+   "debutS": 56.82,
+   "finS": 57.01,
+   "confiance": 0.725,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "avez",
+   "debutS": 57.01,
+   "finS": 57.2,
+   "confiance": 0.99,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "du",
+   "debutS": 57.2,
+   "finS": 57.29,
+   "confiance": 0.857,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "choix",
+   "debutS": 57.29,
+   "finS": 57.47,
+   "confiance": 0.998,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "que",
+   "debutS": 57.52,
+   "finS": 57.64,
+   "confiance": 0.523,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "ce",
+   "debutS": 57.67,
+   "finS": 57.74,
+   "confiance": 0.979,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "soit",
+   "debutS": 57.74,
+   "finS": 57.94,
+   "confiance": 0.983,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "en",
+   "debutS": 57.94,
+   "finS": 58.01,
+   "confiance": 0.967,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "terme",
+   "debutS": 58.06,
+   "finS": 58.26,
+   "confiance": 0.748,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "de",
+   "debutS": 58.26,
+   "finS": 58.35,
+   "confiance": 0.996,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "design",
+   "debutS": 58.35,
+   "finS": 58.63,
+   "confiance": 0.933,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "avec",
+   "debutS": 58.63,
+   "finS": 58.76,
+   "confiance": 0.957,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "6",
+   "debutS": 58.83,
+   "finS": 58.96,
+   "confiance": 0.725,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "variantes.",
+   "debutS": 58.96,
+   "finS": 59.44,
+   "confiance": 0.354,
+   "morceau": "c15",
+   "garde": true
+  },
+  {
+   "brut": "Mais",
+   "debutS": 59.73,
+   "finS": 59.84,
+   "confiance": 0.669,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "aussi",
+   "debutS": 59.84,
+   "finS": 60.16,
+   "confiance": 0.967,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "en",
+   "debutS": 60.18,
+   "finS": 60.31,
+   "confiance": 0.972,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "coupe",
+   "debutS": 60.31,
+   "finS": 60.65,
+   "confiance": 0.934,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "avec",
+   "debutS": 60.65,
+   "finS": 60.92,
+   "confiance": 0.848,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "le",
+   "debutS": 60.92,
+   "finS": 61.05,
+   "confiance": 0.989,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "Boxy",
+   "debutS": 61.05,
+   "finS": 61.31,
+   "confiance": 0.707,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "Tee",
+   "debutS": 61.31,
+   "finS": 61.5,
+   "confiance": 0.53,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "ou",
+   "debutS": 61.56,
+   "finS": 61.63,
+   "confiance": 0.911,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "le",
+   "debutS": 61.63,
+   "finS": 61.76,
+   "confiance": 0.963,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "Baby",
+   "debutS": 61.76,
+   "finS": 62.02,
+   "confiance": 0.987,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "Tee.",
+   "debutS": 62.02,
+   "finS": 62.34,
+   "confiance": 0.824,
+   "morceau": "c16",
+   "garde": true
+  },
+  {
+   "brut": "Dans",
+   "debutS": 65.16,
+   "finS": 65.31,
+   "confiance": 0.978,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "tous",
+   "debutS": 65.31,
+   "finS": 65.47,
+   "confiance": 0.991,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "les",
+   "debutS": 65.47,
+   "finS": 65.59,
+   "confiance": 0.999,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "cas,",
+   "debutS": 65.59,
+   "finS": 65.79,
+   "confiance": 0.449,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "pour",
+   "debutS": 65.79,
+   "finS": 65.95,
+   "confiance": 0.993,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "les",
+   "debutS": 65.95,
+   "finS": 66.07,
+   "confiance": 0.999,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "deux",
+   "debutS": 66.07,
+   "finS": 66.23,
+   "confiance": 0.934,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "modèles,",
+   "debutS": 66.23,
+   "finS": 66.64,
+   "confiance": 0.912,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "ça",
+   "debutS": 66.64,
+   "finS": 66.93,
+   "confiance": 0.934,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "va",
+   "debutS": 66.93,
+   "finS": 67.21,
+   "confiance": 0.999,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "du",
+   "debutS": 67.21,
+   "finS": 67.48,
+   "confiance": 0.998,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "XS",
+   "debutS": 67.61,
+   "finS": 67.76,
+   "confiance": 0.934,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "au",
+   "debutS": 67.76,
+   "finS": 67.95,
+   "confiance": 0.984,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "XXL.",
+   "debutS": 68.05,
+   "finS": 68.46,
+   "confiance": 0.576,
+   "morceau": "c17",
+   "garde": true
+  },
+  {
+   "brut": "C'est",
+   "debutS": 72.57,
+   "finS": 72.73,
+   "confiance": 0.968,
+   "morceau": "c18",
+   "garde": true
+  },
+  {
+   "brut": "le",
+   "debutS": 72.76,
+   "finS": 72.81,
+   "confiance": 0.997,
+   "morceau": "c18",
+   "garde": true
+  },
+  {
+   "brut": "moment,",
+   "debutS": 72.81,
+   "finS": 73.11,
+   "confiance": 0.897,
+   "morceau": "c18",
+   "garde": true
+  },
+  {
+   "brut": "faites-vous",
+   "debutS": 73.11,
+   "finS": 73.52,
+   "confiance": 0.908,
+   "morceau": "c18",
+   "garde": true
+  },
+  {
+   "brut": "plaisir",
+   "debutS": 73.52,
+   "finS": 73.79,
+   "confiance": 0.998,
+   "morceau": "c18",
+   "garde": true
+  },
+  {
+   "brut": "Merci",
+   "debutS": 74.28,
+   "finS": 74.43,
+   "confiance": 0.997,
+   "morceau": "c19",
+   "garde": true
+  },
+  {
+   "brut": "à",
+   "debutS": 74.46,
+   "finS": 74.5,
+   "confiance": 1.0,
+   "morceau": "c19",
+   "garde": true
+  },
+  {
+   "brut": "vous,",
+   "debutS": 74.5,
+   "finS": 74.87,
+   "confiance": 0.742,
+   "morceau": "c19",
+   "garde": true
+  },
+  {
+   "brut": "let's",
+   "debutS": 75.04,
+   "finS": 75.17,
+   "confiance": 0.971,
+   "morceau": "c19",
+   "garde": true
+  },
+  {
+   "brut": "go",
+   "debutS": 75.17,
+   "finS": 75.29,
+   "confiance": 1.0,
+   "morceau": "c19",
+   "garde": true
+  },
+  {
+   "brut": "Sous-titrage",
+   "debutS": 75.83,
+   "finS": 76.45,
+   "confiance": 0.025,
+   "morceau": "c20",
+   "garde": false
+  },
+  {
+   "brut": "ST'",
+   "debutS": 76.48,
+   "finS": 76.62,
+   "confiance": 0.483,
+   "morceau": "c20",
+   "garde": false
+  },
+  {
+   "brut": "501",
+   "debutS": 76.63,
+   "finS": 77.17,
+   "confiance": 0.995,
+   "morceau": "c20",
+   "garde": false
+  }
+ ]
+}

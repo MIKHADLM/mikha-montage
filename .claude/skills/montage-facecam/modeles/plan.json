@@ -1,0 +1,37 @@
+{
+ "_comment": "Plan de montage de la vidéo <N>, traduction du PLAN_MONTAGE.md validé. Ancres : \"P3\" = la phrase, \"P3:mot\" = le mot, \"P8:mot:2\" = sa 2e occurrence. Chemins : video/image/fichier dans public/v<N>/, etiquette dans public/. Exemple complet : a_monter/1/plan.json.",
+ "accroche": {
+  "phrase": "P1",
+  "lignes": [
+   { "texte": "<LIGNE 1>", "couleur": "blanc" },
+   { "texte": "<LIGNE 2>", "couleur": "blanc" },
+   { "texte": "<MOT FORT>", "couleur": "jaune" }
+  ]
+ },
+ "cadrages": [
+  { "phrase": "P1", "zoom": 1.21 },
+  { "phrase": "P2", "zoom": [1, 1.2] },
+  { "phrase": "P4", "zoom": 1.09 }
+ ],
+ "sequences": [
+  {
+   "type": "partenaire",
+   "de": "P3",
+   "a": "P3",
+   "video": "videos/<video-du-partenaire>.mp4",
+   "etiquette": "charte/partenaires/partenaire_bag_etiquette-texte-noir_v01.png"
+  },
+  { "type": "site", "de": "P5:<mot>", "a": "P5" },
+  {
+   "type": "produit",
+   "de": "P6:<mot>",
+   "a": "P6",
+   "photos": [
+    { "fichier": "images/<photo-1>.png", "nom": "<NOM>", "precision": "MEHOMIES" },
+    { "fichier": "images/<photo-2>.png", "de": "P6:<mot>", "nom": "<NOM>", "precision": "MEHOMIES" }
+   ]
+  },
+  { "type": "motion", "de": "P7:<mot>", "a": "P7:<mot>", "asset": "barre-recherche", "fond": "facecam", "decalageY": 0 }
+ ],
+ "sousTitres": { "masquer": [["P5:<mot>", "P5:<mot>"]] }
+}

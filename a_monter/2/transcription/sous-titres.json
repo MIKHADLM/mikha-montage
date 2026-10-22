@@ -1,0 +1,1150 @@
+[
+ {
+  "text": "Les",
+  "startMs": 83,
+  "endMs": 163,
+  "timestampMs": null,
+  "confidence": 0.96
+ },
+ {
+  "text": " reufs",
+  "startMs": 93,
+  "endMs": 313,
+  "timestampMs": null,
+  "confidence": 0.964
+ },
+ {
+  "text": " actuellement",
+  "startMs": 463,
+  "endMs": 953,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " je",
+  "startMs": 953,
+  "endMs": 1043,
+  "timestampMs": null,
+  "confidence": 0.65
+ },
+ {
+  "text": " prépare",
+  "startMs": 1043,
+  "endMs": 1253,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " le",
+  "startMs": 1363,
+  "endMs": 1453,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " premier",
+  "startMs": 1453,
+  "endMs": 1783,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " pop-up",
+  "startMs": 1783,
+  "endMs": 2053,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " de",
+  "startMs": 2053,
+  "endMs": 2143,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " ma",
+  "startMs": 2143,
+  "endMs": 2233,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " marque",
+  "startMs": 2233,
+  "endMs": 2513,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " Mehomies",
+  "startMs": 2513,
+  "endMs": 2823,
+  "timestampMs": null,
+  "confidence": 0.452
+ },
+ {
+  "text": " Ça",
+  "startMs": 2914,
+  "endMs": 2994,
+  "timestampMs": null,
+  "confidence": 0.708
+ },
+ {
+  "text": " va",
+  "startMs": 2934,
+  "endMs": 3014,
+  "timestampMs": null,
+  "confidence": 0.976
+ },
+ {
+  "text": " se",
+  "startMs": 2944,
+  "endMs": 3024,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " passer",
+  "startMs": 3024,
+  "endMs": 3274,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " le",
+  "startMs": 3274,
+  "endMs": 3354,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " 7",
+  "startMs": 3354,
+  "endMs": 3434,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " novembre",
+  "startMs": 3474,
+  "endMs": 3784,
+  "timestampMs": null,
+  "confidence": 0.981
+ },
+ {
+  "text": " à",
+  "startMs": 3824,
+  "endMs": 3904,
+  "timestampMs": null,
+  "confidence": 0.957
+ },
+ {
+  "text": " la",
+  "startMs": 3834,
+  "endMs": 3914,
+  "timestampMs": null,
+  "confidence": 0.973
+ },
+ {
+  "text": " Condition",
+  "startMs": 3914,
+  "endMs": 4284,
+  "timestampMs": null,
+  "confidence": 0.734
+ },
+ {
+  "text": " Publique",
+  "startMs": 4284,
+  "endMs": 4604,
+  "timestampMs": null,
+  "confidence": 0.987
+ },
+ {
+  "text": " de",
+  "startMs": 4624,
+  "endMs": 4704,
+  "timestampMs": null,
+  "confidence": 0.99
+ },
+ {
+  "text": " Roubaix",
+  "startMs": 4684,
+  "endMs": 5064,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " à",
+  "startMs": 5064,
+  "endMs": 5144,
+  "timestampMs": null,
+  "confidence": 0.544
+ },
+ {
+  "text": " l'occasion",
+  "startMs": 5104,
+  "endMs": 5544,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " de",
+  "startMs": 5544,
+  "endMs": 5624,
+  "timestampMs": null,
+  "confidence": 0.981
+ },
+ {
+  "text": " la",
+  "startMs": 5624,
+  "endMs": 5724,
+  "timestampMs": null,
+  "confidence": 0.936
+ },
+ {
+  "text": " nouvelle",
+  "startMs": 5724,
+  "endMs": 5974,
+  "timestampMs": null,
+  "confidence": 0.958
+ },
+ {
+  "text": " édition",
+  "startMs": 5974,
+  "endMs": 6284,
+  "timestampMs": null,
+  "confidence": 0.959
+ },
+ {
+  "text": " de",
+  "startMs": 6284,
+  "endMs": 6374,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " Space",
+  "startMs": 6374,
+  "endMs": 6604,
+  "timestampMs": null,
+  "confidence": 0.985
+ },
+ {
+  "text": " Jam",
+  "startMs": 6604,
+  "endMs": 6904,
+  "timestampMs": null,
+  "confidence": 0.985
+ },
+ {
+  "text": " Passer",
+  "startMs": 7073,
+  "endMs": 7213,
+  "timestampMs": null,
+  "confidence": 0.86
+ },
+ {
+  "text": " du",
+  "startMs": 7213,
+  "endMs": 7293,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " virtuel",
+  "startMs": 7303,
+  "endMs": 7573,
+  "timestampMs": null,
+  "confidence": 0.96
+ },
+ {
+  "text": " au",
+  "startMs": 7623,
+  "endMs": 7703,
+  "timestampMs": null,
+  "confidence": 0.966
+ },
+ {
+  "text": " physique",
+  "startMs": 7703,
+  "endMs": 8143,
+  "timestampMs": null,
+  "confidence": 0.675
+ },
+ {
+  "text": " c'est",
+  "startMs": 8183,
+  "endMs": 8383,
+  "timestampMs": null,
+  "confidence": 0.958
+ },
+ {
+  "text": " un",
+  "startMs": 8383,
+  "endMs": 8463,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " objectif",
+  "startMs": 8463,
+  "endMs": 8793,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " que",
+  "startMs": 8793,
+  "endMs": 8923,
+  "timestampMs": null,
+  "confidence": 0.976
+ },
+ {
+  "text": " j'ai",
+  "startMs": 8923,
+  "endMs": 9043,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " depuis",
+  "startMs": 9123,
+  "endMs": 9333,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " longtemps",
+  "startMs": 9333,
+  "endMs": 9673,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " avec",
+  "startMs": 9723,
+  "endMs": 9883,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " Mehomies",
+  "startMs": 9883,
+  "endMs": 10156,
+  "timestampMs": null,
+  "confidence": 0.493
+ },
+ {
+  "text": " Je",
+  "startMs": 10273,
+  "endMs": 10353,
+  "timestampMs": null,
+  "confidence": 0.954
+ },
+ {
+  "text": " trouve",
+  "startMs": 10273,
+  "endMs": 10443,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " que",
+  "startMs": 10493,
+  "endMs": 10593,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " c'est",
+  "startMs": 10593,
+  "endMs": 10793,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " un",
+  "startMs": 10793,
+  "endMs": 10873,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " move",
+  "startMs": 10923,
+  "endMs": 11043,
+  "timestampMs": null,
+  "confidence": 0.46
+ },
+ {
+  "text": " qui",
+  "startMs": 11133,
+  "endMs": 11213,
+  "timestampMs": null,
+  "confidence": 0.978
+ },
+ {
+  "text": " est",
+  "startMs": 11163,
+  "endMs": 11273,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " cohérent",
+  "startMs": 11283,
+  "endMs": 11613,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " avec",
+  "startMs": 11613,
+  "endMs": 11783,
+  "timestampMs": null,
+  "confidence": 0.984
+ },
+ {
+  "text": " l'ADN",
+  "startMs": 11783,
+  "endMs": 11983,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " de",
+  "startMs": 11983,
+  "endMs": 12063,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " la",
+  "startMs": 12063,
+  "endMs": 12143,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " marque",
+  "startMs": 12143,
+  "endMs": 12403,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " et",
+  "startMs": 12493,
+  "endMs": 12573,
+  "timestampMs": null,
+  "confidence": 0.805
+ },
+ {
+  "text": " les",
+  "startMs": 12633,
+  "endMs": 12723,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " valeurs",
+  "startMs": 12723,
+  "endMs": 13033,
+  "timestampMs": null,
+  "confidence": 0.993
+ },
+ {
+  "text": " qu'on",
+  "startMs": 13043,
+  "endMs": 13133,
+  "timestampMs": null,
+  "confidence": 0.851
+ },
+ {
+  "text": " cherche",
+  "startMs": 13133,
+  "endMs": 13343,
+  "timestampMs": null,
+  "confidence": 0.965
+ },
+ {
+  "text": " à",
+  "startMs": 13343,
+  "endMs": 13423,
+  "timestampMs": null,
+  "confidence": 0.977
+ },
+ {
+  "text": " véhiculer",
+  "startMs": 13393,
+  "endMs": 14023,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " etc",
+  "startMs": 14023,
+  "endMs": 14483,
+  "timestampMs": null,
+  "confidence": 0.874
+ },
+ {
+  "text": " etc",
+  "startMs": 14483,
+  "endMs": 14873,
+  "timestampMs": null,
+  "confidence": 0.98
+ },
+ {
+  "text": " Grâce",
+  "startMs": 15150,
+  "endMs": 15230,
+  "timestampMs": null,
+  "confidence": 0.951
+ },
+ {
+  "text": " aux",
+  "startMs": 15200,
+  "endMs": 15280,
+  "timestampMs": null,
+  "confidence": 0.973
+ },
+ {
+  "text": " commandes",
+  "startMs": 15340,
+  "endMs": 15650,
+  "timestampMs": null,
+  "confidence": 0.988
+ },
+ {
+  "text": " qu'il",
+  "startMs": 15650,
+  "endMs": 15820,
+  "timestampMs": null,
+  "confidence": 0.949
+ },
+ {
+  "text": " y",
+  "startMs": 15820,
+  "endMs": 15900,
+  "timestampMs": null,
+  "confidence": 0.964
+ },
+ {
+  "text": " a",
+  "startMs": 15850,
+  "endMs": 15930,
+  "timestampMs": null,
+  "confidence": 0.976
+ },
+ {
+  "text": " eu",
+  "startMs": 15880,
+  "endMs": 15960,
+  "timestampMs": null,
+  "confidence": 0.903
+ },
+ {
+  "text": " sur",
+  "startMs": 16020,
+  "endMs": 16100,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " le",
+  "startMs": 16060,
+  "endMs": 16140,
+  "timestampMs": null,
+  "confidence": 0.987
+ },
+ {
+  "text": " drop",
+  "startMs": 16130,
+  "endMs": 16270,
+  "timestampMs": null,
+  "confidence": 0.487
+ },
+ {
+  "text": " Mehomies",
+  "startMs": 16350,
+  "endMs": 16530,
+  "timestampMs": null,
+  "confidence": 0.254
+ },
+ {
+  "text": " Flag",
+  "startMs": 16530,
+  "endMs": 16870,
+  "timestampMs": null,
+  "confidence": 0.939
+ },
+ {
+  "text": " on",
+  "startMs": 16890,
+  "endMs": 16970,
+  "timestampMs": null,
+  "confidence": 0.841
+ },
+ {
+  "text": " a",
+  "startMs": 16970,
+  "endMs": 17050,
+  "timestampMs": null,
+  "confidence": 0.986
+ },
+ {
+  "text": " pu",
+  "startMs": 17010,
+  "endMs": 17100,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " se",
+  "startMs": 17100,
+  "endMs": 17190,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " permettre",
+  "startMs": 17190,
+  "endMs": 17640,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " des",
+  "startMs": 17640,
+  "endMs": 17720,
+  "timestampMs": null,
+  "confidence": 0.816
+ },
+ {
+  "text": " petites",
+  "startMs": 17700,
+  "endMs": 17900,
+  "timestampMs": null,
+  "confidence": 0.797
+ },
+ {
+  "text": " folies",
+  "startMs": 17990,
+  "endMs": 18240,
+  "timestampMs": null,
+  "confidence": 0.835
+ },
+ {
+  "text": " les",
+  "startMs": 18240,
+  "endMs": 18390,
+  "timestampMs": null,
+  "confidence": 0.819
+ },
+ {
+  "text": " reufs",
+  "startMs": 18390,
+  "endMs": 18570,
+  "timestampMs": null,
+  "confidence": 0.939
+ },
+ {
+  "text": " Parce",
+  "startMs": 18647,
+  "endMs": 18727,
+  "timestampMs": null,
+  "confidence": 0.965
+ },
+ {
+  "text": " que",
+  "startMs": 18727,
+  "endMs": 18847,
+  "timestampMs": null,
+  "confidence": 0.989
+ },
+ {
+  "text": " forcément",
+  "startMs": 18847,
+  "endMs": 19297,
+  "timestampMs": null,
+  "confidence": 0.429
+ },
+ {
+  "text": " organiser",
+  "startMs": 19307,
+  "endMs": 19677,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " un",
+  "startMs": 19677,
+  "endMs": 19757,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " événement",
+  "startMs": 19757,
+  "endMs": 20117,
+  "timestampMs": null,
+  "confidence": 0.917
+ },
+ {
+  "text": " public",
+  "startMs": 20127,
+  "endMs": 20507,
+  "timestampMs": null,
+  "confidence": 0.9
+ },
+ {
+  "text": " ça",
+  "startMs": 20537,
+  "endMs": 20617,
+  "timestampMs": null,
+  "confidence": 0.861
+ },
+ {
+  "text": " implique",
+  "startMs": 20727,
+  "endMs": 21257,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " d'avoir",
+  "startMs": 21257,
+  "endMs": 21757,
+  "timestampMs": null,
+  "confidence": 0.967
+ },
+ {
+  "text": " du",
+  "startMs": 21777,
+  "endMs": 21917,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " stock",
+  "startMs": 21917,
+  "endMs": 22217,
+  "timestampMs": null,
+  "confidence": 0.605
+ },
+ {
+  "text": " Je",
+  "startMs": 22286,
+  "endMs": 22366,
+  "timestampMs": null,
+  "confidence": 0.959
+ },
+ {
+  "text": " ne",
+  "startMs": 22286,
+  "endMs": 22366,
+  "timestampMs": null,
+  "confidence": 0.593
+ },
+ {
+  "text": " peux",
+  "startMs": 22316,
+  "endMs": 22436,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " pas",
+  "startMs": 22436,
+  "endMs": 22536,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " arriver",
+  "startMs": 22536,
+  "endMs": 22776,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " là-bas",
+  "startMs": 22776,
+  "endMs": 23046,
+  "timestampMs": null,
+  "confidence": 0.641
+ },
+ {
+  "text": " les",
+  "startMs": 23046,
+  "endMs": 23146,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " mains",
+  "startMs": 23146,
+  "endMs": 23296,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " vides",
+  "startMs": 23316,
+  "endMs": 23486,
+  "timestampMs": null,
+  "confidence": 0.965
+ },
+ {
+  "text": " les",
+  "startMs": 23486,
+  "endMs": 23586,
+  "timestampMs": null,
+  "confidence": 0.77
+ },
+ {
+  "text": " reufs",
+  "startMs": 23586,
+  "endMs": 23849,
+  "timestampMs": null,
+  "confidence": 0.958
+ },
+ {
+  "text": " Voilà",
+  "startMs": 23964,
+  "endMs": 24044,
+  "timestampMs": null,
+  "confidence": 0.52
+ },
+ {
+  "text": " en",
+  "startMs": 24024,
+  "endMs": 24104,
+  "timestampMs": null,
+  "confidence": 0.988
+ },
+ {
+  "text": " tout",
+  "startMs": 24084,
+  "endMs": 24204,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " cas",
+  "startMs": 24214,
+  "endMs": 24374,
+  "timestampMs": null,
+  "confidence": 0.529
+ },
+ {
+  "text": " je",
+  "startMs": 24374,
+  "endMs": 24454,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " suis",
+  "startMs": 24454,
+  "endMs": 24534,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " trop",
+  "startMs": 24564,
+  "endMs": 24684,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " content",
+  "startMs": 24734,
+  "endMs": 24984,
+  "timestampMs": null,
+  "confidence": 0.677
+ },
+ {
+  "text": " je",
+  "startMs": 24984,
+  "endMs": 25064,
+  "timestampMs": null,
+  "confidence": 0.989
+ },
+ {
+  "text": " sens",
+  "startMs": 25044,
+  "endMs": 25154,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " que",
+  "startMs": 25194,
+  "endMs": 25274,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " ça",
+  "startMs": 25274,
+  "endMs": 25354,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " avance",
+  "startMs": 25334,
+  "endMs": 25514,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " dans",
+  "startMs": 25524,
+  "endMs": 25644,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " le",
+  "startMs": 25644,
+  "endMs": 25724,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " bon",
+  "startMs": 25714,
+  "endMs": 25814,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " sens",
+  "startMs": 25814,
+  "endMs": 26164,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " Maintenant",
+  "startMs": 26337,
+  "endMs": 26537,
+  "timestampMs": null,
+  "confidence": 0.913
+ },
+ {
+  "text": " je",
+  "startMs": 26537,
+  "endMs": 26617,
+  "timestampMs": null,
+  "confidence": 0.424
+ },
+ {
+  "text": " vais",
+  "startMs": 26597,
+  "endMs": 26727,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " essayer",
+  "startMs": 26727,
+  "endMs": 26957,
+  "timestampMs": null,
+  "confidence": 0.907
+ },
+ {
+  "text": " de",
+  "startMs": 26957,
+  "endMs": 27037,
+  "timestampMs": null,
+  "confidence": 0.986
+ },
+ {
+  "text": " tout",
+  "startMs": 27017,
+  "endMs": 27147,
+  "timestampMs": null,
+  "confidence": 0.958
+ },
+ {
+  "text": " mettre",
+  "startMs": 27147,
+  "endMs": 27337,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " en",
+  "startMs": 27337,
+  "endMs": 27417,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " place",
+  "startMs": 27427,
+  "endMs": 27587,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " pour",
+  "startMs": 27607,
+  "endMs": 27757,
+  "timestampMs": null,
+  "confidence": 0.95
+ },
+ {
+  "text": " vous",
+  "startMs": 27757,
+  "endMs": 27907,
+  "timestampMs": null,
+  "confidence": 0.96
+ },
+ {
+  "text": " proposer",
+  "startMs": 27907,
+  "endMs": 28197,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " quelque",
+  "startMs": 28207,
+  "endMs": 28387,
+  "timestampMs": null,
+  "confidence": 0.965
+ },
+ {
+  "text": " chose",
+  "startMs": 28387,
+  "endMs": 28527,
+  "timestampMs": null,
+  "confidence": 0.988
+ },
+ {
+  "text": " de",
+  "startMs": 28527,
+  "endMs": 28637,
+  "timestampMs": null,
+  "confidence": 0.889
+ },
+ {
+  "text": " qualitatif",
+  "startMs": 28647,
+  "endMs": 29357,
+  "timestampMs": null,
+  "confidence": 0.749
+ },
+ {
+  "text": " Dans",
+  "startMs": 29453,
+  "endMs": 29533,
+  "timestampMs": null,
+  "confidence": 0.92
+ },
+ {
+  "text": " tous",
+  "startMs": 29473,
+  "endMs": 29563,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " les",
+  "startMs": 29583,
+  "endMs": 29663,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " cas",
+  "startMs": 29653,
+  "endMs": 29803,
+  "timestampMs": null,
+  "confidence": 0.797
+ },
+ {
+  "text": " je",
+  "startMs": 29803,
+  "endMs": 29883,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " vous",
+  "startMs": 29863,
+  "endMs": 29983,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " en",
+  "startMs": 29983,
+  "endMs": 30063,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " parlerai",
+  "startMs": 30053,
+  "endMs": 30283,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " dans",
+  "startMs": 30283,
+  "endMs": 30403,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " les",
+  "startMs": 30403,
+  "endMs": 30493,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " semaines",
+  "startMs": 30493,
+  "endMs": 30733,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " qui",
+  "startMs": 30733,
+  "endMs": 30823,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " arrivent",
+  "startMs": 30823,
+  "endMs": 31203,
+  "timestampMs": null,
+  "confidence": 0.783
+ },
+ {
+  "text": " let's",
+  "startMs": 31203,
+  "endMs": 31443,
+  "timestampMs": null,
+  "confidence": 0.532
+ },
+ {
+  "text": " go",
+  "startMs": 31453,
+  "endMs": 31553,
+  "timestampMs": null,
+  "confidence": 0.986
+ }
+]

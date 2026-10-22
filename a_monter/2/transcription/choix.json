@@ -1,0 +1,147 @@
+{
+ "_comment": "Choix de montage de la vidéo 2 : prises gardées et texte relu, proposés par l'agent et validés par Michaël le 2026-10-01. Texte relu : même nombre de mots que la reconnaissance (« Mehomies[2] » = un mot relu pour 2 mots reconnus), orthographe de TON.md, nombres en chiffres ; un « | » isolé force une coupure de sous-titres. Lu par scripts/decouper_transcription.py et scripts/preparer_medias.py.",
+ "rush": "annonce_popup_mehomies.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -36,
+  "dureeMinS": 0.3,
+  "_note": "Seuil relevé de -40 à -36 dB pour ce rush : le bruit de la pièce tourne autour de -40 dB, à -40 les fins de phrase gardaient jusqu'à 2 s de blanc. Transcription à -40 gardée dans brut_seuil-40/."
+ },
+ "sousTitres": {
+  "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf",
+  "taillePx": 75,
+  "largeurMaxPx": 880,
+  "motsMax": 3
+ },
+ "musique": {
+  "fichier": "assets/music.mp3",
+  "debutDansLaPisteS": 0.0,
+  "niveauLufs": -22.7,
+  "_note": "Piste prise dès son début (0:00), validé par Michaël le 2026-10-01 ; démarre juste après le hook (charte). Droits confirmés par Michaël."
+ },
+ "phrases": [
+  {
+   "id": "P1",
+   "morceaux": [
+    "c03"
+   ],
+   "_note": "3e prise de l'accroche (la dernière)",
+   "texte": "Les reufs, actuellement je prépare le premier pop-up de ma marque Mehomies."
+  },
+  {
+   "id": "P2",
+   "morceaux": [
+    "c09b"
+   ],
+   "_note": "Dernière prise complète (« nouvelle édition ») ; c09b = 53,00 → 57,00 s (fin de « Jam ») ; la 1re prise, c04, dit « la 7ème édition »",
+   "texte": "Ça va se passer le 7 novembre | à la | Condition Publique | de Roubaix | à l'occasion | de la | nouvelle édition | de Space Jam."
+  },
+  {
+   "id": "P3",
+   "morceaux": [
+    "c11b"
+   ],
+   "texte": "Passer du virtuel au physique, c'est un objectif que j'ai depuis longtemps avec Mehomies.",
+   "_note": "Dernière des 3 prises enchaînées dans c11 (« Passer du… », puis deux fois « passer du virtuel au physique, c'est un objectif ») ; c11b = à partir de 66,76 s, retranscrit seul"
+  },
+  {
+   "id": "P4",
+   "morceaux": [
+    "c14b"
+   ],
+   "texte": "Je trouve que c'est un move | qui est cohérent | avec l'ADN | de la marque et les valeurs qu'on cherche à véhiculer, etc etc.",
+   "_note": "c14b = c14 dès l'attaque de « Je » (79,86 s) : 0,35 s de souffle retiré (v03)"
+  },
+  {
+   "id": "P5",
+   "morceaux": [
+    "c25b"
+   ],
+   "texte": "Grâce aux commandes | qu'il | y a eu | sur le drop Mehomies[2] Flag, on a pu | se permettre | des petites folies, les reufs.",
+   "_note": "3e prise de c25 ; c25b = de « Grâce » (155,27 s, souffle avant retiré) à la fin de « reufs » (158,62 s ; 0,6 s de blanc après retiré, v03)"
+  },
+  {
+   "id": "P6",
+   "morceaux": [
+    "c32b",
+    "c33b"
+   ],
+   "texte": "Parce que forcément, organiser | un événement public, ça implique d'avoir du stock. Je ne peux pas arriver là-bas, les mains vides, les reufs.",
+   "_note": "c32b = 2e « parce que forcément » (195,30 s) jusqu'à la fin de « stock » (198,80 s) ; c33b = dès le vrai « Je » (199,84 s ; le son à 199,64 s est un souffle, v03) : 0,15 s entre les deux"
+  },
+  {
+   "id": "P7",
+   "morceaux": [
+    "c37b"
+   ],
+   "_note": "Dernière prise ; c37b = de « Voilà » (227,22 s) à la fin de « sens » (229,47 s) ; la précédente, c36, finit par « et franchement, ça me fait trop plaisir les reufs »",
+   "texte": "Voilà, en tout cas, je suis trop content, je sens | que ça avance | dans | le bon sens."
+  },
+  {
+   "id": "P8",
+   "morceaux": [
+    "c39b"
+   ],
+   "_note": "2e prise de c39, de 240,69 s jusqu'à la fin de « qualitatif » (243,64 s) : après, tu regardes tes notes",
+   "texte": "Maintenant, je vais essayer | de tout | mettre en place | pour vous proposer | quelque chose | de qualitatif."
+  },
+  {
+   "id": "P9",
+   "morceaux": [
+    "c40b"
+   ],
+   "_note": "Dernière prise de c40 à partir de 252,94 s (avant : 1re prise avec « merci », puis « Dans tous les cas, je vous en parl… » abandonné)",
+   "texte": "Dans tous les cas, je vous en parlerai dans les semaines qui arrivent, let's go !"
+  }
+ ],
+ "coupes": {
+  "c00": "test du micro (« un, deux, un, deux »)",
+  "c01": "1re prise de l'accroche",
+  "c02": "2e prise de l'accroche",
+  "c04": "1re prise (« Ça se passe… la 7ème édition de Space Jam »)",
+  "c05": "prise ratée (« la nouvelle émission »)",
+  "c06": "faux départ",
+  "c07": "avant-dernière prise complète",
+  "c08": "faux départ",
+  "c09-debut": "bruit et blanc avant « Ça va se passer » (repéré par reperer_hesitations.py)",
+  "c09-fin": "fin de « Jam » qui traîne (v03)",
+  "c10": "bruit (le modèle y entend « Merci »)",
+  "c11-debut": "« Passer du… » puis une 1re prise complète (reprises effacées par la reconnaissance ; retour de Michaël, 0:07–0:11 de la v01)",
+  "c12": "bruit (le modèle y invente « Sous-titrage »)",
+  "c13": "faux départ",
+  "c14-debut": "souffle avant « Je trouve » (v03)",
+  "c15": "bruit",
+  "c16": "bruit",
+  "c17": "bruit",
+  "c18": "bruit",
+  "c19": "faux départ",
+  "c20": "faux départs et hésitations (« Ok… »)",
+  "c21": "prise interrompue (« on a pu se permettre un petit »)",
+  "c22": "bruit",
+  "c23": "faux départ",
+  "c24": "bruit",
+  "c25-debut": "deux « Grâce aux commandes qu'il y a eu sur le drop… » abandonnés, puis souffle avant « Grâce » (retours de Michaël sur la v01, 0:20–0:23, et la v02)",
+  "c25-fin": "blanc après « les reufs » (retour de Michaël sur la v02)",
+  "c26": "bruit",
+  "c27": "faux départ",
+  "c28": "bruit",
+  "c29": "faux départ",
+  "c30": "bruit",
+  "c31": "1re prise (« un pop-up physique, ça implique d'avoir du stock »)",
+  "c32-debut": "1er « Parce que forcément » (retour de Michaël, 0:27–0:29 de la v01)",
+  "c32-fin": "blanc et bruit après « stock » (retour de Michaël : enchaîner plus vite)",
+  "c33-debut": "blanc et souffle avant « Je » (retours de Michaël : enchaîner plus vite, sous-titre en avance)",
+  "c34": "faux départ",
+  "c35": "faux départ (« dans les grandes lignes »)",
+  "c36": "prise précédente (« …et franchement, ça me fait trop plaisir les reufs »)",
+  "c37-debut": "bruit et blanc de 0,6 s avant « Voilà » (repéré par reperer_hesitations.py)",
+  "c37-fin": "fin de « sens » qui traîne (v03)",
+  "c38": "bruit",
+  "c39-debut": "1re prise",
+  "c39-fin": "après « qualitatif » : regard vers les notes (retour de Michaël)",
+  "c40-debut": "1re prise (« …merci, let's go »), puis « Dans tous les cas, je vous en parl… » abandonné (retour de Michaël, 0:42 de la v01)",
+  "c41": "bruit"
+ },
+ "_resync": "Rush remplacé le 2026-10-01 (étalonné, son décalé de 4 images par Michaël dans DaVinci) : décalage mesuré par corrélation = +133 ms (+4,00 images) sur tout le rush ; temps de brut/ et debutForceS décalés d'autant. Transcription d'origine : brut_rush-avant-resync/."
+}

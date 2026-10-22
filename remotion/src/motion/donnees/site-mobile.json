@@ -1,0 +1,88 @@
+{
+ "_comment": "Captures de mehomies.com en version mobile (scripts/capturer_site.mjs) : rectangles en points de page, 1 point = 3 px de capture.",
+ "date": "2026-09-29T17:42:33.682Z",
+ "ecran": {
+  "largeur": 390,
+  "hauteur": 844,
+  "densite": 3
+ },
+ "accueil": {
+  "fichier": "site-mobile/accueil.png",
+  "diapo": 1,
+  "mascotte": {
+   "x": 0,
+   "y": 100,
+   "largeur": 390,
+   "hauteur": 675.2
+  },
+  "bandeau": {
+   "x": 0,
+   "y": 775.2,
+   "largeur": 390,
+   "hauteur": 48.3
+  },
+  "titreProduits": {
+   "x": 0,
+   "y": 823.5,
+   "largeur": 390,
+   "hauteur": 25
+  },
+  "carte": {
+   "x": 16,
+   "y": 880.5,
+   "largeur": 175,
+   "hauteur": 218.8
+  },
+  "photo": {
+   "x": 16,
+   "y": 880.5,
+   "largeur": 175,
+   "hauteur": 218.8
+  },
+  "hauteur": 3470
+ },
+ "produit": {
+  "fichier": "site-mobile/produit.png",
+  "fichierTaille": "site-mobile/produit_taille-m.png",
+  "taille": "M",
+  "photo": {
+   "x": 16,
+   "y": 116,
+   "largeur": 358,
+   "hauteur": 447.5
+  },
+  "titre": {
+   "x": 16,
+   "y": 587.5,
+   "largeur": 358,
+   "hauteur": 28.8
+  },
+  "tailles": {
+   "x": 16,
+   "y": 722.7,
+   "largeur": 358,
+   "hauteur": 48
+  },
+  "boutonTaille": {
+   "x": 139.3,
+   "y": 722.7,
+   "largeur": 49.7,
+   "hauteur": 48
+  },
+  "bouton": {
+   "x": 16,
+   "y": 906.3,
+   "largeur": 358,
+   "hauteur": 48
+  },
+  "texteBouton": "SÉLECTIONNEZ UNE TAILLE",
+  "hauteur": 1731,
+  "texteBoutonTaille": "Ajouter au panier - 33 €",
+  "boutonApresTaille": {
+   "x": 16,
+   "y": 906.3,
+   "largeur": 358,
+   "hauteur": 48
+  }
+ }
+}

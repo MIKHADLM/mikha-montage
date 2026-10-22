@@ -1,0 +1,18 @@
+# Dépôt MONTAGE : méthode (skill), style (CHARTE), outils (remotion), mémoire (apprentissage, motion_design).
+# Les médias lourds de chaque vidéo ne sont pas versionnés : ils passent par AirDrop, Drive ou disque.
+.DS_Store
+remotion/node_modules/
+remotion/out/
+remotion/public/charte/
+remotion/public/v*/
+a_monter/*/*.mp4
+a_monter/*/*.mov
+a_monter/*/*.MP4
+a_monter/*/*.MOV
+a_monter/*/assets/
+a_monter/*/export/
+a_monter/*/apercus/
+a_monter/*/transcription/brut*/
+a_monter/*/transcription/.tmp*/
+a_monter/*/transcription/.hesitations/
+CHARTE/a_ranger/

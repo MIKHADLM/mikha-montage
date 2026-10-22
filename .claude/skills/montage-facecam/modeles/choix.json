@@ -1,0 +1,27 @@
+{
+ "_comment": "Choix de montage de la vidéo <N> : prises gardées et texte relu, validés par Michaël le <date>. Texte relu : même nombre de mots que la reconnaissance (« Mehomies[2] » = un mot relu pour 2 mots reconnus), orthographe de TON.md, nombres en chiffres ; un « | » isolé force une coupure de sous-titres. Une prise nettoyée (hésitation, souffle, fin qui traîne) est un sous-morceau « cNNb » créé par scripts/redecouper_morceau.py ; ce qui reste hors de lui se note « cNN-debut » / « cNN-fin » dans les coupes. Exemple complet : a_monter/2/transcription/choix.json. Lu par scripts/decouper_transcription.py et scripts/preparer_medias.py.",
+ "rush": "<fichier du rush>",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": { "seuilDb": -40, "dureeMinS": 0.3 },
+ "sousTitres": {
+  "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf",
+  "taillePx": 75,
+  "largeurMaxPx": 880,
+  "motsMax": 3
+ },
+ "musique": {
+  "fichier": "assets/<musique fournie>",
+  "debutDansLaPisteS": 0.0,
+  "niveauLufs": -22.7,
+  "_note": "Point de départ donné par Michaël avec la piste"
+ },
+ "phrases": [
+  { "id": "P1", "morceaux": ["c01"], "texte": "<phrase d'accroche relue>" },
+  { "id": "P2", "morceaux": ["c03"], "texte": "<phrase relue, | pour forcer une coupure>" }
+ ],
+ "coupes": {
+  "c00": "coupé : bruit avant la prise",
+  "c02": "coupé : faux départ"
+ }
+}

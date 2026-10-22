@@ -1,0 +1,350 @@
+{
+ "_comment": "Découpage du rush : segments gardés, dans l'ordre du montage. Généré par remotion/scripts/decouper_transcription.py depuis choix.json. Temps en secondes et en images.",
+ "source": "a_monter/1/fin_précommande.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "dureeMontageS": 38.167,
+ "dureeMontageFrames": 1145,
+ "phrases": [
+  {
+   "id": "P1",
+   "montageDebutS": 0.0,
+   "montageFinS": 2.333,
+   "texte": "C'est la dernière chance pour toi de commander ton t-shirt Mehomies."
+  },
+  {
+   "id": "P2",
+   "montageDebutS": 2.333,
+   "montageFinS": 7.567,
+   "texte": "Ça va faire maintenant un mois que les précommandes sont ouvertes, et il est temps pour nous de clôturer, histoire de passer à la production."
+  },
+  {
+   "id": "P3",
+   "montageDebutS": 7.567,
+   "montageFinS": 11.133,
+   "texte": "Avec BAG, on tenait à vous remercier pour votre soutien général autour de ce projet."
+  },
+  {
+   "id": "P4",
+   "montageDebutS": 11.133,
+   "montageFinS": 14.567,
+   "texte": "Que ce soit vos retours, vos messages d'encouragement et bien sûr les commandes."
+  },
+  {
+   "id": "P5",
+   "montageDebutS": 14.567,
+   "montageFinS": 19.733,
+   "texte": "En vrai les gars, chaque petit geste, c'est quelque chose de très concret pour nous, et ça nous permet de développer le projet sur du long terme."
+  },
+  {
+   "id": "P6",
+   "montageDebutS": 19.733,
+   "montageFinS": 21.367,
+   "texte": "Donc merci à toi si tu soutiens le projet."
+  },
+  {
+   "id": "P7",
+   "montageDebutS": 21.367,
+   "montageFinS": 26.867,
+   "texte": "Pour ceux qui ne l'ont pas encore fait et qui veulent commander leur t-shirt, vous avez jusqu'à ce soir minuit sur le site mehomies.com."
+  },
+  {
+   "id": "P8",
+   "montageDebutS": 26.867,
+   "montageFinS": 32.5,
+   "texte": "Normalement, vous avez du choix, que ce soit en termes de design avec 6 variantes, mais aussi en coupe avec le Boxy Tee ou le Baby Tee."
+  },
+  {
+   "id": "P9",
+   "montageDebutS": 32.5,
+   "montageFinS": 35.667,
+   "texte": "Dans tous les cas, pour les deux modèles, ça va du XS au XXL."
+  },
+  {
+   "id": "P10",
+   "montageDebutS": 35.667,
+   "montageFinS": 36.933,
+   "texte": "C'est le moment, faites-vous plaisir!"
+  },
+  {
+   "id": "P11",
+   "montageDebutS": 36.933,
+   "montageFinS": 38.167,
+   "texte": "Merci à vous, let's go!"
+  }
+ ],
+ "segments": [
+  {
+   "id": 1,
+   "phrase": "P1",
+   "morceau": "c01",
+   "paroleDebutS": 5.96,
+   "paroleFinS": 8.12,
+   "sourceDebutFrame": 176,
+   "sourceFinFrame": 246,
+   "dureeFrames": 70,
+   "montageDebutFrame": 0,
+   "sourceDebutS": 5.867,
+   "sourceFinS": 8.2,
+   "montageDebutS": 0.0,
+   "montageFinS": 2.333
+  },
+  {
+   "id": 2,
+   "phrase": "P2",
+   "morceau": "c03",
+   "paroleDebutS": 10.22,
+   "paroleFinS": 15.28,
+   "sourceDebutFrame": 304,
+   "sourceFinFrame": 461,
+   "dureeFrames": 157,
+   "montageDebutFrame": 70,
+   "sourceDebutS": 10.133,
+   "sourceFinS": 15.367,
+   "montageDebutS": 2.333,
+   "montageFinS": 7.567
+  },
+  {
+   "id": 3,
+   "phrase": "P3",
+   "morceau": "c04",
+   "paroleDebutS": 16.46,
+   "paroleFinS": 19.86,
+   "sourceDebutFrame": 491,
+   "sourceFinFrame": 598,
+   "dureeFrames": 107,
+   "montageDebutFrame": 227,
+   "sourceDebutS": 16.367,
+   "sourceFinS": 19.933,
+   "montageDebutS": 7.567,
+   "montageFinS": 11.133
+  },
+  {
+   "id": 4,
+   "phrase": "P4",
+   "morceau": "c06",
+   "paroleDebutS": 23.4,
+   "paroleFinS": 25.44,
+   "sourceDebutFrame": 700,
+   "sourceFinFrame": 766,
+   "dureeFrames": 66,
+   "montageDebutFrame": 334,
+   "sourceDebutS": 23.333,
+   "sourceFinS": 25.533,
+   "montageDebutS": 11.133,
+   "montageFinS": 13.333
+  },
+  {
+   "id": 5,
+   "phrase": "P4",
+   "morceau": "c07",
+   "paroleDebutS": 25.76,
+   "paroleFinS": 26.82,
+   "sourceDebutFrame": 770,
+   "sourceFinFrame": 807,
+   "dureeFrames": 37,
+   "montageDebutFrame": 400,
+   "sourceDebutS": 25.667,
+   "sourceFinS": 26.9,
+   "montageDebutS": 13.333,
+   "montageFinS": 14.567
+  },
+  {
+   "id": 6,
+   "phrase": "P5",
+   "morceau": "c09",
+   "paroleDebutS": 34.72,
+   "paroleFinS": 39.72,
+   "sourceDebutFrame": 1039,
+   "sourceFinFrame": 1194,
+   "dureeFrames": 155,
+   "montageDebutFrame": 437,
+   "sourceDebutS": 34.633,
+   "sourceFinS": 39.8,
+   "montageDebutS": 14.567,
+   "montageFinS": 19.733
+  },
+  {
+   "id": 7,
+   "phrase": "P6",
+   "morceau": "c10",
+   "paroleDebutS": 40.8,
+   "paroleFinS": 42.3,
+   "sourceDebutFrame": 1222,
+   "sourceFinFrame": 1271,
+   "dureeFrames": 49,
+   "montageDebutFrame": 592,
+   "sourceDebutS": 40.733,
+   "sourceFinS": 42.367,
+   "montageDebutS": 19.733,
+   "montageFinS": 21.367
+  },
+  {
+   "id": 8,
+   "phrase": "P7",
+   "morceau": "c11",
+   "paroleDebutS": 43.96,
+   "paroleFinS": 47.92,
+   "sourceDebutFrame": 1316,
+   "sourceFinFrame": 1440,
+   "dureeFrames": 124,
+   "montageDebutFrame": 641,
+   "sourceDebutS": 43.867,
+   "sourceFinS": 48.0,
+   "montageDebutS": 21.367,
+   "montageFinS": 25.5
+  },
+  {
+   "id": 9,
+   "phrase": "P7",
+   "morceau": "c12",
+   "paroleDebutS": 48.3,
+   "paroleFinS": 49.52,
+   "sourceDebutFrame": 1447,
+   "sourceFinFrame": 1488,
+   "dureeFrames": 41,
+   "montageDebutFrame": 765,
+   "sourceDebutS": 48.233,
+   "sourceFinS": 49.6,
+   "montageDebutS": 25.5,
+   "montageFinS": 26.867
+  },
+  {
+   "id": 10,
+   "phrase": "P8",
+   "morceau": "c15",
+   "paroleDebutS": 56.46,
+   "paroleFinS": 59.3,
+   "sourceDebutFrame": 1691,
+   "sourceFinFrame": 1781,
+   "dureeFrames": 90,
+   "montageDebutFrame": 806,
+   "sourceDebutS": 56.367,
+   "sourceFinS": 59.367,
+   "montageDebutS": 26.867,
+   "montageFinS": 29.867
+  },
+  {
+   "id": 11,
+   "phrase": "P8",
+   "morceau": "c16",
+   "paroleDebutS": 59.72,
+   "paroleFinS": 62.2,
+   "sourceDebutFrame": 1789,
+   "sourceFinFrame": 1868,
+   "dureeFrames": 79,
+   "montageDebutFrame": 896,
+   "sourceDebutS": 59.633,
+   "sourceFinS": 62.267,
+   "montageDebutS": 29.867,
+   "montageFinS": 32.5
+  },
+  {
+   "id": 12,
+   "phrase": "P9",
+   "morceau": "c17",
+   "paroleDebutS": 65.3,
+   "paroleFinS": 68.32,
+   "sourceDebutFrame": 1957,
+   "sourceFinFrame": 2052,
+   "dureeFrames": 95,
+   "montageDebutFrame": 975,
+   "sourceDebutS": 65.233,
+   "sourceFinS": 68.4,
+   "montageDebutS": 32.5,
+   "montageFinS": 35.667
+  },
+  {
+   "id": 13,
+   "phrase": "P10",
+   "morceau": "c18",
+   "paroleDebutS": 72.72,
+   "paroleFinS": 73.82,
+   "sourceDebutFrame": 2179,
+   "sourceFinFrame": 2217,
+   "dureeFrames": 38,
+   "montageDebutFrame": 1070,
+   "sourceDebutS": 72.633,
+   "sourceFinS": 73.9,
+   "montageDebutS": 35.667,
+   "montageFinS": 36.933
+  },
+  {
+   "id": 14,
+   "phrase": "P11",
+   "morceau": "c19",
+   "paroleDebutS": 74.28,
+   "paroleFinS": 75.36,
+   "sourceDebutFrame": 2226,
+   "sourceFinFrame": 2263,
+   "dureeFrames": 37,
+   "montageDebutFrame": 1108,
+   "sourceDebutS": 74.2,
+   "sourceFinS": 75.433,
+   "montageDebutS": 36.933,
+   "montageFinS": 38.167
+  }
+ ],
+ "coupes": [
+  {
+   "morceau": "c00",
+   "sourceDebutS": 0.18,
+   "sourceFinS": 2.1,
+   "texte": "*sad music*",
+   "raison": "bruit avant la prise (le modèle y invente « Merci d'avoir regardé cette vidéo ! »)"
+  },
+  {
+   "morceau": "c01-debut",
+   "sourceDebutS": 2.44,
+   "sourceFinS": 5.96,
+   "texte": "C'est la dernière chance pour toi de commander ton t-shirt Mehomiz, c'est la dernière chance pour toi de commander ton t-shirt Mehomiz.",
+   "raison": "1re prise de l'accroche ; la 2e, plus rapide, est gardée"
+  },
+  {
+   "morceau": "c02",
+   "sourceDebutS": 9.04,
+   "sourceFinS": 9.68,
+   "texte": "Ça va faire bientôt.",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c05",
+   "sourceDebutS": 20.6,
+   "sourceFinS": 22.36,
+   "texte": "Que ce soit vos retours, vos messages.",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c08",
+   "sourceDebutS": 30.82,
+   "sourceFinS": 33.4,
+   "texte": "En vrai les gars, chaque petit geste c'est quelque chose de très concret pour nous.",
+   "raison": "1re prise, reprise en entier juste après"
+  },
+  {
+   "morceau": "c13",
+   "sourceDebutS": 51.58,
+   "sourceFinS": 54.52,
+   "texte": "Normalement vous avez du choix que ce soit en terme de design avec plus de 6 variantes,",
+   "raison": "1re prise (« avec plus de 6 variantes »), reprise ensuite"
+  },
+  {
+   "morceau": "c14",
+   "sourceDebutS": 55.08,
+   "sourceFinS": 56.1,
+   "texte": "Normalement, vous avez du choix...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c20",
+   "sourceDebutS": 75.98,
+   "sourceFinS": 77.04,
+   "texte": "Sous-titrage ST' 501",
+   "raison": "bruit : tu te lèves (le modèle y invente « Sous-titrage ST' 501 »)"
+  }
+ ]
+}

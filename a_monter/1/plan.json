@@ -1,0 +1,40 @@
+{
+ "_comment": "Plan de montage de la vidéo 1 dans la direction artistique du 2026-09-30, décrit d'après la VF de Michaël : sert de test et d'exemple au skill montage-facecam. Lu par la composition Remotion « Montage » (remotion/src/montage/). Ancres : \"P3\" = la phrase, \"P3:Avec\" = le mot, \"P8:avec:2\" = le 2e « avec » de P8.",
+ "accroche": {
+  "phrase": "P1",
+  "lignes": [
+   { "texte": "DERNIÈRE CHANCE", "couleur": "jaunePale" },
+   { "texte": "POUR COMMANDER", "couleur": "blanc" },
+   { "texte": "TON TEE", "couleur": "jaune" }
+  ]
+ },
+ "cadrages": [
+  { "phrase": "P1", "zoom": 1.21 },
+  { "phrase": "P2", "zoom": [1, 1.2] },
+  { "phrase": "P5", "zoom": [1, 1.15] },
+  { "phrase": "P6", "zoom": 1.09 },
+  { "phrase": "P10", "zoom": 1.06 },
+  { "phrase": "P11", "zoom": 1.23 }
+ ],
+ "sequences": [
+  {
+   "type": "partenaire",
+   "de": "P3",
+   "a": "P3",
+   "video": "videos/version-fr-en.mp4",
+   "videoDebutS": 0.47,
+   "etiquette": "charte/partenaires/partenaire_bag_etiquette-texte-noir_v01.png"
+  },
+  { "type": "site", "de": "P7:ce", "a": "P8:variantes" },
+  {
+   "type": "produit",
+   "de": "P8:avec:2",
+   "a": "P8",
+   "photos": [
+    { "fichier": "images/mehomies-boxy-t.png", "nom": "BOXY TEE", "precision": "MEHOMIES" },
+    { "fichier": "images/post-32.png", "de": "P8:ou", "nom": "BABY TEE", "precision": "MEHOMIES" }
+   ]
+  }
+ ],
+ "sousTitres": { "masquer": [["P7:sur", "P7:mehomies.com"]] }
+}

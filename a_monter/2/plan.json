@@ -1,0 +1,117 @@
+{
+ "_comment": "Plan de montage de la vidéo 2 (annonce du pop-up), validé par Michaël le 2026-10-01 (PLAN_MONTAGE.md, RETOURS.md) ; v02 d'après ses retours sur la v01, v03 d'après ses retours sur la v02. Lu par la composition Remotion « Montage ». Ancres : \"P3\" = la phrase, \"P3:Avec\" = le mot, \"P6:les:2\" = le 2e « les » de P6. sousTitres.ombreSurFacecam : proposition de l'agent (t-shirt blanc), à valider.",
+ "accroche": {
+  "phrase": "P1",
+  "lignes": [
+   {
+    "texte": "LE PREMIER",
+    "couleur": "blanc"
+   },
+   {
+    "texte": "POP-UP",
+    "couleur": "jaune"
+   },
+   {
+    "texte": "MEHOMIES",
+    "couleur": "jaune"
+   }
+  ]
+ },
+ "cadrages": [
+  {
+   "phrase": "P1",
+   "zoom": 1.21
+  },
+  {
+   "phrase": "P3",
+   "zoom": 1.09
+  },
+  {
+   "phrase": "P4",
+   "zoom": [
+    1,
+    1.15
+   ]
+  },
+  {
+   "phrase": "P6",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P7",
+   "zoom": 1.06
+  },
+  {
+   "phrase": "P9",
+   "zoom": 1.23
+  }
+ ],
+ "sequences": [
+  {
+   "type": "photo",
+   "de": "P2",
+   "a": "P2",
+   "format": "16:9",
+   "photos": [
+    {
+     "fichier": "images/couverture-space-jam-7.png",
+     "nom": "7 NOVEMBRE",
+     "precision": "Condition Publique, Roubaix"
+    }
+   ]
+  },
+  {
+   "type": "produit",
+   "de": "P5:sur",
+   "a": "P5:Flag",
+   "photos": [
+    {
+     "fichier": "images/mehomies-boxy-t.png",
+     "nom": "MEHOMIES FLAG"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "de": "P6:ça",
+   "a": "P6",
+   "photos": [
+    {
+     "fichier": "images/mehomies-tee-bel-v2.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/mehomies-tee-bra-v2.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/mehomies-tee-fra-v2.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/mehomies-tee-swi-v2.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/mehomies-tee-uk-v2.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/mehomies-tee-us-v2.png",
+     "detoure": true
+    }
+   ],
+   "regulier": true,
+   "declencheurDb": -6
+  }
+ ],
+ "sousTitres": {
+  "masquer": [
+   [
+    "P2",
+    "P2"
+   ]
+  ],
+  "ombreSurFacecam": true
+ }
+}
