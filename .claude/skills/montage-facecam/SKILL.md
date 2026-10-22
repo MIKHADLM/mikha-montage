@@ -61,6 +61,10 @@ dossier de ce skill (`MONTAGE/.claude/skills/montage-facecam/`).
 Détail des commandes et des formats de fichiers : `references/chaine-technique.md`.
 
 ### 0. Démarrer
+- **Synchroniser d'abord** : `./synchro.sh` depuis `MONTAGE/` (Michaël travaille sur plusieurs Mac ;
+  règles et conflits : `SYNCHRO.md`). Puis, après chaque étape qui change un fichier suivi (plan,
+  version, retours, charte, skill, journal) : `./synchro.sh "vidéo N : <ce qui a changé>"`. Les
+  rushes et assets ne passent pas par là : s'ils manquent sur ce Mac, les demander à Michaël.
 - Lire la charte dans l'ordre de `CHARTE/README.md`, puis `apprentissage/JOURNAL.md` (leçons,
   règles en attente), `references/pieges.md` et `motion_design/CATALOGUE.md`.
 - Si `CHARTE/a_ranger/` contient des fichiers : les ranger (polices dans `07_typographies/`, sons dans
