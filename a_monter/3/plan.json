@@ -1,0 +1,4 @@
+{
+ "_comment": "Vidéo 3, version sous-titres seuls (premier temps du test) : ni accroche, ni cadrage, ni séquence, ni son ajouté. Ombre activée : les sous-titres blancs tombent sur le visage et la peau claire (proposition de l'agent, sur le modèle de la règle « tenue claire »).",
+ "sousTitres": { "ombreSurFacecam": true }
+}

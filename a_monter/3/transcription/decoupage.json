@@ -1,0 +1,22 @@
+{
+ "_comment": "Vidéo 3, version sous-titres seuls : rush intégral, un seul segment, aucune coupe.",
+ "source": "a_monter/3/IMG_8323.MOV",
+ "fps": 30,
+ "margeS": 0,
+ "silence": null,
+ "dureeMontageS": 30.0,
+ "dureeMontageFrames": 900,
+ "phrases": [],
+ "segments": [
+  {
+   "id": 1,
+   "phrase": "P1",
+   "sourceDebutFrame": 0,
+   "sourceFinFrame": 900,
+   "dureeFrames": 900,
+   "montageDebutFrame": 0,
+   "montageDebutS": 0
+  }
+ ],
+ "coupes": []
+}

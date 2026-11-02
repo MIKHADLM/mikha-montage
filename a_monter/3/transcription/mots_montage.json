@@ -1,0 +1,635 @@
+{
+ "_comment": "Vidéo 3, version sous-titres seuls. Texte relu ; début et fin de chaque groupe calés sur les bouffées de voix mesurées dans le son. Temps = temps du rush (aucune coupe). Écrit à la main, pas par decouper_transcription.py.",
+ "mots": [
+  {
+   "texte": "Salut",
+   "debutS": 0.51,
+   "finS": 0.66,
+   "phrase": "P1",
+   "groupe": "G01",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "à",
+   "debutS": 0.66,
+   "finS": 0.807,
+   "phrase": "P1",
+   "groupe": "G02",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "toute",
+   "debutS": 0.807,
+   "finS": 0.953,
+   "phrase": "P1",
+   "groupe": "G02",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "l'équipe",
+   "debutS": 0.953,
+   "finS": 1.1,
+   "phrase": "P1",
+   "groupe": "G02",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "juste",
+   "debutS": 1.1,
+   "finS": 1.3,
+   "phrase": "P1",
+   "groupe": "G03",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "pour",
+   "debutS": 1.32,
+   "finS": 1.467,
+   "phrase": "P1",
+   "groupe": "G04",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "vous",
+   "debutS": 1.467,
+   "finS": 1.613,
+   "phrase": "P1",
+   "groupe": "G04",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "dire",
+   "debutS": 1.613,
+   "finS": 1.76,
+   "phrase": "P1",
+   "groupe": "G04",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "on",
+   "debutS": 1.92,
+   "finS": 2.06,
+   "phrase": "P1",
+   "groupe": "G05",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "vient",
+   "debutS": 2.06,
+   "finS": 2.2,
+   "phrase": "P1",
+   "groupe": "G05",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "de",
+   "debutS": 2.24,
+   "finS": 2.45,
+   "phrase": "P1",
+   "groupe": "G06",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "sortir",
+   "debutS": 2.45,
+   "finS": 2.66,
+   "phrase": "P1",
+   "groupe": "G06",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "un",
+   "debutS": 2.84,
+   "finS": 3.04,
+   "phrase": "P1",
+   "groupe": "G07",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "petit",
+   "debutS": 3.04,
+   "finS": 3.24,
+   "phrase": "P1",
+   "groupe": "G07",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "jeu",
+   "debutS": 3.28,
+   "finS": 3.68,
+   "phrase": "P1",
+   "groupe": "G08",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "vidéo",
+   "debutS": 3.68,
+   "finS": 4.08,
+   "phrase": "P1",
+   "groupe": "G08",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "sur",
+   "debutS": 4.15,
+   "finS": 4.273,
+   "phrase": "P1",
+   "groupe": "G09",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "le",
+   "debutS": 4.273,
+   "finS": 4.397,
+   "phrase": "P1",
+   "groupe": "G09",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "site",
+   "debutS": 4.397,
+   "finS": 4.52,
+   "phrase": "P1",
+   "groupe": "G09",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "mehomies.com",
+   "debutS": 4.57,
+   "finS": 5.46,
+   "phrase": "P1",
+   "groupe": "G10",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "à",
+   "debutS": 5.87,
+   "finS": 6.085,
+   "phrase": "P1",
+   "groupe": "G11",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "l'occasion",
+   "debutS": 6.085,
+   "finS": 6.3,
+   "phrase": "P1",
+   "groupe": "G11",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "d'Halloween",
+   "debutS": 6.33,
+   "finS": 6.86,
+   "phrase": "P1",
+   "groupe": "G12",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Il",
+   "debutS": 7.39,
+   "finS": 7.64,
+   "phrase": "P2",
+   "groupe": "G13",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "est",
+   "debutS": 7.64,
+   "finS": 7.89,
+   "phrase": "P2",
+   "groupe": "G13",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "dispo",
+   "debutS": 7.89,
+   "finS": 8.14,
+   "phrase": "P2",
+   "groupe": "G13",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "jusqu'à",
+   "debutS": 8.4,
+   "finS": 8.587,
+   "phrase": "P2",
+   "groupe": "G14",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "la",
+   "debutS": 8.587,
+   "finS": 8.773,
+   "phrase": "P2",
+   "groupe": "G14",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "fin",
+   "debutS": 8.773,
+   "finS": 8.96,
+   "phrase": "P2",
+   "groupe": "G14",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "de",
+   "debutS": 8.97,
+   "finS": 9.205,
+   "phrase": "P2",
+   "groupe": "G15",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "semaine",
+   "debutS": 9.205,
+   "finS": 9.44,
+   "phrase": "P2",
+   "groupe": "G15",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Et",
+   "debutS": 11.12,
+   "finS": 11.25,
+   "phrase": "P3",
+   "groupe": "G16",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "petite",
+   "debutS": 11.25,
+   "finS": 11.38,
+   "phrase": "P3",
+   "groupe": "G16",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "information",
+   "debutS": 11.4,
+   "finS": 11.96,
+   "phrase": "P3",
+   "groupe": "G17",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "supplémentaire",
+   "debutS": 12.01,
+   "finS": 12.62,
+   "phrase": "P3",
+   "groupe": "G18",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Vous",
+   "debutS": 13.26,
+   "finS": 13.47,
+   "phrase": "P4",
+   "groupe": "G19",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "pouvez",
+   "debutS": 13.47,
+   "finS": 13.68,
+   "phrase": "P4",
+   "groupe": "G19",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "choper",
+   "debutS": 13.71,
+   "finS": 13.853,
+   "phrase": "P4",
+   "groupe": "G20",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "du",
+   "debutS": 13.853,
+   "finS": 13.997,
+   "phrase": "P4",
+   "groupe": "G20",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "coup",
+   "debutS": 13.997,
+   "finS": 14.14,
+   "phrase": "P4",
+   "groupe": "G20",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "un",
+   "debutS": 14.56,
+   "finS": 14.8,
+   "phrase": "P4",
+   "groupe": "G21",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "petit",
+   "debutS": 14.8,
+   "finS": 15.04,
+   "phrase": "P4",
+   "groupe": "G21",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "restock",
+   "debutS": 15.1,
+   "finS": 15.66,
+   "phrase": "P4",
+   "groupe": "G22",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "de",
+   "debutS": 16.25,
+   "finS": 16.495,
+   "phrase": "P4",
+   "groupe": "G23",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "t-shirts",
+   "debutS": 16.495,
+   "finS": 16.74,
+   "phrase": "P4",
+   "groupe": "G23",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "sur",
+   "debutS": 17.14,
+   "finS": 17.3,
+   "phrase": "P4",
+   "groupe": "G24",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "le",
+   "debutS": 17.3,
+   "finS": 17.46,
+   "phrase": "P4",
+   "groupe": "G24",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "site",
+   "debutS": 17.46,
+   "finS": 17.62,
+   "phrase": "P4",
+   "groupe": "G24",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "mais",
+   "debutS": 18.05,
+   "finS": 18.355,
+   "phrase": "P4",
+   "groupe": "G25",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "aussi",
+   "debutS": 18.355,
+   "finS": 18.66,
+   "phrase": "P4",
+   "groupe": "G25",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "au",
+   "debutS": 19.06,
+   "finS": 19.45,
+   "phrase": "P4",
+   "groupe": "G26",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "pop-up",
+   "debutS": 19.45,
+   "finS": 19.84,
+   "phrase": "P4",
+   "groupe": "G26",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "au",
+   "debutS": 22.59,
+   "finS": 22.845,
+   "phrase": "P4",
+   "groupe": "G27",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "pop-up",
+   "debutS": 22.845,
+   "finS": 23.1,
+   "phrase": "P4",
+   "groupe": "G27",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Space",
+   "debutS": 23.37,
+   "finS": 23.695,
+   "phrase": "P4",
+   "groupe": "G28",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Jam",
+   "debutS": 23.695,
+   "finS": 24.02,
+   "phrase": "P4",
+   "groupe": "G28",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Donc",
+   "debutS": 25.25,
+   "finS": 25.405,
+   "phrase": "P5",
+   "groupe": "G29",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "voilà",
+   "debutS": 25.405,
+   "finS": 25.56,
+   "phrase": "P5",
+   "groupe": "G29",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "on",
+   "debutS": 25.58,
+   "finS": 25.71,
+   "phrase": "P5",
+   "groupe": "G30",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "compte",
+   "debutS": 25.71,
+   "finS": 25.84,
+   "phrase": "P5",
+   "groupe": "G30",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "sur",
+   "debutS": 25.87,
+   "finS": 26.0,
+   "phrase": "P5",
+   "groupe": "G31",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "vous",
+   "debutS": 26.0,
+   "finS": 26.13,
+   "phrase": "P5",
+   "groupe": "G31",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "les",
+   "debutS": 26.15,
+   "finS": 26.355,
+   "phrase": "P5",
+   "groupe": "G32",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "frères",
+   "debutS": 26.355,
+   "finS": 26.56,
+   "phrase": "P5",
+   "groupe": "G32",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Merci",
+   "debutS": 27.6,
+   "finS": 27.75,
+   "phrase": "P6",
+   "groupe": "G33",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "pour",
+   "debutS": 27.75,
+   "finS": 27.933,
+   "phrase": "P6",
+   "groupe": "G34",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "la",
+   "debutS": 27.933,
+   "finS": 28.117,
+   "phrase": "P6",
+   "groupe": "G34",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "force",
+   "debutS": 28.117,
+   "finS": 28.3,
+   "phrase": "P6",
+   "groupe": "G34",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "Let's",
+   "debutS": 28.62,
+   "finS": 28.77,
+   "phrase": "P7",
+   "groupe": "G35",
+   "segment": 1,
+   "confiance": 1
+  },
+  {
+   "texte": "go",
+   "debutS": 28.77,
+   "finS": 28.92,
+   "phrase": "P7",
+   "groupe": "G35",
+   "segment": 1,
+   "confiance": 1
+  }
+ ]
+}

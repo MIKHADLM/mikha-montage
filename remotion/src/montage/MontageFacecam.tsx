@@ -123,7 +123,7 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
   // Sous-titres : masqués pendant le hook, les séquences produit et les passages demandés ;
   // noirs sur fond blanc, plus bas dans la séquence du site
   const style = (f: number): StyleSousTitres => {
-    if (f >= accroche.debut && f < accroche.fin) return null;
+    if (accroche && f >= accroche.debut && f < accroche.fin) return null;
     if (M.masques.some((m) => f >= m.debut && f < m.fin)) return null;
     const seq = M.sequences.find((s) => f >= s.debut && f < s.fin);
     if (!seq || (seq.type === "motion" && seq.fond === "facecam")) {
@@ -144,7 +144,7 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
   };
 
   const riser = Math.round(SFX.riser.dureeS * M.fps);
-  const dureeMusique = M.duree - accroche.fin;
+  const dureeMusique = accroche ? M.duree - accroche.fin : 0;
 
   return (
     <PolicesChargees>
@@ -166,18 +166,21 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
                   borne,
                 )
               }
+              objectFit="cover"
               style={{ position: "absolute", width: "100%", height: "100%" }}
             />
           ))}
         </Cadrage>
 
-        <Sequence
-          name="Titre d'accroche"
-          from={accroche.debut}
-          durationInFrames={accroche.fin - accroche.debut}
-        >
-          <TitreAccroche lignes={donnees.plan.accroche.lignes} />
-        </Sequence>
+        {accroche && (
+          <Sequence
+            name="Titre d'accroche"
+            from={accroche.debut}
+            durationInFrames={accroche.fin - accroche.debut}
+          >
+            <TitreAccroche lignes={accroche.lignes} />
+          </Sequence>
+        )}
 
         {M.sequences.map((s, i) => (
           <Sequence
@@ -271,14 +274,16 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
 
         <SousTitres groupes={M.groupes} style={style} />
 
-        <Audio
-          name="Riser (hook)"
-          src={staticFile(SFX.riser.fichier)}
-          from={Math.max(0, accroche.fin - riser)}
-          trimBefore={Math.max(0, riser - accroche.fin)}
-          durationInFrames={Math.min(riser, accroche.fin)}
-        />
-        {dureeMusique > 0 && (
+        {accroche && (
+          <Audio
+            name="Riser (hook)"
+            src={staticFile(SFX.riser.fichier)}
+            from={Math.max(0, accroche.fin - riser)}
+            trimBefore={Math.max(0, riser - accroche.fin)}
+            durationInFrames={Math.min(riser, accroche.fin)}
+          />
+        )}
+        {accroche && dureeMusique > 0 && (
           <Audio
             name="Musique"
             src={staticFile(`${video}/musique.wav`)}

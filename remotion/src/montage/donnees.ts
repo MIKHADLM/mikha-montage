@@ -34,7 +34,8 @@ export type MotsMontage = { mots: MotSource[] };
 export type Ancre = string;
 
 export type Plan = {
-  accroche: {
+  // Absente : pas de titre d'accroche, ni riser, ni musique (version « sous-titres seuls », vidéo 3)
+  accroche?: {
     phrase: string;
     lignes: { texte: string; couleur: CouleurTexte }[];
   };
@@ -175,10 +176,13 @@ export const creerMontage = ({
     groupes.push({ debut: d, fin: f, texte: ms.map((m) => m.texte).join(" ") });
   });
 
-  const accroche = {
-    debut: debutPhrase(plan.accroche.phrase),
-    fin: finPhrase(plan.accroche.phrase),
-  };
+  const accroche = plan.accroche
+    ? {
+        debut: debutPhrase(plan.accroche.phrase),
+        fin: finPhrase(plan.accroche.phrase),
+        lignes: plan.accroche.lignes,
+      }
+    : null;
   const cadrages = (plan.cadrages ?? []).map((c) => {
     const [de, a] = typeof c.zoom === "number" ? [c.zoom, c.zoom] : c.zoom;
     return { debut: debutPhrase(c.phrase), fin: finPhrase(c.phrase), de, a };

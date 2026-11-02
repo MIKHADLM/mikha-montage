@@ -1,0 +1,35 @@
+{
+ "_comment": "Vidéo 3, version sous-titres seuls : texte relu. Sans coupe, le découpage automatique n'est pas utilisé. Les « euh » (9,9 s ; 20,1 s) ne sont pas écrits.",
+ "rush": "IMG_8323.MOV",
+ "fps": 30,
+ "phrases": [
+  {
+   "id": "P1",
+   "texte": "Salut à toute l'équipe juste pour vous dire on vient de sortir un petit jeu vidéo sur le site mehomies.com à l'occasion d'Halloween"
+  },
+  {
+   "id": "P2",
+   "texte": "Il est dispo jusqu'à la fin de semaine"
+  },
+  {
+   "id": "P3",
+   "texte": "Et petite information supplémentaire"
+  },
+  {
+   "id": "P4",
+   "texte": "Vous pouvez choper du coup un petit restock de t-shirts sur le site mais aussi au pop-up au pop-up Space Jam"
+  },
+  {
+   "id": "P5",
+   "texte": "Donc voilà on compte sur vous les frères"
+  },
+  {
+   "id": "P6",
+   "texte": "Merci pour la force"
+  },
+  {
+   "id": "P7",
+   "texte": "Let's go"
+  }
+ ]
+}
