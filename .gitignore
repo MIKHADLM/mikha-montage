@@ -33,3 +33,7 @@ credentials*.json
 motion_design/*/export/
 CHARTE/08_references/videos/*
 !CHARTE/08_references/videos/README.md
+
+# Médias candidats de la vidéo 3 (ne passent pas par Git)
+a_monter/*/assets_candidats/
+a_monter/*/musique_candidate/
