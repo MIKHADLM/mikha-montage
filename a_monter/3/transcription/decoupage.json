@@ -1,19 +1,19 @@
 {
  "_comment": "Vidéo 3, version sous-titres seuls : rush intégral, un seul segment, aucune coupe.",
- "source": "a_monter/3/IMG_8323.MOV",
+ "source": "a_monter/3/IMG_8323_original.MOV",
  "fps": 30,
  "margeS": 0,
  "silence": null,
- "dureeMontageS": 30.0,
- "dureeMontageFrames": 900,
+ "dureeMontageS": 30.067,
+ "dureeMontageFrames": 902,
  "phrases": [],
  "segments": [
   {
    "id": 1,
    "phrase": "P1",
    "sourceDebutFrame": 0,
-   "sourceFinFrame": 900,
-   "dureeFrames": 900,
+   "sourceFinFrame": 902,
+   "dureeFrames": 902,
    "montageDebutFrame": 0,
    "montageDebutS": 0
   }
