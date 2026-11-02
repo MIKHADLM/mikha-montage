@@ -13,6 +13,9 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | A4 | Couleur du curseur de la barre de recherche : rouge (asset v01), jaune (peu visible sur le verre blanc) ou noir | Passage au jaune | Michaël |
 | A5 | Usage des whoosh et de la caisse enregistreuse | Non utilisés dans la VF | Michaël, quand l'occasion se présente |
 | A6 | Rebonds dans les animations (goutte de la barre de recherche) : autorisés ailleurs ? | Asset barre de recherche | Michaël |
+| A7 | Titre d'accroche en haut (bas à y = 540) quand le visage occupe la place habituelle ; que faire des sous-titres dans ce cas | Vidéo 3, visage bas dans le cadre | Michaël |
+| A8 | Clic à l'entrée d'un asset sur fond blanc, pas de clic entre deux séquences blanches collées | Vidéo 3, lecture de `SON.md` | Michaël |
+| A9 | Image carrée de petite définition : 640 px, sans agrandissement, étiquette dessous | Vidéo 3, affiche Space Jam | Michaël |
 
 ## 2. Leçons
 
@@ -50,6 +53,11 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-10-01 | 2 | Ombre du titre d'accroche sous les sous-titres blancs quand la tenue est claire | v03 (« On garde l'ombre ») | Charte `SOUS-TITRES.md` | appliquée |
 | 2026-10-01 | 2 | Type « photo » : affiche 16:9 + étiquette (date, lieu), détourés posés en entier dans le cadre, image 16:9 seule centrée | v03 validée | Outils, skill (`chaine-technique.md`) | appliquée |
 | 2026-10-01 | 2 | Orthographe : « les reufs », « move », « Condition Publique », « Space Jam » | Réponses de Michaël | Charte `TON.md` | appliquée |
+| 2026-11-02 | 3 | Regarder où tombe le visage sur le rush avant de fixer le titre : ici le titre habituel cachait la bouche | Image fixe avant rendu | Skill (pièges), règle A7 | en attente |
+| 2026-11-02 | 3 | `site-mobile` date du 29/09 (« Précommandes disponibles », 33 €) : à refaire avant de le réutiliser | Vérification de l'aperçu | Skill (pièges) | appliquée |
+| 2026-11-02 | 3 | Rush HDR ou 24 i/s : `preparer_medias.py` copie l'image telle quelle, donc préparer d'abord un rush SDR 1080 × 1920, 30 i/s | Vidéo 3 | Skill (pièges) | appliquée |
+| 2026-11-02 | 3 | Un sous-titre masqué pouvait revenir 3 images après la fin du masque | Planche d'images clés | Outil (`donnees.ts`) | appliquée |
+| 2026-11-02 | 3 | ffmpeg récent n'accepte plus `-vsync` | Contrôle de la couleur en erreur | Outil `controler_export.py` | appliquée |
 
 ## 3. Bilan par vidéo
 
@@ -57,6 +65,7 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 |---|---|---|---|---|
 | 1 (fin des précommandes) | v01, v02 (agent), VF (Michaël) | 6 sur la v01 | 5 | Michaël a trouvé la direction artistique en montant lui-même |
 | 2 (annonce du pop-up) | plan, v01, v02, v03 (agent, **v03 validée**) | 10 sur le plan, 9 sur la v01, 6 sur la v02 | 5 (cadrages, un seul jaune, chasse aux hésitations, plans coupés au mot, défilé régulier) | Premier montage complet par le skill ; rush remplacé en cours ; 45,9 → 33,3 → 31,7 s ; v02 « beaucoup mieux » |
+| 3 (jeu, restock, pop-up) | sous-titres v01, v02, complet v01 (test, musique provisoire) | en attente | 0 | Montée sans validation du plan pour tester le skill à distance ; 30,1 → 18,3 s |
 
 ## 4. Évolutions du skill et des outils
 
@@ -68,3 +77,4 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-10-01 | `reperer_hesitations.py` (bouts entre micro-pauses retranscrits seuls) et `redecouper_morceau.py` (sous-morceaux, lus par `decouper_transcription.py`) ; étiquette facultative du type « photo » et réduction automatique des étiquettes trop larges | Retours de Michaël sur la v01 de la vidéo 2 |
 | 2026-10-01 | Type « photo » : options `regulier` et `declencheurDb` ; `reperer_hesitations.py` signale les débuts lents et les fins qui traînent | Retours de Michaël sur la v02 de la vidéo 2 |
 | 2026-10-01 | Passe d'ensemble du skill après la vidéo 2 : principe « le rythme avant tout » ; étape 1 (rush définitif ? étalonné et synchronisé) ; étape 2 réécrite en 6 temps (transcription, choix, texte relu, chasse aux hésitations, règles de coupe, découpage) ; contrôle des sous-titres sur la tenue ; corriger la cause et chercher le même défaut ailleurs ; résumé du style à jour (un seul jaune, ombre si tenue claire, affiche, défilé) ; pièges « échanges avec Michaël » ; modèles `choix.json` et `PLAN_MONTAGE.md` ; règles de cohérence des illustrations | Question de Michaël : « est-ce qu'il ne faudrait pas remettre à jour le skill ? » |
+| 2026-11-02 | `accroche.bas`, `partenaire` avec `nom` et `precision` sans étiquette image, `motion.departImage`, `photo` au format `1:1`, clic d'entrée des assets sur fond blanc, pas de clic entre séquences collées, masque étendu au groupe en cours ; `controler_export.py` : `-fps_mode` | Vidéo 3 |

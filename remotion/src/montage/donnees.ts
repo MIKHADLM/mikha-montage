@@ -38,6 +38,8 @@ export type Plan = {
   accroche?: {
     phrase: string;
     lignes: { texte: string; couleur: CouleurTexte }[];
+    // bas du titre en px, si le visage est là où le titre tombe d'habitude (vidéo 3)
+    bas?: number;
   };
   cadrages?: { phrase: string; zoom: number | [number, number] }[];
   sequences?: SequencePlan[];
@@ -49,7 +51,10 @@ export type SequencePlan =
       type: "partenaire";
       de: Ancre;
       a: Ancre;
-      etiquette: string;
+      // étiquette image (partenaire), ou texte nom + précision (ex. une vidéo de jeu, vidéo 3)
+      etiquette?: string;
+      nom?: string;
+      precision?: string;
       video?: string;
       videoDebutS?: number;
       image?: string;
@@ -61,6 +66,8 @@ export type SequencePlan =
       de: Ancre;
       a: Ancre;
       asset: IdMotion;
+      // image de l'asset où commencer, pour le caler sur une phrase courte (vidéo 3)
+      departImage?: number;
       fond?: "blanc" | "facecam";
       decalageY?: number;
     }
@@ -71,7 +78,8 @@ export type SequencePlan =
       type: "photo";
       de: Ancre;
       a: Ancre;
-      format?: "4:5" | "16:9";
+      // 1:1 : image carrée affichée sans agrandissement (petite source, vidéo 3)
+      format?: "4:5" | "16:9" | "1:1";
       // regulier : photos affichées chacune le même temps (les ancres `de` des photos sont ignorées)
       regulier?: boolean;
       // gain du déclencheur en dB (ex. -6 pour une rafale de photos), 0 par défaut
@@ -181,6 +189,7 @@ export const creerMontage = ({
         debut: debutPhrase(plan.accroche.phrase),
         fin: finPhrase(plan.accroche.phrase),
         lignes: plan.accroche.lignes,
+        bas: plan.accroche.bas,
       }
     : null;
   const cadrages = (plan.cadrages ?? []).map((c) => {
@@ -203,10 +212,12 @@ export const creerMontage = ({
     );
     return { ...s, debut: d, fin: f, debutsPhotos };
   });
-  const masques = (plan.sousTitres?.masquer ?? []).map(([a, b]) => ({
-    debut: debut(a),
-    fin: fin(b),
-  }));
+  // Un groupe masqué ne doit pas réapparaître juste après le masque (son maintien le dépasse)
+  const masques = (plan.sousTitres?.masquer ?? []).map(([a, b]) => {
+    const f = fin(b);
+    const enCours = groupes.find((g) => g.debut < f && g.fin > f);
+    return { debut: debut(a), fin: enCours ? enCours.fin : f };
+  });
 
   return {
     fps,

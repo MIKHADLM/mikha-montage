@@ -1,4 +1,121 @@
 {
- "_comment": "Vidéo 3, version sous-titres seuls (premier temps du test) : ni accroche, ni cadrage, ni séquence, ni son ajouté. Ombre activée : les sous-titres blancs tombent sur le visage et la peau claire (proposition de l'agent, sur le modèle de la règle « tenue claire »).",
- "sousTitres": { "ombreSurFacecam": true }
+ "_comment": "Vidéo 3, version complète de test (non validée par Michaël). Restock traité comme Boxy France, Brésil, USA (hypothèse). Pas de stock, prix, ni date de fin de jeu à l'écran. Musique provisoire : voir choix.json.",
+ "accroche": {
+  "phrase": "P1",
+  "lignes": [
+   {
+    "texte": "ON VIENT DE SORTIR",
+    "couleur": "blanc"
+   },
+   {
+    "texte": "UN JEU VIDÉO",
+    "couleur": "jaune"
+   },
+   {
+    "texte": "MEHOMIES",
+    "couleur": "jaune"
+   }
+  ],
+  "bas": 540,
+  "_note": "Titre au-dessus de la tête : dans ce rush le visage est très bas, à la place habituelle (y 1 032 à 1 328) le titre cachait la bouche. Proposition, charte DESIGN §3.2 « autre position » à compléter."
+ },
+ "cadrages": [
+  {
+   "phrase": "P1",
+   "zoom": 1.21
+  },
+  {
+   "phrase": "P5",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P7",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P9",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P10",
+   "zoom": 1.23
+  }
+ ],
+ "sequences": [
+  {
+   "type": "motion",
+   "de": "P2",
+   "a": "P2",
+   "asset": "barre-recherche",
+   "departImage": 18
+  },
+  {
+   "type": "photo",
+   "de": "P3",
+   "a": "P3",
+   "photos": [
+    {
+     "fichier": "images/affiche-fakhomies-sans-date.png"
+    }
+   ]
+  },
+  {
+   "type": "partenaire",
+   "de": "P4",
+   "a": "P4",
+   "video": "videos/jeu-partie-16x9.mp4",
+   "videoDebutS": 0,
+   "nom": "FAKHOMIES",
+   "precision": "MEHOMIES GAME"
+  },
+  {
+   "type": "photo",
+   "de": "P6:un",
+   "a": "P6",
+   "regulier": true,
+   "declencheurDb": -6,
+   "photos": [
+    {
+     "fichier": "images/boxy-france-plat.png"
+    },
+    {
+     "fichier": "images/boxy-bresil-plat.png"
+    },
+    {
+     "fichier": "images/boxy-usa-plat.png"
+    },
+    {
+     "fichier": "images/boxy-france-motif.png"
+    },
+    {
+     "fichier": "images/boxy-bresil-motif.png"
+    },
+    {
+     "fichier": "images/boxy-usa-porte.png"
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "de": "P7:au",
+   "a": "P7",
+   "format": "1:1",
+   "photos": [
+    {
+     "fichier": "images/affiche-space-jam-instagram.png",
+     "nom": "7 NOVEMBRE",
+     "precision": "Condition Publique, Roubaix"
+    }
+   ]
+  }
+ ],
+ "sousTitres": {
+  "ombreSurFacecam": true,
+  "masquer": [
+   [
+    "P2",
+    "P2"
+   ]
+  ]
+ }
 }

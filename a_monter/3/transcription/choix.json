@@ -1,35 +1,107 @@
 {
- "_comment": "Vidéo 3, version sous-titres seuls : texte relu. Sans coupe, le découpage automatique n'est pas utilisé. Les « euh » (9,9 s ; 20,1 s) ne sont pas écrits.",
- "rush": "IMG_8323_original.MOV",
+ "_comment": "Vidéo 3, version complète de test : prises gardées et texte relu. Rush : IMG_8323_sdr.mp4 (image SDR de la v02, son d'origine). Non validé par Michaël (test).",
+ "rush": "IMG_8323_sdr.mp4",
  "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "sousTitres": {
+  "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf",
+  "taillePx": 75,
+  "largeurMaxPx": 880,
+  "motsMax": 3
+ },
  "phrases": [
   {
    "id": "P1",
-   "texte": "Salut à toute l'équipe juste pour vous dire on vient de sortir un petit jeu vidéo sur le site mehomies.com à l'occasion d'Halloween"
+   "morceaux": [
+    "c00a"
+   ],
+   "texte": "Salut à toute l'équipe, juste pour vous dire, on vient de sortir un petit jeu vidéo[2]",
+   "_note": "vidéo[2] : la transcription isolée a aussi entendu l'attaque de « sur » (fin de prise). Hook, sous-titres masqués."
   },
   {
    "id": "P2",
-   "texte": "Il est dispo jusqu'à la fin de semaine"
+   "morceaux": [
+    "c00b"
+   ],
+   "texte": "sur le site mehomies.com"
   },
   {
    "id": "P3",
-   "texte": "Et petite information supplémentaire"
+   "morceaux": [
+    "c01"
+   ],
+   "texte": "à l'occasion d'Halloween."
   },
   {
    "id": "P4",
-   "texte": "Vous pouvez choper du coup un petit restock de t-shirts sur le site mais aussi au pop-up au pop-up Space Jam"
+   "morceaux": [
+    "c02"
+   ],
+   "texte": "Il est dispo | jusqu'à la fin | de semaine."
   },
   {
    "id": "P5",
-   "texte": "Donc voilà on compte sur vous les frères"
+   "morceaux": [
+    "c04"
+   ],
+   "texte": "Et petite information | supplémentaire."
   },
   {
    "id": "P6",
-   "texte": "Merci pour la force"
+   "morceaux": [
+    "c05",
+    "c06b",
+    "c07",
+    "c08"
+   ],
+   "_note": "c06b : « euh » de 14,62 à 15,12 s retiré",
+   "texte": "Vous pouvez | choper du coup | un petit restock | de t-shirts | sur le site"
   },
   {
    "id": "P7",
-   "texte": "Let's go"
+   "morceaux": [
+    "c09",
+    "c11a",
+    "c11b"
+   ],
+   "_note": "c10 (« au pop-up, euh ») coupé ; pause de 0,44 s retirée entre pop-up et Space Jam (c11a, c11b)",
+   "texte": "mais aussi | au[2] pop-up | Space Jam."
+  },
+  {
+   "id": "P8",
+   "morceaux": [
+    "c12"
+   ],
+   "texte": "Donc voilà | on compte | sur vous | les frères."
+  },
+  {
+   "id": "P9",
+   "morceaux": [
+    "c13"
+   ],
+   "texte": "Merci pour | la force."
+  },
+  {
+   "id": "P10",
+   "morceaux": [
+    "c14"
+   ],
+   "texte": "Let's go."
   }
- ]
+ ],
+ "coupes": {
+  "c03": "hésitation (euh)",
+  "c10": "faux départ et hésitation (au pop-up, euh)",
+  "c06-debut": "hésitation (euh)"
+ },
+ "musique": {
+  "fichier": "assets/musique_test_generee.wav",
+  "debutDansLaPisteS": 0.0,
+  "niveauLufs": -22.7,
+  "_note": "Musique PROVISOIRE générée pour le test. Pour la remplacer : poser la vraie piste dans assets/, changer `fichier` et `debutDansLaPisteS`, relancer preparer_medias.py puis le rendu."
+ }
 }

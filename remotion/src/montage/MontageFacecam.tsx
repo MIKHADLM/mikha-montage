@@ -16,6 +16,7 @@ import { Cadrage } from "../charte/Cadrage";
 import {
   Etiquette,
   FondBlanc,
+  ImageCarree,
   ImageLarge,
   Partenaire,
   PhotoArrondie,
@@ -70,8 +71,9 @@ const Figer: React.FC<{ derniere: number; children: React.ReactNode }> = ({
   </Freeze>
 );
 
-// Bruitages placés d'après les séquences (04_son/SON.md) : clic avant l'entrée d'une séquence
-// partenaire et avant chaque sortie du fond blanc, déclencheur avant chaque photo
+// Bruitages placés d'après les séquences (04_son/SON.md) : clic avant l'entrée d'une séquence qui
+// ne commence pas par une photo (partenaire, motion sur fond blanc) et avant chaque sortie du fond
+// blanc (pas entre deux séquences collées : on reste sur le fond blanc), déclencheur avant chaque photo
 const bruitages = (M: Montage) => {
   const clic = PLACEMENT_SFX.clic + Math.round(SFX.clic.attaqueS * M.fps);
   const declencheur =
@@ -83,9 +85,10 @@ const bruitages = (M: Montage) => {
     volume?: number;
   }[] = [];
   for (const s of M.sequences) {
-    if (s.type === "partenaire") {
+    const surFondBlanc = s.type !== "motion" || s.fond !== "facecam";
+    if (s.type === "partenaire" || (s.type === "motion" && surFondBlanc)) {
       sons.push({
-        nom: "Clic : entrée partenaire",
+        nom: `Clic : entrée ${s.type}`,
         fichier: SFX.clic.fichier,
         image: s.debut - clic,
       });
@@ -99,8 +102,11 @@ const bruitages = (M: Montage) => {
         volume: 10 ** (gainDb / 20),
       });
     });
-    const surFondBlanc = s.type !== "motion" || s.fond !== "facecam";
-    if (s.fin < M.duree && surFondBlanc) {
+    const suiviDeBlanc = M.sequences.some(
+      (x) =>
+        x.debut === s.fin && (x.type !== "motion" || x.fond !== "facecam"),
+    );
+    if (s.fin < M.duree && surFondBlanc && !suiviDeBlanc) {
       sons.push({
         nom: `Clic : sortie ${s.type}`,
         fichier: SFX.clic.fichier,
@@ -178,7 +184,7 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
             from={accroche.debut}
             durationInFrames={accroche.fin - accroche.debut}
           >
-            <TitreAccroche lignes={accroche.lignes} />
+            <TitreAccroche lignes={accroche.lignes} bas={accroche.bas} />
           </Sequence>
         )}
 
@@ -197,9 +203,11 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
                   <AbsoluteFill
                     style={{ translate: `0px ${s.decalageY ?? 0}px` }}
                   >
-                    <Figer derniere={duree - 1}>
-                      <Asset />
-                    </Figer>
+                    <Sequence from={-(s.departImage ?? 0)} layout="none">
+                      <Figer derniere={duree - 1}>
+                        <Asset />
+                      </Figer>
+                    </Sequence>
                   </AbsoluteFill>
                 );
               })()}
@@ -209,6 +217,13 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
                 videoDebut={Math.round((s.videoDebutS ?? 0) * M.fps)}
                 image={s.image && `${video}/${s.image}`}
                 etiquette={s.etiquette}
+              />
+            )}
+            {s.type === "partenaire" && s.nom && (
+              <Etiquette
+                nom={s.nom}
+                precision={s.precision}
+                lignesDeBase={ETIQUETTE_LARGE}
               />
             )}
             {s.type === "site" && (
@@ -239,6 +254,7 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
                   detoure?: boolean;
                 }[] = s.photos;
                 const large = s.type === "photo" && s.format === "16:9";
+                const carre = s.type === "photo" && s.format === "1:1";
                 return photos.map((p, k) => {
                   const debut = s.debutsPhotos[k] - s.debut;
                   const fin =
@@ -253,7 +269,9 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
                       from={debut}
                       durationInFrames={fin - debut}
                     >
-                      {large ? (
+                      {carre ? (
+                        <ImageCarree src={src} />
+                      ) : large ? (
                         <ImageLarge src={src} avecEtiquette={Boolean(p.nom)} />
                       ) : (
                         <PhotoArrondie src={src} detoure={p.detoure} />
@@ -262,7 +280,9 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
                         <Etiquette
                           nom={p.nom}
                           precision={p.precision}
-                          lignesDeBase={large ? ETIQUETTE_LARGE : undefined}
+                          lignesDeBase={
+                            large || carre ? ETIQUETTE_LARGE : undefined
+                          }
                         />
                       )}
                     </Sequence>

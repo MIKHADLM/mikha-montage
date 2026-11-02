@@ -14,8 +14,10 @@ export type LigneTitre = { texte: string; couleur: CouleurTexte };
 // bords gauche et droit soient alignés, mesurés sur l'encre réelle ; le jaune met en avant les mots
 // importants. Posé sur le face cam, sous le visage (bas de la dernière ligne fixé), avec une ombre
 // portée sombre. Fixe : il apparaît et disparaît en coupe sèche.
-export const TitreAccroche: React.FC<{ lignes: LigneTitre[] }> = ({
+// `bas` : bas de la dernière ligne, si le visage occupe la place habituelle (vidéo 3).
+export const TitreAccroche: React.FC<{ lignes: LigneTitre[]; bas?: number }> = ({
   lignes,
+  bas = TITRE_ACCROCHE.bas,
 }) => {
   const disposition = useMemo(() => {
     const REF = 100;
@@ -35,13 +37,13 @@ export const TitreAccroche: React.FC<{ lignes: LigneTitre[] }> = ({
     const hauteur =
       mesures.reduce((total, m) => total + m.capitales, 0) +
       TITRE_ACCROCHE.ecartEntreLignes * (mesures.length - 1);
-    let haut = TITRE_ACCROCHE.bas - hauteur;
+    let haut = bas - hauteur;
     return mesures.map((m) => {
       const ligneDeBase = haut + m.capitales;
       haut = ligneDeBase + TITRE_ACCROCHE.ecartEntreLignes;
       return { ...m, ligneDeBase };
     });
-  }, [lignes]);
+  }, [lignes, bas]);
   const o = TITRE_ACCROCHE.ombre;
 
   return (

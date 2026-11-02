@@ -1,0 +1,478 @@
+[
+ {
+  "text": "Salut",
+  "startMs": 123,
+  "endMs": 203,
+  "timestampMs": null,
+  "confidence": 0.959
+ },
+ {
+  "text": " à",
+  "startMs": 143,
+  "endMs": 223,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " toute",
+  "startMs": 153,
+  "endMs": 333,
+  "timestampMs": null,
+  "confidence": 0.955
+ },
+ {
+  "text": " l'équipe",
+  "startMs": 333,
+  "endMs": 683,
+  "timestampMs": null,
+  "confidence": 0.907
+ },
+ {
+  "text": " juste",
+  "startMs": 683,
+  "endMs": 863,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " pour",
+  "startMs": 863,
+  "endMs": 943,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " vous",
+  "startMs": 1013,
+  "endMs": 1143,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " dire",
+  "startMs": 1143,
+  "endMs": 1383,
+  "timestampMs": null,
+  "confidence": 0.867
+ },
+ {
+  "text": " on",
+  "startMs": 1533,
+  "endMs": 1613,
+  "timestampMs": null,
+  "confidence": 0.986
+ },
+ {
+  "text": " vient",
+  "startMs": 1563,
+  "endMs": 1913,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " de",
+  "startMs": 1913,
+  "endMs": 2063,
+  "timestampMs": null,
+  "confidence": 0.99
+ },
+ {
+  "text": " sortir",
+  "startMs": 2063,
+  "endMs": 2493,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " un",
+  "startMs": 2493,
+  "endMs": 2633,
+  "timestampMs": null,
+  "confidence": 0.992
+ },
+ {
+  "text": " petit",
+  "startMs": 2633,
+  "endMs": 2993,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " jeu",
+  "startMs": 2993,
+  "endMs": 3073,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " vidéo",
+  "startMs": 3263,
+  "endMs": 3703,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " sur",
+  "startMs": 3793,
+  "endMs": 3883,
+  "timestampMs": null,
+  "confidence": 0.354
+ },
+ {
+  "text": " le",
+  "startMs": 3883,
+  "endMs": 4013,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " site",
+  "startMs": 4053,
+  "endMs": 4333,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " mehomies.com",
+  "startMs": 4333,
+  "endMs": 5113,
+  "timestampMs": null,
+  "confidence": 0.644
+ },
+ {
+  "text": " à",
+  "startMs": 5220,
+  "endMs": 5300,
+  "timestampMs": null,
+  "confidence": 0.405
+ },
+ {
+  "text": " l'occasion",
+  "startMs": 5220,
+  "endMs": 5710,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " d'Halloween",
+  "startMs": 5720,
+  "endMs": 6310,
+  "timestampMs": null,
+  "confidence": 0.603
+ },
+ {
+  "text": " Il",
+  "startMs": 6393,
+  "endMs": 6473,
+  "timestampMs": null,
+  "confidence": 0.889
+ },
+ {
+  "text": " est",
+  "startMs": 6413,
+  "endMs": 6583,
+  "timestampMs": null,
+  "confidence": 0.509
+ },
+ {
+  "text": " dispo",
+  "startMs": 6583,
+  "endMs": 7153,
+  "timestampMs": null,
+  "confidence": 0.481
+ },
+ {
+  "text": " jusqu'à",
+  "startMs": 7433,
+  "endMs": 7663,
+  "timestampMs": null,
+  "confidence": 0.952
+ },
+ {
+  "text": " la",
+  "startMs": 7673,
+  "endMs": 7793,
+  "timestampMs": null,
+  "confidence": 0.913
+ },
+ {
+  "text": " fin",
+  "startMs": 7883,
+  "endMs": 7973,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " de",
+  "startMs": 8083,
+  "endMs": 8163,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " semaine",
+  "startMs": 8123,
+  "endMs": 8523,
+  "timestampMs": null,
+  "confidence": 0.68
+ },
+ {
+  "text": " Et",
+  "startMs": 8640,
+  "endMs": 8720,
+  "timestampMs": null,
+  "confidence": 0.747
+ },
+ {
+  "text": " petite",
+  "startMs": 8660,
+  "endMs": 8930,
+  "timestampMs": null,
+  "confidence": 0.728
+ },
+ {
+  "text": " information",
+  "startMs": 8930,
+  "endMs": 9510,
+  "timestampMs": null,
+  "confidence": 0.989
+ },
+ {
+  "text": " supplémentaire",
+  "startMs": 9510,
+  "endMs": 10170,
+  "timestampMs": null,
+  "confidence": 0.46
+ },
+ {
+  "text": " Vous",
+  "startMs": 10283,
+  "endMs": 10393,
+  "timestampMs": null,
+  "confidence": 0.905
+ },
+ {
+  "text": " pouvez",
+  "startMs": 10453,
+  "endMs": 10873,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " choper",
+  "startMs": 10873,
+  "endMs": 11183,
+  "timestampMs": null,
+  "confidence": 0.948
+ },
+ {
+  "text": " du",
+  "startMs": 11313,
+  "endMs": 11393,
+  "timestampMs": null,
+  "confidence": 0.847
+ },
+ {
+  "text": " coup",
+  "startMs": 11313,
+  "endMs": 11393,
+  "timestampMs": null,
+  "confidence": 0.985
+ },
+ {
+  "text": " un",
+  "startMs": 11320,
+  "endMs": 11400,
+  "timestampMs": null,
+  "confidence": 0.746
+ },
+ {
+  "text": " petit",
+  "startMs": 11320,
+  "endMs": 11640,
+  "timestampMs": null,
+  "confidence": 0.988
+ },
+ {
+  "text": " restock",
+  "startMs": 11640,
+  "endMs": 12010,
+  "timestampMs": null,
+  "confidence": 0.689
+ },
+ {
+  "text": " de",
+  "startMs": 12103,
+  "endMs": 12223,
+  "timestampMs": null,
+  "confidence": 0.756
+ },
+ {
+  "text": " t-shirts",
+  "startMs": 12233,
+  "endMs": 12703,
+  "timestampMs": null,
+  "confidence": 0.733
+ },
+ {
+  "text": " sur",
+  "startMs": 12830,
+  "endMs": 12910,
+  "timestampMs": null,
+  "confidence": 0.783
+ },
+ {
+  "text": " le",
+  "startMs": 12920,
+  "endMs": 13090,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " site",
+  "startMs": 13090,
+  "endMs": 13350,
+  "timestampMs": null,
+  "confidence": 0.406
+ },
+ {
+  "text": " mais",
+  "startMs": 13474,
+  "endMs": 13734,
+  "timestampMs": null,
+  "confidence": 0.9
+ },
+ {
+  "text": " aussi",
+  "startMs": 13734,
+  "endMs": 14184,
+  "timestampMs": null,
+  "confidence": 0.415
+ },
+ {
+  "text": " au",
+  "startMs": 14260,
+  "endMs": 14460,
+  "timestampMs": null,
+  "confidence": 0.27
+ },
+ {
+  "text": " pop-up",
+  "startMs": 14510,
+  "endMs": 14610,
+  "timestampMs": null,
+  "confidence": 0.951
+ },
+ {
+  "text": " Space",
+  "startMs": 14770,
+  "endMs": 15200,
+  "timestampMs": null,
+  "confidence": 0.54
+ },
+ {
+  "text": " Jam",
+  "startMs": 15200,
+  "endMs": 15470,
+  "timestampMs": null,
+  "confidence": 0.717
+ },
+ {
+  "text": " Donc",
+  "startMs": 15557,
+  "endMs": 15637,
+  "timestampMs": null,
+  "confidence": 0.911
+ },
+ {
+  "text": " voilà",
+  "startMs": 15577,
+  "endMs": 15857,
+  "timestampMs": null,
+  "confidence": 0.815
+ },
+ {
+  "text": " on",
+  "startMs": 15857,
+  "endMs": 15937,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " compte",
+  "startMs": 15937,
+  "endMs": 16177,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " sur",
+  "startMs": 16177,
+  "endMs": 16287,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " vous",
+  "startMs": 16327,
+  "endMs": 16457,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " les",
+  "startMs": 16457,
+  "endMs": 16577,
+  "timestampMs": null,
+  "confidence": 0.949
+ },
+ {
+  "text": " frères",
+  "startMs": 16577,
+  "endMs": 16947,
+  "timestampMs": null,
+  "confidence": 0.88
+ },
+ {
+  "text": " Merci",
+  "startMs": 17057,
+  "endMs": 17227,
+  "timestampMs": null,
+  "confidence": 0.98
+ },
+ {
+  "text": " pour",
+  "startMs": 17227,
+  "endMs": 17477,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " la",
+  "startMs": 17477,
+  "endMs": 17577,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " force",
+  "startMs": 17677,
+  "endMs": 17817,
+  "timestampMs": null,
+  "confidence": 0.973
+ },
+ {
+  "text": " Let's",
+  "startMs": 17910,
+  "endMs": 18060,
+  "timestampMs": null,
+  "confidence": 0.954
+ },
+ {
+  "text": " go",
+  "startMs": 18060,
+  "endMs": 18230,
+  "timestampMs": null,
+  "confidence": 0.811
+ }
+]

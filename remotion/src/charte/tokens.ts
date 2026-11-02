@@ -77,6 +77,9 @@ export const IMAGE_LARGE = { haut: 525 } as const;
 // Étiquette sous une image 16:9 (placée comme la vidéo partenaire, y de 449 à 948) : même écart
 // image / nom (68 px) et nom / précision (83 px) que sous une photo produit. Proposition (vidéo 2)
 export const ETIQUETTE_LARGE = { nom: 1087, precision: 1170 } as const;
+// Image carrée de petite définition (séquence photo, format 1:1) : affichée à 640 px, sans
+// agrandissement, avec l'étiquette ETIQUETTE_LARGE dessous. Proposition (vidéo 3)
+export const IMAGE_CARREE = { cote: 640, haut: 310, rayon: 60 } as const;
 export const SITE = {
   decalageTelephone: -23,
   decalageBarre: 610,

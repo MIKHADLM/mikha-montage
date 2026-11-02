@@ -109,6 +109,7 @@ début (de la phrase ou du mot) ; en `a`, une fin (de la phrase ou du mot).
 |---|---|
 | `accroche.lignes[].couleur` | `jaune`, `blanc` (`jaunePale` abandonné le 2026-10-01, gardé pour la vidéo 1) |
 | `cadrages[].zoom` | un nombre (fixe) ou `[départ, arrivée]` (progressif, linéaire sur la phrase) ; phrase absente = × 1 |
+| `accroche.bas` | bas du titre en px (1 328 par défaut), si le visage occupe la place habituelle (vidéo 3 : 540, proposition) |
 | `sousTitres.masquer` | paires `[de, a]` : sous-titres cachés pendant ce passage |
 | `sousTitres.ombreSurFacecam` | `true` : ombre du titre d'accroche sous les sous-titres blancs (tenue claire, vidéo 2 ; proposition, journal A7) |
 
@@ -116,11 +117,11 @@ début (de la phrase ou du mot) ; en `a`, une fin (de la phrase ou du mot).
 
 | `type` | Champs | Rendu |
 |---|---|---|
-| `partenaire` | `de`, `a`, `etiquette` (chemin dans `public/`, ex. `charte/partenaires/partenaire_bag_etiquette-texte-noir_v01.png`), `video` ou `image` (dans `public/v<N>/`, ex. `videos/version-fr-en.mp4`), `videoDebutS` | Vidéo 16:9 sans son en haut, étiquette dessous |
+| `partenaire` | `de`, `a`, `etiquette` (chemin dans `public/`, ex. `charte/partenaires/partenaire_bag_etiquette-texte-noir_v01.png`), `video` ou `image` (dans `public/v<N>/`, ex. `videos/version-fr-en.mp4`), `videoDebutS` ; `nom` et `precision` à la place d'`etiquette` pour une étiquette texte (`etiquette` devient facultative) | Vidéo 16:9 sans son en haut, étiquette dessous |
 | `site` | `de`, `a` | Téléphone animé et barre de recherche (assets de la banque), placés comme dans la VF |
 | `produit` | `de`, `a`, `photos: [{ fichier, de?, nom, precision? }]` | Une photo arrondie à la fois (changement sur l'ancre `de` de la photo suivante), étiquette nom / précision |
-| `photo` | `de`, `a`, `format` (`4:5` par défaut, ou `16:9`), `regulier?` (photos à intervalles égaux, ancres `de` ignorées), `declencheurDb?` (ex. -6 pour une rafale), `photos: [{ fichier, de?, detoure?, nom?, precision? }]` | Photos une à la fois, étiquette facultative ; 4:5 dans le cadre arrondi (`detoure: true` : produit détouré posé en entier, sur blanc) ; 16:9 à la place de la vidéo partenaire avec étiquette dessous (ex. date et lieu sous une affiche), ou centrée à y = 525 sans étiquette ; sous-titres noirs (les masquer avec `sousTitres.masquer` si l'étiquette dit l'essentiel) ; déclencheur avant chaque photo (vidéo 2, journal A8) |
-| `motion` | `de`, `a`, `asset` (identifiant de `src/motion/registre.ts`), `fond` (`blanc` par défaut, ou `facecam`), `decalageY` | Asset de la banque joué jusqu'au bout puis figé |
+| `photo` | `de`, `a`, `format` (`4:5` par défaut, `16:9`, ou `1:1` : image carrée à 640 px sans agrandissement, étiquette dessous), `regulier?` (photos à intervalles égaux, ancres `de` ignorées), `declencheurDb?` (ex. -6 pour une rafale), `photos: [{ fichier, de?, detoure?, nom?, precision? }]` | Photos une à la fois, étiquette facultative ; 4:5 dans le cadre arrondi (`detoure: true` : produit détouré posé en entier, sur blanc) ; 16:9 à la place de la vidéo partenaire avec étiquette dessous (ex. date et lieu sous une affiche), ou centrée à y = 525 sans étiquette ; sous-titres noirs (les masquer avec `sousTitres.masquer` si l'étiquette dit l'essentiel) ; déclencheur avant chaque photo (vidéo 2, journal A8) |
+| `motion` | `de`, `a`, `asset` (identifiant de `src/motion/registre.ts`), `fond` (`blanc` par défaut, ou `facecam`), `decalageY`, `departImage` (image de l'asset où commencer) | Asset de la banque joué jusqu'au bout puis figé |
 
 Les images d'`assets/` arrivent dans `public/v<N>/images/` sous un nom simplifié (minuscules, tirets,
 sans « avec arrière-plan supprimé ») : le script les affiche.
@@ -134,8 +135,8 @@ sans « avec arrière-plan supprimé ») : le script les affiche.
   0,5 s après son dernier mot ; masqués pendant le hook, les séquences `produit` et les passages
   `masquer` ; blancs sur le face cam, noirs sur fond blanc (y compris `photo`), plus bas pendant la
   séquence `site`.
-- Bruitages : clic dont le son tombe 3 images avant l'entrée d'une séquence `partenaire` et avant la
-  sortie de chaque séquence sur fond blanc ; déclencheur 5 images avant chaque photo (`produit` et
+- Bruitages : clic dont le son tombe 3 images avant l'entrée d'une séquence `partenaire` ou `motion`
+  sur fond blanc et avant la sortie de chaque séquence sur fond blanc (pas entre deux séquences collées) ; déclencheur 5 images avant chaque photo (`produit` et
   `photo`) ; l'asset du
   site apporte son propre déclencheur.
 

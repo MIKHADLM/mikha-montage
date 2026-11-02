@@ -6,6 +6,7 @@ import {
   CAPITALES,
   COULEURS,
   ETIQUETTE,
+  IMAGE_CARREE,
   IMAGE_LARGE,
   PARTENAIRE,
   PHOTO,
@@ -69,6 +70,23 @@ export const ImageLarge: React.FC<{ src: string; avecEtiquette?: boolean }> = ({
   />
 );
 
+// Image carrée de petite définition : centrée, arrondie, sans agrandissement
+export const ImageCarree: React.FC<{ src: string }> = ({ src }) => (
+  <Img
+    src={staticFile(src)}
+    style={{
+      position: "absolute",
+      left: (CANEVAS.largeur - IMAGE_CARREE.cote) / 2,
+      top: IMAGE_CARREE.haut,
+      width: IMAGE_CARREE.cote,
+      height: IMAGE_CARREE.cote,
+      objectFit: "cover",
+      borderRadius: IMAGE_CARREE.rayon,
+      boxShadow: PHOTO.ombre,
+    }}
+  />
+);
+
 // Étiquette sous la photo : nom en Gilroy ExtraBold, précision en Gilroy Medium Italic, en noir ;
 // une ligne plus large que la zone sûre est réduite
 const tailleQuiTient = (texte: string, police: string, capitales: number) => {
@@ -128,7 +146,7 @@ export const Partenaire: React.FC<{
   video?: string;
   videoDebut?: number;
   image?: string;
-  etiquette: string;
+  etiquette?: string;
 }> = ({ video, videoDebut = 0, image, etiquette }) => {
   const cadre = {
     position: "absolute" as const,
@@ -149,15 +167,17 @@ export const Partenaire: React.FC<{
         />
       )}
       {image && <Img src={staticFile(image)} style={cadre} />}
-      <Img
-        src={staticFile(etiquette)}
-        style={{
-          position: "absolute",
-          left: (CANEVAS.largeur - PARTENAIRE.etiquette.largeur) / 2,
-          top: PARTENAIRE.etiquette.haut,
-          width: PARTENAIRE.etiquette.largeur,
-        }}
-      />
+      {etiquette && (
+        <Img
+          src={staticFile(etiquette)}
+          style={{
+            position: "absolute",
+            left: (CANEVAS.largeur - PARTENAIRE.etiquette.largeur) / 2,
+            top: PARTENAIRE.etiquette.haut,
+            width: PARTENAIRE.etiquette.largeur,
+          }}
+        />
+      )}
     </>
   );
 };

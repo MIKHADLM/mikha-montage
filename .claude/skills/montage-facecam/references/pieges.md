@@ -53,6 +53,7 @@
   0,23 s) ; la composition `Montage` en tient compte.
 
 ## Image et mise en page
+- **Rush HDR ou hors format** (vidéo 3 : HEVC HLG 24 i/s) : `preparer_medias.py` copie l'image sans la convertir. Préparer d'abord un rush SDR 1080 × 1920, 30 i/s, le nommer dans `choix.json`, et le signaler : c'est une conversion, pas un étalonnage de Michaël.
 - **Couleur du rush :** jamais retouchée ; le rush est copié sans réencodage, le contrôle compare
   une image du montage et du rush.
 - **Zone sûre :** sous y = 1 088, rien au-delà de x = 885 ; bas à 1 365. Exception acceptée : barre
@@ -61,6 +62,8 @@
 - **Tenue claire sous les sous-titres blancs** (vidéo 2) : illisibles sans ombre ; regarder une
   image de sous-titre avant le rendu ; règle de la charte (`SOUS-TITRES.md`) :
   `sousTitres.ombreSurFacecam`. Le titre d'accroche tombe aussi sur la tenue : maquette dans le plan.
+- **Visage bas dans le cadre** (vidéo 3) : le titre d'accroche habituel cache la bouche, le zoom × 1,21 aggrave. Regarder une image du hook avant le rendu ; `accroche.bas` place le titre plus haut (position à valider, journal A7). Les sous-titres tombent aussi sur le bas du visage : le signaler.
+- **Asset daté** (vidéo 3) : `site-mobile` montre « Précommandes disponibles » et 33 € ; vérifier son aperçu avant de l'utiliser, le refaire si le site a changé.
 - **Police absente de `public/` :** toutes les compositions échouent ; relancer `preparer_medias.py`.
 
 ## Échanges avec Michaël

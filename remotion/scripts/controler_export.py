@@ -71,7 +71,7 @@ if a.rush and a.image_montage is not None and a.image_rush is not None:
     with tempfile.TemporaryDirectory(dir=EXPORT.parent) as tmp:
         def image(src, n, nom):
             f = Path(tmp) / nom
-            lancer("ffmpeg", "-v", "error", "-y", "-i", src, "-vf", f"select=eq(n\\,{n})", "-vsync", "0", "-frames:v", "1", str(f))
+            lancer("ffmpeg", "-v", "error", "-y", "-i", src, "-vf", f"select=eq(n\\,{n})", "-fps_mode", "passthrough", "-frames:v", "1", str(f))
             return Image.open(f).convert("RGB").crop((0, 150, 1080, 900))
         m = image(str(EXPORT), a.image_montage, "m.png")
         r = image(a.rush, a.image_rush, "r.png")

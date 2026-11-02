@@ -1,22 +1,324 @@
 {
- "_comment": "Vidéo 3, version sous-titres seuls : rush intégral, un seul segment, aucune coupe.",
- "source": "a_monter/3/IMG_8323_original.MOV",
+ "_comment": "Découpage du rush : segments gardés, dans l'ordre du montage. Généré par remotion/scripts/decouper_transcription.py depuis choix.json. Temps en secondes et en images.",
+ "source": "a_monter/3/IMG_8323_sdr.mp4",
  "fps": 30,
- "margeS": 0,
- "silence": null,
- "dureeMontageS": 30.067,
- "dureeMontageFrames": 902,
- "phrases": [],
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "dureeMontageS": 18.3,
+ "dureeMontageFrames": 549,
+ "phrases": [
+  {
+   "id": "P1",
+   "montageDebutS": 0.0,
+   "montageFinS": 3.733,
+   "texte": "Salut à toute l'équipe, juste pour vous dire, on vient de sortir un petit jeu vidéo"
+  },
+  {
+   "id": "P2",
+   "montageDebutS": 3.733,
+   "montageFinS": 5.167,
+   "texte": "sur le site mehomies.com"
+  },
+  {
+   "id": "P3",
+   "montageDebutS": 5.167,
+   "montageFinS": 6.333,
+   "texte": "à l'occasion d'Halloween."
+  },
+  {
+   "id": "P4",
+   "montageDebutS": 6.333,
+   "montageFinS": 8.567,
+   "texte": "Il est dispo jusqu'à la fin de semaine."
+  },
+  {
+   "id": "P5",
+   "montageDebutS": 8.567,
+   "montageFinS": 10.2,
+   "texte": "Et petite information supplémentaire."
+  },
+  {
+   "id": "P6",
+   "montageDebutS": 10.2,
+   "montageFinS": 13.367,
+   "texte": "Vous pouvez choper du coup un petit restock de t-shirts sur le site"
+  },
+  {
+   "id": "P7",
+   "montageDebutS": 13.367,
+   "montageFinS": 15.5,
+   "texte": "mais aussi au pop-up Space Jam."
+  },
+  {
+   "id": "P8",
+   "montageDebutS": 15.5,
+   "montageFinS": 17.0,
+   "texte": "Donc voilà on compte sur vous les frères."
+  },
+  {
+   "id": "P9",
+   "montageDebutS": 17.0,
+   "montageFinS": 17.833,
+   "texte": "Merci pour la force."
+  },
+  {
+   "id": "P10",
+   "montageDebutS": 17.833,
+   "montageFinS": 18.3,
+   "texte": "Let's go."
+  }
+ ],
  "segments": [
   {
    "id": 1,
    "phrase": "P1",
-   "sourceDebutFrame": 0,
-   "sourceFinFrame": 902,
-   "dureeFrames": 902,
+   "morceau": "c00a",
+   "paroleDebutS": 0.56,
+   "paroleFinS": 4.12,
+   "sourceDebutFrame": 14,
+   "sourceFinFrame": 126,
+   "dureeFrames": 112,
    "montageDebutFrame": 0,
-   "montageDebutS": 0
+   "sourceDebutS": 0.467,
+   "sourceFinS": 4.2,
+   "montageDebutS": 0.0,
+   "montageFinS": 3.733
+  },
+  {
+   "id": 2,
+   "phrase": "P2",
+   "morceau": "c00b",
+   "paroleDebutS": 4.28,
+   "paroleFinS": 5.56,
+   "sourceDebutFrame": 126,
+   "sourceFinFrame": 169,
+   "dureeFrames": 43,
+   "montageDebutFrame": 112,
+   "sourceDebutS": 4.2,
+   "sourceFinS": 5.633,
+   "montageDebutS": 3.733,
+   "montageFinS": 5.167
+  },
+  {
+   "id": 3,
+   "phrase": "P3",
+   "morceau": "c01",
+   "paroleDebutS": 5.94,
+   "paroleFinS": 6.96,
+   "sourceDebutFrame": 176,
+   "sourceFinFrame": 211,
+   "dureeFrames": 35,
+   "montageDebutFrame": 155,
+   "sourceDebutS": 5.867,
+   "sourceFinS": 7.033,
+   "montageDebutS": 5.167,
+   "montageFinS": 6.333
+  },
+  {
+   "id": 4,
+   "phrase": "P4",
+   "morceau": "c02",
+   "paroleDebutS": 7.48,
+   "paroleFinS": 9.54,
+   "sourceDebutFrame": 222,
+   "sourceFinFrame": 289,
+   "dureeFrames": 67,
+   "montageDebutFrame": 190,
+   "sourceDebutS": 7.4,
+   "sourceFinS": 9.633,
+   "montageDebutS": 6.333,
+   "montageFinS": 8.567
+  },
+  {
+   "id": 5,
+   "phrase": "P5",
+   "morceau": "c04",
+   "paroleDebutS": 11.26,
+   "paroleFinS": 12.72,
+   "sourceDebutFrame": 335,
+   "sourceFinFrame": 384,
+   "dureeFrames": 49,
+   "montageDebutFrame": 257,
+   "sourceDebutS": 11.167,
+   "sourceFinS": 12.8,
+   "montageDebutS": 8.567,
+   "montageFinS": 10.2
+  },
+  {
+   "id": 6,
+   "phrase": "P6",
+   "morceau": "c05",
+   "paroleDebutS": 13.36,
+   "paroleFinS": 14.24,
+   "sourceDebutFrame": 398,
+   "sourceFinFrame": 430,
+   "dureeFrames": 32,
+   "montageDebutFrame": 306,
+   "sourceDebutS": 13.267,
+   "sourceFinS": 14.333,
+   "montageDebutS": 10.2,
+   "montageFinS": 11.267
+  },
+  {
+   "id": 7,
+   "phrase": "P6",
+   "morceau": "c06b",
+   "paroleDebutS": 15.14,
+   "paroleFinS": 15.76,
+   "sourceDebutFrame": 452,
+   "sourceFinFrame": 475,
+   "dureeFrames": 23,
+   "montageDebutFrame": 338,
+   "sourceDebutS": 15.067,
+   "sourceFinS": 15.833,
+   "montageDebutS": 11.267,
+   "montageFinS": 12.033
+  },
+  {
+   "id": 8,
+   "phrase": "P6",
+   "morceau": "c07",
+   "paroleDebutS": 16.28,
+   "paroleFinS": 16.82,
+   "sourceDebutFrame": 486,
+   "sourceFinFrame": 507,
+   "dureeFrames": 21,
+   "montageDebutFrame": 361,
+   "sourceDebutS": 16.2,
+   "sourceFinS": 16.9,
+   "montageDebutS": 12.033,
+   "montageFinS": 12.733
+  },
+  {
+   "id": 9,
+   "phrase": "P6",
+   "morceau": "c08",
+   "paroleDebutS": 17.22,
+   "paroleFinS": 17.7,
+   "sourceDebutFrame": 514,
+   "sourceFinFrame": 533,
+   "dureeFrames": 19,
+   "montageDebutFrame": 382,
+   "sourceDebutS": 17.133,
+   "sourceFinS": 17.767,
+   "montageDebutS": 12.733,
+   "montageFinS": 13.367
+  },
+  {
+   "id": 10,
+   "phrase": "P7",
+   "morceau": "c09",
+   "paroleDebutS": 18.12,
+   "paroleFinS": 18.8,
+   "sourceDebutFrame": 541,
+   "sourceFinFrame": 566,
+   "dureeFrames": 25,
+   "montageDebutFrame": 401,
+   "sourceDebutS": 18.033,
+   "sourceFinS": 18.867,
+   "montageDebutS": 13.367,
+   "montageFinS": 14.2
+  },
+  {
+   "id": 11,
+   "phrase": "P7",
+   "morceau": "c11a",
+   "paroleDebutS": 22.68,
+   "paroleFinS": 23.0,
+   "sourceDebutFrame": 678,
+   "sourceFinFrame": 692,
+   "dureeFrames": 14,
+   "montageDebutFrame": 426,
+   "sourceDebutS": 22.6,
+   "sourceFinS": 23.067,
+   "montageDebutS": 14.2,
+   "montageFinS": 14.667
+  },
+  {
+   "id": 12,
+   "phrase": "P7",
+   "morceau": "c11b",
+   "paroleDebutS": 23.44,
+   "paroleFinS": 24.12,
+   "sourceDebutFrame": 701,
+   "sourceFinFrame": 726,
+   "dureeFrames": 25,
+   "montageDebutFrame": 440,
+   "sourceDebutS": 23.367,
+   "sourceFinS": 24.2,
+   "montageDebutS": 14.667,
+   "montageFinS": 15.5
+  },
+  {
+   "id": 13,
+   "phrase": "P8",
+   "morceau": "c12",
+   "paroleDebutS": 25.3,
+   "paroleFinS": 26.66,
+   "sourceDebutFrame": 757,
+   "sourceFinFrame": 802,
+   "dureeFrames": 45,
+   "montageDebutFrame": 465,
+   "sourceDebutS": 25.233,
+   "sourceFinS": 26.733,
+   "montageDebutS": 15.5,
+   "montageFinS": 17.0
+  },
+  {
+   "id": 14,
+   "phrase": "P9",
+   "morceau": "c13",
+   "paroleDebutS": 27.7,
+   "paroleFinS": 28.4,
+   "sourceDebutFrame": 829,
+   "sourceFinFrame": 854,
+   "dureeFrames": 25,
+   "montageDebutFrame": 510,
+   "sourceDebutS": 27.633,
+   "sourceFinS": 28.467,
+   "montageDebutS": 17.0,
+   "montageFinS": 17.833
+  },
+  {
+   "id": 15,
+   "phrase": "P10",
+   "morceau": "c14",
+   "paroleDebutS": 28.72,
+   "paroleFinS": 29.02,
+   "sourceDebutFrame": 859,
+   "sourceFinFrame": 873,
+   "dureeFrames": 14,
+   "montageDebutFrame": 535,
+   "sourceDebutS": 28.633,
+   "sourceFinS": 29.1,
+   "montageDebutS": 17.833,
+   "montageFinS": 18.3
   }
  ],
- "coupes": []
+ "coupes": [
+  {
+   "morceau": "c03",
+   "sourceDebutS": 10.04,
+   "sourceFinS": 10.92,
+   "texte": "Euh...",
+   "raison": "hésitation (euh)"
+  },
+  {
+   "morceau": "c06-debut",
+   "sourceDebutS": 14.64,
+   "sourceFinS": 15.14,
+   "texte": "Un petit restock.",
+   "raison": "hésitation (euh)"
+  },
+  {
+   "morceau": "c10",
+   "sourceDebutS": 19.16,
+   "sourceFinS": 21.24,
+   "texte": "Hoop, hoop, hoop.",
+   "raison": "faux départ et hésitation (au pop-up, euh)"
+  }
+ ]
 }
