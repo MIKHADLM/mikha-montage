@@ -173,6 +173,13 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
   `AUTOMATISATIONS/CONTEXTE.md` (« Publication d'une vidéo validée »), seulement après son « ok »
   sur la légende, le réseau et l'horaire.
 - Légendes MIKHA : **ni emoji ni hashtag** (Michaël, 2026-11-03). Proposer le texte brut.
+- Programmation Metricool (marque mikha_dlm, blogId 3680334) : Metricool ne lit pas le Drive privé
+  (« Failed to normalize media »). Procédure validée (Michaël, 2026-11-03) : retrouver le VF et la
+  miniature sur le Drive (MCP Google Drive, `search_files`), les passer en « tous ceux qui ont le
+  lien » en lecture (`share_file`, `anyoneWithLink`, `reader`), puis donner leurs liens `view` à
+  `createScheduledPost` (`media` + `videoThumbnailUrl`). On laisse le partage par lien ensuite.
+  Le dossier Drive n'est pas lisible depuis le terminal (File Provider) : vérifier par le MCP.
+  TikTok exige un `title` dans `tiktokData`.
 
 ## Le style en bref (la charte fait foi)
 
