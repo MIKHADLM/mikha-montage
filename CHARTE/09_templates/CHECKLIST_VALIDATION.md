@@ -12,6 +12,7 @@ Direction artistique de référence : la VF de Michaël (`08_references/videos/r
 - [ ] Aucun silence restant (tous coupés) et pas de blanc involontaire (image noire, plan vide)
 - [ ] Aucune hésitation restée (bout de phrase redit, « euh », regard vers les notes) ; chaque plan commence sur le premier mot et finit sur le dernier ; ≈ 0,15 s entre deux phrases enchaînées (règles du 2026-10-01)
 - [ ] Coupes sèches uniquement
+- [ ] Aucune image isolée aux raccords : `detecter_frames_isolees.py` OK, et chaque raccord regardé image par image (règle validée le 2026-11-03)
 - [ ] Un nouveau cadrage du face cam à chaque phrase (zoom progressif sur les longues phrases, recadrage fixe ailleurs), aucun dézoom
 - [ ] Rythme cohérent avec les phrases, le texte et l'ambiance de la vidéo (brief)
 - [ ] Durée conforme au brief et à `05_formats/FORMATS.md`
@@ -27,6 +28,8 @@ Direction artistique de référence : la VF de Michaël (`08_references/videos/r
 - [ ] Sous-titres **incrustés** dans la vidéo, sans faute, tous les mots dits écrits
 - [ ] Chaque groupe de 1 à 3 mots apparaît quand son premier mot est prononcé, jamais avant
 - [ ] Sous-titres en Gilroy ExtraBold, blancs sur le face cam, noirs sur fond blanc, sans contour ; ombre seulement si la tenue est claire (`03_motion/SOUS-TITRES.md`)
+- [ ] Texte à l'écran (titre, texte en escalier) calé sur la voix au mot près, chaque entrée regardée image par image ; mots écrits = mots dits ; phrase complète, aucun mot sauté (règles validées le 2026-11-03)
+- [ ] Affiche toujours entière, jamais recadrée, étiquette lieu / date dessous (règle validée le 2026-11-03)
 - [ ] Sous-titres masqués quand un texte à l'écran montre déjà les mots dits (étiquette, adresse dans la barre de recherche)
 - [ ] Majuscule sur la première lettre du premier mot d'une phrase seulement ; nombres en chiffres ; pas de ponctuation
 - [ ] Noms propres bien écrits : Mehomies, BAG, Boxy Tee, Baby Tee

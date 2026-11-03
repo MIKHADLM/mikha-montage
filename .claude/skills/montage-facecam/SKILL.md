@@ -175,6 +175,11 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
 
 ## Le style en bref (la charte fait foi)
 
+- **Exigence de Michaël (règles validées le 2026-11-03) :** il regarde à l'image près. Aucune image
+  isolée aux raccords ; texte à l'écran calé sur la voix au mot près, avec les mots dits et la phrase
+  complète ; affiche toujours entière (jamais recadrée) avec l'étiquette lieu / date dessous ; avant
+  livraison, chaque raccord et chaque entrée de texte regardés image par image.
+
 - **Hook :** la phrase d'accroche entière ; titre reformulé en 3 lignes Gilroy Heavy capitales, bords
   alignés, sous le visage ; un seul jaune `#FFB900` sur les mots importants, blanc ailleurs ; face
   cam × 1,21 ; riser qui finit avec la phrase ; pas de sous-titres.

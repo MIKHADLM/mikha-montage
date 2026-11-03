@@ -116,6 +116,7 @@ const bruitages = (M: Montage) => {
       sons.push({
         nom: `Clic : entrée ${s.type}`,
         fichier: SFX.clic.fichier,
+        volume: M.clicVolume,
         image: s.debut - clic,
       });
     }
@@ -135,6 +136,7 @@ const bruitages = (M: Montage) => {
       sons.push({
         nom: `Clic : sortie ${s.type}`,
         fichier: SFX.clic.fichier,
+        volume: M.clicVolume,
         image: s.fin - clic,
       });
     }

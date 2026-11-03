@@ -56,6 +56,8 @@ export type Plan = {
   sequences?: SequencePlan[];
   // ombreSurFacecam : ombre du titre d'accroche sous les sous-titres blancs (t-shirt clair, vidéo 2)
   sousTitres?: { masquer?: [Ancre, Ancre][]; ombreSurFacecam?: boolean };
+  // gain des clics en dB (vidéo 4 : -4, « baisse un peu le son des clics », proposition de défaut)
+  sons?: { clicDb?: number };
 };
 export type SequencePlan =
   | {
@@ -302,6 +304,7 @@ export const creerMontage = ({
   });
 
   return {
+    clicVolume: 10 ** ((plan.sons?.clicDb ?? 0) / 20),
     rouge,
     fps,
     duree,

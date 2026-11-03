@@ -1,5 +1,5 @@
 {
- "_comment": "Vidéo 4 (Fakhomies), DA rouge, v03 : retours à l'image de Michael sur la v02 (retours/Fakhomies_v02.json).",
+ "_comment": "Vidéo 4 (Fakhomies), DA rouge, v04 : clics -4 dB (retour v03) ; v03 : retours à l'image de Michael sur la v02 (retours/Fakhomies_v02.json).",
  "da": "rouge",
  "accroche": {
   "phrase": "P1",
@@ -155,5 +155,8 @@
     "P8:samedi"
    ]
   ]
+ },
+ "sons": {
+  "clicDb": -4
  }
 }
