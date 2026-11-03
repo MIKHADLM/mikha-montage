@@ -147,7 +147,7 @@ Composants : `remotion/src/da/rouge/` ; valeurs : `src/da/rouge/tokens.ts`.
 | `accroche.titre` | Titre en bloc (composition 06) : `avant` = 1 à 3 petits mots blancs empilés à gauche, `cle` = mot clé rouge, `apres` = dernier mot rouge sur toute la largeur (facultatif). Remplace `accroche.lignes` |
 | `accroche.derriere` | `false` : tout le titre passe devant (repli si le détourage rate : tête trop haute, plan trop serré) ; sinon les mots rouges passent derrière le sujet, avec un contour permanent de 3 px |
 | `cadrages` | Le cadrage de la phrase d'accroche est ignoré : le hook reste à × 1 |
-| séquence `texte` | `de`, `a`, `lignes: [{ texte, largeur, gauche }]` (largeur et retrait en part de 1080), `image?` / `video?` + `videoDebutS?` (plein cadre). Texte en escalier, Chivo 800 minuscule serrée, mot par mot ; noir flouté sur le fond rouge, rouge sur une image. Sans caractères spéciaux. Sous-titres masqués pendant la séquence |
+| séquence `texte` | `de`, `a`, `lignes: [{ texte, largeur, gauche }]` (largeur et retrait en part de 1080), `image?` / `video?` + `videoDebutS?` (plein cadre). Texte en escalier, Chivo 800 minuscule serrée, mot par mot ; noir flouté sur le fond rouge, rouge sur une image. Sans caractères spéciaux. Sous-titres masqués pendant la séquence ; `lignes: []` = image ou vidéo seule, sous-titres de base gardés (vidéo 4) |
 
 Rendu, tout seul :
 - **Hook :** le bloc monte morceau par morceau (un toutes les 4 images, en 12) ; images détourées

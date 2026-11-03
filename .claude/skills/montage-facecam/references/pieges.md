@@ -56,6 +56,7 @@
 - **Rush HDR ou hors format** (vidéo 3 : HEVC HLG 24 i/s) : `preparer_medias.py` copie l'image sans la convertir. Préparer d'abord un rush SDR 1080 × 1920, 30 i/s, le nommer dans `choix.json`, et le signaler : c'est une conversion, pas un étalonnage de Michaël.
 - **Couleur du rush :** jamais retouchée ; le rush est copié sans réencodage, le contrôle compare
   une image du montage et du rush.
+- **Affiche recadrée** (vidéo 4 : affiche Instagram 1:1 recadrée, elle « perdait son sens ») : demander ou utiliser le fichier d'origine et l'afficher entière dans son format (`photo` `4:5`, `16:9` ou `1:1` selon son ratio).
 - **Zone sûre :** sous y = 1 088, rien au-delà de x = 885 ; bas à 1 365. Exception acceptée : barre
   de recherche et sous-titres de la séquence du site.
 - **Texte jaune sur fond blanc :** illisible (contraste 1,7:1) ; le jaune reste sur le face cam.

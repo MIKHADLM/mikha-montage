@@ -175,7 +175,9 @@ const SequenceRouge: React.FC<{
               style={{ position: "absolute", width: "100%", height: "100%" }}
             />
           )}
-          <TexteEscalier lignes={s.lignes} surRouge={!pleinCadre} />
+          {s.lignes.length > 0 && (
+            <TexteEscalier lignes={s.lignes} surRouge={!pleinCadre} />
+          )}
         </>
       )}
       {s.type === "motion" &&
@@ -320,7 +322,9 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
     if (!seq || (seq.type === "motion" && seq.fond === "facecam")) {
       return "facecam";
     }
-    if (seq.type === "produit" || seq.type === "texte") return null;
+    if (seq.type === "produit") return null;
+    // texte sans lignes : vidéo ou image plein cadre seule, sous-titres de base gardés (vidéo 4)
+    if (seq.type === "texte") return seq.lignes.length > 0 ? null : "facecam";
     return "rouge";
   };
   const groupesLongs = M.rouge ? grouperLong(M.mots, M.fps, M.duree) : [];

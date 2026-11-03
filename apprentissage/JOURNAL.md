@@ -16,6 +16,9 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | A7 | Titre d'accroche en haut (bas à y = 540) quand le visage occupe la place habituelle ; que faire des sous-titres dans ce cas | Vidéo 3, visage bas dans le cadre | Michaël |
 | A8 | Clic à l'entrée d'un asset sur fond blanc, pas de clic entre deux séquences blanches collées | Vidéo 3, lecture de `SON.md` | Michaël |
 | A9 | Image carrée de petite définition : 640 px, sans agrandissement, étiquette dessous | Vidéo 3, affiche Space Jam | Michaël |
+| A10 | **Ne jamais recadrer une affiche** : toujours entière (format natif, fond rouge ou blanc autour si besoin), sans étiquette quand elle dit déjà lieu et date | Vidéo 4, retour 6 sur la v01 (« elle perdait son sens ») | Michaël |
+| A11 | Une illustration commence sur le mot qui **ouvre** l'idée (« il s'agit », « faire gagner », « développer »), pas sur le mot qui la nomme ; le texte en escalier démarre en même temps | Vidéo 4, retours 2 à 4 sur la v01 | Michaël |
+| A12 | Le texte en escalier n'est pas systématique : une illustration peut rester sans texte, sous-titres de base gardés (`texte` avec `lignes: []`) | Vidéo 4, retour 5 sur la v01 | Michaël |
 
 ## 2. Leçons
 
@@ -78,3 +81,4 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-10-01 | Type « photo » : options `regulier` et `declencheurDb` ; `reperer_hesitations.py` signale les débuts lents et les fins qui traînent | Retours de Michaël sur la v02 de la vidéo 2 |
 | 2026-10-01 | Passe d'ensemble du skill après la vidéo 2 : principe « le rythme avant tout » ; étape 1 (rush définitif ? étalonné et synchronisé) ; étape 2 réécrite en 6 temps (transcription, choix, texte relu, chasse aux hésitations, règles de coupe, découpage) ; contrôle des sous-titres sur la tenue ; corriger la cause et chercher le même défaut ailleurs ; résumé du style à jour (un seul jaune, ombre si tenue claire, affiche, défilé) ; pièges « échanges avec Michaël » ; modèles `choix.json` et `PLAN_MONTAGE.md` ; règles de cohérence des illustrations | Question de Michaël : « est-ce qu'il ne faudrait pas remettre à jour le skill ? » |
 | 2026-11-02 | `accroche.bas`, `partenaire` avec `nom` et `precision` sans étiquette image, `motion.departImage`, `photo` au format `1:1`, clic d'entrée des assets sur fond blanc, pas de clic entre séquences collées, masque étendu au groupe en cours ; `controler_export.py` : `-fps_mode` | Vidéo 3 |
+| 2026-11-03 | DA rouge : séquence `texte` avec `lignes: []` (illustration plein cadre sans texte, sous-titres de base gardés) | Vidéo 4, retours sur la v01 |

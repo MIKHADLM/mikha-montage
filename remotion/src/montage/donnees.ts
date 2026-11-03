@@ -116,6 +116,7 @@ export type SequencePlan =
     }
   // DA rouge seulement : texte en escalier, sur le fond rouge (noir flouté) ou sur une image ou une
   // vidéo plein cadre (rouge) ; à utiliser de temps en temps
+  // `lignes: []` : illustration plein cadre sans texte, sous-titres de base gardés (vidéo 4)
   | {
       type: "texte";
       de: Ancre;

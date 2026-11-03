@@ -1,5 +1,5 @@
 {
- "_comment": "Vidéo 4 (Fakhomies), DA rouge, v01 sans validation préalable du plan (demande de Michaël). Musique provisoire (voir choix.json). Plan de couloir non utilisé.",
+ "_comment": "Vidéo 4 (Fakhomies), DA rouge, v02 : retours de Michael sur la v01 (RETOURS_v01.md). Plan de couloir non utilisé.",
  "da": "rouge",
  "accroche": {
   "phrase": "P1",
@@ -53,7 +53,7 @@
  "sequences": [
   {
    "type": "texte",
-   "de": "P2:de",
+   "de": "P2:Il",
    "a": "P2",
    "video": "videos/fakhomies-plan-1-entrepot.mp4",
    "videoDebutS": 0,
@@ -67,20 +67,30 @@
      "texte": "un jeu d'horreur",
      "largeur": 0.62,
      "gauche": 0.3
+    },
+    {
+     "texte": "sortie le jour d'halloween",
+     "largeur": 0.84,
+     "gauche": 0.08
     }
    ]
   },
   {
    "type": "texte",
-   "de": "P3:des",
+   "de": "P3:faire",
    "a": "P3:15%",
    "video": "videos/fakhomies-plan-2-carton.mp4",
    "videoDebutS": 0,
    "lignes": [
     {
+     "texte": "faire gagner",
+     "largeur": 0.62,
+     "gauche": 0.08
+    },
+    {
      "texte": "des réductions",
      "largeur": 0.72,
-     "gauche": 0.08
+     "gauche": 0.2
     },
     {
      "texte": "de 5 à 15%",
@@ -91,7 +101,7 @@
   },
   {
    "type": "texte",
-   "de": "P4:l'univers",
+   "de": "P4:développer",
    "a": "P4",
    "video": "videos/fakhomies-plan-6-salle-de-controle.mp4",
    "videoDebutS": 0,
@@ -110,35 +120,24 @@
   },
   {
    "type": "texte",
-   "de": "P6:jusqu'à",
-   "a": "P6:semaine",
+   "de": "P6:vous",
+   "a": "P6:d'achat",
    "video": "videos/fakhomies-plan-8-visage.mp4",
    "videoDebutS": 0,
-   "lignes": [
-    {
-     "texte": "jusqu'à la fin",
-     "largeur": 0.72,
-     "gauche": 0.08
-    },
-    {
-     "texte": "de semaine",
-     "largeur": 0.6,
-     "gauche": 0.32
-    }
-   ]
+   "lignes": [],
+   "_note": "Sans texte rouge, sous-titres de base gardés (retour 5)."
   },
   {
    "type": "photo",
    "de": "P8:à",
    "a": "P8:samedi",
-   "format": "1:1",
+   "format": "4:5",
    "photos": [
     {
-     "fichier": "images/affiche-space-jam-instagram.png",
-     "nom": "SAMEDI 7 NOVEMBRE",
-     "precision": "Condition Publique, Roubaix"
+     "fichier": "images/affiche-evenement.png"
     }
-   ]
+   ],
+   "_note": "Affiche entière (4:5 natif, 1350 x 1688), sans étiquette : elle dit déjà lieu et date."
   }
  ],
  "sousTitres": {
