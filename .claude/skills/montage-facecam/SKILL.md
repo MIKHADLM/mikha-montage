@@ -172,6 +172,7 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
   `etat_montage.txt` cesse alors de compter les questions du brief. La copie ne programme rien : la publication suit la procédure de
   `AUTOMATISATIONS/CONTEXTE.md` (« Publication d'une vidéo validée »), seulement après son « ok »
   sur la légende, le réseau et l'horaire.
+- Légendes MIKHA : **ni emoji ni hashtag** (Michaël, 2026-11-03). Proposer le texte brut.
 
 ## Le style en bref (la charte fait foi)
 

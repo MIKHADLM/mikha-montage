@@ -1,5 +1,7 @@
 # Plan de montage : vidéo 4 (Fakhomies), DA rouge
 
+> **Publication :** programmée le 04/11/2026 à 18:30 (Instagram Reel, TikTok, YouTube Short ; Metricool, post 415809868). Passer à « publiée » une fois en ligne.
+
 > Monté directement en v01 sans validation préalable (consigne de Michaël, 2026-11-03). Tout est proposition. Traduction exacte : `plan.json`.
 
 - **Hook (P1) :** titre en bloc « ON A / SORTI UN / **JEU** / **MEHOMIES** ». Titre **devant** le sujet (`derriere: false`) : la tête est haute dans le cadre, « MEHOMIES » passait presque entier derrière les cheveux.

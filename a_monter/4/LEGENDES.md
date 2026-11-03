@@ -14,3 +14,14 @@ On se voit samedi 7 novembre à la Condition Publique de Roubaix pour le pop-up.
 
 **Titre YouTube Shorts (≤ 60 caractères)**
 On a sorti un jeu d'horreur Mehomies (Fakhomies)
+
+## Choix de Michael (2026-11-03 21:09)
+- Miniature : 3 (« LE JEU / FAKHOMIES / SORTI POUR HALLOWEEN »)
+- Texte : A, sans emoji ni hashtag :
+
+On a sorti Fakhomies, un jeu d'horreur Mehomies, le jour d'Halloween.
+Joue et gagne de 5 à 15 % de réduction, valable sur tout le site, jusqu'à la fin de la semaine.
+Et pour la région lilloise : rendez-vous samedi 7 novembre au pop-up à la Condition Publique de Roubaix.
+
+- Titre YouTube : On a sorti un jeu d'horreur Mehomies (Fakhomies)
+- Règle : légendes MIKHA sans emoji ni hashtag (Michael, 2026-11-03).
