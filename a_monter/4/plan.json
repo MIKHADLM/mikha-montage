@@ -1,5 +1,5 @@
 {
- "_comment": "Vidéo 4 (Fakhomies), DA rouge, v02 : retours de Michael sur la v01 (RETOURS_v01.md). Plan de couloir non utilisé.",
+ "_comment": "Vidéo 4 (Fakhomies), DA rouge, v03 : retours à l'image de Michael sur la v02 (retours/Fakhomies_v02.json).",
  "da": "rouge",
  "accroche": {
   "phrase": "P1",
@@ -53,7 +53,7 @@
  "sequences": [
   {
    "type": "texte",
-   "de": "P2:Il",
+   "de": "P2",
    "a": "P2",
    "video": "videos/fakhomies-plan-1-entrepot.mp4",
    "videoDebutS": 0,
@@ -69,33 +69,34 @@
      "gauche": 0.3
     },
     {
-     "texte": "sortie le jour d'halloween",
+     "texte": "sorti le jour d'halloween",
      "largeur": 0.84,
      "gauche": 0.08
     }
-   ]
+   ],
+   "_note": "« sorti » (le jeu, ce qui est dit) et non « sortie » : sinon le mot n'est pas calé sur la voix."
   },
   {
    "type": "texte",
-   "de": "P3:faire",
+   "de": "P3:des",
    "a": "P3:15%",
    "video": "videos/fakhomies-plan-2-carton.mp4",
    "videoDebutS": 0,
    "lignes": [
     {
-     "texte": "faire gagner",
-     "largeur": 0.62,
+     "texte": "des réductions",
+     "largeur": 0.74,
      "gauche": 0.08
     },
     {
-     "texte": "des réductions",
-     "largeur": 0.72,
-     "gauche": 0.2
+     "texte": "qui vont de",
+     "largeur": 0.56,
+     "gauche": 0.36
     },
     {
-     "texte": "de 5 à 15%",
-     "largeur": 0.6,
-     "gauche": 0.32
+     "texte": "5 à 15%",
+     "largeur": 0.5,
+     "gauche": 0.2
     }
    ]
   },
@@ -107,14 +108,19 @@
    "videoDebutS": 0,
    "lignes": [
     {
-     "texte": "l'univers",
-     "largeur": 0.7,
+     "texte": "de développer",
+     "largeur": 0.74,
      "gauche": 0.08
     },
     {
+     "texte": "l'univers",
+     "largeur": 0.6,
+     "gauche": 0.32
+    },
+    {
      "texte": "de la marque",
-     "largeur": 0.62,
-     "gauche": 0.3
+     "largeur": 0.66,
+     "gauche": 0.14
     }
    ]
   },
@@ -134,10 +140,12 @@
    "format": "4:5",
    "photos": [
     {
-     "fichier": "images/affiche-evenement.png"
+     "fichier": "images/affiche-evenement.png",
+     "nom": "SAMEDI 7 NOVEMBRE",
+     "precision": "Condition Publique, Roubaix"
     }
    ],
-   "_note": "Affiche entière (4:5 natif, 1350 x 1688), sans étiquette : elle dit déjà lieu et date."
+   "_note": "Affiche entière (4:5 natif), étiquette lieu et date remise (retour v02, frame 772)."
   }
  ],
  "sousTitres": {

@@ -16,9 +16,13 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | A7 | Titre d'accroche en haut (bas à y = 540) quand le visage occupe la place habituelle ; que faire des sous-titres dans ce cas | Vidéo 3, visage bas dans le cadre | Michaël |
 | A8 | Clic à l'entrée d'un asset sur fond blanc, pas de clic entre deux séquences blanches collées | Vidéo 3, lecture de `SON.md` | Michaël |
 | A9 | Image carrée de petite définition : 640 px, sans agrandissement, étiquette dessous | Vidéo 3, affiche Space Jam | Michaël |
-| A10 | **Ne jamais recadrer une affiche** : toujours entière (format natif, fond rouge ou blanc autour si besoin), sans étiquette quand elle dit déjà lieu et date | Vidéo 4, retour 6 sur la v01 (« elle perdait son sens ») | Michaël |
+| A10 | **Ne jamais recadrer une affiche** : toujours entière (format natif, fond rouge ou blanc autour si besoin), avec l'étiquette lieu / date quand même (l'affiche entière est petite, retour v02 frame 772) | Vidéo 4, retour 6 sur la v01 (« elle perdait son sens ») | Michaël |
 | A11 | Une illustration commence sur le mot qui **ouvre** l'idée (« il s'agit », « faire gagner », « développer »), pas sur le mot qui la nomme ; le texte en escalier démarre en même temps | Vidéo 4, retours 2 à 4 sur la v01 | Michaël |
 | A12 | Le texte en escalier n'est pas systématique : une illustration peut rester sans texte, sous-titres de base gardés (`texte` avec `lignes: []`) | Vidéo 4, retour 5 sur la v01 | Michaël |
+| A13 | **Aucune image isolée aux raccords** : une illustration qui commence (ou finit) à moins de 5 images d'une coupe est recalée sur la coupe ; contrôle automatique `detecter_frames_isolees.py` à chaque export | Vidéo 4, v02 frame 104 (« une frame parasite ») | Michaël |
+| A14 | **Texte à l'écran calé sur la voix au mot près** : chaque mot du texte en escalier apparaît quand il est dit (fait par le montage) ; un mot écrit doit donc être le mot dit (« sorti », pas « sortie ») | Vidéo 4, v02 frame 154 | Michaël |
+| A15 | **Phrases complètes à l'écran** : un texte reprend toute la phrase dite, sans sauter de mots (« des réductions qui vont de 5 à 15 % ») | Vidéo 4, v02 frame 234 | Michaël |
+| A16 | **Niveau d'exigence de Michaël** : il regarde à l'image près (frame isolée, texte en avance de quelques images, mots manquants). Avant chaque livraison : planche image par image autour de chaque raccord et de chaque entrée de texte, pas seulement des images clés | Bilan des retours v01 et v02 de la vidéo 4 | Michaël |
 
 ## 2. Leçons
 
@@ -82,3 +86,4 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-10-01 | Passe d'ensemble du skill après la vidéo 2 : principe « le rythme avant tout » ; étape 1 (rush définitif ? étalonné et synchronisé) ; étape 2 réécrite en 6 temps (transcription, choix, texte relu, chasse aux hésitations, règles de coupe, découpage) ; contrôle des sous-titres sur la tenue ; corriger la cause et chercher le même défaut ailleurs ; résumé du style à jour (un seul jaune, ombre si tenue claire, affiche, défilé) ; pièges « échanges avec Michaël » ; modèles `choix.json` et `PLAN_MONTAGE.md` ; règles de cohérence des illustrations | Question de Michaël : « est-ce qu'il ne faudrait pas remettre à jour le skill ? » |
 | 2026-11-02 | `accroche.bas`, `partenaire` avec `nom` et `precision` sans étiquette image, `motion.departImage`, `photo` au format `1:1`, clic d'entrée des assets sur fond blanc, pas de clic entre séquences collées, masque étendu au groupe en cours ; `controler_export.py` : `-fps_mode` | Vidéo 3 |
 | 2026-11-03 | DA rouge : séquence `texte` avec `lignes: []` (illustration plein cadre sans texte, sous-titres de base gardés) | Vidéo 4, retours sur la v01 |
+| 2026-11-03 | Bords des séquences recalés sur la coupe voisine (< 5 images) ; texte en escalier calé mot par mot sur la voix ; script `detecter_frames_isolees.py` | Vidéo 4, retours à l'image sur la v02 |

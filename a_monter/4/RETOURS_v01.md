@@ -17,3 +17,7 @@
 6. Nouvelle affiche entière (4:5 natif, aucun recadrage), sans étiquette (elle montre déjà lieu et date), sous-titres masqués pendant l'affiche.
 
 Règles proposées : journal A10 (jamais recadrer une affiche), A11 (illustration dès le mot qui ouvre l'idée), A12 (texte en escalier facultatif).
+
+## v02 → v03
+
+Retours à l'image : `retours/Fakhomies_v02.json` / `.md` (tous faits dans `export/Fakhomies_v03.mp4`). Règles proposées : journal A13 à A16 (A10 corrigée : étiquette lieu / date gardée sous l'affiche entière).

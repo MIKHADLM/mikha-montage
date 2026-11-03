@@ -176,7 +176,11 @@ const SequenceRouge: React.FC<{
             />
           )}
           {s.lignes.length > 0 && (
-            <TexteEscalier lignes={s.lignes} surRouge={!pleinCadre} />
+            <TexteEscalier
+              lignes={s.lignes}
+              surRouge={!pleinCadre}
+              apparitions={s.apparitions}
+            />
           )}
         </>
       )}

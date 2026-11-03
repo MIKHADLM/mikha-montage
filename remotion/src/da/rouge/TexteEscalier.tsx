@@ -20,7 +20,8 @@ export type LigneEscalier = { texte: string; largeur: number; gauche: number };
 export const TexteEscalier: React.FC<{
   lignes: LigneEscalier[];
   surRouge: boolean;
-}> = ({ lignes, surRouge }) => {
+  apparitions?: number[]; // image d'apparition de chaque mot (calée sur la voix), sinon cadence fixe
+}> = ({ lignes, surRouge, apparitions }) => {
   const f = useCurrentFrame();
   const P = POLICES_ROUGE.escalier;
   const disposition = useMemo(() => {
@@ -74,8 +75,9 @@ export const TexteEscalier: React.FC<{
                 opacity={interpolate(
                   f,
                   [
-                    A.debut + rang * A.intervalle,
-                    A.debut + rang * A.intervalle + A.duree,
+                    apparitions?.[rang] ?? A.debut + rang * A.intervalle,
+                    (apparitions?.[rang] ?? A.debut + rang * A.intervalle) +
+                      A.duree,
                   ],
                   [0, 1],
                   {

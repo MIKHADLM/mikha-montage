@@ -236,9 +236,45 @@ export const creerMontage = ({
     });
   // Début de chaque photo d'une séquence produit ou photo : sur son ancre `de`, ou à intervalles
   // égaux (photo, `regulier`)
+  // Bords d'une séquence recalés sur la coupe voisine s'ils en sont à moins de 5 images : sinon il
+  // reste une ou deux images isolées du face cam (frame parasite, vidéo 4, retour sur la v02)
+  const SNAP = 5;
+  const caler = (t: number, cote: "debut" | "fin") => {
+    for (const g of segments) {
+      const a0 = g.montageDebutFrame;
+      const a1 = a0 + g.dureeFrames;
+      if (cote === "debut" && t >= a0 && t - a0 < SNAP) return a0;
+      if (cote === "fin" && t <= a1 && a1 - t < SNAP && t > a0) return a1;
+    }
+    return t;
+  };
+  // Texte en escalier : chaque mot apparaît quand il est dit (mot reconnu correspondant dans la
+  // séquence, accents et ponctuation ignorés) ; un mot non dit suit le précédent de 4 images
+  const cle = (t: string) =>
+    t
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[’]/g, "'")
+      .replace(/[^a-z0-9%']/g, "");
+  const apparitionsEscalier = (texte: string[], d: number, f: number) => {
+    const dits = mots.filter((m) => m.debut >= d - 2 && m.debut < f);
+    let k = 0;
+    let prec = -4;
+    return texte.map((w) => {
+      // un mot dit sauté au plus : un mot écrit qui n'est pas dit ne va pas chercher un homonyme plus loin
+      const j = dits.findIndex(
+        (m, i) => i >= k && i <= k + 1 && cle(m.texte) === cle(w),
+      );
+      const t = j >= 0 ? Math.max(0, dits[j].debut - d) : prec + 4;
+      if (j >= 0) k = j + 1;
+      prec = t;
+      return t;
+    });
+  };
   const sequences = (plan.sequences ?? []).map((s) => {
-    const d = debut(s.de);
-    const f = fin(s.a);
+    const d = caler(debut(s.de), "debut");
+    const f = caler(fin(s.a), "fin");
     const photos = s.type === "produit" || s.type === "photo" ? s.photos : [];
     const regulier = s.type === "photo" && s.regulier;
     const debutsPhotos = photos.map((p, k) =>
@@ -248,7 +284,15 @@ export const creerMontage = ({
           ? debut(p.de)
           : d,
     );
-    return { ...s, debut: d, fin: f, debutsPhotos };
+    const apparitions =
+      s.type === "texte"
+        ? apparitionsEscalier(
+            s.lignes.flatMap((l) => l.texte.split(" ")),
+            d,
+            f,
+          )
+        : [];
+    return { ...s, debut: d, fin: f, debutsPhotos, apparitions };
   });
   // Un groupe masqué ne doit pas réapparaître juste après le masque (son maintien le dépasse)
   const masques = (plan.sousTitres?.masquer ?? []).map(([a, b]) => {

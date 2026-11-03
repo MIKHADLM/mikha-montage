@@ -129,6 +129,9 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
 ### 5. Contrôles
 - `python3 scripts/finaliser_son.py <export>` (pic vrai à -1 dBTP au plus), puis
   `python3 scripts/controler_export.py <export> --rush <rush> --image-montage <n> --image-rush <m>`.
+- `python3 scripts/detecter_frames_isolees.py <export>` : aucune image isolée aux raccords (« frame
+  parasite », vidéo 4). Michaël regarde à l'image près : regarder aussi image par image chaque raccord
+  et chaque entrée de texte.
 - Regarder une planche d'images clés : hook, entrée et sortie de chaque séquence, sous-titres dans la
   zone sûre, fin.
 - `a_monter/<N>/CHECKLIST_VALIDATION.md` (copie de `CHARTE/09_templates/`) : case cochée = vérifié

@@ -58,6 +58,7 @@ a_monter/<N>/
 | Rendu | `npx remotion render Montage ../a_monter/<N>/export/<nom>_v01.mp4 --props='{"video":"v<N>"}'` | MP4 1080×1920, 30 i/s, H.264, BT.709 |
 | Son final | `python3 scripts/finaliser_son.py <export>` | pic vrai ramené à -1 dBTP si besoin (image copiée) |
 | Contrôle | `python3 scripts/controler_export.py <export> --rush ../a_monter/<N>/<rush> --image-montage <n> --image-rush <m>` | OK / À CORRIGER par critère |
+| Raccords | `python3 scripts/detecter_frames_isolees.py <export>` | OK, ou les images isolées entre deux coupes (frame parasite) |
 | Téléphone | `python3 scripts/apercu_telephone.py <export>` | copie de moins de 29 Mo |
 
 `--image-montage` / `--image-rush` : le même instant dans le montage et dans le rush, sur un plan à
@@ -147,7 +148,7 @@ Composants : `remotion/src/da/rouge/` ; valeurs : `src/da/rouge/tokens.ts`.
 | `accroche.titre` | Titre en bloc (composition 06) : `avant` = 1 à 3 petits mots blancs empilés à gauche, `cle` = mot clé rouge, `apres` = dernier mot rouge sur toute la largeur (facultatif). Remplace `accroche.lignes` |
 | `accroche.derriere` | `false` : tout le titre passe devant (repli si le détourage rate : tête trop haute, plan trop serré) ; sinon les mots rouges passent derrière le sujet, avec un contour permanent de 3 px |
 | `cadrages` | Le cadrage de la phrase d'accroche est ignoré : le hook reste à × 1 |
-| séquence `texte` | `de`, `a`, `lignes: [{ texte, largeur, gauche }]` (largeur et retrait en part de 1080), `image?` / `video?` + `videoDebutS?` (plein cadre). Texte en escalier, Chivo 800 minuscule serrée, mot par mot ; noir flouté sur le fond rouge, rouge sur une image. Sans caractères spéciaux. Sous-titres masqués pendant la séquence ; `lignes: []` = image ou vidéo seule, sous-titres de base gardés (vidéo 4) |
+| séquence `texte` | `de`, `a`, `lignes: [{ texte, largeur, gauche }]` (largeur et retrait en part de 1080), `image?` / `video?` + `videoDebutS?` (plein cadre). Texte en escalier, Chivo 800 minuscule serrée, mot par mot ; noir flouté sur le fond rouge, rouge sur une image. Sans caractères spéciaux. Sous-titres masqués pendant la séquence ; `lignes: []` = image ou vidéo seule, sous-titres de base gardés (vidéo 4). Chaque mot apparaît quand il est dit (mot reconnu correspondant, accents ignorés) : écrire les mots dits |
 
 Rendu, tout seul :
 - **Hook :** le bloc monte morceau par morceau (un toutes les 4 images, en 12) ; images détourées
@@ -171,6 +172,8 @@ Rendu, tout seul :
   « personal use only » dans le fichier, licence commerciale [À COMPLÉTER]** (`DA MIKHA/polices/README.md`).
 
 ## 6. Ce que la composition `Montage` fait toute seule
+
+- Bords de séquence : recalés sur la coupe voisine s'ils en sont à moins de 5 images (pas d'image isolée).
 
 - Face cam : segments du découpage, fondu de 2 images sur la voix à chaque coupe, cadrage par phrase.
 - Hook : titre d'accroche pendant toute la phrase `accroche.phrase` ; riser dont la fin tombe avec

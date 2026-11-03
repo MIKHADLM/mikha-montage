@@ -6,40 +6,50 @@
       "frame": 104,
       "temps": 3.483,
       "texte": "Une frame parasite",
-      "fait": false,
-      "cree_le": "2026-11-03T20:45:09"
+      "fait": true,
+      "cree_le": "2026-11-03T20:45:09",
+      "fait_dans": "Fakhomies_v03",
+      "reponse": "bord de l'illustration recalé sur la coupe (image de face cam isolée supprimée)"
     },
     {
       "id": "mw15qwbjhg9y",
       "frame": 154,
       "temps": 5.15,
       "texte": "Faire apparaître le texte en même temps que la voix il faut que le texte et la voix soit synchronisé",
-      "fait": false,
-      "cree_le": "2026-11-03T20:46:04"
+      "fait": true,
+      "cree_le": "2026-11-03T20:46:04",
+      "fait_dans": "Fakhomies_v03",
+      "reponse": "texte rouge calé mot par mot sur la voix"
     },
     {
       "id": "mw15srwe0ist",
       "frame": 234,
       "temps": 7.817,
       "texte": "Au final, pour cette image d’illustration, elle doit commencer à « des reductions » Attention à ne pas oublier le « qui vont de » \nLa phrase complète, c’est « des réductions qui vont 5 à 15 % »",
-      "fait": false,
-      "cree_le": "2026-11-03T20:47:31"
+      "fait": true,
+      "cree_le": "2026-11-03T20:47:31",
+      "fait_dans": "Fakhomies_v03",
+      "reponse": "carton dès « des réductions », texte « des réductions / qui vont de / 5 à 15% »"
     },
     {
       "id": "mw15trcqxil0",
       "frame": 442,
       "temps": 14.75,
       "texte": "Tu dois écrire « de développer l’univers de la marque » en rouge au-dessus du match illustration",
-      "fait": false,
-      "cree_le": "2026-11-03T20:48:17"
+      "fait": true,
+      "cree_le": "2026-11-03T20:48:17",
+      "fait_dans": "Fakhomies_v03",
+      "reponse": "« de développer / l'univers / de la marque » en rouge"
     },
     {
       "id": "mw15uiu2jttd",
       "frame": 772,
       "temps": 25.75,
       "texte": "Il faut que tu rajoutes le lieu et la date comme tu l’avais fait pour la v1",
-      "fait": false,
-      "cree_le": "2026-11-03T20:48:53"
+      "fait": true,
+      "cree_le": "2026-11-03T20:48:53",
+      "fait_dans": "Fakhomies_v03",
+      "reponse": "étiquette SAMEDI 7 NOVEMBRE / Condition Publique, Roubaix remise, affiche entière"
     }
   ],
   "envoye_le": "2026-11-03T21:49:03"
