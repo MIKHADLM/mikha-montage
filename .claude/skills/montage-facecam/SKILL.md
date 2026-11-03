@@ -141,6 +141,10 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
   `exporter_sous_titres.py` (SRT par groupe ou mot à mot).
 
 ### 7. Retours et apprentissage
+- Les retours de Michaël peuvent arriver via l'outil retours-video (`http://100.68.33.13:8780`, voir
+  `~/agent/README.md`) : lire `a_monter/<N>/retours/<version>.md` / `.json` ; chaque retour est lié à une
+  frame (et parfois une plage `fin_frame` ou un point x,y relatif) de cette version ; après application,
+  cocher `fait` (mettre `"fait": true` dans le json, ou case dans l'outil).
 - Chaque retour : noté mot pour mot dans `a_monter/<N>/RETOURS.md` (modèle `modeles/RETOURS.md`),
   appliqué dans une nouvelle version (`_v02`…). Ses repères de temps sont ceux de la version qu'il a
   regardée : garder une copie du découpage de chaque version (`export/<nom>_vNN_decoupage.json`).
