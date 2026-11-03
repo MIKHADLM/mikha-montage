@@ -41,7 +41,7 @@ Bruitages disponibles dans `06_assets/sfx/` (mesures : voir le README de ce doss
 | Fichier | Nature | Quand l'utiliser (VF) | Niveau dans le mix |
 |---|---|---|---|
 | `sfx_riser_riser_v01.mp3` | Montée (riser), 5,3 s | Pendant le **hook** : la fin du son tombe avec la fin de la phrase d'accroche (on garde la fin du fichier, 2,4 s dans la VF) | Fichier sans gain |
-| `sfx_clic_click_v01.wav` | Clic | ≈ 0,1 s avant la **sortie de chaque séquence sur fond blanc**, et avant l'**entrée** d'une séquence qui ne commence pas par une photo (séquence partenaire) | Fichier sans gain |
+| `sfx_clic_click_v01.wav` | Clic | ≈ 0,1 s avant la **sortie de chaque séquence sur fond blanc**, et avant l'**entrée** d'une séquence qui ne commence pas par une photo (séquence partenaire) | **-4 dB** sous le niveau du fichier (validé par Michaël le 2026-11-03, vidéo 4 : « baisse un peu le son des clics ») ; réglable par vidéo avec `sons.clicDb` |
 | `sfx_declencheur_shutter-click_v01.mp3` | Déclencheur d'appareil photo | ≈ 0,15 s avant **chaque photo** qui apparaît, et à l'arrivée du téléphone (son inclus dans l'asset site mobile) | Fichier sans gain ; **-6 dB dans un défilé** de photos (`03_motion/MOTION.md`, section 2), pour que la rafale de flashs ne domine pas (confirmé par Michaël le 2026-10-01, vidéo 2) |
 | `sfx_whoosh_cinematic_v01.mp3` | Whoosh cinématique | Pas utilisé dans la VF : à définir | à définir |
 | `sfx_whoosh_large-sub_v01.mp3` | Whoosh long avec grave | Pas utilisé dans la VF : à définir | à définir |

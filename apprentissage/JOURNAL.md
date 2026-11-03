@@ -23,7 +23,7 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | A14 | **Texte à l'écran calé sur la voix au mot près** : chaque mot du texte en escalier apparaît quand il est dit (fait par le montage) ; un mot écrit doit donc être le mot dit (« sorti », pas « sortie ») | Vidéo 4, v02 frame 154 | **Validée par Michaël le 2026-11-03 (« Ok règles ») : règle définitive (checklist, skill)** |
 | A15 | **Phrases complètes à l'écran** : un texte reprend toute la phrase dite, sans sauter de mots (« des réductions qui vont de 5 à 15 % ») | Vidéo 4, v02 frame 234 | **Validée par Michaël le 2026-11-03 (« Ok règles ») : règle définitive (checklist, skill)** |
 | A16 | **Niveau d'exigence de Michaël** : il regarde à l'image près (frame isolée, texte en avance de quelques images, mots manquants). Avant chaque livraison : planche image par image autour de chaque raccord et de chaque entrée de texte, pas seulement des images clés | Bilan des retours v01 et v02 de la vidéo 4 | **Validée par Michaël le 2026-11-03 (« Ok règles ») : règle définitive (checklist, skill)** |
-| A17 | Clics à -4 dB sous le niveau du fichier par défaut (`plan.json` : `"sons": { "clicDb": -4 }`, appliqué à la vidéo 4 seulement pour l'instant) | Vidéo 4, retour v03 « baisse un peu le son des clics » | Michaël |
+| A17 | Clics à -4 dB sous le niveau du fichier, par défaut pour toutes les vidéos (`SON.md`, code : `sons.clicDb`, -4 par défaut) | Vidéo 4, retour v03 « baisse un peu le son des clics » | **Validée par Michaël le 2026-11-03 : règle définitive (SON.md, code)** |
 
 ## 2. Leçons
 
@@ -68,6 +68,8 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-11-02 | 3 | ffmpeg récent n'accepte plus `-vsync` | Contrôle de la couleur en erreur | Outil `controler_export.py` | appliquée |
 
 ## 3. Bilan par vidéo
+
+- **Vidéo 4 (Fakhomies, DA rouge pilote)** : validée en v04 le 2026-11-03 après 3 tours (v01 placement des illustrations, v02 retours à l'image, v03 clics). Leçon : Michaël juge à l'image près (règles A13 à A16).
 
 | Vidéo | Versions | Retours de Michaël | Règles acceptées | Remarque |
 |---|---|---|---|---|
