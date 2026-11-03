@@ -1,0 +1,152 @@
+{
+ "_comment": "Vidéo 4 (Fakhomies), DA rouge, v01 sans validation préalable du plan (demande de Michaël). Musique provisoire (voir choix.json). Plan de couloir non utilisé.",
+ "da": "rouge",
+ "accroche": {
+  "phrase": "P1",
+  "titre": {
+   "avant": [
+    "ON A",
+    "SORTI UN"
+   ],
+   "cle": "JEU",
+   "apres": "MEHOMIES"
+  },
+  "derriere": false,
+  "_note": "derriere: false : la tête est haute dans le cadre, MEHOMIES passait presque entièrement derrière les cheveux (illisible). Repli prévu par la DA."
+ },
+ "cadrages": [
+  {
+   "phrase": "P2",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P3",
+   "zoom": [
+    1,
+    1.15
+   ]
+  },
+  {
+   "phrase": "P4",
+   "zoom": 1.08
+  },
+  {
+   "phrase": "P5",
+   "zoom": 1.18
+  },
+  {
+   "phrase": "P7",
+   "zoom": 1.1
+  },
+  {
+   "phrase": "P8",
+   "zoom": [
+    1,
+    1.12
+   ]
+  },
+  {
+   "phrase": "P9",
+   "zoom": 1.23
+  }
+ ],
+ "sequences": [
+  {
+   "type": "texte",
+   "de": "P2:de",
+   "a": "P2",
+   "video": "videos/fakhomies-plan-1-entrepot.mp4",
+   "videoDebutS": 0,
+   "lignes": [
+    {
+     "texte": "fakhomies",
+     "largeur": 0.8,
+     "gauche": 0.08
+    },
+    {
+     "texte": "un jeu d'horreur",
+     "largeur": 0.62,
+     "gauche": 0.3
+    }
+   ]
+  },
+  {
+   "type": "texte",
+   "de": "P3:des",
+   "a": "P3:15%",
+   "video": "videos/fakhomies-plan-2-carton.mp4",
+   "videoDebutS": 0,
+   "lignes": [
+    {
+     "texte": "des réductions",
+     "largeur": 0.72,
+     "gauche": 0.08
+    },
+    {
+     "texte": "de 5 à 15%",
+     "largeur": 0.6,
+     "gauche": 0.32
+    }
+   ]
+  },
+  {
+   "type": "texte",
+   "de": "P4:l'univers",
+   "a": "P4",
+   "video": "videos/fakhomies-plan-6-salle-de-controle.mp4",
+   "videoDebutS": 0,
+   "lignes": [
+    {
+     "texte": "l'univers",
+     "largeur": 0.7,
+     "gauche": 0.08
+    },
+    {
+     "texte": "de la marque",
+     "largeur": 0.62,
+     "gauche": 0.3
+    }
+   ]
+  },
+  {
+   "type": "texte",
+   "de": "P6:jusqu'à",
+   "a": "P6:semaine",
+   "video": "videos/fakhomies-plan-8-visage.mp4",
+   "videoDebutS": 0,
+   "lignes": [
+    {
+     "texte": "jusqu'à la fin",
+     "largeur": 0.72,
+     "gauche": 0.08
+    },
+    {
+     "texte": "de semaine",
+     "largeur": 0.6,
+     "gauche": 0.32
+    }
+   ]
+  },
+  {
+   "type": "photo",
+   "de": "P8:à",
+   "a": "P8:samedi",
+   "format": "1:1",
+   "photos": [
+    {
+     "fichier": "images/affiche-space-jam-instagram.png",
+     "nom": "SAMEDI 7 NOVEMBRE",
+     "precision": "Condition Publique, Roubaix"
+    }
+   ]
+  }
+ ],
+ "sousTitres": {
+  "masquer": [
+   [
+    "P8:à",
+    "P8:samedi"
+   ]
+  ]
+ }
+}

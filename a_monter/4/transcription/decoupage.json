@@ -1,0 +1,322 @@
+{
+ "_comment": "Découpage du rush : segments gardés, dans l'ordre du montage. Généré par remotion/scripts/decouper_transcription.py depuis choix.json. Temps en secondes et en images.",
+ "source": "a_monter/4/Fakhomies_Mikha_sdr.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "dureeMontageS": 29.167,
+ "dureeMontageFrames": 875,
+ "phrases": [
+  {
+   "id": "P1",
+   "montageDebutS": 0.0,
+   "montageFinS": 3.467,
+   "texte": "On a sorti un jeu vidéo à l'occasion du restock de certains de nos t-shirts Mehomies."
+  },
+  {
+   "id": "P2",
+   "montageDebutS": 3.467,
+   "montageFinS": 6.5,
+   "texte": "Il s'agit de Fakhomies, donc un jeu d'horreur qui est sorti le jour d'Halloween."
+  },
+  {
+   "id": "P3",
+   "montageDebutS": 6.5,
+   "montageFinS": 11.667,
+   "texte": "Et l'idée, c'est de vous faire gagner des réductions qui vont de 5 à 15% et ça de manière un peu originale. Donc avec un jeu."
+  },
+  {
+   "id": "P4",
+   "montageDebutS": 11.667,
+   "montageFinS": 15.867,
+   "texte": "C'est le genre d'événement qu'on va continuer à faire via Mehomies parce que ça nous permet de développer l'univers de la marque."
+  },
+  {
+   "id": "P5",
+   "montageDebutS": 15.867,
+   "montageFinS": 18.1,
+   "texte": "Et perso, moi j'ai pris beaucoup de plaisir à le développer."
+  },
+  {
+   "id": "P6",
+   "montageDebutS": 18.1,
+   "montageFinS": 21.3,
+   "texte": "Pour ceux qui veulent y jouer, vous avez encore jusqu'à la fin de semaine pour gagner votre bon d'achat."
+  },
+  {
+   "id": "P7",
+   "montageDebutS": 21.3,
+   "montageFinS": 22.433,
+   "texte": "Il est valable sur tout le site."
+  },
+  {
+   "id": "P8",
+   "montageDebutS": 22.433,
+   "montageFinS": 28.067,
+   "texte": "Et pour toutes les personnes dans la région lilloise, je vous donne rendez-vous à la Condition Publique de Roubaix. Ce samedi. Pour le pop-up."
+  },
+  {
+   "id": "P9",
+   "montageDebutS": 28.067,
+   "montageFinS": 29.167,
+   "texte": "Merci, let's go."
+  }
+ ],
+ "segments": [
+  {
+   "id": 1,
+   "phrase": "P1",
+   "morceau": "c00",
+   "paroleDebutS": 0.66,
+   "paroleFinS": 3.96,
+   "sourceDebutFrame": 17,
+   "sourceFinFrame": 121,
+   "dureeFrames": 104,
+   "montageDebutFrame": 0,
+   "sourceDebutS": 0.567,
+   "sourceFinS": 4.033,
+   "montageDebutS": 0.0,
+   "montageFinS": 3.467
+  },
+  {
+   "id": 2,
+   "phrase": "P2",
+   "morceau": "c03",
+   "paroleDebutS": 15.2,
+   "paroleFinS": 18.08,
+   "sourceDebutFrame": 454,
+   "sourceFinFrame": 545,
+   "dureeFrames": 91,
+   "montageDebutFrame": 104,
+   "sourceDebutS": 15.133,
+   "sourceFinS": 18.167,
+   "montageDebutS": 3.467,
+   "montageFinS": 6.5
+  },
+  {
+   "id": 3,
+   "phrase": "P3",
+   "morceau": "c06",
+   "paroleDebutS": 27.52,
+   "paroleFinS": 31.72,
+   "sourceDebutFrame": 823,
+   "sourceFinFrame": 954,
+   "dureeFrames": 131,
+   "montageDebutFrame": 195,
+   "sourceDebutS": 27.433,
+   "sourceFinS": 31.8,
+   "montageDebutS": 6.5,
+   "montageFinS": 10.867
+  },
+  {
+   "id": 4,
+   "phrase": "P3",
+   "morceau": "c07",
+   "paroleDebutS": 32.54,
+   "paroleFinS": 33.18,
+   "sourceDebutFrame": 974,
+   "sourceFinFrame": 998,
+   "dureeFrames": 24,
+   "montageDebutFrame": 326,
+   "sourceDebutS": 32.467,
+   "sourceFinS": 33.267,
+   "montageDebutS": 10.867,
+   "montageFinS": 11.667
+  },
+  {
+   "id": 5,
+   "phrase": "P4",
+   "morceau": "c11",
+   "paroleDebutS": 63.42,
+   "paroleFinS": 67.46,
+   "sourceDebutFrame": 1900,
+   "sourceFinFrame": 2026,
+   "dureeFrames": 126,
+   "montageDebutFrame": 350,
+   "sourceDebutS": 63.333,
+   "sourceFinS": 67.533,
+   "montageDebutS": 11.667,
+   "montageFinS": 15.867
+  },
+  {
+   "id": 6,
+   "phrase": "P5",
+   "morceau": "c12",
+   "paroleDebutS": 67.82,
+   "paroleFinS": 69.88,
+   "sourceDebutFrame": 2032,
+   "sourceFinFrame": 2099,
+   "dureeFrames": 67,
+   "montageDebutFrame": 476,
+   "sourceDebutS": 67.733,
+   "sourceFinS": 69.967,
+   "montageDebutS": 15.867,
+   "montageFinS": 18.1
+  },
+  {
+   "id": 7,
+   "phrase": "P6",
+   "morceau": "c14",
+   "paroleDebutS": 78.22,
+   "paroleFinS": 81.24,
+   "sourceDebutFrame": 2344,
+   "sourceFinFrame": 2440,
+   "dureeFrames": 96,
+   "montageDebutFrame": 543,
+   "sourceDebutS": 78.133,
+   "sourceFinS": 81.333,
+   "montageDebutS": 18.1,
+   "montageFinS": 21.3
+  },
+  {
+   "id": 8,
+   "phrase": "P7",
+   "morceau": "c15",
+   "paroleDebutS": 82.18,
+   "paroleFinS": 83.16,
+   "sourceDebutFrame": 2463,
+   "sourceFinFrame": 2497,
+   "dureeFrames": 34,
+   "montageDebutFrame": 639,
+   "sourceDebutS": 82.1,
+   "sourceFinS": 83.233,
+   "montageDebutS": 21.3,
+   "montageFinS": 22.433
+  },
+  {
+   "id": 9,
+   "phrase": "P8",
+   "morceau": "c17b",
+   "paroleDebutS": 99.52,
+   "paroleFinS": 103.58,
+   "sourceDebutFrame": 2983,
+   "sourceFinFrame": 3110,
+   "dureeFrames": 127,
+   "montageDebutFrame": 673,
+   "sourceDebutS": 99.433,
+   "sourceFinS": 103.667,
+   "montageDebutS": 22.433,
+   "montageFinS": 26.667
+  },
+  {
+   "id": 10,
+   "phrase": "P8",
+   "morceau": "c18",
+   "paroleDebutS": 103.94,
+   "paroleFinS": 104.52,
+   "sourceDebutFrame": 3116,
+   "sourceFinFrame": 3138,
+   "dureeFrames": 22,
+   "montageDebutFrame": 800,
+   "sourceDebutS": 103.867,
+   "sourceFinS": 104.6,
+   "montageDebutS": 26.667,
+   "montageFinS": 27.4
+  },
+  {
+   "id": 11,
+   "phrase": "P8",
+   "morceau": "c19",
+   "paroleDebutS": 105.1,
+   "paroleFinS": 105.62,
+   "sourceDebutFrame": 3151,
+   "sourceFinFrame": 3171,
+   "dureeFrames": 20,
+   "montageDebutFrame": 822,
+   "sourceDebutS": 105.033,
+   "sourceFinS": 105.7,
+   "montageDebutS": 27.4,
+   "montageFinS": 28.067
+  },
+  {
+   "id": 12,
+   "phrase": "P9",
+   "morceau": "c20",
+   "paroleDebutS": 106.04,
+   "paroleFinS": 107.0,
+   "sourceDebutFrame": 3179,
+   "sourceFinFrame": 3212,
+   "dureeFrames": 33,
+   "montageDebutFrame": 842,
+   "sourceDebutS": 105.967,
+   "sourceFinS": 107.067,
+   "montageDebutS": 28.067,
+   "montageFinS": 29.167
+  }
+ ],
+ "coupes": [
+  {
+   "morceau": "c01",
+   "sourceDebutS": 5.86,
+   "sourceFinS": 7.5,
+   "texte": "Il s'agit de Fake Homies qui est sorti",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c02",
+   "sourceDebutS": 11.74,
+   "sourceFinS": 14.18,
+   "texte": "Il s'agit de Fake Homies, donc un jeu d'horreur fait pour Halloween.",
+   "raison": "reprise"
+  },
+  {
+   "morceau": "c04",
+   "sourceDebutS": 20.02,
+   "sourceFinS": 21.26,
+   "texte": "Et l'idée, c'était de vous proposer",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c05",
+   "sourceDebutS": 23.16,
+   "sourceFinS": 26.82,
+   "texte": "Et l'idée, c'était de vous faire gagner des...",
+   "raison": "reprise"
+  },
+  {
+   "morceau": "c08",
+   "sourceDebutS": 40.02,
+   "sourceFinS": 44.72,
+   "texte": "C'est le genre d'événement qu'on va continuer à développer avec Mehomiz parce que...",
+   "raison": "reprise"
+  },
+  {
+   "morceau": "c09",
+   "sourceDebutS": 45.68,
+   "sourceFinS": 48.6,
+   "texte": "C'est le genre d'événement qu'on va continuer à développer avec Mehomys parce que ça nous permet",
+   "raison": "reprise"
+  },
+  {
+   "morceau": "c10",
+   "sourceDebutS": 56.88,
+   "sourceFinS": 59.9,
+   "texte": "C'est le genre d'événement qu'on va continuer à développer avec Mehomis parce que",
+   "raison": "reprise"
+  },
+  {
+   "morceau": "c13",
+   "sourceDebutS": 74.28,
+   "sourceFinS": 77.28,
+   "texte": "Pour ceux qui veulent y jouer, vous avez encore jusqu'à la fin de semaine pour gagner.",
+   "raison": "reprise (fin incomplète)"
+  },
+  {
+   "morceau": "c16",
+   "sourceDebutS": 93.78,
+   "sourceFinS": 96.9,
+   "texte": "Et pour toutes les personnes dans la région lillois, je vous donne rendez-vous.",
+   "raison": "reprise (lillois)"
+  },
+  {
+   "morceau": "c17-debut",
+   "sourceDebutS": 98.02,
+   "sourceFinS": 99.52,
+   "texte": "Et pour toutes les personnes dans la région lilloise, je vous donne rendez-vous à la condition publique de Roubaix.",
+   "raison": "1re prise (et pour toutes les personnes dans la région)"
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "_comment": "Vidéo 4 (Fakhomies), v01 montée sans validation préalable du plan (demande de Michaël). Rush : Fakhomies_Mikha_sdr.mp4 (HLG converti en SDR comme la vidéo 3, hlg_vers_sdr_lut.py .5 .8).",
+ "rush": "Fakhomies_Mikha_sdr.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": { "seuilDb": -40, "dureeMinS": 0.3 },
+ "sousTitres": { "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf", "taillePx": 75, "largeurMaxPx": 880, "motsMax": 3 },
+ "phrases": [
+  { "id": "P1", "morceaux": ["c00"], "texte": "On a sorti un jeu vidéo à l'occasion du restock de certains de nos t-shirts Mehomies." },
+  { "id": "P2", "morceaux": ["c03"], "texte": "Il s'agit de Fakhomies[2], donc un jeu d'horreur qui est sorti le jour d'Halloween." },
+  { "id": "P3", "morceaux": ["c06", "c07"], "texte": "Et l'idée, c'est de vous faire gagner des réductions qui vont de 5 à 15% et ça de manière un peu originale. Donc avec un jeu." },
+  { "id": "P4", "morceaux": ["c11"], "texte": "C'est le genre d'événement qu'on va continuer à faire via Mehomies parce que ça nous permet de développer l'univers de la marque." },
+  { "id": "P5", "morceaux": ["c12"], "texte": "Et perso, moi j'ai pris beaucoup de plaisir à le développer." },
+  { "id": "P6", "morceaux": ["c14"], "texte": "Pour ceux qui veulent y jouer, vous avez encore jusqu'à la fin de semaine pour gagner votre bon d'achat." },
+  { "id": "P7", "morceaux": ["c15"], "texte": "Il est valable sur tout le site." },
+  { "id": "P8", "morceaux": ["c17b", "c18", "c19"], "texte": "Et pour toutes les personnes dans la région lilloise, je vous donne rendez-vous à la Condition Publique de Roubaix. Ce samedi. Pour le pop-up." },
+  { "id": "P9", "morceaux": ["c20"], "texte": "Merci, let's go." }
+ ],
+ "coupes": {
+  "c01": "faux départ", "c02": "reprise", "c04": "faux départ", "c05": "reprise",
+  "c08": "reprise", "c09": "reprise", "c10": "reprise", "c13": "reprise (fin incomplète)", "c16": "reprise (lillois)", "c17-debut": "1re prise (et pour toutes les personnes dans la région)"
+ },
+ "musique": { "fichier": "assets/musique_test_generee.wav", "debutDansLaPisteS": 0.0, "niveauLufs": -22.7,
+  "_note": "Musique PROVISOIRE (celle du test de la vidéo 3) : aucune musique livrée." }
+}

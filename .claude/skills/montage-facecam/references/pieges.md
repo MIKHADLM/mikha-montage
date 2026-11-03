@@ -88,3 +88,4 @@
 - Capture de site : Chrome sans tête a besoin d'un dossier temporaire autorisé (`TMPDIR`).
 - Rendu Remotion : les images JPEG intermédiaires suffisent pour la vidéo ; PNG pour un asset
   transparent.
+- **Bundle Remotion cassé sur un Mac** (vidéo 4) : `src/da/TitreDerriere.tsx` importe `public/da/popup/placement.json`, ignoré par Git, donc absent hors du Mac où il a été fait ; toutes les compositions échouent (« Module not found »). Parade : un bouche-trou local (non suivi) ou recréer le fichier.
