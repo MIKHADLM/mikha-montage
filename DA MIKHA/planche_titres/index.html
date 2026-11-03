@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planche titres</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --noir: #0d0d0d; --blanc: #fff; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 32px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 640px; margin-top: 6px; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .carte .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; container-type: inline-size; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+
+  /* Cadre 1080×1920 mis à l'échelle de la vignette */
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; transform: scale(calc(100cqw / 1080px)); overflow: hidden; }
+  .bg { position: absolute; inset: 0; background: url(img/facecam.png) center/cover; }
+  .sujet { position: absolute; inset: 0; background: url(img/sujet.png) center/cover; }
+  .ref { position: absolute; inset: 0; background: url(img/reference.png) center/cover; }
+  .ligne { display: block; white-space: nowrap; line-height: .96; }
+  .anton { font-family: Anton; text-transform: uppercase; }
+  .thunder { font-family: Thunder; text-transform: uppercase; }
+  .grain::after { content: ""; position: absolute; inset: -50%; pointer-events: none; opacity: .32; mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .ombre { text-shadow: 0 6px 18px rgba(0,0,0,.35); }
+
+  /* 01 bandeaux */
+  .v1 .bloc { position: absolute; left: 120px; right: 120px; top: 230px; }
+  .v1 .tag { display: inline-block; background: var(--noir); color: var(--blanc); padding: 14px 22px 8px; font-size: 92px; }
+  .v1 .pave { background: var(--rouge); color: var(--blanc); padding: 22px 26px 14px; margin-top: 10px; }
+
+  /* 02 derrière la tête */
+  .v2 .geant { position: absolute; left: 50px; right: 50px; top: 450px; color: var(--rouge); }
+  .v2 .petit { position: absolute; left: 0; right: 0; top: 350px; text-align: center; color: var(--rouge); font-size: 84px; letter-spacing: 16px; }
+
+  /* 03 écho */
+  .v3 .bloc { position: absolute; left: 110px; right: 110px; top: 150px; }
+  .v3 .contour { color: transparent; -webkit-text-stroke: 4px var(--rouge); }
+  .v3 .plein { color: var(--rouge); }
+  .v3 .haut { color: var(--rouge); font-size: 80px; letter-spacing: 6px; margin-bottom: 14px; }
+
+  /* 04 panneau affiche */
+  .v4 .bg { top: 860px; }
+  .v4 .panneau { position: absolute; left: 0; right: 0; top: 0; height: 880px; background: var(--rouge); overflow: hidden; }
+  .v4 .bloc { position: absolute; left: 230px; right: 230px; top: 170px; color: var(--noir); filter: blur(2.2px); }
+
+  /* 05 échelle extrême */
+  .v5 .petit { position: absolute; left: 0; right: 0; top: 210px; text-align: center; color: var(--blanc); font-size: 54px; letter-spacing: 22px; }
+  .v5 .bloc { position: absolute; left: 70px; right: 70px; top: 280px; color: var(--blanc); }
+  .v5 .bloc .r { color: var(--rouge); }
+
+  /* 06 étiquette */
+  .v6 .tag { position: absolute; left: 190px; top: 250px; background: var(--blanc); color: var(--noir); padding: 16px 26px 8px; font-size: 96px; transform: rotate(3deg); box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+  .v6 .pave { position: absolute; left: 130px; right: 130px; top: 370px; background: var(--rouge); color: var(--noir); padding: 26px 30px 16px; transform: rotate(-3deg); box-shadow: 0 14px 40px rgba(0,0,0,.3); }
+
+  /* 07 surligneur */
+  .v7 .bloc { position: absolute; left: 150px; right: 150px; top: 200px; color: var(--blanc); }
+  .v7 .surl { position: relative; display: block; }
+  .v7 .surl::before { content: ""; position: absolute; left: -24px; right: -24px; top: 38%; bottom: 4%; background: var(--rouge); z-index: -1; }
+  .v7 .bloc { isolation: isolate; }
+
+  /* 08 sur le t-shirt */
+  .v8 .bloc { position: absolute; left: 90px; right: 90px; top: 1380px; color: var(--blanc); }
+  .v8 .bloc .r { color: var(--rouge); }
+</style>
+</head>
+<body>
+<header>
+  <h1>TITRE D'ACCROCHE · PISTES</h1>
+  <p>Huit pistes sur la même phrase, avec Anton, Thunder et le rouge <code>#F12F19</code>. Ce sont des images fixes ; les animations d'apparition viendront après.</p>
+</header>
+
+<main class="grille">
+
+  <article class="carte">
+    <div class="vignette"><div class="frame"><div class="ref"></div></div></div>
+    <h2><span>00</span>Ton titre actuel</h2>
+    <p>Le point de départ : Anton blanc et rouge, avec une ombre portée.</p>
+  </article>
+
+  <article class="carte v1">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="bloc">
+        <span class="tag thunder">On sort un</span>
+        <div class="pave"><span class="ligne anton fit">Jeu vidéo</span></div>
+      </div>
+    </div></div>
+    <h2><span>01</span>Bandeaux</h2>
+    <p>Le texte est posé sur des pavés pleins. Il reste lisible sur le plafond blanc sans aucune ombre.</p>
+  </article>
+
+  <article class="carte v2">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder">On sort un</div>
+      <div class="geant">
+        <span class="ligne anton fit">Jeu vidéo</span>
+      </div>
+      <div class="sujet"></div>
+    </div></div>
+    <h2><span>02</span>Derrière la tête</h2>
+    <p>Le mot clé en géant passe derrière toi grâce au détourage. Il faut un détourage image par image sur la vidéo.</p>
+  </article>
+
+  <article class="carte v3">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="bloc">
+        <span class="ligne thunder haut">On sort un</span>
+        <span class="ligne anton fit contour">Jeu vidéo</span>
+        <span class="ligne anton fit contour">Jeu vidéo</span>
+        <span class="ligne anton fit plein">Jeu vidéo</span>
+      </div>
+    </div></div>
+    <h2><span>03</span>Écho</h2>
+    <p>Le mot est répété en contour, puis plein. Ça se prête bien à une animation en cascade.</p>
+  </article>
+
+  <article class="carte v4">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="panneau grain">
+        <div class="bloc">
+          <span class="ligne anton fit">On sort</span>
+          <span class="ligne anton fit">un jeu</span>
+          <span class="ligne anton fit">vidéo</span>
+        </div>
+      </div>
+    </div></div>
+    <h2><span>04</span>Panneau affiche</h2>
+    <p>Le haut de l'écran reprend ton panneau rouge grainé avec le texte noir flou. On fait le lien direct avec « SUR TOUT LE SITE ».</p>
+  </article>
+
+  <article class="carte v5">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder ombre">On sort un</div>
+      <div class="bloc ombre">
+        <span class="ligne thunder fit"><span class="r">Jeu</span> vidéo</span>
+      </div>
+    </div></div>
+    <h2><span>05</span>Échelle extrême</h2>
+    <p>Tout en Thunder : une petite ligne très espacée, puis un mot très haut. C'est plus élégant que le bloc Anton.</p>
+  </article>
+
+  <article class="carte v6">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="pave"><span class="ligne anton fit">Jeu vidéo</span></div>
+      <div class="tag thunder">On sort un</div>
+    </div></div>
+    <h2><span>06</span>Étiquettes collées</h2>
+    <p>Deux étiquettes légèrement de travers, comme collées à la main. Ton plus brut, plus « fait maison ».</p>
+  </article>
+
+  <article class="carte v7">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="bloc ombre">
+        <span class="ligne anton fit">On sort</span>
+        <span class="ligne anton fit">un jeu</span>
+        <span class="ligne anton fit surl">vidéo</span>
+      </div>
+    </div></div>
+    <h2><span>07</span>Surligneur</h2>
+    <p>Ton bloc aligné en 3 lignes, avec un trait rouge sous le mot clé. Le trait peut se dessiner à l'apparition.</p>
+  </article>
+
+  <article class="carte v8">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="bloc">
+        <span class="ligne anton fit">On sort un</span>
+        <span class="ligne anton fit r">Jeu vidéo</span>
+      </div>
+    </div></div>
+    <h2><span>08</span>Sur le t-shirt</h2>
+    <p>Le titre descend dans la zone sombre de l'image. Il reste lisible sans ombre et ton visage est dégagé. À vérifier avec l'interface d'Instagram.</p>
+  </article>
+
+</main>
+
+<script>
+  // Met chaque cadre 1080×1920 à l'échelle de sa vignette
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v => {
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`;
+  });
+  echelle(); addEventListener('resize', echelle);
+  // Ajuste chaque ligne .fit à la largeur de son bloc : bords alignés
+  document.fonts.ready.then(() => {
+    document.querySelectorAll('.fit').forEach(el => {
+      const cible = el.parentElement.clientWidth - (parseFloat(getComputedStyle(el.parentElement).paddingLeft) + parseFloat(getComputedStyle(el.parentElement).paddingRight));
+      el.style.fontSize = '100px';
+      el.style.display = 'inline-block';
+      el.style.fontSize = (100 * cible / el.scrollWidth) + 'px';
+      el.style.display = 'block';
+    });
+  });
+</script>
+</body>
+</html>

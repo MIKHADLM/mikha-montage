@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compositions de mots</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  @font-face { font-family: "Chivo"; src: local("Chivo"), url(fonts/Chivo-VariableFont_wght.ttf); font-weight: 100 900; }
+  :root { --rouge: #F12F19; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 32px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 700px; margin-top: 6px; }
+  .refs { display: flex; gap: 12px; margin-top: 16px; }
+  .refs img { height: 160px; border-radius: 4px; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .carte .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .frame > * { position: absolute; inset: 0; }
+  .fond, .sujet { background: center/cover; }
+  .sujet.ombre { filter: drop-shadow(0 0 36px rgba(0,0,0,.45)); }
+  svg text { white-space: pre; }
+  .panneau { background: var(--rouge); }
+  .panneau::after { content: ""; position: absolute; inset: 0; opacity: .32; mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+</style>
+</head>
+<body>
+<header>
+  <h1>COMPOSITION DES MOTS · TESTS</h1>
+  <p>Deux idées tirées de tes références. <b>Imbrication</b> : des mots de tailles très différentes qui s'emboîtent, les petits mots logés dans les creux des grands. <b>Escalier</b> : une grotesque grasse en minuscules, très serrée, des lignes décalées, des crochets et une note de bas de page. Les textes viennent de tes vidéos (affiche FAKHOMIES, transcription de la vidéo 2).</p>
+  <div class="refs"><img src="img/ref_composition_culture.jpg" alt=""><img src="img/ref_composition_escalier.jpg" alt=""></div>
+</header>
+<main class="grille" id="grille"></main>
+
+<script>
+  // Polices : grotesque proche de la référence 2 (Helvetica Neue, système), Chivo pour comparer
+  const HN = '"Helvetica Neue"', CH = 'Chivo', AN = 'Anton', TH = 'Thunder';
+  const CREME = '#F8F2B4', BLANC = '#fff', NOIR = '#111', ROUGE = '#F12F19';
+  const PHOTO = { fond: 'img/facecam.png', sujet: 'img/sujet.png' };
+  const RUSH = { fond: 'img/popup.png', sujet: 'img/popup_sujet.png' };
+  const PANNEAU = { panneau: true }; // ton panneau rouge grainé (Panneau_2)
+
+  // Chaque mot : texte, x, ligne de base y, corps s, police f, graisse w, couleur c,
+  // approche ls (em), ancre a, derriere (sous le sujet), contour (redessiné devant le sujet)
+  const CARTES = [
+    { nom: 'Imbrication', img: PHOTO, ombre: false,
+      txt: "Comme « create culture not content » : un mot géant, et les petits mots logés dans ses creux. Grotesque medium, en noir sur le plafond clair.",
+      mots: [
+        { t: 'on sort un', x: 330, y: 318, s: 74, f: HN, w: 500, c: NOIR },
+        { t: 'jeu', x: 150, y: 520, s: 330, f: HN, w: 500, c: NOIR },
+        { t: 'vidéo', x: 640, y: 440, s: 120, f: HN, w: 500, c: NOIR },
+      ] },
+    { nom: 'Imbrication derrière la tête', img: RUSH, ombre: true,
+      txt: "On garde la piste 02 : le mot géant passe derrière toi, avec son contour, et les petits mots s'emboîtent devant. En blanc, comme la référence.",
+      mots: [
+        { t: 'le premier', x: 120, y: 300, s: 78, f: HN, w: 500, c: BLANC },
+        { t: 'pop-up', x: 85, y: 520, s: 255, f: HN, w: 500, c: BLANC, derriere: true, contour: true },
+        { t: 'de ma marque', x: 560, y: 600, s: 58, f: HN, w: 500, c: BLANC },
+        { t: 'mehomies', x: 555, y: 690, s: 96, f: HN, w: 500, c: BLANC },
+      ] },
+    { nom: 'Escalier long, sur panneau', img: PANNEAU, zoom: 1.3,
+      txt: "Trop long pour le face cam (il te couvrait le visage), donc sur ton panneau rouge grainé. Une phrase entière de la vidéo 2, en escalier : chaque ligne change de taille et de calage, le passage clé est entre crochets, l'info pratique en note de bas de page.",
+      mots: [
+        { t: 'actuellement', x: 150, y: 710, s: 96, f: HN, w: 700, c: CREME, ls: -.05 },
+        { t: 'je prépare', x: 330, y: 800, s: 96, f: HN, w: 700, c: CREME, ls: -.05 },
+        { t: '[ le premier', x: 210, y: 880, s: 72, f: HN, w: 700, c: CREME, ls: -.04 },
+        { t: 'pop-up ]', x: 330, y: 1035, s: 170, f: HN, w: 700, c: CREME, ls: -.06 },
+        { t: 'de ma marque', x: 150, y: 1125, s: 80, f: HN, w: 700, c: CREME, ls: -.05 },
+        { t: 'mehomies', x: 175, y: 1280, s: 170, f: HN, w: 700, c: CREME, ls: -.06 },
+        { t: '*', x: 870, y: 1210, s: 90, f: HN, w: 700, c: CREME },
+        { t: '* le 7 novembre à la Condition Publique de Roubaix', x: 540, y: 1640, s: 36, f: HN, w: 500, c: CREME, a: 'middle', ls: -.02 },
+      ] },
+    { nom: 'Escalier court', img: PHOTO, ombre: false,
+      txt: "La même grammaire sur un titre court, en rouge sur le plafond clair. La note de bas de page reprend l'info de ton affiche.",
+      mots: [
+        { t: 'on sort', x: 170, y: 330, s: 150, f: HN, w: 700, c: ROUGE, ls: -.06 },
+        { t: '[ un', x: 668, y: 330, s: 76, f: HN, w: 700, c: ROUGE, ls: -.04 },
+        { t: 'jeu vidéo ]', x: 150, y: 470, s: 160, f: HN, w: 700, c: ROUGE, ls: -.06 },
+        { t: '*', x: 925, y: 400, s: 90, f: HN, w: 700, c: ROUGE },
+        { t: '* en exclusivité sur le site mehomies, le 31 octobre 2026', x: 540, y: 1700, s: 34, f: HN, w: 500, c: BLANC, a: 'middle', ls: -.02 },
+      ] },
+    { nom: 'Imbrication en Anton', img: PHOTO, ombre: true,
+      txt: "La composition de la référence 1 avec ta typo actuelle : Anton en capitales pour le mot géant, Thunder pour les petits mots, qui viennent se caler dans les creux.",
+      mots: [
+        { t: 'ON SORT UN', x: 150, y: 290, s: 90, f: TH, w: 400, c: ROUGE, ls: .08 },
+        { t: 'JEU', x: 140, y: 560, s: 300, f: AN, w: 400, c: ROUGE, derriere: true, contour: true },
+        { t: 'VIDÉO', x: 560, y: 560, s: 168, f: AN, w: 400, c: ROUGE },
+      ] },
+    { nom: 'Escalier en Chivo, sur panneau', img: PANNEAU, zoom: 1.3,
+      txt: "La carte « Escalier long » en Chivo ExtraBold, une police déjà installée sur ton Mac : une autre grotesque, plus ronde, pour comparer avec Helvetica.",
+      mots: [
+        { t: 'actuellement', x: 150, y: 710, s: 92, f: CH, w: 800, c: CREME, ls: -.05 },
+        { t: 'je prépare', x: 330, y: 800, s: 92, f: CH, w: 800, c: CREME, ls: -.05 },
+        { t: '[ le premier', x: 210, y: 880, s: 68, f: CH, w: 800, c: CREME, ls: -.04 },
+        { t: 'pop-up ]', x: 330, y: 1035, s: 160, f: CH, w: 800, c: CREME, ls: -.06 },
+        { t: 'de ma marque', x: 150, y: 1125, s: 76, f: CH, w: 800, c: CREME, ls: -.05 },
+        { t: 'mehomies', x: 175, y: 1280, s: 160, f: CH, w: 800, c: CREME, ls: -.06 },
+        { t: '*', x: 870, y: 1210, s: 90, f: CH, w: 800, c: CREME },
+        { t: '* le 7 novembre à la Condition Publique de Roubaix', x: 540, y: 1640, s: 36, f: CH, w: 500, c: CREME, a: 'middle', ls: -.02 },
+      ] },
+  ];
+
+  const svgTexte = (m, contour) => `<text x="${m.x}" y="${m.y}" font-family='${m.f}' font-weight="${m.w}" font-size="${m.s}"
+      letter-spacing="${(m.ls || 0) * m.s}" text-anchor="${m.a || 'start'}"
+      ${contour ? `fill="none" stroke="${m.c}" stroke-width="3"` : `fill="${m.c}"`}>${m.t}</text>`;
+  const calque = (mots, filtre) => `<svg viewBox="0 0 1080 1920" width="1080" height="1920" ${filtre ? 'style="filter:drop-shadow(0 4px 16px rgba(0,0,0,.45))"' : ''}>${mots}</svg>`;
+
+  const grille = document.getElementById('grille');
+  CARTES.forEach((c, n) => {
+    const derriere = c.mots.filter(m => m.derriere).map(m => svgTexte(m)).join('');
+    // zoom : agrandit le bloc autour du centre de la page ; la note de bas de page (centrée) reste fixe
+    const bloc = (html) => c.zoom ? `<g transform="translate(540 960) scale(${c.zoom}) translate(-540 -995)">${html}</g>` : html;
+    const devant = bloc(c.mots.filter(m => !m.derriere && m.a !== 'middle').map(m => svgTexte(m)).join(''))
+      + c.mots.filter(m => !m.derriere && m.a === 'middle').map(m => svgTexte(m)).join('')
+      + c.mots.filter(m => m.contour).map(m => svgTexte(m, true)).join('');
+    const a = document.createElement('article'); a.className = 'carte';
+    a.innerHTML = `
+      <div class="vignette"><div class="frame">
+        ${c.img.panneau ? '<div class="panneau"></div>' : `<div class="fond" style="background-image:url(${c.img.fond})"></div>`}
+        ${derriere ? calque(derriere, c.ombreTexte) : ''}
+        ${derriere ? `<div class="sujet${c.ombre ? ' ombre' : ''}" style="background-image:url(${c.img.sujet})"></div>` : ''}
+        ${calque(devant, c.ombreTexte)}
+      </div></div>
+      <h2><span>${String(n + 1).padStart(2, '0')}</span>${c.nom}</h2>
+      <p>${c.txt}</p>`;
+    grille.append(a);
+  });
+
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v => {
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`;
+  });
+  echelle(); addEventListener('resize', echelle);
+</script>
+</body>
+</html>

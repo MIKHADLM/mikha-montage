@@ -3,6 +3,13 @@ rendu Remotion (texte relu, groupes de 1 à 3 mots).
 
 Usage : python3 scripts/exporter_sous_titres.py ../a_monter/1
 
+DA rouge ("da": "rouge" dans plan.json) : les groupes sont les groupes longs du rendu
+(src/da/rouge/SousTitresRouge.tsx, grouperLong) : groupes du découpage fusionnés en lignes de 690 px
+au plus en Thunder 70 px, coupés à chaque phrase et à chaque pause de plus de 0,3 s, lignes
+équilibrées, jamais finies sur un petit mot de liaison ; maintien 15 images, sans durée minimale.
+Les largeurs sont mesurées avec Pillow (le rendu les mesure dans le navigateur) : un groupe au ras de
+la limite peut, rarement, se couper autrement.
+
 Lit <dossier vidéo>/transcription/decoupage.json et mots_montage.json, place les mots sur la timeline
 montée comme src/lib/montage.ts, et écrit dans <dossier vidéo>/export/ :
   <nom>_sous-titres_mot-a-mot.srt   chaque mot apparaît quand il est prononcé, à la suite des mots
@@ -27,6 +34,8 @@ import unicodedata
 from pathlib import Path
 
 VIDEO = Path(sys.argv[1]).resolve()
+PLAN = json.loads((VIDEO / "plan.json").read_text()) if (VIDEO / "plan.json").exists() else {}
+ROUGE = PLAN.get("da") == "rouge"
 dec = json.loads((VIDEO / "transcription" / "decoupage.json").read_text())
 mots = json.loads((VIDEO / "transcription" / "mots_montage.json").read_text())["mots"]
 fps = dec["fps"]
@@ -58,6 +67,50 @@ for m in mots:
         {"texte": m["texte"], "debut": vers_montage(m["debutS"], m["segment"]),
          "fin": vers_montage(m["finS"], m["segment"])})
 groupes = list(par_groupe.values())
+
+if ROUGE:
+    from PIL import ImageFont
+
+    # Mêmes valeurs que src/da/rouge/tokens.ts (SOUS_TITRES_ROUGE, MOTS_DE_LIAISON)
+    POLICE = ImageFont.truetype(str(Path(__file__).resolve().parents[2] / "DA MIKHA" / "polices" / "Thunder-LC.ttf"), 70)
+    LARGEUR, PAUSE, MAINTIEN, DUREE_MIN = 690, 0.3 * fps, 15, 1
+    LIAISON = {"le", "la", "les", "de", "du", "des", "à", "au", "aux", "un", "une", "ma", "mon", "ta", "ton",
+               "sa", "son", "ses", "mes", "tes", "et", "ou", "que", "qui", "en", "pour", "par", "sur", "avec",
+               "dans", "se", "je", "tu", "on"}
+    phrase_de = {}
+    for m in mots:
+        phrase_de.setdefault(m["groupe"], m["phrase"])
+    cles = list(par_groupe.keys())
+    morceaux = []
+    for cle, g in zip(cles, groupes):
+        if morceaux:
+            cle_prec, prec = morceaux[-1][-1]
+            if phrase_de[cle_prec] == phrase_de[cle] and g[0]["debut"] - prec[-1]["fin"] <= PAUSE:
+                morceaux[-1].append((cle, g))
+                continue
+        morceaux.append([(cle, g)])
+    longs = []
+    for gs in morceaux:
+        gs = [g for _, g in gs]
+        cout, depuis = [0.0], [0]
+        for i in range(1, len(gs) + 1):
+            cout.append(math.inf)
+            depuis.append(0)
+            for k in range(i - 1, -1, -1):
+                ms = [m for g in gs[k:i] for m in g]
+                w = POLICE.getlength(" ".join(m["texte"] for m in ms))
+                if w > LARGEUR and i - k > 1:
+                    break
+                fin_liaison = i < len(gs) and ms[-1]["texte"].lower() in LIAISON
+                c = cout[k] + (LARGEUR - w) ** 2 + (1e7 if fin_liaison else 0)
+                if c < cout[i]:
+                    cout[i], depuis[i] = c, k
+        lignes, i = [], len(gs)
+        while i > 0:
+            lignes.insert(0, [m for g in gs[depuis[i]:i] for m in g])
+            i = depuis[i]
+        longs += lignes
+    groupes = longs
 
 entrees = {"mot-a-mot": [], "par-groupe": []}
 fin_precedent = 0

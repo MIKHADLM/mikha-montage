@@ -5,6 +5,8 @@ import type { GroupeSousTitres } from "../charte/SousTitres";
 import type { IdMotion } from "../motion/registre";
 import type { CouleurTexte } from "../charte/tokens";
 import { SOUS_TITRES } from "../charte/tokens";
+import type { LigneEscalier } from "../da/rouge/TexteEscalier";
+import type { TitreBloc } from "../da/rouge/TitreBlocAccroche";
 
 type Segment = {
   id: number;
@@ -34,12 +36,21 @@ export type MotsMontage = { mots: MotSource[] };
 export type Ancre = string;
 
 export type Plan = {
+  // Direction artistique : "charte" (jaune et Gilroy, par défaut : vidéos 1 à 3) ou "rouge" (nouvelle
+  // DA, DA MIKHA/DECISIONS.md : titre en bloc derrière la tête, Thunder, fond rouge grainé)
+  da?: "charte" | "rouge";
   // Absente : pas de titre d'accroche, ni riser, ni musique (version « sous-titres seuls », vidéo 3)
   accroche?: {
     phrase: string;
-    lignes: { texte: string; couleur: CouleurTexte }[];
+    // charte : lignes du titre
+    lignes?: { texte: string; couleur: CouleurTexte }[];
     // bas du titre en px, si le visage est là où le titre tombe d'habitude (vidéo 3)
     bas?: number;
+    // DA rouge : titre en bloc (petits mots empilés, mot clé, dernier mot)
+    titre?: TitreBloc;
+    // DA rouge : false = titre entier devant le sujet (repli si le détourage échoue) ; sinon les mots
+    // rouges passent derrière le sujet détouré (public/<video>/sujet, preparer_medias.py)
+    derriere?: boolean;
   };
   cadrages?: { phrase: string; zoom: number | [number, number] }[];
   sequences?: SequencePlan[];
@@ -102,6 +113,17 @@ export type SequencePlan =
         nom: string;
         precision?: string;
       }[];
+    }
+  // DA rouge seulement : texte en escalier, sur le fond rouge (noir flouté) ou sur une image ou une
+  // vidéo plein cadre (rouge) ; à utiliser de temps en temps
+  | {
+      type: "texte";
+      de: Ancre;
+      a: Ancre;
+      lignes: LigneEscalier[];
+      image?: string;
+      video?: string;
+      videoDebutS?: number;
     };
 
 export type DonneesMontage = {
@@ -184,18 +206,33 @@ export const creerMontage = ({
     groupes.push({ debut: d, fin: f, texte: ms.map((m) => m.texte).join(" ") });
   });
 
+  const rouge = plan.da === "rouge";
+  if (plan.accroche && rouge && !plan.accroche.titre) {
+    throw new Error("DA rouge : accroche.titre manque dans plan.json");
+  }
+  if (plan.accroche && !rouge && !plan.accroche.lignes) {
+    throw new Error("Charte : accroche.lignes manque dans plan.json");
+  }
+  if (!rouge && plan.sequences?.some((s) => s.type === "texte")) {
+    throw new Error("Séquence « texte » : seulement en DA rouge");
+  }
   const accroche = plan.accroche
     ? {
         debut: debutPhrase(plan.accroche.phrase),
         fin: finPhrase(plan.accroche.phrase),
-        lignes: plan.accroche.lignes,
+        lignes: plan.accroche.lignes ?? [],
         bas: plan.accroche.bas,
+        titre: plan.accroche.titre,
+        derriere: plan.accroche.derriere !== false,
       }
     : null;
-  const cadrages = (plan.cadrages ?? []).map((c) => {
-    const [de, a] = typeof c.zoom === "number" ? [c.zoom, c.zoom] : c.zoom;
-    return { debut: debutPhrase(c.phrase), fin: finPhrase(c.phrase), de, a };
-  });
+  // DA rouge : pas de zoom pendant le hook (la tête ne doit pas monter vers le titre)
+  const cadrages = (plan.cadrages ?? [])
+    .filter((c) => !(rouge && c.phrase === plan.accroche?.phrase))
+    .map((c) => {
+      const [de, a] = typeof c.zoom === "number" ? [c.zoom, c.zoom] : c.zoom;
+      return { debut: debutPhrase(c.phrase), fin: finPhrase(c.phrase), de, a };
+    });
   // Début de chaque photo d'une séquence produit ou photo : sur son ancre `de`, ou à intervalles
   // égaux (photo, `regulier`)
   const sequences = (plan.sequences ?? []).map((s) => {
@@ -220,6 +257,7 @@ export const creerMontage = ({
   });
 
   return {
+    rouge,
     fps,
     duree,
     segments,

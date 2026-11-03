@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petite ligne du titre</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 32px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 720px; margin-top: 6px; }
+  .commandes { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  button { font: inherit; font-size: 14px; color: var(--texte); background: #262626; border: 1px solid #333; border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; background: #000; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .frame > * { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  .sujet { filter: drop-shadow(0 0 36px rgba(0,0,0,.45)); }
+  .ombre { filter: drop-shadow(0 6px 18px rgba(0,0,0,.55)); }
+  .zone { display: none; pointer-events: none; }
+  body.voir-zone .zone { display: block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PETITE LIGNE DU TITRE</h1>
+  <p>Même image (vidéo 2, au milieu du titre), même mot géant : seule la petite ligne change. Le bouton « Zone sûre » montre le cadre TikTok/Reels : la version actuelle est au-dessus, sous les éléments de l'application.</p>
+  <div class="commandes"><button id="zone" aria-pressed="false">Zone sûre</button></div>
+</header>
+<main class="grille" id="grille"></main>
+
+<script>
+  // Placement du mot géant (remotion/public/da/popup/placement.json)
+  const P = { mot: 'MEHOMIES', taille: 234, ligneDeBase: 421, hautCapitales: 219, x0: 85, largeur: 933 };
+  const PETIT = 'LE PREMIER POP-UP';
+  const ROUGE = '#F12F19';
+
+  const thunder = (x, y, taille, esp, couleur, extra = '') =>
+    `<text x="${x + esp / 2}" y="${y}" text-anchor="middle" font-family="Thunder" font-size="${taille}" letter-spacing="${esp}" fill="${couleur}" ${extra}>${PETIT}</text>`;
+
+  // Bandeau ajusté à la largeur de la ligne (mesurée une fois la police chargée)
+  function largeurPetit(taille, esp) {
+    const c = document.createElement('canvas').getContext('2d');
+    c.font = `${taille}px Thunder`; c.letterSpacing = `${esp}px`;
+    const m = c.measureText(PETIT);
+    return { l: m.width, haut: m.actualBoundingBoxAscent };
+  }
+  function bandeau(cy, taille, esp, fond, texte, marge = 26) {
+    const { l, haut } = largeurPetit(taille, esp);
+    const h = haut + 2 * marge, w = l + 2 * marge + 10;
+    return `<rect x="${540 - w / 2}" y="${cy - h / 2}" width="${w}" height="${h}" fill="${fond}"/>` +
+      thunder(540, cy + haut / 2, taille, esp, texte);
+  }
+
+  const VARIANTES = [
+    { nom: 'Actuelle', txt: 'Rouge, 84 px, au-dessus du mot. Hors zone sûre (ligne de base à 185 px) et fine sur un fond clair.',
+      devant: () => thunder(540, P.hautCapitales - 34, 84, 16, ROUGE) },
+    { nom: 'Blanche, posée dans le mot', txt: 'Plus grande (110 px), blanche avec ombre, à cheval sur le bas du mot géant, devant toi. Le rouge des lettres et les cheveux lui servent de fond.',
+      devant: () => `<g class="ombre">${thunder(540, P.ligneDeBase - 12, 110, 12, '#fff')}</g>` },
+    { nom: 'Bandeau noir', txt: 'Blanche sur un bandeau noir posé sur la ligne de base du mot. Lisible sur n\'importe quel fond, et ça reste dans le noir, blanc, rouge de la DA.',
+      devant: () => `<g class="ombre">${bandeau(P.ligneDeBase, 76, 12, '#0d0d0d', '#fff', 22)}</g>` },
+    { nom: 'Bandeau blanc', txt: 'Même idée en étiquette blanche, texte noir. Plus « affiche », mais plus lourd sur le front.',
+      devant: () => `<g class="ombre">${bandeau(P.ligneDeBase, 76, 12, '#fff', '#0d0d0d', 22)}</g>` },
+    { nom: 'Bandeau rouge, sous le mot', txt: 'Texte blanc sur le rouge de la DA, juste sous le mot géant, en haut du front. Le mot et sa ligne forment un seul bloc.',
+      devant: () => `<g class="ombre">${bandeau(P.ligneDeBase + 70, 70, 12, ROUGE, '#fff', 20)}</g>` },
+    { nom: 'Blanche, sous le mot', txt: 'Sans bandeau : blanche, 96 px, avec ombre, sous le mot, sur les cheveux et le front.',
+      devant: () => `<g class="ombre">${thunder(540, P.ligneDeBase + 100, 96, 14, '#fff')}</g>` },
+  ];
+
+  const motGeant = (trait) =>
+    `<text x="${P.x0}" y="${P.ligneDeBase}" font-family="Anton" font-size="${P.taille}" textLength="${P.largeur}" lengthAdjust="spacing" ` +
+    (trait ? `fill="none" stroke="${ROUGE}" stroke-width="3"` : `fill="${ROUGE}"`) + `>${P.mot}</text>`;
+  const svg = (contenu, cls = '') => `<svg class="${cls}" viewBox="0 0 1080 1920">${contenu}</svg>`;
+
+  document.fonts.load('84px Thunder').then(() => document.fonts.load('100px Anton')).then(() => {
+    const grille = document.getElementById('grille');
+    VARIANTES.forEach((v, n) => {
+      const a = document.createElement('article'); a.className = 'carte';
+      a.innerHTML = `
+        <div class="vignette"><div class="frame">
+          <img src="img/titre_fond.png" alt="">
+          <div class="ombre">${svg(motGeant(false))}</div>
+          <img class="sujet" src="img/titre_sujet.png" alt="">
+          ${svg(motGeant(true))}
+          ${svg(v.devant())}
+          ${svg(`<polygon points="85,219 1018,219 1018,1088 885,1088 885,1475 499,1475 499,1365 85,1365" fill="none" stroke="#3cf" stroke-width="4" stroke-dasharray="16 10"/>`, 'zone')}
+        </div></div>
+        <h2><span>${String(n + 1).padStart(2, '0')}</span>${v.nom}</h2>
+        <p>${v.txt}</p>`;
+      grille.appendChild(a);
+    });
+    const echelle = () => document.querySelectorAll('.vignette').forEach(v =>
+      v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`);
+    echelle(); addEventListener('resize', echelle);
+  });
+  document.getElementById('zone').onclick = (e) =>
+    e.target.setAttribute('aria-pressed', document.body.classList.toggle('voir-zone'));
+</script>
+</body>
+</html>

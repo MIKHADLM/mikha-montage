@@ -185,6 +185,11 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
   chaque sortie du fond blanc et à l'entrée d'une séquence partenaire ; déclencheur avant chaque
   photo, -6 dB dans un défilé ; pic vrai -1 dBTP au plus.
 
+**DA rouge, en test (2026-11-03) :** titre en bloc derrière la tête, sous-titres Thunder mot par mot,
+fond rouge grainé. Seulement pour une vidéo dont `plan.json` porte `"da": "rouge"`, sur demande de
+Michaël (vidéo pilote) ; tant qu'il ne l'a pas validée, la charte jaune reste la règle. Format et
+rendu : `references/chaine-technique.md` (§5, « DA rouge ») ; décisions : `DA MIKHA/DECISIONS.md`.
+
 ## Motion design
 
 Quand un propos gagnerait à être illustré et qu'aucune photo ne convient : chercher d'abord dans

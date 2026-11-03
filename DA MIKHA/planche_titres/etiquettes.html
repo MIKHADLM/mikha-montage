@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Étiquettes sur fond rouge</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 24px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 760px; margin-top: 6px; }
+  .commandes { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  button { font: inherit; font-size: 14px; color: var(--texte); background: #262626; border: 1px solid #333; border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .frame > * { position: absolute; }
+  .panneau { inset: 0; background: var(--rouge); }
+  .panneau::after { content: ""; position: absolute; inset: 0; opacity: .32; mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  /* Élément posé : entier, angles droits, légère ombre portée (comme l'affiche du template) */
+  .element { object-fit: cover; box-shadow: 0 14px 34px rgba(0,0,0,.35); }
+  .calque { inset: 0; width: 1080px; height: 1920px; }
+  .ombre { filter: drop-shadow(0 4px 10px rgba(0,0,0,.45)); }
+  .st { left: 195px; right: 195px; bottom: 580px; text-align: center; font-family: Thunder; font-size: 70px; line-height: 1;
+        color: #fff; filter: drop-shadow(0 4px 10px rgba(0,0,0,.6)); display: none; }
+  body.voir-st .st { display: block; }
+  .zone { display: none; pointer-events: none; }
+  body.voir-zone .zone { display: block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ÉTIQUETTES SUR FOND ROUGE</h1>
+  <p>Les deux étiquettes de la vidéo 2 (l'affiche du 7 novembre, le t-shirt Mehomies Flag) sur le fond rouge grainé : élément entier, angles droits, légère ombre portée. Six styles pour le nom et la précision. Les sous-titres sont masqués quand l'étiquette montre les mots dits ; le bouton « Sous-titres » montre où ils tombent sinon.</p>
+  <div class="commandes">
+    <button data-cas="0" aria-pressed="true">Affiche 16:9</button>
+    <button data-cas="1" aria-pressed="false">Produit 4:5</button>
+    <button id="st" aria-pressed="false">Sous-titres</button>
+    <button id="zone" aria-pressed="false">Zone sûre</button>
+  </div>
+</header>
+<main class="grille" id="grille"></main>
+
+<script>
+  const ROUGE = '#F12F19', BLANC = '#fff', NOIR = '#0d0d0d';
+  // Les deux cas de la vidéo 2 (a_monter/2/plan.json). Le produit n'a pas de précision dans le
+  // plan : « MEHOMIES » comme dans la charte (proposition)
+  const CAS = [
+    { img: 'img/couverture-space-jam-7.png', x: 96, y: 430, l: 888, h: 500,
+      nom: '7 NOVEMBRE', precision: 'Condition Publique, Roubaix', st: 'Ça va se passer le 7 novembre' },
+    // Photo 4:5 réduite (690 → 610 px) pour que l'étiquette finisse au-dessus de 1180 px
+    { img: 'img/mehomies-boxy-t.png', x: 235, y: 230, l: 610, h: 762,
+      nom: 'MEHOMIES FLAG', precision: 'Mehomies', st: 'avec le Mehomies Flag' },
+  ];
+  const ECART = 56; // entre le bas de l'élément et le haut de l'étiquette (proposition)
+  // L'élément et son étiquette finissent au-dessus de 1180 px : la place de deux lignes de
+  // sous-titres (bas à 1340), pour qu'ils ne se touchent jamais (proposition)
+  const BAS_ELEMENTS = 1180;
+
+  const ctx = document.createElement('canvas').getContext('2d');
+  function encre(t, police, taille, esp = 0) {
+    ctx.font = `${taille}px ${police}`; ctx.letterSpacing = `${esp}px`;
+    const m = ctx.measureText(t);
+    return { g: m.actualBoundingBoxLeft, l: m.actualBoundingBoxLeft + m.actualBoundingBoxRight, haut: m.actualBoundingBoxAscent,
+             bas: m.actualBoundingBoxDescent };
+  }
+  const tailleCap = (t, police, h) => 100 * h / encre(t, police, 100).haut;
+  const tailleLargeur = (t, police, l) => 100 * l / encre(t, police, 100).l;
+  // Texte SVG : x du bord d'encre (gauche, centre ou droite), y de la ligne de base
+  function txt(t, police, taille, x, base, couleur, cale = 'centre', esp = 0) {
+    const e = encre(t, police, taille, esp);
+    const x0 = cale === 'gauche' ? x : cale === 'droite' ? x - e.l : x - e.l / 2;
+    return `<text x="${x0 + e.g}" y="${base}" font-family="${police}" font-size="${taille}" letter-spacing="${esp}" fill="${couleur}" style="white-space:pre">${t}</text>`;
+  }
+
+  // Chaque style renvoie le SVG de l'étiquette, sous l'élément c (haut de l'étiquette : y0)
+  const STYLES = [
+    { nom: 'Noir, comme le panneau', txt: 'Nom en Anton noir, précision en Thunder noir, centrés. Le noir de ton panneau « SUR TOUT LE SITE » : rien ne se perd dans le rouge.',
+      faire: (c, y0) => {
+        const cn = 62, cp = 44, tn = tailleCap(c.nom, 'Anton', cn), tp = tailleCap(c.precision, 'Thunder', cp);
+        return txt(c.nom, 'Anton', tn, 540, y0 + cn, NOIR) + txt(c.precision, 'Thunder', tp, 540, y0 + cn + 22 + cp, NOIR, 'centre', 3);
+      } },
+    { nom: 'Blanc', txt: 'Mêmes tailles en blanc, avec une ombre légère, comme les sous-titres.',
+      ombre: true,
+      faire: (c, y0) => {
+        const cn = 62, cp = 44, tn = tailleCap(c.nom, 'Anton', cn), tp = tailleCap(c.precision, 'Thunder', cp);
+        return txt(c.nom, 'Anton', tn, 540, y0 + cn, BLANC) + txt(c.precision, 'Thunder', tp, 540, y0 + cn + 22 + cp, BLANC, 'centre', 3);
+      } },
+    { nom: 'Nom blanc, précision noire', txt: 'Le nom ressort en blanc, la précision passe en retrait en noir.',
+      faire: (c, y0) => {
+        const cn = 62, cp = 44, tn = tailleCap(c.nom, 'Anton', cn), tp = tailleCap(c.precision, 'Thunder', cp);
+        return `<g class="ombre">${txt(c.nom, 'Anton', tn, 540, y0 + cn, BLANC)}</g>` + txt(c.precision, 'Thunder', tp, 540, y0 + cn + 22 + cp, NOIR, 'centre', 3);
+      } },
+    { nom: 'Calée sur les bords de l\'image', txt: 'Le nom part du bord gauche de l\'image, la précision finit sur son bord droit, sur la même ligne de base. Même idée que les coins du titre.',
+      faire: (c, y0) => {
+        const cn = 62, tn = tailleCap(c.nom, 'Anton', cn);
+        let tp = tailleCap(c.precision, 'Thunder', 44);
+        const libre = c.l - encre(c.nom, 'Anton', tn).l - 30;
+        if (encre(c.precision, 'Thunder', tp, 3).l > libre) tp *= libre / encre(c.precision, 'Thunder', tp, 3).l;
+        return `<g class="ombre">${txt(c.nom, 'Anton', tn, c.x, y0 + cn, BLANC, 'gauche')}</g>` +
+          txt(c.precision, 'Thunder', tp, c.x + c.l, y0 + cn, NOIR, 'droite', 3);
+      } },
+    { nom: 'Bandeau noir sur l\'image', txt: 'Le nom en blanc sur un bandeau noir qui chevauche le bas de l\'image, la précision en noir dessous. L\'étiquette fait corps avec l\'élément.',
+      dedans: true,
+      faire: (c) => {
+        const cn = 54, tn = tailleCap(c.nom, 'Anton', cn), e = encre(c.nom, 'Anton', tn);
+        const m = 22, w = e.l + 2 * m + 8, h = cn + 2 * m, cy = c.y + c.h;
+        const tp = tailleCap(c.precision, 'Thunder', 40);
+        return `<rect class="ombre" x="${540 - w / 2}" y="${cy - h / 2}" width="${w}" height="${h}" fill="${NOIR}"/>` +
+          txt(c.nom, 'Anton', tn, 540, cy + cn / 2, BLANC) + txt(c.precision, 'Thunder', tp, 540, cy + h / 2 + 30 + 40, NOIR, 'centre', 3);
+      } },
+    { nom: 'En bloc, comme le titre', txt: 'Le nom remplit la largeur de l\'image en blanc (110 px de haut au plus), la précision en petit au-dessus, à gauche. L\'étiquette reprend la composition du titre.',
+      faire: (c, y0) => {
+        const cp = 34, tp = tailleCap(c.precision, 'Thunder', cp);
+        let tn = tailleLargeur(c.nom, 'Anton', c.l); const cn = Math.min(110, encre(c.nom, 'Anton', tn).haut); tn = tailleCap(c.nom, 'Anton', cn);
+        const ln = encre(c.nom, 'Anton', tn).l, x = 540 - ln / 2;
+        return txt(c.precision, 'Thunder', tp, x, y0 + cp, NOIR, 'gauche', 3) +
+          `<g class="ombre">${txt(c.nom, 'Anton', tn, x, y0 + cp + 14 + cn, BLANC, 'gauche')}</g>`;
+      } },
+  ];
+
+  const svg = (c, cls = 'calque') => `<svg class="${cls}" viewBox="0 0 1080 1920">${c}</svg>`;
+  let cas = 0;
+  function dessiner() {
+    const c = CAS[cas], grille = document.getElementById('grille'); grille.innerHTML = '';
+    STYLES.forEach((s, n) => {
+      const a = document.createElement('article'); a.className = 'carte';
+      const etiquette = s.faire(c, c.y + c.h + ECART);
+      a.innerHTML = `
+        <div class="vignette"><div class="frame">
+          <div class="panneau"></div>
+          <img class="element" src="${c.img}" style="left:${c.x}px;top:${c.y}px;width:${c.l}px;height:${c.h}px" alt="">
+          <div class="calque ${s.ombre ? 'ombre' : ''}">${svg(etiquette)}</div>
+          <div class="st">${c.st}</div>
+          ${svg(`<line x1="85" x2="1018" y1="${BAS_ELEMENTS}" y2="${BAS_ELEMENTS}" stroke="#fff" stroke-width="3" stroke-dasharray="6 8"/><polygon points="85,219 1018,219 1018,1088 885,1088 885,1475 499,1475 499,1365 85,1365" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="16 10"/>`, 'calque zone')}
+        </div></div>
+        <h2><span>${String(n + 1).padStart(2, '0')}</span>${s.nom}</h2>
+        <p>${s.txt}</p>`;
+      grille.appendChild(a);
+    });
+    echelle();
+  }
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v =>
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`);
+  addEventListener('resize', echelle);
+  document.querySelectorAll('[data-cas]').forEach(b => b.onclick = () => {
+    cas = +b.dataset.cas;
+    document.querySelectorAll('[data-cas]').forEach(x => x.setAttribute('aria-pressed', x === b));
+    dessiner();
+  });
+  const bascule = (id, cls) => document.getElementById(id).onclick = (e) =>
+    e.target.setAttribute('aria-pressed', document.body.classList.toggle(cls));
+  bascule('st', 'voir-st'); bascule('zone', 'voir-zone');
+  Promise.all([document.fonts.load('100px Anton'), document.fonts.load('100px Thunder')]).then(dessiner);
+</script>
+</body>
+</html>

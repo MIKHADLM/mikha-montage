@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Titre en bloc</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 32px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 760px; margin-top: 6px; }
+  .refs { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+  .refs img { height: 90px; border-radius: 4px; }
+  .commandes { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  button { font: inherit; font-size: 14px; color: var(--texte); background: #262626; border: 1px solid #333; border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; background: #000; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .frame > * { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  .sujet { filter: drop-shadow(0 0 36px rgba(0,0,0,.45)); }
+  .ombre { filter: drop-shadow(0 6px 18px rgba(0,0,0,.55)); }
+  .zone { display: none; pointer-events: none; }
+  body.voir-zone .zone { display: block; }
+</style>
+</head>
+<body>
+<header>
+  <h1>TITRE EN BLOC</h1>
+  <p>D'après tes deux références : le titre devient un bloc compact. Le mot clé est très grand, les petits mots se glissent dans les vides autour de lui (coins, à côté, empilés), avec un interligne très serré. Mot clé en rouge, le reste en blanc, ombre portée partout. Tout est calculé, donc ça marche avec n'importe quel titre.</p>
+  <div class="refs"><img src="img/ref_titre_prospects.png" alt=""><img src="img/ref_titre_ideas.png" alt=""></div>
+  <div class="commandes">
+    <button data-titre="0" aria-pressed="true">Le premier pop-up Mehomies</button>
+    <button data-titre="1" aria-pressed="false">On sort un jeu vidéo</button>
+    <button id="zone" aria-pressed="false">Zone sûre</button>
+  </div>
+</header>
+<main class="grille" id="grille"></main>
+
+<script>
+  const ROUGE = '#F12F19', BLANC = '#fff';
+  const POLICE = 'Anton';
+
+  // Chaque titre : les mêmes rôles pour toutes les compositions
+  //   avant : le début (petit, une ligne par élément quand ils s'empilent), cle : le mot clé
+  //   (géant, rouge), lien : petit mot facultatif après le mot clé, apres : la fin ;
+  //   coins : coin haut gauche, coin haut droit, mot géant (compositions « coins »)
+  const TITRES = [
+    { avant: ['LE', 'PREMIER'], cle: 'POP-UP', lien: 'DE', apres: 'MEHOMIES', coins: ['LE PREMIER', 'POP-UP', 'MEHOMIES'] },
+    { avant: ['ON SORT', 'UN'], cle: 'JEU', lien: '', apres: 'VIDÉO', coins: ['ON SORT', 'UN', 'JEU VIDÉO'] },
+  ];
+
+  // Mesure de l'encre d'un texte en Anton à une taille donnée
+  const ctx = document.createElement('canvas').getContext('2d');
+  function encre(t, taille) {
+    ctx.font = `${taille}px ${POLICE}`;
+    const m = ctx.measureText(t);
+    return { g: m.actualBoundingBoxLeft, d: m.actualBoundingBoxRight, l: m.actualBoundingBoxLeft + m.actualBoundingBoxRight,
+             haut: m.actualBoundingBoxAscent };
+  }
+  // Taille pour qu'un texte ait une largeur d'encre donnée, ou une hauteur de capitales donnée
+  const tailleLargeur = (t, l) => 100 * l / encre(t, 100).l;
+  const tailleCap = (t, h) => 100 * h / encre(t, 100).haut;
+
+  // Un morceau placé : x de son bord d'encre gauche, y de sa ligne de base
+  const morceau = (t, taille, x, base, couleur, derriere = false) =>
+    ({ t, taille, x: x + encre(t, taille).g, base, couleur, derriere });
+
+  // Compositions : chacune renvoie une liste de morceaux et la hauteur du bloc, à partir de son
+  // bord haut (y = 0) et de sa largeur W
+  const COMPOS = [
+    { nom: 'Coins, derrière la tête', place: 'haut', derriere: true,
+      txt: 'Comme « Prospects » : les petits mots dans les coins au-dessus du mot géant, qui passe derrière toi. Le bloc commence au haut de la zone sûre.',
+      faire: (T, W) => COMPOS[0].coins(T, W, true),
+      coins: (T, W, derriere) => {
+        const tg = tailleLargeur(T.coins[2], W), cg = encre(T.coins[2], tg).haut;
+        const cp = cg * 0.3, ecart = cg * 0.09;
+        const [a, b, g] = T.coins;
+        const ta = tailleCap(a, cp), tb = tailleCap(b, cp);
+        return { h: cp + ecart + cg, m: [
+          morceau(a, ta, 0, cp, BLANC), morceau(b, tb, W - encre(b, tb).l, cp, BLANC),
+          morceau(g, tg, 0, cp + ecart + cg, ROUGE, derriere)] };
+      } },
+    { nom: 'Coins, sous le visage', place: 'bas',
+      txt: 'Même bloc, posé devant toi sous le visage, au-dessus de la ligne des sous-titres (le hook n\'en a pas).',
+      faire: (T, W) => COMPOS[0].coins(T, W, false) },
+    { nom: 'Petits mots empilés à côté', place: 'bas',
+      txt: 'Les petits mots s\'empilent sur deux lignes à gauche, à la hauteur exacte du mot clé ; le mot géant remplit toute la largeur en dessous.',
+      faire: (T, W) => {
+        const ecartX = 22;
+        // Le mot clé et la pile partagent la première ligne : on cherche la taille qui remplit W
+        let lo = 20, hi = 600, r;
+        for (let i = 0; i < 40; i++) {
+          const tc = (lo + hi) / 2, cc = encre(T.cle, tc).haut, ev = cc * 0.12;
+          const cp = (cc - ev) / 2;
+          const tp = T.avant.map(t => tailleCap(t, cp));
+          const lp = Math.max(...T.avant.map((t, k) => encre(t, tp[k]).l));
+          const total = lp + ecartX + encre(T.cle, tc).l;
+          r = { tc, cc, ev, cp, tp, lp };
+          if (total > W) hi = tc; else lo = tc;
+        }
+        const tg = tailleLargeur(T.apres, W), cg = encre(T.apres, tg).haut, ecart = Math.min(r.cc, cg) * 0.1;
+        const m = T.avant.map((t, k) => morceau(t, r.tp[k], r.lp - encre(t, r.tp[k]).l, r.cp + k * (r.cp + r.ev), BLANC));
+        m.push(morceau(T.cle, r.tc, r.lp + ecartX, r.cc, ROUGE));
+        m.push(morceau(T.apres, tg, 0, r.cc + ecart + cg, ROUGE));
+        return { h: r.cc + ecart + cg, m };
+      } },
+    { nom: 'Bloc justifié', place: 'bas',
+      txt: 'Chaque ligne remplit toute la largeur : les tailles changent d\'elles-mêmes selon la longueur des mots. Petits mots en blanc, mot clé et marque en rouge.',
+      faire: (T, W) => {
+        const lignes = [[T.avant.join(' '), BLANC], [T.cle, ROUGE], [T.apres, BLANC]];
+        let y = 0, prec = 0; const m = [];
+        lignes.forEach(([t, c], k) => {
+          const ta = tailleLargeur(t, W), h = encre(t, ta).haut;
+          y += k ? Math.min(prec, h) * 0.1 + h : h; prec = h;
+          m.push(morceau(t, ta, 0, y, c));
+        });
+        return { h: y, m };
+      } },
+    { nom: 'Mot clé et petit mot sur la même ligne', place: 'bas',
+      txt: 'Comme « ideas and content » : aligné à gauche, le mot clé géant et un petit mot posés sur la même ligne de base, puis le dernier mot en grand.',
+      faire: (T, W) => {
+        const a = T.avant.join(' ');
+        const tc = tailleLargeur(T.cle, W * 0.62), cc = encre(T.cle, tc).haut;
+        const cp = cc * 0.34, ta = tailleCap(a, cp);
+        const tg = tailleLargeur(T.apres, W * 0.92), cg = encre(T.apres, tg).haut;
+        const e1 = cp * 0.3, e2 = Math.min(cc, cg) * 0.1;
+        const m = [morceau(a, ta, 0, cp, BLANC)];
+        m.push(morceau(T.cle, tc, 0, cp + e1 + cc, ROUGE));
+        if (T.lien) m.push(morceau(T.lien, ta, encre(T.cle, tc).l + 18, cp + e1 + cc, BLANC));
+        m.push(morceau(T.apres, tg, W * 0.08, cp + e1 + cc + e2 + cg, ROUGE));
+        return { h: cp + e1 + cc + e2 + cg, m };
+      } },
+    { nom: 'Empilés, derrière la tête', place: 'haut', derriere: true,
+      txt: 'La composition « empilés » en haut : le mot clé et le dernier mot passent derrière toi, les petits mots restent devant.',
+      faire: (T, W) => {
+        const r = COMPOS[2].faire(T, W);
+        r.m.forEach(x => { if (x.couleur === ROUGE) x.derriere = true; });
+        return r;
+      } },
+    { nom: 'Mot clé et petit mot, derrière la tête', place: 'haut', derriere: true,
+      txt: 'La composition 05 en haut : les mots rouges passent derrière toi, les petits mots blancs restent devant.',
+      faire: (T, W) => {
+        const r = COMPOS[4].faire(T, W);
+        r.m.forEach(x => { if (x.couleur === ROUGE) x.derriere = true; });
+        return r;
+      } },
+  ];
+
+  // Zone sûre : en haut, 85 à 1018 ; sous le visage (y > 1088), 195 à 885 pour rester centré
+  // Hauteur du bloc limitée (propositions) : en haut, jusqu'au milieu de la tête ; en bas, sous le menton
+  const PLACE = { haut: { x: 85, W: 933, haut: 219, hMax: 330 }, bas: { x: 195, W: 690, bas: 1340, hMax: 400 } };
+
+  const texte = (x, trait) =>
+    `<text x="${x.x}" y="${x.base}" font-family="${POLICE}" font-size="${x.taille}" ` +
+    (trait ? `fill="none" stroke="${x.couleur}" stroke-width="3"` : `fill="${x.couleur}"`) + `>${x.t}</text>`;
+  const svg = (c, cls = '') => `<svg class="${cls}" viewBox="0 0 1080 1920">${c}</svg>`;
+
+  let titre = 0;
+  function dessiner() {
+    const grille = document.getElementById('grille'); grille.innerHTML = '';
+    COMPOS.forEach((c, n) => {
+      const p = PLACE[c.place];
+      let { h, m } = c.faire(TITRES[titre], p.W), x0 = p.x;
+      // Un titre court donne un bloc trop haut : on le réduit (centré) pour ne pas couvrir le visage
+      if (h > p.hMax) {
+        const W = p.W * p.hMax / h; ({ h, m } = c.faire(TITRES[titre], W)); x0 += (p.W - W) / 2;
+      }
+      const y0 = c.place === 'haut' ? p.haut : p.bas - h;
+      m.forEach(x => { x.x += x0; x.base += y0; });
+      const derriere = m.filter(x => x.derriere), devant = m.filter(x => !x.derriere);
+      const a = document.createElement('article'); a.className = 'carte';
+      a.innerHTML = `
+        <div class="vignette"><div class="frame">
+          <img src="img/titre_fond.png" alt="">
+          <div class="ombre">${svg(derriere.map(x => texte(x)).join(''))}</div>
+          <img class="sujet" src="img/titre_sujet.png" alt="">
+          ${svg(derriere.map(x => texte(x, true)).join(''))}
+          <div class="ombre">${svg(devant.map(x => texte(x)).join(''))}</div>
+          ${svg(`<polygon points="85,219 1018,219 1018,1088 885,1088 885,1475 499,1475 499,1365 85,1365" fill="none" stroke="#3cf" stroke-width="4" stroke-dasharray="16 10"/>`, 'zone')}
+        </div></div>
+        <h2><span>${String(n + 1).padStart(2, '0')}</span>${c.nom}</h2>
+        <p>${c.txt}</p>`;
+      grille.appendChild(a);
+    });
+    echelle();
+  }
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v =>
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`);
+  addEventListener('resize', echelle);
+
+  document.querySelectorAll('[data-titre]').forEach(b => b.onclick = () => {
+    titre = +b.dataset.titre;
+    document.querySelectorAll('[data-titre]').forEach(x => x.setAttribute('aria-pressed', x === b));
+    dessiner();
+  });
+  document.getElementById('zone').onclick = (e) =>
+    e.target.setAttribute('aria-pressed', document.body.classList.toggle('voir-zone'));
+  document.fonts.load(`100px ${POLICE}`).then(dessiner);
+</script>
+</body>
+</html>

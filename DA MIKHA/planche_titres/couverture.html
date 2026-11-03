@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Couverture des Reels</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  :root { --rouge: #F12F19; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header, section { max-width: 1200px; margin: 0 auto 32px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  h3 { font-family: Anton; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  header p, section > p { color: var(--doux); max-width: 760px; margin-top: 6px; }
+  .commandes { display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap; }
+  button { font: inherit; font-size: 14px; color: var(--texte); background: #262626; border: 1px solid #333; border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+  .grille { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; background: #000; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .frame > * { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  .panneau { background: var(--rouge); }
+  .panneau::after { content: ""; position: absolute; inset: 0; opacity: .32; mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .ombre { filter: drop-shadow(0 6px 18px rgba(0,0,0,.55)); }
+  /* Recadrage de la grille du profil : 3:4 au centre, 240 px coupés en haut et en bas */
+  .recadrage { pointer-events: none; }
+  .recadrage rect { fill: rgba(0,0,0,.55); }
+  .profil { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 420px; background: #000; padding: 3px 0; }
+  .case { aspect-ratio: 3/4; position: relative; overflow: hidden; }
+</style>
+</head>
+<body>
+<header>
+  <h1>COUVERTURE DES REELS</h1>
+  <p>Quatre couvertures à partir du titre retenu (bloc 06, mots rouges derrière la tête). La grille du profil Instagram ne montre que le centre de la couverture, en 3:4 : 240 px coupés en haut et en bas (zones assombries). Le titre de la vidéo, calé à 219 px, y est donc rogné : la couverture a sa propre mise en page.</p>
+</header>
+<main class="grille" id="cartes"></main>
+<section>
+  <h3>Sur ton profil</h3>
+  <p>Six Reels à la suite, avec deux titres en alternance (même photo, faute d'autres vidéos), à la taille d'un téléphone.</p>
+  <div class="commandes" id="choix"></div>
+  <div class="profil" id="profil"></div>
+</section>
+
+<script>
+  const ROUGE = '#F12F19', BLANC = '#fff';
+  const TITRES = [
+    { avant: ['LE', 'PREMIER'], cle: 'POP-UP', apres: 'MEHOMIES' },
+    { avant: ['ON SORT', 'UN'], cle: 'JEU', apres: 'VIDÉO' },
+  ];
+  const ctx = document.createElement('canvas').getContext('2d');
+  function encre(t, taille) {
+    ctx.font = `${taille}px Anton`;
+    const m = ctx.measureText(t);
+    return { g: m.actualBoundingBoxLeft, l: m.actualBoundingBoxLeft + m.actualBoundingBoxRight, haut: m.actualBoundingBoxAscent };
+  }
+  const tailleLargeur = (t, l) => 100 * l / encre(t, 100).l;
+  const tailleCap = (t, h) => 100 * h / encre(t, 100).haut;
+  const morceau = (t, taille, x, base, couleur) => ({ t, taille, x: x + encre(t, taille).g, base, couleur });
+
+  // Bloc 06 (planche titre_bloc.html) : petits mots empilés à gauche, mot clé, dernier mot en dessous
+  function bloc(T, W) {
+    const ecartX = 22; let lo = 20, hi = 900, r;
+    for (let i = 0; i < 40; i++) {
+      const tc = (lo + hi) / 2, cc = encre(T.cle, tc).haut, ev = cc * 0.12, cp = (cc - ev) / 2;
+      const tp = T.avant.map(t => tailleCap(t, cp));
+      const lp = Math.max(...T.avant.map((t, k) => encre(t, tp[k]).l));
+      r = { tc, cc, ev, cp, tp, lp };
+      if (lp + ecartX + encre(T.cle, tc).l > W) hi = tc; else lo = tc;
+    }
+    const tg = tailleLargeur(T.apres, W), cg = encre(T.apres, tg).haut, ecart = Math.min(r.cc, cg) * 0.1;
+    const m = T.avant.map((t, k) => morceau(t, r.tp[k], r.lp - encre(t, r.tp[k]).l, r.cp + k * (r.cp + r.ev), BLANC));
+    m.push(morceau(T.cle, r.tc, r.lp + ecartX, r.cc, ROUGE));
+    m.push(morceau(T.apres, tg, 0, r.cc + ecart + cg, ROUGE));
+    return { h: r.cc + ecart + cg, m };
+  }
+  // Place le bloc : haut à y0, largeur W centrée, hauteur limitée à hMax
+  function placer(T, y0, W, hMax) {
+    let { h, m } = bloc(T, W), x0 = 540 - W / 2;
+    if (h > hMax) { const W2 = W * hMax / h; ({ h, m } = bloc(T, W2)); x0 = 540 - W2 / 2; }
+    return m.map(x => ({ ...x, x: x.x + x0, base: x.base + y0 }));
+  }
+
+  // fond : photo du rush ou fond rouge ; sujet : échelle et décalage (le sujet descend, le titre
+  // a de la place au-dessus de la tête, dans la zone de la grille)
+  const STYLES = [
+    { nom: 'Image du titre, telle quelle', txt: 'Une image du hook avec son titre. Le plus simple, mais le haut du titre est rogné dans la grille (il commence à 219 px, la grille à 240).',
+      fond: 'photo', bloc: { y0: 219, W: 933, hMax: 330 } },
+    { nom: 'Titre recalé pour la grille', txt: 'Même image, titre plus bas (300 px) et plus grand : il tient entier dans la grille et se lit en petit.',
+      fond: 'photo', bloc: { y0: 300, W: 933, hMax: 420 } },
+    // Sur le fond rouge, le rouge du titre disparaît : les mots clés passent en noir, comme le
+    // panneau « SUR TOUT LE SITE » (règle du texte sur fond rouge)
+    { nom: 'Fond rouge, toi détouré', txt: 'Le décor disparaît : toi détouré sur le fond rouge grainé, plus petit et plus bas, titre derrière la tête. Sur le rouge, les mots clés passent en noir, comme ton panneau. Toutes les couvertures se ressemblent sur le profil.',
+      fond: 'rouge', cle: '#0d0d0d', sujet: { echelle: 0.8 }, bloc: { y0: 300, W: 933, hMax: 420 } },
+    { nom: 'Fond rouge, toi en noir et blanc', txt: 'La même, avec toi en noir et blanc : le noir, le blanc et le rouge seulement, façon affiche.',
+      fond: 'rouge', cle: '#0d0d0d', sujet: { echelle: 0.8, nb: true }, bloc: { y0: 300, W: 933, hMax: 420 } },
+  ];
+
+  const texte = (x, trait) => `<text x="${x.x}" y="${x.base}" font-family="Anton" font-size="${x.taille}" ` +
+    (trait ? `fill="none" stroke="${x.couleur}" stroke-width="3"` : `fill="${x.couleur}"`) + `>${x.t}</text>`;
+  const svg = (c, cls = '') => `<svg class="${cls}" viewBox="0 0 1080 1920">${c}</svg>`;
+
+  function frame(s, T, avecRecadrage) {
+    const m = placer(T, s.bloc.y0, s.bloc.W, s.bloc.hMax);
+    const derriere = m.filter(x => x.couleur === ROUGE), devant = m.filter(x => x.couleur !== ROUGE);
+    if (s.cle) derriere.forEach(x => x.couleur = s.cle);
+    const sj = s.sujet || {};
+    const styleSujet = `transform-origin:540px 1920px;transform:scale(${sj.echelle || 1});` +
+      `filter:drop-shadow(0 0 36px rgba(0,0,0,.45))${sj.nb ? ' grayscale(1) contrast(1.12)' : ''}`;
+    return `<div class="frame">
+      ${s.fond === 'photo' ? '<img src="img/titre_fond.png" alt="">' : '<div class="panneau"></div>'}
+      <div class="ombre">${svg(derriere.map(x => texte(x)).join(''))}</div>
+      <img src="img/titre_sujet.png" style="${styleSujet}" alt="">
+      ${svg(derriere.map(x => texte(x, true)).join(''))}
+      <div class="ombre">${svg(devant.map(x => texte(x)).join(''))}</div>
+      ${avecRecadrage ? svg('<rect x="0" y="0" width="1080" height="240"/><rect x="0" y="1680" width="1080" height="240"/>', 'recadrage') : ''}
+    </div>`;
+  }
+
+  let choix = 2;
+  function dessiner() {
+    const cartes = document.getElementById('cartes'); cartes.innerHTML = '';
+    STYLES.forEach((s, n) => {
+      const a = document.createElement('article'); a.className = 'carte';
+      a.innerHTML = `<div class="vignette">${frame(s, TITRES[0], true)}</div>
+        <h2><span>${String(n + 1).padStart(2, '0')}</span>${s.nom}</h2><p>${s.txt}</p>`;
+      cartes.appendChild(a);
+    });
+    document.getElementById('choix').innerHTML = STYLES.map((s, n) =>
+      `<button data-n="${n}" aria-pressed="${n === choix}">${String(n + 1).padStart(2, '0')}</button>`).join('');
+    document.querySelectorAll('#choix button').forEach(b => b.onclick = () => { choix = +b.dataset.n; dessiner(); });
+    document.getElementById('profil').innerHTML = [0, 1, 0, 1, 0, 1].map(t =>
+      `<div class="case">${frame(STYLES[choix], TITRES[t], false)}</div>`).join('');
+    echelle();
+  }
+  function echelle() {
+    document.querySelectorAll('.vignette').forEach(v =>
+      v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`);
+    // Dans la grille, on ne voit que y de 240 à 1680
+    document.querySelectorAll('.case').forEach(c => {
+      const k = c.clientWidth / 1080;
+      c.querySelector('.frame').style.transform = `translateY(${-240 * k}px) scale(${k})`;
+    });
+  }
+  addEventListener('resize', echelle);
+  document.fonts.load('100px Anton').then(dessiner);
+</script>
+</body>
+</html>

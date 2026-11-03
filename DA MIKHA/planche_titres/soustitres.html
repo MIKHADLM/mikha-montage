@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sous-titres tests</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 28px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 720px; margin-top: 6px; }
+  .commandes { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  button { font: inherit; font-size: 14px; color: var(--texte); background: #262626; border: 1px solid #333; border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .carte .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; cursor: pointer; background: #000; }
+  .carte .son { position: absolute; top: 8px; right: 8px; z-index: 2; font-size: 12px; background: rgba(0,0,0,.55); padding: 2px 8px; border-radius: 99px; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .frame video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* Hauteur standard réseaux sociaux (zone sûre TikTok/Reels, CHARTE/02_design/DESIGN.md §7) : le bloc
+     est calé par le bas à 1340 px et grandit vers le haut ; centré sur 540, il s'arrête à 885 px à
+     droite (colonne des boutons) d'où 690 px de large (propositions) */
+  .st { position: absolute; left: 195px; right: 195px; bottom: 580px; text-align: center; font-family: Thunder; color: #fff;
+        font-size: 96px; line-height: 1; white-space: nowrap; filter: drop-shadow(0 4px 10px rgba(0,0,0,.6)); }
+  .st .m { display: inline-block; white-space: pre; }
+  /* Fenêtre de la montée : le bas de la fenêtre passe sous les jambages (j, p, g) */
+  .zone { position: absolute; inset: 0; pointer-events: none; display: none; }
+  body.voir-zone .zone { display: block; }
+  .st .ligne { display: inline-block; overflow: hidden; vertical-align: top; padding: .08em 0 .22em; margin: -.08em 0 -.22em; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SOUS-TITRES · TESTS</h1>
+  <p>Neuf traitements en Thunder, tous avec une ombre portée, sur un extrait de la vidéo 2 (phrases P1 et P2, avec les vrais temps des mots et les vrais groupes du montage, ou en groupes longs avec le bouton ci-dessous). Ton t-shirt blanc est le cas le plus dur pour des sous-titres blancs. Clique sur une vignette pour activer son son.</p>
+  <div class="commandes">
+    <button id="relancer">Tout relancer</button>
+    <button id="ralenti" aria-pressed="false">Ralenti ×0,5</button>
+    <button id="longs" aria-pressed="true">Groupes longs, plus petits</button>
+    <button id="zone" aria-pressed="false">Zone sûre</button>
+  </div>
+</header>
+<main class="grille" id="grille"></main>
+
+<script>
+  const ROUGE = '#F12F19';
+  const MOTS_CLES = new Set(['pop-up', 'Mehomies', '7', 'novembre', 'Roubaix', 'Space', 'Jam']);
+  const echapper = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+
+  // Deux découpages à comparer : les groupes du montage (1 à 3 mots, 96 px) ou des groupes longs
+  // (70 px) qui se remplissent jusqu'à la largeur de la ligne (propositions)
+  const MODES = { montage: { taille: 96 }, longs: { taille: 70, largeur: 690, pause: 0.3 } };
+  let mode = 'longs';
+  const PAR_MODE = {};
+  let GROUPES = [];
+  const groupeA = (t) => GROUPES.find(g => t >= g.debut && t < g.fin);
+
+  // Chaque traitement rend le calque de sous-titres au temps t (secondes)
+  const TRAITEMENTS = [
+    { nom: 'Groupe entier, coupe sèche', txt: "Ton template : le groupe apparaît d'un coup et reste jusqu'au suivant. C'est la référence.",
+      rendu: (t, g) => g ? g.mots.map(m => m.t).join(' ') : '' },
+    { nom: 'Mot par mot dans le groupe', txt: "Chaque mot s'ajoute au moment où tu le dis. Le texte suit exactement la voix.",
+      rendu: (t, g) => g ? g.mots.map(m => `<span class="m" style="opacity:${t >= m.d ? 1 : 0}">${echapper(m.t)}</span>`).join(' ') : '' },
+    { nom: 'Mot prononcé en rouge', txt: 'Le groupe entier, et le mot en train d\'être dit passe en rouge. Comme un karaoké.',
+      rendu: (t, g) => g ? g.mots.map((m, i) => {
+        const actif = t >= m.d && (i === g.mots.length - 1 ? t < g.fin : t < g.mots[i + 1].d);
+        return `<span class="m" style="color:${actif ? ROUGE : '#fff'}">${echapper(m.t)}</span>`; }).join(' ') : '' },
+    { nom: 'Un seul mot, en grand', taille: 170, txt: 'Un mot à la fois, deux fois plus grand. Très rythmé, mais fatigant sur une vidéo longue.',
+      rendu: (t) => { const m = MOTS.filter(m => t >= m.d && t < m.d + 0.6).pop(); return m ? echapper(m.t) : ''; } },
+    { nom: 'Petit rebond', txt: 'Le groupe arrive en grossissant légèrement sur 4 images (de 85 % à 100 %). La lecture reste la même, avec plus de vie.',
+      rendu: (t, g) => { if (!g) return ''; const p = Math.min(1, (t - g.debut) / (4 / 30)); const e = 1 - Math.pow(1 - p, 3);
+        return `<span class="m" style="transform:scale(${.85 + .15 * e});opacity:${.3 + .7 * e}">${g.mots.map(m => echapper(m.t)).join(' ')}</span>`; } },
+    { nom: 'Tout en capitales', txt: 'Le même groupe en capitales. Thunder devient plus haute et plus « titre » : à comparer avec la casse normale de ton template.',
+      rendu: (t, g) => g ? g.mots.map(m => m.t.toUpperCase()).join(' ') : '' },
+    { nom: 'Mots clés en Anton rouge', txt: "Les noms, dates et lieux (pop-up, Mehomies, 7 novembre, Roubaix, Space Jam) passent en Anton rouge, un peu plus gros. Ça relie les sous-titres au titre.",
+      rendu: (t, g) => g ? g.mots.map(m => MOTS_CLES.has(m.t)
+        ? `<span class="m" style="font-family:Anton;color:${ROUGE};font-size:.92em;text-transform:uppercase;vertical-align:.02em">${echapper(m.t)}</span>`
+        : echapper(m.t)).join(' ') : '' },
+    { nom: 'Montée depuis une ligne', txt: "Chaque groupe monte depuis une ligne fixe, comme le titre « sort de derrière la tête ». Ça donne la même animation au titre et aux sous-titres.",
+      rendu: (t, g) => g ? monte(echapper(g.mots.map(m => m.t).join(' ')), t - g.debut) : '' },
+    { nom: 'Montée mot par mot', txt: "Chaque mot monte depuis la ligne au moment où tu le dis, et les mots s'ajoutent jusqu'à former le groupe entier. La place de chaque mot est réservée dès le début : rien ne se décale.",
+      rendu: (t, g) => g ? g.mots.map(m => monte(echapper(m.t), t - m.d)).join(' ') : '' },
+  ];
+
+  // Un texte qui monte depuis une ligne fixe (sous les jambages) en 5 images ; caché avant son départ
+  function monte(html, ecoule) {
+    const p = Math.max(0, Math.min(1, ecoule / (5 / 30))), e = 1 - Math.pow(1 - p, 4);
+    return `<span class="ligne"><span class="m" style="transform:translateY(${(1 - e) * 115}%)">${html}</span></span>`;
+  }
+
+  let MOTS = [];
+  let vitesse = 1;
+  const cartes = [];
+
+  // Le clip est chargé une fois en mémoire : le petit serveur local ne gère pas la lecture par
+  // morceaux, et sans ça certaines vidéos ne peuvent pas être repositionnées
+  Promise.all([
+    fetch('img/mots_soustitres.json').then(r => r.json()),
+    fetch('img/clip_soustitres.mp4').then(r => r.blob()).then(b => URL.createObjectURL(b)),
+  ]).then(([mots, clip]) => {
+    MOTS = mots;
+    const parId = new Map();
+    mots.forEach(m => { if (!parId.has(m.g)) parId.set(m.g, []); parId.get(m.g).push(m); });
+    PAR_MODE.montage = finir([...parId.values()]);
+
+    const grille = document.getElementById('grille');
+    TRAITEMENTS.forEach((tr, n) => {
+      const a = document.createElement('article'); a.className = 'carte';
+      a.innerHTML = `
+        <div class="vignette"><span class="son">son coupé</span><div class="frame">
+          <video src="${clip}" muted loop playsinline preload="auto"></video>
+          <div class="st" style="${tr.taille ? `font-size:${tr.taille}px` : ''}"></div>
+          <svg class="zone" viewBox="0 0 1080 1920"><polygon points="85,219 1018,219 1018,1088 885,1088 885,1475 499,1475 499,1365 85,1365"
+            fill="none" stroke="#3cf" stroke-width="4" stroke-dasharray="16 10"/></svg>
+        </div></div>
+        <h2><span>${String(n + 1).padStart(2, '0')}</span>${tr.nom}</h2>
+        <p>${tr.txt}</p>`;
+      grille.append(a);
+      const video = a.querySelector('video'), st = a.querySelector('.st'), son = a.querySelector('.son');
+      a.querySelector('.vignette').onclick = () => {
+        cartes.forEach(c => { c.video.muted = true; c.son.textContent = 'son coupé'; });
+        video.muted = false; son.textContent = 'son actif';
+      };
+      cartes.push({ tr, video, st, son });
+    });
+    echelle();
+    // Thunder doit être chargée avant de mesurer les groupes (sinon mesure avec une police de secours)
+    Promise.all([document.fonts.load('70px Thunder'), document.fonts.load('70px Anton')]).then(() => {
+      PAR_MODE.longs = finir(regrouper(PAR_MODE.montage.map(g => g.mots), MODES.longs));
+      appliquerMode(); relancer(); requestAnimationFrame(boucle);
+    });
+  });
+
+  // Chaque groupe reste jusqu'au suivant, 0,5 s au plus après son dernier mot
+  function finir(listes) {
+    const gs = listes.map(ms => ({ mots: ms, debut: ms[0].d, dernier: ms[ms.length - 1].f }));
+    gs.forEach((g, i) => { const suivant = gs[i + 1]; g.fin = Math.min(suivant ? suivant.debut : Infinity, g.dernier + 0.5); });
+    return gs;
+  }
+
+  // Groupes longs : on fusionne les groupes du montage (qui gardent déjà ensemble « le 7 novembre »,
+  // « Condition Publique »…) en lignes qui tiennent dans la largeur. Une fin de phrase ou une pause
+  // coupe toujours ; entre deux, on répartit les groupes pour que les lignes aient des longueurs
+  // proches (pas de mot orphelin) et qu'aucune ne finisse sur un petit mot de liaison.
+  const LIAISON = new Set(['le', 'la', 'les', 'de', 'du', 'des', 'à', 'au', 'aux', 'un', 'une', 'ma', 'mon', 'ta', 'ton',
+    'sa', 'son', 'ses', 'mes', 'tes', 'et', 'ou', 'que', 'qui', 'en', 'pour', 'par', 'sur', 'avec', 'dans', 'se', 'je', 'tu', 'on']);
+  function regrouper(groupes, { taille, largeur, pause }) {
+    const ctx = document.createElement('canvas').getContext('2d');
+    ctx.font = `${taille}px Thunder`;
+    const large = (ms) => ctx.measureText(ms.map(m => m.t).join(' ')).width;
+    // Morceaux sans coupure obligatoire
+    const morceaux = [];
+    groupes.forEach(g => {
+      const cour = morceaux[morceaux.length - 1], prec = cour && cour[cour.length - 1].at(-1), m = g[0];
+      if (!prec || prec.g.split('-')[0] !== m.g.split('-')[0] || m.d - prec.f > pause) morceaux.push([g]);
+      else cour.push(g);
+    });
+    // Dans chaque morceau : découpage qui minimise le vide au bout des lignes (au carré)
+    const longs = [];
+    morceaux.forEach(gs => {
+      const cout = [0], depuis = [0];
+      for (let i = 1; i <= gs.length; i++) {
+        cout[i] = Infinity;
+        for (let k = i - 1; k >= 0; k--) {
+          const ms = gs.slice(k, i).flat(), w = large(ms);
+          if (w > largeur && i - k > 1) break;
+          const finLiaison = i < gs.length && LIAISON.has(ms.at(-1).t.toLowerCase());
+          const c = cout[k] + (largeur - w) ** 2 + (finLiaison ? 1e7 : 0);
+          if (c < cout[i]) { cout[i] = c; depuis[i] = k; }
+        }
+      }
+      const lignes = [];
+      for (let i = gs.length; i > 0; i = depuis[i]) lignes.unshift(gs.slice(depuis[i], i).flat());
+      longs.push(...lignes);
+    });
+    return longs;
+  }
+
+  function appliquerMode() {
+    GROUPES = PAR_MODE[mode];
+    cartes.forEach(c => { if (!c.tr.taille) c.st.style.fontSize = MODES[mode].taille + 'px'; });
+    dernier = new Map();
+  }
+
+  let dernier = new Map();
+  function boucle() {
+    cartes.forEach(c => {
+      const t = c.video.currentTime, html = c.tr.rendu(t, groupeA(t));
+      if (dernier.get(c) !== html) { c.st.innerHTML = html; dernier.set(c, html); }
+    });
+    requestAnimationFrame(boucle);
+  }
+  function relancer() { cartes.forEach(c => { c.video.currentTime = 0; c.video.playbackRate = vitesse; c.video.play(); }); }
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v => {
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`;
+  });
+  addEventListener('resize', echelle);
+  document.getElementById('relancer').onclick = relancer;
+  document.getElementById('zone').onclick = (e) => {
+    e.target.setAttribute('aria-pressed', document.body.classList.toggle('voir-zone'));
+  };
+  document.getElementById('longs').onclick = (e) => {
+    mode = mode === 'longs' ? 'montage' : 'longs'; e.target.setAttribute('aria-pressed', mode === 'longs');
+    appliquerMode(); relancer();
+  };
+  document.getElementById('ralenti').onclick = (e) => {
+    vitesse = vitesse === 1 ? .5 : 1; e.target.setAttribute('aria-pressed', vitesse !== 1); relancer();
+  };
+</script>
+</body>
+</html>

@@ -37,3 +37,6 @@ CHARTE/08_references/videos/*
 # Médias candidats de la vidéo 3 (ne passent pas par Git)
 a_monter/*/assets_candidats/
 a_monter/*/musique_candidate/
+remotion/public/da/
+# Tests vidéo de la recherche de DA (lourds) : passent par AirDrop, Drive ou disque
+DA MIKHA/tests_video/

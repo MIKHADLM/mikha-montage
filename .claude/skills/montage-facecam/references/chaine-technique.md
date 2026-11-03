@@ -126,6 +126,50 @@ début (de la phrase ou du mot) ; en `a`, une fin (de la phrase ou du mot).
 Les images d'`assets/` arrivent dans `public/v<N>/images/` sous un nom simplifié (minuscules, tirets,
 sans « avec arrière-plan supprimé ») : le script les affiche.
 
+### DA rouge (en test depuis le 2026-11-03, `"da": "rouge"`)
+
+La nouvelle direction artistique (`DA MIKHA/DECISIONS.md`) n'est **pas encore dans la charte** : elle
+ne sert que pour une vidéo dont `plan.json` porte `"da": "rouge"` (d'abord la vidéo pilote, sur demande
+de Michaël). Sans ce champ, la vidéo garde la charte jaune : les vidéos 1, 2 et 3 ne changent pas.
+Composants : `remotion/src/da/rouge/` ; valeurs : `src/da/rouge/tokens.ts`.
+
+```json
+{
+ "da": "rouge",
+ "accroche": { "phrase": "P1",
+   "titre": { "avant": ["LE", "PREMIER"], "cle": "POP-UP", "apres": "MEHOMIES" } },
+ "cadrages": [ … ], "sequences": [ … ], "sousTitres": { "masquer": [ … ] }
+}
+```
+
+| Champ | Rôle |
+|---|---|
+| `accroche.titre` | Titre en bloc (composition 06) : `avant` = 1 à 3 petits mots blancs empilés à gauche, `cle` = mot clé rouge, `apres` = dernier mot rouge sur toute la largeur (facultatif). Remplace `accroche.lignes` |
+| `accroche.derriere` | `false` : tout le titre passe devant (repli si le détourage rate : tête trop haute, plan trop serré) ; sinon les mots rouges passent derrière le sujet, avec un contour permanent de 3 px |
+| `cadrages` | Le cadrage de la phrase d'accroche est ignoré : le hook reste à × 1 |
+| séquence `texte` | `de`, `a`, `lignes: [{ texte, largeur, gauche }]` (largeur et retrait en part de 1080), `image?` / `video?` + `videoDebutS?` (plein cadre). Texte en escalier, Chivo 800 minuscule serrée, mot par mot ; noir flouté sur le fond rouge, rouge sur une image. Sans caractères spéciaux. Sous-titres masqués pendant la séquence |
+
+Rendu, tout seul :
+- **Hook :** le bloc monte morceau par morceau (un toutes les 4 images, en 12) ; images détourées
+  `public/v<N>/sujet/NNNN.png`, faites par `preparer_medias.py` (relancer seul :
+  `python3 scripts/preparer_medias.py ../a_monter/<N> v<N> --detourage`, après un changement de prise
+  du hook). Vérifier les bords (cheveux, mains) sur 2 ou 3 images. Riser et coupe sèche comme avant.
+- **Sous-titres :** Thunder blanc 70 px avec ombre, groupes longs sur une ligne de 690 px au plus
+  (coupés à chaque phrase et à chaque pause de plus de 0,3 s, jamais finis sur un mot de liaison),
+  bas à 1 340 px ; chaque mot monte quand il est dit sur le face cam, apparaît d'un coup sur le rouge ;
+  masqués pendant le hook, `produit`, `texte` et `masquer`.
+- **Séquences :** fond rouge grainé (grain fixe) à la place du blanc ; images à angles droits avec
+  ombre, posées (« Pose » : 106 % → 100 % en fondu, 8 images) ; 16:9 à 888 × 500, 4:5 à 610 × 762,
+  1:1 à 640 ; étiquette nom (Anton blanc) / précision (Thunder blanc) à 56 px sous l'élément ; tout
+  finit au-dessus de 1 180 px. Mêmes bruitages qu'avant (déclencheur avant chaque élément, clic à la
+  sortie ; clic à l'entrée d'un `texte`).
+- **À vérifier au pilote (non réglé) :** assets de motion design et `site` (pensés pour le blanc,
+  gardés tels quels sur le rouge) ; étiquettes PNG des partenaires (noires, réduites sous la vidéo) ;
+  sous-titres pendant `site` (hauteur standard, sous le téléphone).
+- **Export SRT :** `exporter_sous_titres.py` reprend les groupes longs quand le plan est en DA rouge.
+- **Polices :** `DA MIKHA/polices/` (copiées par `preparer_medias.py`). **Thunder : licence
+  « personal use only » dans le fichier, licence commerciale [À COMPLÉTER]** (`DA MIKHA/polices/README.md`).
+
 ## 6. Ce que la composition `Montage` fait toute seule
 
 - Face cam : segments du découpage, fondu de 2 images sur la voix à chaque coupe, cadrage par phrase.

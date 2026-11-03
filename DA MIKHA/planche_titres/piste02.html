@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piste 02 lisibilité</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --noir: #0d0d0d; --blanc: #fff; --page: #161616; --texte: #eee; --doux: #9a9a9a;
+          --ok: #3fb950; --moyen: #d29922; --ko: #f85149; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 32px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 680px; margin-top: 6px; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .carte .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .score { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 13px; padding: 3px 10px; border-radius: 99px; background: #222; }
+  .score::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c, var(--doux)); }
+
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .bg { position: absolute; inset: 0; background: url(img/facecam.png) center/cover; }
+  .sujet { position: absolute; inset: 0; background: url(img/sujet.png) center/cover; }
+  .ligne { display: block; white-space: nowrap; line-height: .96; }
+  .anton { font-family: Anton; text-transform: uppercase; }
+  .thunder { font-family: Thunder; text-transform: uppercase; }
+  .bloc { position: absolute; left: 50px; right: 50px; color: var(--rouge); }
+  .petit { position: absolute; left: 0; right: 0; text-align: center; color: var(--rouge); font-size: 84px; letter-spacing: 16px; }
+
+  .contour { color: transparent; -webkit-text-stroke: 3px var(--rouge); }
+  .ombre-sujet { filter: drop-shadow(0 0 36px rgba(0,0,0,.45)); }
+</style>
+</head>
+<body>
+<header>
+  <h1>PISTE 02 · RESTER LISIBLE</h1>
+  <p>Trois façons de garder le titre lisible quand il passe derrière toi, puis des titres de longueurs différentes (ceux des vidéos 1 et 2). Sous chaque image, la planche calcule la part cachée de la lettre la plus masquée.</p>
+</header>
+
+<main class="grille">
+
+  <article class="carte">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder" style="top:350px">On sort un</div>
+      <div class="bloc derriere" style="top:450px"><span class="ligne anton fit">Jeu vidéo</span></div>
+      <div class="sujet"></div>
+    </div></div>
+    <h2><span>A</span>Base</h2>
+    <p>Comme sur la première planche : seul le bas des lettres passe derrière les cheveux.</p>
+    <div class="score"></div>
+  </article>
+
+  <article class="carte">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder" style="top:420px">On sort un</div>
+      <div class="bloc derriere" style="top:520px"><span class="ligne anton fit">Jeu vidéo</span></div>
+      <div class="sujet"></div>
+      <div class="bloc" style="top:520px"><span class="ligne anton fit contour">Jeu vidéo</span></div>
+    </div></div>
+    <h2><span>B</span>Contour devant</h2>
+    <p>Plus bas, donc plus caché, mais un contour fin redessine la partie cachée par-dessus ta tête. Le mot reste entier : le score ne compte que le remplissage.</p>
+    <div class="score"></div>
+  </article>
+
+  <article class="carte">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder" style="top:350px">On sort un</div>
+      <div class="bloc derriere" style="top:450px"><span class="ligne anton fit">Jeu vidéo</span></div>
+      <div class="sujet ombre-sujet"></div>
+    </div></div>
+    <h2><span>C</span>Ombre du sujet</h2>
+    <p>Une ombre douce autour de toi détache ta tête des lettres. Ça crée de la profondeur, et l'endroit où le mot se coupe se lit mieux.</p>
+    <div class="score"></div>
+  </article>
+
+  <article class="carte">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder" style="top:250px">Le premier</div>
+      <div class="bloc derriere" style="top:350px"><span class="ligne anton fit">Pop-up</span></div>
+      <div class="sujet ombre-sujet"></div>
+      <div class="petit thunder" style="top:1390px; color:var(--blanc)">Mehomies</div>
+    </div></div>
+    <h2><span>D</span>Mot court en géant</h2>
+    <p>« LE PREMIER POP-UP MEHOMIES » : le mot court remplit la largeur et devient très haut. La fin du titre passe devant, sur le t-shirt.</p>
+    <div class="score"></div>
+  </article>
+
+  <article class="carte">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder" style="top:220px; font-size:70px; letter-spacing:12px">Dernière chance</div>
+      <div class="petit thunder" style="top:300px; font-size:70px; letter-spacing:12px">pour commander</div>
+      <div class="bloc derriere" style="top:390px"><span class="ligne anton fit">Ton tee</span></div>
+      <div class="sujet ombre-sujet"></div>
+    </div></div>
+    <h2><span>E</span>Titre long</h2>
+    <p>« DERNIÈRE CHANCE POUR COMMANDER TON TEE » : le début en petit, devant, et seul le mot clé passe derrière.</p>
+    <div class="score"></div>
+  </article>
+
+  <article class="carte">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder" style="top:470px">On sort un</div>
+      <div class="bloc derriere" style="top:570px"><span class="ligne anton fit">Jeu vidéo</span></div>
+      <div class="sujet"></div>
+    </div></div>
+    <h2><span>F</span>Trop bas (à éviter)</h2>
+    <p>Le même titre descendu de 120 px : la tête mange le milieu du mot. Ça sert à voir où se trouve la limite.</p>
+    <div class="score"></div>
+  </article>
+
+  <article class="carte" data-auto="30">
+    <div class="vignette"><div class="frame">
+      <div class="bg"></div>
+      <div class="petit thunder suit" style="top:470px">On sort un</div>
+      <div class="bloc derriere" style="top:570px"><span class="ligne anton fit">Jeu vidéo</span></div>
+      <div class="sujet ombre-sujet"></div>
+    </div></div>
+    <h2><span>G</span>Réglage automatique (proposition)</h2>
+    <p>On part de la position F, et le titre remonte tout seul jusqu'à ce qu'aucune lettre ne soit cachée à plus de 30 %. Le seuil de 30 % est une proposition, à régler à l'œil.</p>
+    <div class="score"></div>
+  </article>
+
+</main>
+
+<script>
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v => {
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`;
+  });
+  echelle(); addEventListener('resize', () => { echelle(); });
+
+  // Bords alignés : chaque ligne .fit prend la largeur de son bloc
+  const ajuster = () => document.querySelectorAll('.fit').forEach(el => {
+    const cible = el.parentElement.clientWidth;
+    el.style.fontSize = '100px'; el.style.display = 'inline-block';
+    el.style.fontSize = (100 * cible / el.scrollWidth) + 'px'; el.style.display = 'block';
+  });
+
+  // Lisibilité : part de chaque lettre (au pixel près) recouverte par le détourage
+  async function chargerMasque() {
+    const img = new Image(); img.src = 'img/sujet.png'; await img.decode();
+    const c = new OffscreenCanvas(1080, 1920), x = c.getContext('2d');
+    x.drawImage(img, 0, 0, 1080, 1920);
+    return x.getImageData(0, 0, 1080, 1920).data;
+  }
+
+  function mesurer(carte, masque) {
+    const frame = carte.querySelector('.frame'), fr = frame.getBoundingClientRect();
+    const k = fr.width / 1080;
+    const c = new OffscreenCanvas(1080, 1920), x = c.getContext('2d', { willReadFrequently: true });
+    let pire = { lettre: '', part: 0 };
+    carte.querySelectorAll('.derriere .fit').forEach(el => {
+      const st = getComputedStyle(el);
+      // Ligne de base : un repère vide aligné sur la base du texte
+      const repere = document.createElement('i');
+      repere.style.cssText = 'display:inline-block;width:0;height:0;vertical-align:baseline';
+      el.appendChild(repere);
+      const base = (repere.getBoundingClientRect().top - fr.top) / k;
+      repere.remove();
+      const noeud = el.firstChild, texte = noeud.textContent;
+      for (let i = 0; i < texte.length; i++) {
+        const ch = texte[i]; if (!/\p{L}/u.test(ch)) continue;
+        const r = document.createRange(); r.setStart(noeud, i); r.setEnd(noeud, i + 1);
+        const b = r.getBoundingClientRect(), gauche = (b.left - fr.left) / k;
+        x.clearRect(0, 0, 1080, 1920);
+        x.font = `${parseFloat(st.fontSize)}px ${st.fontFamily}`;
+        x.fillText(ch.toUpperCase(), gauche, base);
+        const x0 = Math.max(0, Math.floor(gauche)), x1 = Math.min(1080, Math.ceil((b.right - fr.left) / k));
+        const y0 = Math.max(0, Math.floor(base - parseFloat(st.fontSize))), y1 = Math.min(1920, Math.ceil(base + 10));
+        const g = x.getImageData(x0, y0, x1 - x0, y1 - y0).data;
+        let total = 0, cache = 0;
+        for (let yy = 0; yy < y1 - y0; yy++) for (let xx = 0; xx < x1 - x0; xx++) {
+          if (g[(yy * (x1 - x0) + xx) * 4 + 3] < 128) continue;
+          total++;
+          if (masque[((y0 + yy) * 1080 + x0 + xx) * 4 + 3] > 128) cache++;
+        }
+        const part = total ? cache / total : 0;
+        if (part > pire.part) pire = { lettre: ch.toUpperCase(), part };
+      }
+    });
+    return pire;
+  }
+
+  function afficher(carte, pire) {
+    const pct = Math.round(pire.part * 100);
+    const s = carte.querySelector('.score');
+    s.style.setProperty('--c', pct < 25 ? 'var(--ok)' : pct < 45 ? 'var(--moyen)' : 'var(--ko)');
+    s.textContent = pct ? `Lettre la plus cachée : ${pire.lettre} · ${pct} %` : 'Aucune lettre cachée';
+    if (carte.dataset.auto) s.textContent += ` · titre remonté de ${carte.dataset.remonte} px`;
+  }
+
+  // Cartes data-auto : remonte le titre jusqu'à ce qu'aucune lettre ne soit cachée à plus de data-auto %
+  function regler(carte, masque) {
+    const seuil = carte.dataset.auto / 100, bouge = carte.querySelectorAll('.derriere, .suit');
+    let pire = mesurer(carte, masque), d = 0;
+    while (pire.part > seuil && d < 600) {
+      d += 10;
+      bouge.forEach(el => el.style.top = (parseFloat(el.style.top) - 10) + 'px');
+      pire = mesurer(carte, masque);
+    }
+    carte.dataset.remonte = d;
+    return pire;
+  }
+
+  document.fonts.ready.then(async () => {
+    ajuster();
+    const masque = await chargerMasque();
+    document.querySelectorAll('.carte').forEach(c => afficher(c, c.dataset.auto ? regler(c, masque) : mesurer(c, masque)));
+  });
+</script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 """Prépare les médias d'une vidéo pour Remotion.
 
-Usage : python3 scripts/preparer_medias.py ../a_monter/<N> v<N> [--donnees]
+Usage : python3 scripts/preparer_medias.py ../a_monter/<N> v<N> [--donnees] [--detourage]
 
 Écrit dans remotion/public/ :
-  charte/polices/        polices de CHARTE/07_typographies
+  charte/polices/        polices de CHARTE/07_typographies, et celles de la DA rouge (DA MIKHA/polices)
   charte/fond-1.png      fond_1 (abandonné, gardé pour refaire la vidéo 1)
   charte/sfx/*.wav       bruitages de la charte en WAV, au niveau de leur fichier (comme dans la VF)
   charte/partenaires/    étiquettes et logos de CHARTE/06_assets/partenaires
@@ -13,7 +13,10 @@ Usage : python3 scripts/preparer_medias.py ../a_monter/<N> v<N> [--donnees]
   <id>/images/*.png      images de assets/, marges transparentes retirées, 1600 px au plus
   <id>/videos/*.mp4      vidéos de assets/ (autres que le rush), en H.264
   <id>/*.json            decoupage.json et mots_montage.json (transcription/), plan.json (dossier vidéo)
+  <id>/sujet/NNNN.png    DA rouge ("da": "rouge" dans plan.json) : le sujet détouré sur chaque image
+                         du hook (NNNN = image depuis le début du hook), pour le titre derrière la tête
 Avec --donnees : ne recopie que les fichiers JSON (après une modification de plan.json).
+Avec --detourage : refait seulement le détourage du hook (après un changement de prise du hook).
 """
 
 import argparse
@@ -30,6 +33,7 @@ p = argparse.ArgumentParser()
 p.add_argument("video")
 p.add_argument("id")
 p.add_argument("--donnees", action="store_true", help="ne recopier que les fichiers JSON")
+p.add_argument("--detourage", action="store_true", help="refaire seulement le détourage du hook (DA rouge)")
 a = p.parse_args()
 
 VIDEO = Path(a.video).resolve()
@@ -37,6 +41,7 @@ VID = a.id
 REMOTION = Path(__file__).resolve().parent.parent
 MONTAGE = REMOTION.parent
 CHARTE = MONTAGE / "CHARTE"
+POLICES_DA = MONTAGE / "DA MIKHA" / "polices"  # DA rouge : rejoindront CHARTE/07_typographies une fois validée
 PUBLIC = REMOTION / "public"
 DEST = PUBLIC / VID
 
@@ -85,14 +90,48 @@ def copier_donnees():
     print("données copiées dans", DEST.relative_to(REMOTION), ":", ", ".join(f.name for f in fichiers if f.exists()))
 
 
+def detourer_hook():
+    """DA rouge : extrait les images du hook (dans l'ordre du montage, au cadre 1080 × 1920 comme le
+    face cam) et détoure le sujet de chacune (scripts/detourer.swift, macOS 14 ou plus)."""
+    plan = json.loads((VIDEO / "plan.json").read_text())
+    if plan.get("da") != "rouge" or not plan.get("accroche") or plan["accroche"].get("derriere") is False:
+        return
+    dec = json.loads((VIDEO / "transcription" / "decoupage.json").read_text())
+    rush = VIDEO / dec["source"].split("/")[-1]
+    segs = [s for s in dec["segments"] if s["phrase"] == plan["accroche"]["phrase"]]
+    images = DEST / ".hook_images"
+    sujet = DEST / "sujet"
+    for d in (images, sujet):
+        shutil.rmtree(d, ignore_errors=True)
+        d.mkdir(parents=True)
+    n = 0
+    for s in segs:
+        a0 = s["sourceDebutFrame"]
+        ffmpeg("-i", str(rush), "-vf",
+               f"trim=start_frame={a0}:end_frame={a0 + s['dureeFrames']},setpts=PTS-STARTPTS,"
+               "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
+               "-fps_mode", "passthrough", "-start_number", str(n), str(images / "%04d.png"))
+        n += s["dureeFrames"]
+    subprocess.run(["swift", str(REMOTION / "scripts" / "detourer.swift"), str(images), str(sujet)], check=True)
+    shutil.rmtree(images)
+    faites = len(list(sujet.glob("*.png")))
+    if faites != n:
+        raise SystemExit(f"détourage incomplet : {faites} images sur {n}")
+    print(f"hook détouré : {n} images dans {sujet.relative_to(REMOTION)} (vérifier les bords : cheveux, mains)")
+
+
 if a.donnees:
     copier_donnees()
+    raise SystemExit
+if a.detourage:
+    copier_donnees()
+    detourer_hook()
     raise SystemExit
 
 # 1. Charte : polices, fond_1 (archive), bruitages, partenaires
 for sous in ("polices", "sfx", "partenaires"):
     (PUBLIC / "charte" / sous).mkdir(parents=True, exist_ok=True)
-for ttf in (CHARTE / "07_typographies").glob("*/*.ttf"):
+for ttf in [*(CHARTE / "07_typographies").glob("*/*.ttf"), *POLICES_DA.glob("*.ttf")]:
     shutil.copy2(ttf, PUBLIC / "charte" / "polices" / ttf.name)
 shutil.copy2(CHARTE / "06_assets" / "textures" / "texture_fond-1_v01.png", PUBLIC / "charte" / "fond-1.png")
 for nom, fichier in SFX.items():
@@ -163,5 +202,6 @@ for f in sorted((VIDEO / "assets").iterdir()):
     im.save(out, optimize=True)
     print(f"image {out.name} : {im.width}x{im.height} {im.mode}")
 
-# 5. Données du montage
+# 5. Données du montage, puis détourage du hook (DA rouge)
 copier_donnees()
+detourer_hook()

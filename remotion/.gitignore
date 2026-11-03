@@ -11,3 +11,4 @@ public/charte/
 public/v*/
 
 # Captures du site (scripts/capturer_site.mjs) : gardées dans Git, l'asset site-mobile montre le site du 2026-09-29
+public/da/

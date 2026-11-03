@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Piste 02 animations</title>
+<style>
+  @font-face { font-family: "Anton"; src: url(fonts/Anton-Regular.ttf); }
+  @font-face { font-family: "Thunder"; src: url(fonts/Thunder-LC.ttf); }
+  :root { --rouge: #F12F19; --noir: #0d0d0d; --blanc: #fff; --page: #161616; --texte: #eee; --doux: #9a9a9a; }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: var(--page); color: var(--texte); font: 15px/1.45 -apple-system, system-ui, sans-serif; padding: 32px 16px 64px; }
+  header { max-width: 1200px; margin: 0 auto 28px; }
+  h1 { font-family: Anton; font-weight: 400; font-size: 44px; letter-spacing: .5px; }
+  header p { color: var(--doux); max-width: 700px; margin-top: 6px; }
+  .commandes { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  button { font: inherit; font-size: 14px; color: var(--texte); background: #262626; border: 1px solid #333; border-radius: 99px; padding: 6px 14px; cursor: pointer; }
+  button[aria-pressed="true"] { background: var(--rouge); border-color: var(--rouge); color: #fff; }
+  .grille { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 36px 24px; }
+  .carte .vignette { width: 100%; aspect-ratio: 9/16; position: relative; overflow: hidden; border-radius: 6px; cursor: pointer; }
+  .carte h2 { font-size: 15px; margin-top: 12px; }
+  .carte h2 span { color: var(--rouge); margin-right: 6px; }
+  .carte p { color: var(--doux); font-size: 13.5px; margin-top: 4px; }
+  .carte .duree { font-size: 12.5px; color: var(--doux); margin-top: 6px; font-variant-numeric: tabular-nums; }
+
+  .frame { position: absolute; top: 0; left: 0; width: 1080px; height: 1920px; transform-origin: 0 0; overflow: hidden; }
+  .bg { position: absolute; inset: 0; background: url(img/facecam.png) center/cover; }
+  .sujet { position: absolute; inset: 0; background: url(img/sujet.png) center/cover; filter: drop-shadow(0 0 36px rgba(0,0,0,.45)); }
+  .ligne { display: block; white-space: nowrap; line-height: .96; }
+  .anton { font-family: Anton; text-transform: uppercase; }
+  .thunder { font-family: Thunder; text-transform: uppercase; }
+  .petit { position: absolute; left: 0; right: 0; top: 250px; text-align: center; color: var(--rouge); font-size: 84px; letter-spacing: 16px; }
+  .geant { position: absolute; left: 50px; right: 50px; top: 350px; color: var(--rouge); }
+  .geant.cache { overflow: hidden; padding-top: 20px; margin-top: -20px; }
+  .l { display: inline-block; white-space: pre; }
+  .calque { position: absolute; top: 0; left: 0; }
+  .contour { color: transparent; -webkit-text-stroke: 3px var(--rouge); }
+</style>
+</head>
+<body>
+<header>
+  <h1>PISTE 02 · APPARITIONS</h1>
+  <p>Huit façons de faire apparaître le titre derrière toi, dans la mise en page G (réglée à 30 %). Les durées sont données en images à 30 i/s, pour passer ensuite dans Remotion. Clique sur une vignette pour la rejouer seule.</p>
+  <div class="commandes">
+    <button id="rejouer">Rejouer tout</button>
+    <button id="ralenti" aria-pressed="false">Ralenti ×0,25</button>
+    <button id="boucle" aria-pressed="true">En boucle</button>
+  </div>
+</header>
+
+<main class="grille" id="grille"></main>
+
+<script>
+  const F = 1000 / 30; // une image à 30 i/s
+  const SORTIE = 'cubic-bezier(.16,1,.3,1)';      // sortie forte
+  const REBOND = 'cubic-bezier(.34,1.56,.64,1)';  // léger dépassement
+
+  // Chaque piste : texte, explication, et la fonction qui pose ses animations (retourne la durée totale en images)
+  const PISTES = [
+    { id: 'montee', nom: 'Sort de derrière la tête', cache: true,
+      txt: "Le mot monte de derrière toi, comme s'il se levait derrière ta tête. C'est l'animation qui exploite le mieux le détourage.",
+      jouer: ({ g, p }) => {
+        anim(p, [{ opacity: 0, letterSpacing: '40px' }, { opacity: 1, letterSpacing: '16px' }], 0, 12, SORTIE);
+        anim(g, [{ transform: 'translateY(105%)' }, { transform: 'translateY(0)' }], 6, 14, SORTIE);
+        return 20; } },
+    { id: 'escalier', nom: 'Lettres en escalier', cache: true,
+      txt: 'Les lettres montent une à une avec un léger rebond. Plus nerveux, avec un bon rythme pour poser un clic sur chaque lettre.',
+      jouer: ({ g, p, lettres }) => {
+        anim(p, [{ opacity: 0 }, { opacity: 1 }], 0, 6, 'linear');
+        lettres.forEach((l, i) => anim(l, [{ transform: 'translateY(110%)' }, { transform: 'translateY(0)' }], 6 + i * 2, 10, REBOND));
+        return 6 + lettres.length * 2 + 10; } },
+    { id: 'impact', nom: 'Impact', cache: false,
+      txt: "Le mot arrive étiré et flou, puis s'écrase à sa taille. C'est le plus « coup de poing » : à caler sur la chute du riser.",
+      jouer: ({ g, p }) => {
+        anim(p, [{ opacity: 0 }, { opacity: 1 }], 0, 4, 'linear');
+        anim(g, [{ opacity: 0, transform: 'scale(.9, 1.9)', filter: 'blur(10px)' },
+                 { opacity: 1, transform: 'scale(1.03, .92)', filter: 'blur(0)', offset: .6 },
+                 { transform: 'scale(1, 1)' }], 6, 9, 'ease-out');
+        return 15; } },
+    { id: 'coupe', nom: 'Coupe sèche + flash', cache: false,
+      txt: "Aucun mouvement : le titre est là d'une image à l'autre, en blanc pendant 2 images puis en rouge. Ça colle à tes coupes sèches.",
+      jouer: ({ g, p }) => {
+        anim(p, [{ opacity: 0 }, { opacity: 1 }], 0, 1, 'steps(1, start)');
+        anim(g, [{ opacity: 0 }, { opacity: 1 }], 4, 1, 'steps(1, start)');
+        anim(g, [{ color: '#fff', transform: 'scale(1.04)' }, { color: '#fff', transform: 'scale(1.04)', offset: .99 }, { color: 'var(--rouge)', transform: 'scale(1)' }], 4, 3, 'linear');
+        return 8; } },
+    { id: 'contour', nom: 'Contour puis remplissage', cache: false, contour: true,
+      txt: "Le contour se trace de gauche à droite, puis le rouge remplit les lettres par le bas. C'est le prolongement animé de la variante B.",
+      jouer: ({ g, p, c }) => {
+        anim(p, [{ opacity: 0 }, { opacity: 1 }], 0, 6, 'linear');
+        anim(c, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }], 4, 10, SORTIE);
+        anim(g, [{ clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)' }], 12, 10, SORTIE);
+        return 22; } },
+    { id: 'flou', nom: 'Du flou au net', cache: false,
+      txt: "Le mot fait la mise au point, avec un léger recul. Ça rappelle le flou de ton panneau « SUR TOUT LE SITE ». Plus doux, plus cinéma.",
+      jouer: ({ g, p }) => {
+        anim(p, [{ opacity: 0, filter: 'blur(12px)' }, { opacity: 1, filter: 'blur(0)' }], 0, 12, SORTIE);
+        anim(g, [{ opacity: 0, transform: 'scale(1.12)', filter: 'blur(26px)' }, { opacity: 1, transform: 'scale(1)', filter: 'blur(0)' }], 4, 16, SORTIE);
+        return 20; } },
+    { id: 'portes', nom: 'Les deux mots se rejoignent', cache: false,
+      txt: 'Le premier mot arrive de la gauche, le second de la droite, et ils se rejoignent derrière ta tête. Ça ne marche que pour les titres en deux mots.',
+      jouer: ({ g, p, mots }) => {
+        anim(p, [{ opacity: 0 }, { opacity: 1 }], 0, 6, 'linear');
+        anim(mots[0], [{ transform: 'translateX(-700px)' }, { transform: 'translateX(0)' }], 4, 12, SORTIE);
+        anim(mots[1], [{ transform: 'translateX(800px)' }, { transform: 'translateX(0)' }], 4, 12, SORTIE);
+        return 16; } },
+    { id: 'machine', nom: 'Frappe', cache: false,
+      txt: "Une lettre par image, sans aucune transition, comme une machine à écrire très rapide. C'est sec et ça se lit en même temps que tu parles.",
+      jouer: ({ p, lettres, lettresP }) => {
+        lettresP.forEach((l, i) => anim(l, [{ opacity: 0 }, { opacity: 1 }], i, 1, 'steps(1, start)'));
+        lettres.forEach((l, i) => anim(l, [{ opacity: 0 }, { opacity: 1 }], lettresP.length + 2 + i * 2, 1, 'steps(1, start)'));
+        return lettresP.length + 2 + lettres.length * 2; } },
+  ];
+
+  // Pose une animation (début et durée en images), état initial tenu avant le début
+  function anim(el, kf, debut, duree, easing) {
+    el.animate(kf, { delay: debut * F, duration: Math.max(1, duree) * F, easing, fill: 'both' });
+  }
+
+  const decouper = (el) => {
+    const t = el.textContent; el.textContent = '';
+    const mots = [];
+    t.split(/( )/).forEach(m => {
+      if (m === ' ') { el.append(' '); return; }
+      const sm = document.createElement('span'); sm.className = 'l';
+      [...m].forEach(ch => { const s = document.createElement('span'); s.className = 'l'; s.textContent = ch; sm.append(s); });
+      el.append(sm); mots.push(sm);
+    });
+    return mots;
+  };
+
+  const grille = document.getElementById('grille');
+  PISTES.forEach((piste, n) => {
+    const a = document.createElement('article'); a.className = 'carte';
+    a.innerHTML = `
+      <div class="vignette"><div class="frame">
+        <div class="bg"></div>
+        <div class="petit thunder">On sort un</div>
+        <div class="geant${piste.cache ? ' cache' : ''}">
+          ${piste.contour ? '<span class="ligne anton fit contour calque">Jeu vidéo</span>' : ''}
+          <span class="ligne anton fit principal">Jeu vidéo</span>
+        </div>
+        <div class="sujet"></div>
+      </div></div>
+      <h2><span>${String(n + 1).padStart(2, '0')}</span>${piste.nom}</h2>
+      <p>${piste.txt}</p>
+      <div class="duree"></div>`;
+    grille.append(a);
+    piste.carte = a;
+  });
+
+  const echelle = () => document.querySelectorAll('.vignette').forEach(v => {
+    v.querySelector('.frame').style.transform = `scale(${v.clientWidth / 1080})`;
+  });
+
+  const ajuster = () => document.querySelectorAll('.fit').forEach(el => {
+    const cible = el.parentElement.clientWidth;
+    el.style.fontSize = '100px'; el.style.display = 'inline-block';
+    el.style.fontSize = (100 * cible / el.scrollWidth) + 'px'; el.style.display = 'block';
+  });
+
+  let vitesse = 1, boucle = true;
+  const minuteries = new Map();
+
+  function jouer(piste) {
+    const a = piste.carte;
+    a.querySelectorAll('.frame *').forEach(el => el.getAnimations().forEach(x => x.cancel()));
+    const g = a.querySelector('.principal'), p = a.querySelector('.petit'), c = a.querySelector('.contour');
+    const total = piste.jouer({ g: piste.id === 'montee' ? a.querySelector('.geant .principal') : g, p, c,
+      lettres: [...g.querySelectorAll('.l .l')], mots: piste.mots, lettresP: [...p.querySelectorAll('.l .l')] });
+    a.querySelectorAll('.frame *').forEach(el => el.getAnimations().forEach(x => x.playbackRate = vitesse));
+    a.querySelector('.duree').textContent = `Durée : ${total} images (${(total / 30).toFixed(2).replace('.', ',')} s)`;
+    clearTimeout(minuteries.get(piste));
+    if (boucle) minuteries.set(piste, setTimeout(() => jouer(piste), (total * F + 1600) / vitesse));
+  }
+  const toutJouer = () => PISTES.forEach(jouer);
+
+  document.fonts.ready.then(() => {
+    PISTES.forEach(piste => {
+      piste.mots = decouper(piste.carte.querySelector('.principal'));
+      const c = piste.carte.querySelector('.contour'); if (c) decouper(c);
+      decouper(piste.carte.querySelector('.petit'));
+      piste.carte.querySelector('.vignette').addEventListener('click', () => jouer(piste));
+    });
+    echelle(); ajuster(); toutJouer();
+  });
+  addEventListener('resize', echelle);
+
+  document.getElementById('rejouer').onclick = toutJouer;
+  document.getElementById('ralenti').onclick = (e) => {
+    vitesse = vitesse === 1 ? .25 : 1; e.target.setAttribute('aria-pressed', vitesse !== 1); toutJouer();
+  };
+  document.getElementById('boucle').onclick = (e) => {
+    boucle = !boucle; e.target.setAttribute('aria-pressed', boucle);
+    if (!boucle) minuteries.forEach(clearTimeout); else toutJouer();
+  };
+</script>
+</body>
+</html>
