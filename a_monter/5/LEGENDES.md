@@ -17,4 +17,4 @@ Merci pour la force.
 **Titre YouTube Shorts**
 Premier événement Mehomies ce samedi à Roubaix
 
-**Choix de Michael (2026-11-05) :** proposition A, avec identifications @mehomies.co (premier paragraphe) et @spaceparklille (« Space Jam avec @spaceparklille »). Programmée Metricool post 418269738, ven. 06/11/2026 17:00, IG Reel + TikTok + YT Short. Miniature : Cover.HEIC (Drive, dossier 2).
+**Choix de Michael (2026-11-05) :** proposition A, avec identifications @mehomies.co (premier paragraphe) et @spaceparklille (« Space Jam avec @spaceparklille »). Programmée Metricool post 418272746 (uuid 7735345458978310605), ven. 06/11/2026 17:00, IG Reel + TikTok + YT Short. Miniature : Cover.HEIC de Michael (Drive, dossier 2) convertie en JPG (syncro_drive/2026-11-05_MEHO-space-jam_cover.jpg), Metricool n'accepte pas le HEIC.
