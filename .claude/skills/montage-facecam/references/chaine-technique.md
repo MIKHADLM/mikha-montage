@@ -158,7 +158,8 @@ Rendu, tout seul :
 - **Sous-titres :** Thunder blanc 70 px avec ombre, groupes longs sur une ligne de 690 px au plus
   (coupés à chaque phrase et à chaque pause de plus de 0,3 s, jamais finis sur un mot de liaison),
   bas à 1 340 px ; chaque mot monte quand il est dit sur le face cam, apparaît d'un coup sur le rouge ;
-  masqués pendant le hook, `produit`, `texte` et `masquer`.
+  masqués pendant le hook, `produit`, `texte` et `masquer` ; une ligne coupe à la fin du hook et d'un `texte`,
+  et une ligne entièrement dite sous ces passages ne réapparaît pas après (vidéo 5, journal A18).
 - **Séquences :** fond rouge grainé (grain fixe) à la place du blanc ; images à angles droits avec
   ombre, posées (« Pose » : 106 % → 100 % en fondu, 8 images) ; 16:9 à 888 × 500, 4:5 à 610 × 762,
   1:1 à 640 ; étiquette nom (Anton blanc) / précision (Thunder blanc) à 56 px sous l'élément ; tout

@@ -1,0 +1,597 @@
+[
+ {
+  "text": "Premier",
+  "startMs": 123,
+  "endMs": 253,
+  "timestampMs": null,
+  "confidence": 0.913
+ },
+ {
+  "text": " événement",
+  "startMs": 253,
+  "endMs": 663,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " Mehomies",
+  "startMs": 663,
+  "endMs": 983,
+  "timestampMs": null,
+  "confidence": 0.53
+ },
+ {
+  "text": " ce",
+  "startMs": 983,
+  "endMs": 1063,
+  "timestampMs": null,
+  "confidence": 0.851
+ },
+ {
+  "text": " week-end",
+  "startMs": 1253,
+  "endMs": 1453,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " les",
+  "startMs": 1453,
+  "endMs": 1593,
+  "timestampMs": null,
+  "confidence": 0.751
+ },
+ {
+  "text": " frères",
+  "startMs": 1593,
+  "endMs": 1963,
+  "timestampMs": null,
+  "confidence": 0.897
+ },
+ {
+  "text": " Pour",
+  "startMs": 2057,
+  "endMs": 2137,
+  "timestampMs": null,
+  "confidence": 0.958
+ },
+ {
+  "text": " ceux",
+  "startMs": 2067,
+  "endMs": 2187,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " qui",
+  "startMs": 2237,
+  "endMs": 2317,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " ne",
+  "startMs": 2307,
+  "endMs": 2387,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " le",
+  "startMs": 2367,
+  "endMs": 2447,
+  "timestampMs": null,
+  "confidence": 0.989
+ },
+ {
+  "text": " savent",
+  "startMs": 2437,
+  "endMs": 2647,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " pas",
+  "startMs": 2647,
+  "endMs": 2857,
+  "timestampMs": null,
+  "confidence": 0.893
+ },
+ {
+  "text": " ce",
+  "startMs": 2857,
+  "endMs": 2967,
+  "timestampMs": null,
+  "confidence": 0.957
+ },
+ {
+  "text": " samedi",
+  "startMs": 2967,
+  "endMs": 3267,
+  "timestampMs": null,
+  "confidence": 0.94
+ },
+ {
+  "text": " se",
+  "startMs": 3327,
+  "endMs": 3407,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " tient",
+  "startMs": 3437,
+  "endMs": 3697,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " la",
+  "startMs": 3747,
+  "endMs": 3827,
+  "timestampMs": null,
+  "confidence": 0.892
+ },
+ {
+  "text": " 7e",
+  "startMs": 3807,
+  "endMs": 4137,
+  "timestampMs": null,
+  "confidence": 0.623
+ },
+ {
+  "text": " édition",
+  "startMs": 4137,
+  "endMs": 4537,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " de",
+  "startMs": 4537,
+  "endMs": 4647,
+  "timestampMs": null,
+  "confidence": 0.989
+ },
+ {
+  "text": " Space",
+  "startMs": 4647,
+  "endMs": 4927,
+  "timestampMs": null,
+  "confidence": 0.982
+ },
+ {
+  "text": " Jam",
+  "startMs": 4977,
+  "endMs": 5197,
+  "timestampMs": null,
+  "confidence": 0.991
+ },
+ {
+  "text": " à",
+  "startMs": 5197,
+  "endMs": 5577,
+  "timestampMs": null,
+  "confidence": 0.754
+ },
+ {
+  "text": " la",
+  "startMs": 5577,
+  "endMs": 5657,
+  "timestampMs": null,
+  "confidence": 0.969
+ },
+ {
+  "text": " Condition",
+  "startMs": 5717,
+  "endMs": 5957,
+  "timestampMs": null,
+  "confidence": 0.953
+ },
+ {
+  "text": " Publique",
+  "startMs": 5957,
+  "endMs": 6357,
+  "timestampMs": null,
+  "confidence": 0.971
+ },
+ {
+  "text": " de",
+  "startMs": 6427,
+  "endMs": 6507,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " Roubaix",
+  "startMs": 6457,
+  "endMs": 6827,
+  "timestampMs": null,
+  "confidence": 0.981
+ },
+ {
+  "text": " L'après-midi",
+  "startMs": 7000,
+  "endMs": 7440,
+  "timestampMs": null,
+  "confidence": 0.79
+ },
+ {
+  "text": " vous",
+  "startMs": 7440,
+  "endMs": 7600,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " aurez",
+  "startMs": 7600,
+  "endMs": 7800,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " accès",
+  "startMs": 7800,
+  "endMs": 8000,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " à",
+  "startMs": 8030,
+  "endMs": 8110,
+  "timestampMs": null,
+  "confidence": 0.993
+ },
+ {
+  "text": " un",
+  "startMs": 8040,
+  "endMs": 8120,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " village",
+  "startMs": 8120,
+  "endMs": 8410,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " de",
+  "startMs": 8410,
+  "endMs": 8490,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " créateurs",
+  "startMs": 8510,
+  "endMs": 8940,
+  "timestampMs": null,
+  "confidence": 0.896
+ },
+ {
+  "text": " avec",
+  "startMs": 8950,
+  "endMs": 9160,
+  "timestampMs": null,
+  "confidence": 0.84
+ },
+ {
+  "text": " une",
+  "startMs": 9160,
+  "endMs": 9310,
+  "timestampMs": null,
+  "confidence": 0.985
+ },
+ {
+  "text": " trentaine",
+  "startMs": 9310,
+  "endMs": 9760,
+  "timestampMs": null,
+  "confidence": 0.985
+ },
+ {
+  "text": " de",
+  "startMs": 9760,
+  "endMs": 9860,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " stands",
+  "startMs": 9860,
+  "endMs": 10200,
+  "timestampMs": null,
+  "confidence": 0.978
+ },
+ {
+  "text": " et",
+  "startMs": 10400,
+  "endMs": 10550,
+  "timestampMs": null,
+  "confidence": 0.537
+ },
+ {
+  "text": " parmi",
+  "startMs": 10550,
+  "endMs": 10900,
+  "timestampMs": null,
+  "confidence": 0.942
+ },
+ {
+  "text": " eux",
+  "startMs": 10900,
+  "endMs": 11060,
+  "timestampMs": null,
+  "confidence": 0.99
+ },
+ {
+  "text": " un",
+  "startMs": 11180,
+  "endMs": 11260,
+  "timestampMs": null,
+  "confidence": 0.465
+ },
+ {
+  "text": " stand",
+  "startMs": 11250,
+  "endMs": 11600,
+  "timestampMs": null,
+  "confidence": 0.966
+ },
+ {
+  "text": " Mehomies",
+  "startMs": 11600,
+  "endMs": 12010,
+  "timestampMs": null,
+  "confidence": 0.297
+ },
+ {
+  "text": " Vous",
+  "startMs": 12120,
+  "endMs": 12200,
+  "timestampMs": null,
+  "confidence": 0.966
+ },
+ {
+  "text": " pourrez",
+  "startMs": 12180,
+  "endMs": 12550,
+  "timestampMs": null,
+  "confidence": 0.918
+ },
+ {
+  "text": " vous",
+  "startMs": 12550,
+  "endMs": 12750,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " procurer",
+  "startMs": 12750,
+  "endMs": 13180,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " des",
+  "startMs": 13180,
+  "endMs": 13340,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " t-shirts",
+  "startMs": 13340,
+  "endMs": 13760,
+  "timestampMs": null,
+  "confidence": 0.592
+ },
+ {
+  "text": " de",
+  "startMs": 13760,
+  "endMs": 13860,
+  "timestampMs": null,
+  "confidence": 0.99
+ },
+ {
+  "text": " la",
+  "startMs": 13860,
+  "endMs": 13940,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " collection",
+  "startMs": 13990,
+  "endMs": 14490,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " Mehomies",
+  "startMs": 14490,
+  "endMs": 14850,
+  "timestampMs": null,
+  "confidence": 0.46
+ },
+ {
+  "text": " Flag",
+  "startMs": 14850,
+  "endMs": 15030,
+  "timestampMs": null,
+  "confidence": 0.735
+ },
+ {
+  "text": " Mais",
+  "startMs": 15164,
+  "endMs": 15244,
+  "timestampMs": null,
+  "confidence": 0.647
+ },
+ {
+  "text": " aussi",
+  "startMs": 15194,
+  "endMs": 15414,
+  "timestampMs": null,
+  "confidence": 0.976
+ },
+ {
+  "text": " voir",
+  "startMs": 15544,
+  "endMs": 15624,
+  "timestampMs": null,
+  "confidence": 0.91
+ },
+ {
+  "text": " des",
+  "startMs": 15614,
+  "endMs": 15754,
+  "timestampMs": null,
+  "confidence": 0.983
+ },
+ {
+  "text": " prototypes",
+  "startMs": 15754,
+  "endMs": 16224,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " sur",
+  "startMs": 16304,
+  "endMs": 16384,
+  "timestampMs": null,
+  "confidence": 0.97
+ },
+ {
+  "text": " lesquels",
+  "startMs": 16364,
+  "endMs": 16684,
+  "timestampMs": null,
+  "confidence": 0.997
+ },
+ {
+  "text": " on",
+  "startMs": 16684,
+  "endMs": 16764,
+  "timestampMs": null,
+  "confidence": 0.993
+ },
+ {
+  "text": " travaille",
+  "startMs": 16814,
+  "endMs": 17124,
+  "timestampMs": null,
+  "confidence": 0.996
+ },
+ {
+  "text": " en",
+  "startMs": 17124,
+  "endMs": 17204,
+  "timestampMs": null,
+  "confidence": 0.994
+ },
+ {
+  "text": " ce",
+  "startMs": 17284,
+  "endMs": 17364,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " moment",
+  "startMs": 17304,
+  "endMs": 17524,
+  "timestampMs": null,
+  "confidence": 0.982
+ },
+ {
+  "text": " Bref",
+  "startMs": 17697,
+  "endMs": 17777,
+  "timestampMs": null,
+  "confidence": 0.954
+ },
+ {
+  "text": " on",
+  "startMs": 17767,
+  "endMs": 17847,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " espère",
+  "startMs": 17847,
+  "endMs": 18077,
+  "timestampMs": null,
+  "confidence": 0.995
+ },
+ {
+  "text": " vous",
+  "startMs": 18077,
+  "endMs": 18187,
+  "timestampMs": null,
+  "confidence": 0.993
+ },
+ {
+  "text": " voir",
+  "startMs": 18247,
+  "endMs": 18397,
+  "timestampMs": null,
+  "confidence": 0.999
+ },
+ {
+  "text": " nombreux",
+  "startMs": 18397,
+  "endMs": 18857,
+  "timestampMs": null,
+  "confidence": 0.78
+ },
+ {
+  "text": " Merci",
+  "startMs": 18857,
+  "endMs": 19117,
+  "timestampMs": null,
+  "confidence": 0.79
+ },
+ {
+  "text": " pour",
+  "startMs": 19117,
+  "endMs": 19337,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " la",
+  "startMs": 19337,
+  "endMs": 19417,
+  "timestampMs": null,
+  "confidence": 0.998
+ },
+ {
+  "text": " force",
+  "startMs": 19437,
+  "endMs": 19837,
+  "timestampMs": null,
+  "confidence": 0.771
+ },
+ {
+  "text": " Let's",
+  "startMs": 20037,
+  "endMs": 20207,
+  "timestampMs": null,
+  "confidence": 0.974
+ },
+ {
+  "text": " go",
+  "startMs": 20207,
+  "endMs": 20327,
+  "timestampMs": null,
+  "confidence": 0.997
+ }
+]

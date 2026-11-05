@@ -24,6 +24,7 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | A15 | **Phrases complètes à l'écran** : un texte reprend toute la phrase dite, sans sauter de mots (« des réductions qui vont de 5 à 15 % ») | Vidéo 4, v02 frame 234 | **Validée par Michaël le 2026-11-03 (« Ok règles ») : règle définitive (checklist, skill)** |
 | A16 | **Niveau d'exigence de Michaël** : il regarde à l'image près (frame isolée, texte en avance de quelques images, mots manquants). Avant chaque livraison : planche image par image autour de chaque raccord et de chaque entrée de texte, pas seulement des images clés | Bilan des retours v01 et v02 de la vidéo 4 | **Validée par Michaël le 2026-11-03 (« Ok règles ») : règle définitive (checklist, skill)** |
 | A17 | Clics à -4 dB sous le niveau du fichier, par défaut pour toutes les vidéos (`SON.md`, code : `sons.clicDb`, -4 par défaut) | Vidéo 4, retour v03 « baisse un peu le son des clics » | **Validée par Michaël le 2026-11-03 : règle définitive (SON.md, code)** |
+| A18 | Un sous-titre dont tous les mots ont été dits sous le hook ou sous un texte en escalier ne réapparaît pas après (il revenait 2 à 6 images, « les frères » après le titre) ; une ligne de sous-titres coupe aussi à la fin de ces passages (fait dans le code, DA rouge) | Vidéo 5, contrôle image par image de la v01 | Michaël |
 
 ## 2. Leçons
 
@@ -66,9 +67,12 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-11-02 | 3 | Rush HDR ou 24 i/s : `preparer_medias.py` copie l'image telle quelle, donc préparer d'abord un rush SDR 1080 × 1920, 30 i/s | Vidéo 3 | Skill (pièges) | appliquée |
 | 2026-11-02 | 3 | Un sous-titre masqué pouvait revenir 3 images après la fin du masque | Planche d'images clés | Outil (`donnees.ts`) | appliquée |
 | 2026-11-02 | 3 | ffmpeg récent n'accepte plus `-vsync` | Contrôle de la couleur en erreur | Outil `controler_export.py` | appliquée |
+| 2026-11-05 | 5 | Rush converti HLG → SDR : ffmpeg (swscale) recopie les étiquettes couleur de l'entrée (bt2020 / HLG) malgré `-color_*` ; le navigateur du rendu lit alors l'image en HDR (visage rouge, écart 46/255). Réétiqueter sans réencoder (`h264_metadata`) et vérifier avec `ffprobe` | Contrôle de la couleur | Skill (pièges) | appliquée |
+| 2026-11-05 | 5 | Sous-titre du hook ou d'un texte en escalier qui réapparaît après le masque | Planche image par image | Outil (`MontageFacecam.tsx`, `grouperLong`), règle A18 | en attente |
 
 ## 3. Bilan par vidéo
 
+- **Vidéo 5 (annonce Space Jam, DA rouge)** : v01 le 2026-11-05 (20,5 s), plan de coupe de Michaël, affiche de la vidéo 4, stock t-shirts. En attente de ses retours.
 - **Vidéo 4 (Fakhomies, DA rouge pilote)** : validée en v04 le 2026-11-03 après 3 tours (v01 placement des illustrations, v02 retours à l'image, v03 clics). Leçon : Michaël juge à l'image près (règles A13 à A16).
 
 | Vidéo | Versions | Retours de Michaël | Règles acceptées | Remarque |

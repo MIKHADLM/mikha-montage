@@ -28,7 +28,14 @@ const largeur = (ms: MotMonte[]) =>
 // ensemble « le 7 novembre », « Condition Publique »…) en lignes qui tiennent dans la largeur. Une fin
 // de phrase ou une pause coupe toujours ; entre deux, les lignes ont des longueurs proches (vide au
 // bout des lignes minimisé au carré) et aucune ne finit sur un petit mot de liaison.
-export const grouperLong = (mots: MotMonte[], fps: number, duree: number) => {
+// `coupures` : images où une ligne doit aussi couper (fin d'un texte en escalier ou du hook), pour
+// qu'une ligne ne mélange pas des mots déjà montés à l'écran et des mots qui suivent (vidéo 5).
+export const grouperLong = (
+  mots: MotMonte[],
+  fps: number,
+  duree: number,
+  coupures: number[] = [],
+) => {
   const groupes: MotMonte[][] = [];
   for (const m of mots) {
     const g = groupes[groupes.length - 1];
@@ -42,7 +49,8 @@ export const grouperLong = (mots: MotMonte[], fps: number, duree: number) => {
     if (
       !prec ||
       prec.phrase !== g[0].phrase ||
-      g[0].debut - prec.fin > S.pauseS * fps
+      g[0].debut - prec.fin > S.pauseS * fps ||
+      coupures.some((c) => prec.fin <= c + 1 && g[0].debut >= c - 1)
     ) {
       morceaux.push([g]);
     } else cour.push(g);

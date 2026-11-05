@@ -54,6 +54,7 @@
 
 ## Image et mise en page
 - **Rush HDR ou hors format** (vidéo 3 : HEVC HLG 24 i/s) : `preparer_medias.py` copie l'image sans la convertir. Préparer d'abord un rush SDR 1080 × 1920, 30 i/s, le nommer dans `choix.json`, et le signaler : c'est une conversion, pas un étalonnage de Michaël.
+- **Étiquettes couleur héritées** (vidéo 5) : la conversion HLG → SDR par `scale` (zscale absent de ffmpeg sur le Mac serveur) garde les étiquettes bt2020 / arib-std-b67 malgré `-color_primaries bt709…` ; Remotion lit alors le rush en HDR (visage rouge). Après conversion : `ffprobe` des étiquettes, puis `ffmpeg -i x.mp4 -c copy -bsf:v h264_metadata=colour_primaries=1:transfer_characteristics=1:matrix_coefficients=1`. Commande de conversion : `scale=1080:1920:flags=lanczos:in_color_matrix=bt2020:in_range=tv,format=gbrpf32le,lut3d=<lut>,scale=out_color_matrix=bt709:out_range=tv,format=yuv420p`.
 - **Couleur du rush :** jamais retouchée ; le rush est copié sans réencodage, le contrôle compare
   une image du montage et du rush.
 - **Affiche recadrée** (vidéo 4 : affiche Instagram 1:1 recadrée, elle « perdait son sens ») : demander ou utiliser le fichier d'origine et l'afficher entière dans son format (`photo` `4:5`, `16:9` ou `1:1` selon son ratio).

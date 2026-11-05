@@ -1,0 +1,172 @@
+{
+ "_comment": "Découpage du rush : segments gardés, dans l'ordre du montage. Généré par remotion/scripts/decouper_transcription.py depuis choix.json. Temps en secondes et en images.",
+ "source": "a_monter/5/Space_Jam1_sdr.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "dureeMontageS": 20.467,
+ "dureeMontageFrames": 614,
+ "phrases": [
+  {
+   "id": "P1",
+   "montageDebutS": 0.0,
+   "montageFinS": 2.0,
+   "texte": "Premier événement Mehomies ce week-end les frères."
+  },
+  {
+   "id": "P2",
+   "montageDebutS": 2.0,
+   "montageFinS": 6.933,
+   "texte": "Pour ceux qui ne le savent pas, ce samedi se tient la 7e édition de Space Jam à la Condition Publique de Roubaix."
+  },
+  {
+   "id": "P3",
+   "montageDebutS": 6.933,
+   "montageFinS": 12.033,
+   "texte": "L'après-midi, vous aurez accès à un village de créateurs avec une trentaine de stands et parmi eux un stand Mehomies."
+  },
+  {
+   "id": "P4",
+   "montageDebutS": 12.033,
+   "montageFinS": 15.067,
+   "texte": "Vous pourrez vous procurer des t-shirts de la collection Mehomies Flag."
+  },
+  {
+   "id": "P5",
+   "montageDebutS": 15.067,
+   "montageFinS": 17.6,
+   "texte": "Mais aussi voir des prototypes sur lesquels on travaille en ce moment."
+  },
+  {
+   "id": "P6",
+   "montageDebutS": 17.6,
+   "montageFinS": 20.467,
+   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go!"
+  }
+ ],
+ "segments": [
+  {
+   "id": 1,
+   "phrase": "P1",
+   "morceau": "c00",
+   "paroleDebutS": 0.34,
+   "paroleFinS": 2.2,
+   "sourceDebutFrame": 8,
+   "sourceFinFrame": 68,
+   "dureeFrames": 60,
+   "montageDebutFrame": 0,
+   "sourceDebutS": 0.267,
+   "sourceFinS": 2.267,
+   "montageDebutS": 0.0,
+   "montageFinS": 2.0
+  },
+  {
+   "id": 2,
+   "phrase": "P2",
+   "morceau": "c02",
+   "paroleDebutS": 6.4,
+   "paroleFinS": 11.18,
+   "sourceDebutFrame": 190,
+   "sourceFinFrame": 338,
+   "dureeFrames": 148,
+   "montageDebutFrame": 60,
+   "sourceDebutS": 6.333,
+   "sourceFinS": 11.267,
+   "montageDebutS": 2.0,
+   "montageFinS": 6.933
+  },
+  {
+   "id": 3,
+   "phrase": "P3",
+   "morceau": "c06",
+   "paroleDebutS": 23.82,
+   "paroleFinS": 28.76,
+   "sourceDebutFrame": 712,
+   "sourceFinFrame": 865,
+   "dureeFrames": 153,
+   "montageDebutFrame": 208,
+   "sourceDebutS": 23.733,
+   "sourceFinS": 28.833,
+   "montageDebutS": 6.933,
+   "montageFinS": 12.033
+  },
+  {
+   "id": 4,
+   "phrase": "P4",
+   "morceau": "c07",
+   "paroleDebutS": 29.52,
+   "paroleFinS": 32.38,
+   "sourceDebutFrame": 883,
+   "sourceFinFrame": 974,
+   "dureeFrames": 91,
+   "montageDebutFrame": 361,
+   "sourceDebutS": 29.433,
+   "sourceFinS": 32.467,
+   "montageDebutS": 12.033,
+   "montageFinS": 15.067
+  },
+  {
+   "id": 5,
+   "phrase": "P5",
+   "morceau": "c08",
+   "paroleDebutS": 32.72,
+   "paroleFinS": 35.08,
+   "sourceDebutFrame": 979,
+   "sourceFinFrame": 1055,
+   "dureeFrames": 76,
+   "montageDebutFrame": 452,
+   "sourceDebutS": 32.633,
+   "sourceFinS": 35.167,
+   "montageDebutS": 15.067,
+   "montageFinS": 17.6
+  },
+  {
+   "id": 6,
+   "phrase": "P6",
+   "morceau": "c09",
+   "paroleDebutS": 35.92,
+   "paroleFinS": 38.62,
+   "sourceDebutFrame": 1075,
+   "sourceFinFrame": 1161,
+   "dureeFrames": 86,
+   "montageDebutFrame": 528,
+   "sourceDebutS": 35.833,
+   "sourceFinS": 38.7,
+   "montageDebutS": 17.6,
+   "montageFinS": 20.467
+  }
+ ],
+ "coupes": [
+  {
+   "morceau": "c01",
+   "sourceDebutS": 3.02,
+   "sourceFinS": 5.1,
+   "texte": "Pour ceux qui ne le savent pas, ce symptôme se tient le plus.",
+   "raison": "faux départ (« ce symptôme »)"
+  },
+  {
+   "morceau": "c03",
+   "sourceDebutS": 12.04,
+   "sourceFinS": 14.98,
+   "texte": "L'après-midi, vous aurez accès gratuitement à une trentaine de stands.",
+   "raison": "reprise (sans « village de créateurs »)"
+  },
+  {
+   "morceau": "c04",
+   "sourceDebutS": 15.98,
+   "sourceFinS": 20.16,
+   "texte": "L'après-midi, vous aurez accès gratuitement à un village de créateurs avec plus d'une trentaine de stands.",
+   "raison": "reprise (dit « gratuitement » et « plus d'une trentaine », sans le stand Mehomies)"
+  },
+  {
+   "morceau": "c05",
+   "sourceDebutS": 21.38,
+   "sourceFinS": 23.32,
+   "texte": "L'après-midi, vous aurez accès à un village de créateurs avec",
+   "raison": "faux départ"
+  }
+ ]
+}

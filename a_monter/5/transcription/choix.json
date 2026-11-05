@@ -1,0 +1,72 @@
+{
+ "_comment": "Vidéo 5 (annonce Space Jam, pop-up Mehomies du samedi 7/11), v01 montée sans validation préalable du plan (consigne de la mission M19). Rush : Space_Jam1_sdr.mp4 (HLG converti en SDR comme les vidéos 3 et 4, hlg_vers_sdr_lut.py .5 .8 ; swscale, zscale absent de ffmpeg sur ce Mac).",
+ "rush": "Space_Jam1_sdr.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "sousTitres": {
+  "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf",
+  "taillePx": 75,
+  "largeurMaxPx": 880,
+  "motsMax": 3
+ },
+ "phrases": [
+  {
+   "id": "P1",
+   "morceaux": [
+    "c00"
+   ],
+   "texte": "Premier événement Mehomies ce week-end les frères."
+  },
+  {
+   "id": "P2",
+   "morceaux": [
+    "c02"
+   ],
+   "texte": "Pour ceux qui ne le savent pas, ce samedi se tient la 7e édition | de Space Jam à la Condition Publique de Roubaix."
+  },
+  {
+   "id": "P3",
+   "morceaux": [
+    "c06"
+   ],
+   "texte": "L'après-midi, vous aurez accès à un village de créateurs avec une trentaine de stands et parmi eux un stand Mehomies."
+  },
+  {
+   "id": "P4",
+   "morceaux": [
+    "c07"
+   ],
+   "texte": "Vous pourrez vous procurer des t-shirts de la collection Mehomies Flag."
+  },
+  {
+   "id": "P5",
+   "morceaux": [
+    "c08"
+   ],
+   "texte": "Mais aussi voir des prototypes sur lesquels on travaille en ce moment."
+  },
+  {
+   "id": "P6",
+   "morceaux": [
+    "c09"
+   ],
+   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go !"
+  }
+ ],
+ "coupes": {
+  "c01": "faux départ (« ce symptôme »)",
+  "c03": "reprise (sans « village de créateurs »)",
+  "c04": "reprise (dit « gratuitement » et « plus d'une trentaine », sans le stand Mehomies)",
+  "c05": "faux départ"
+ },
+ "musique": {
+  "fichier": "assets/musique_fakhomies.mp3",
+  "debutDansLaPisteS": 0.0,
+  "niveauLufs": -22.7,
+  "_note": "Même musique que la vidéo 4 (demande de Michael, 2026-11-05), départ 0 s comme en v04."
+ }
+}

@@ -319,11 +319,35 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
     };
   };
 
+  const coupuresRouge = [
+    ...(accroche ? [accroche.fin] : []),
+    ...M.sequences
+      .filter((s) => s.type === "texte" && s.lignes.length > 0)
+      .map((s) => s.fin),
+  ];
+  const groupesLongs = M.rouge
+    ? grouperLong(M.mots, M.fps, M.duree, coupuresRouge)
+    : [];
+  // Un groupe dont tous les mots ont été dits sous un masque (hook, texte en escalier) ne réapparaît
+  // pas quelques images après (son maintien de 0,5 s le faisait revenir : vidéo 5, « les frères »
+  // 2 images après le titre). Seulement si son dernier mot finit avant la fin du masque (à 1 image près).
+  const finMasque = (fin: number) => {
+    const g = groupesLongs.find(
+      (x) => x.debut < fin && x.fin > fin && x.mots[x.mots.length - 1].fin <= fin + 1,
+    );
+    return g ? g.fin : fin;
+  };
+  const finAccroche = accroche ? finMasque(accroche.fin) : 0;
+  const finsTexte = M.sequences
+    .filter((s) => s.type === "texte" && s.lignes.length > 0)
+    .map((s) => ({ debut: s.debut, fin: finMasque(s.fin) }));
+
   // DA rouge : mêmes masques ; mot par mot qui monte sur le face cam, sec sur le fond rouge ;
   // masqués pendant le produit et le texte en escalier (le texte montré remplace les mots dits)
   const modeRouge = (f: number): ModeSousTitres => {
-    if (accroche && f >= accroche.debut && f < accroche.fin) return null;
+    if (accroche && f >= accroche.debut && f < finAccroche) return null;
     if (M.masques.some((m) => f >= m.debut && f < m.fin)) return null;
+    if (finsTexte.some((m) => f >= m.debut && f < m.fin)) return null;
     const seq = M.sequences.find((s) => f >= s.debut && f < s.fin);
     if (!seq || (seq.type === "motion" && seq.fond === "facecam")) {
       return "facecam";
@@ -333,7 +357,6 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
     if (seq.type === "texte") return seq.lignes.length > 0 ? null : "facecam";
     return "rouge";
   };
-  const groupesLongs = M.rouge ? grouperLong(M.mots, M.fps, M.duree) : [];
 
   const riser = Math.round(SFX.riser.dureeS * M.fps);
   const dureeMusique = accroche ? M.duree - accroche.fin : 0;

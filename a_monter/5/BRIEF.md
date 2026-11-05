@@ -1,0 +1,7 @@
+# Brief : vidéo 5 (annonce Space Jam, pop-up Mehomies)
+
+- **Compte :** mikha_dlm (MIKHA). Sujet : premier événement Mehomies ce week-end : stand Mehomies au village de créateurs de Space Jam (7e édition dite dans la vidéo), samedi 7 novembre 2026, Condition Publique de Roubaix ; t-shirts Mehomies Flag en vente et prototypes à voir.
+- **Rush :** `Space_Jam1.MOV` (Drive « Rushs brut pour montage Claude / 2 », téléchargé le 2026-11-05), HEVC HLG 3840 × 2160 pivoté, 30 i/s, 39,6 s. Monté sur `Space_Jam1_sdr.mp4` : HLG converti en SDR 1080 × 1920 comme les vidéos 3 et 4 (`../3/hlg_vers_sdr_lut.py .5 .8`). Conversion, pas un étalonnage : **rush définitif à confirmer.**
+- **Assets :** `assets/esteban_crash_zoom_kling3.mp4` (plan de coupe livré par Michaël, Drive même dossier : crash zoom sur le Boxy Brésil, 828 × 1108, 24 i/s, 5 s, sans son) ; affiche Space Jam entière reprise de la vidéo 4 (`assets/affiche_evenement.jpg`, lu dessus : Condition Publique – Roubaix, Village de créateurs, 7 novembre 2026, 15h, gratuit, Mehomies dans la liste des stands) ; t-shirts du stock (`../3/assets_candidats/tshirts/`, validés par Michaël le 2026-11-05) : Boxy France et USA ; musique de la vidéo 4 (`assets/musique_fakhomies.mp3`, demande de Michaël).
+- **DA :** rouge, comme la vidéo 4 (même événement, même musique). À confirmer.
+- **Questions :** rush définitif ; DA rouge ou charte jaune ; « 7e édition » (dit, non écrit sur l'affiche) ; prise c04 écartée (disait « gratuitement » et « plus d'une trentaine », mais pas le stand Mehomies).
