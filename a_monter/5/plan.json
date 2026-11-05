@@ -1,5 +1,5 @@
 {
- "_comment": "Vidéo 5 (annonce Space Jam), DA rouge. v02 : t-shirts France et USA détourés, posés sur le rouge (retour de Michael sur la v01). v01 montée sans validation préalable du plan (mission M19).",
+ "_comment": "Vidéo 5 (annonce Space Jam), DA rouge. v03 : sous-titres gardés pendant l'affiche (retour v02). v02 : t-shirts détourés. v01 sans validation préalable du plan (mission M19).",
  "da": "rouge",
  "accroche": {
   "phrase": "P1",
@@ -50,7 +50,7 @@
      "precision": "Condition Publique, Roubaix"
     }
    ],
-   "_note": "Affiche entière (A10), étiquette lieu / date, dès « ce samedi » (mot qui ouvre l'idée)."
+   "_note": "Affiche entière (A10), étiquette lieu / date, dès « ce samedi » ; sous-titres gardés sous l'étiquette (retour v02, journal A19)."
   },
   {
    "type": "texte",
@@ -105,12 +105,7 @@
   }
  ],
  "sousTitres": {
-  "masquer": [
-   [
-    "P2:ce",
-    "P2:roubaix"
-   ]
-  ]
+  "masquer": []
  },
  "sons": {
   "clicDb": -4

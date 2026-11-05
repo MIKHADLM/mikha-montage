@@ -319,11 +319,11 @@ export const MontageFacecam: React.FC<PropsMontage> = ({ video, donnees }) => {
     };
   };
 
+  // Coupures de ligne : fin du hook, bords de chaque séquence (une ligne ne passe pas du face cam au
+  // fond rouge : vidéo 5, « pas ce samedi » à l'entrée de l'affiche)
   const coupuresRouge = [
     ...(accroche ? [accroche.fin] : []),
-    ...M.sequences
-      .filter((s) => s.type === "texte" && s.lignes.length > 0)
-      .map((s) => s.fin),
+    ...M.sequences.flatMap((s) => [s.debut, s.fin]),
   ];
   const groupesLongs = M.rouge
     ? grouperLong(M.mots, M.fps, M.duree, coupuresRouge)

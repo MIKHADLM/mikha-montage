@@ -15,3 +15,7 @@
 
 ## v02 (2026-11-05, retour de Michael sur la v01 : « est-ce que tu pourrais essayer de détourer les T-shirts qui ont été mis sur le fond rouge ? »)
 - Boxy France et USA détourés (`assets/boxy_*_detoure.png`, `remotion/scripts/detourer_fond_blanc.py` : fond blanc relié au bord, bord doux de 2 px décontaminé du blanc), posés sur le rouge avec l'ombre qui suit leur forme. Bords vérifiés zoomés (col, manches, ourlet) : pas de halo blanc. Rien d'autre ne change.
+
+## v03 (2026-11-05, retour de Michael sur la v02 : « Sur le fond rouge avec l'affiche, est-ce que ce serait possible de rajouter les sous-titres en plus des informations ? »)
+- Sous-titres gardés pendant l'affiche (masque retiré), style habituel du fond rouge, sous l'étiquette (bas à 1 340 px, étiquette au-dessus de 1 180 px) : rien ne se chevauche, vérifié image par image (images 80 à 211).
+- Lignes recalées pour la lecture : « ce samedi se tient / la 7e édition / de Space Jam / à la Condition Publique / de Roubaix » (« | » dans le texte relu) ; une ligne coupe aussi aux bords de chaque séquence (plus de « pas ce samedi » à cheval sur l'entrée de l'affiche).

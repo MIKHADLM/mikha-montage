@@ -285,7 +285,7 @@
    "finS": 9.53,
    "phrase": "P2",
    "debutPhrase": false,
-   "groupe": "P2-g9",
+   "groupe": "P2-g8",
    "segment": 2,
    "confiance": 0.991
   },
@@ -297,7 +297,7 @@
    "finS": 9.91,
    "phrase": "P2",
    "debutPhrase": false,
-   "groupe": "P2-g10",
+   "groupe": "P2-g9",
    "segment": 2,
    "confiance": 0.754
   },
@@ -309,7 +309,7 @@
    "finS": 9.99,
    "phrase": "P2",
    "debutPhrase": false,
-   "groupe": "P2-g10",
+   "groupe": "P2-g9",
    "segment": 2,
    "confiance": 0.969
   },
@@ -333,7 +333,7 @@
    "finS": 10.69,
    "phrase": "P2",
    "debutPhrase": false,
-   "groupe": "P2-g11",
+   "groupe": "P2-g10",
    "segment": 2,
    "confiance": 0.971
   },
