@@ -1,3 +1,5 @@
+> **Publication :** programmée le 06/11/2026 à 17:00 (Instagram, TikTok, YouTube)
+
 # Plan de montage : vidéo 5 (annonce Space Jam), DA rouge
 
 > Monté directement en v01 sans validation préalable (mission M19, 2026-11-05). Tout est proposition. Traduction exacte : `plan.json`.
