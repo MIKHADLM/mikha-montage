@@ -12,3 +12,6 @@
 - **Cadrages :** P2 × 1,12 ; P3 × 1 → 1,15 ; P4 × 1,08 ; P5 × 1,18 ; P6 × 1,1.
 - **Son :** voix -14 LUFS ; musique de la vidéo 4 (départ 0 s) ; riser, clics (-4 dB), déclencheurs automatiques.
 - **À signaler :** visage bas dans le cadre : les sous-titres (bas à 1 340 px) passent sur le menton et parfois la bouche.
+
+## v02 (2026-11-05, retour de Michael sur la v01 : « est-ce que tu pourrais essayer de détourer les T-shirts qui ont été mis sur le fond rouge ? »)
+- Boxy France et USA détourés (`assets/boxy_*_detoure.png`, `remotion/scripts/detourer_fond_blanc.py` : fond blanc relié au bord, bord doux de 2 px décontaminé du blanc), posés sur le rouge avec l'ombre qui suit leur forme. Bords vérifiés zoomés (col, manches, ourlet) : pas de halo blanc. Rien d'autre ne change.

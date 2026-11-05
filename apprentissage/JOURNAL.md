@@ -69,10 +69,11 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-11-02 | 3 | ffmpeg récent n'accepte plus `-vsync` | Contrôle de la couleur en erreur | Outil `controler_export.py` | appliquée |
 | 2026-11-05 | 5 | Rush converti HLG → SDR : ffmpeg (swscale) recopie les étiquettes couleur de l'entrée (bt2020 / HLG) malgré `-color_*` ; le navigateur du rendu lit alors l'image en HDR (visage rouge, écart 46/255). Réétiqueter sans réencoder (`h264_metadata`) et vérifier avec `ffprobe` | Contrôle de la couleur | Skill (pièges) | appliquée |
 | 2026-11-05 | 5 | Sous-titre du hook ou d'un texte en escalier qui réapparaît après le masque | Planche image par image | Outil (`MontageFacecam.tsx`, `grouperLong`), règle A18 | en attente |
+| 2026-11-05 | 5 | Produits sur fond blanc pur (photos du site) posés sur le rouge : les détourer. Le masque de Vision (macOS) laisse un bord flou et un halo ; un détourage par le fond blanc relié au bord, bord de 2 px décontaminé, est net | Retour v01 (« détourer les T-shirts ») | Outil `detourer_fond_blanc.py` | appliquée |
 
 ## 3. Bilan par vidéo
 
-- **Vidéo 5 (annonce Space Jam, DA rouge)** : v01 le 2026-11-05 (20,5 s), plan de coupe de Michaël, affiche de la vidéo 4, stock t-shirts. En attente de ses retours.
+- **Vidéo 5 (annonce Space Jam, DA rouge)** : v01 le 2026-11-05 (20,5 s), plan de coupe de Michaël, affiche de la vidéo 4, stock t-shirts. v02 : t-shirts détourés (retour v01).
 - **Vidéo 4 (Fakhomies, DA rouge pilote)** : validée en v04 le 2026-11-03 après 3 tours (v01 placement des illustrations, v02 retours à l'image, v03 clics). Leçon : Michaël juge à l'image près (règles A13 à A16).
 
 | Vidéo | Versions | Retours de Michaël | Règles acceptées | Remarque |

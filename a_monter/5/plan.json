@@ -1,16 +1,41 @@
 {
- "_comment": "Vidéo 5 (annonce Space Jam, pop-up Mehomies samedi 7/11), DA rouge comme la vidéo 4 (même événement, même musique). v01 montée sans validation préalable du plan (mission M19).",
+ "_comment": "Vidéo 5 (annonce Space Jam), DA rouge. v02 : t-shirts France et USA détourés, posés sur le rouge (retour de Michael sur la v01). v01 montée sans validation préalable du plan (mission M19).",
  "da": "rouge",
  "accroche": {
   "phrase": "P1",
-  "titre": {"avant": ["PREMIER", "ÉVÉNEMENT"], "cle": "MEHOMIES", "apres": "CE WEEK-END"}
+  "titre": {
+   "avant": [
+    "PREMIER",
+    "ÉVÉNEMENT"
+   ],
+   "cle": "MEHOMIES",
+   "apres": "CE WEEK-END"
+  }
  },
  "cadrages": [
-  {"phrase": "P2", "zoom": 1.12},
-  {"phrase": "P3", "zoom": [1, 1.15]},
-  {"phrase": "P4", "zoom": 1.08},
-  {"phrase": "P5", "zoom": 1.18},
-  {"phrase": "P6", "zoom": 1.1}
+  {
+   "phrase": "P2",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P3",
+   "zoom": [
+    1,
+    1.15
+   ]
+  },
+  {
+   "phrase": "P4",
+   "zoom": 1.08
+  },
+  {
+   "phrase": "P5",
+   "zoom": 1.18
+  },
+  {
+   "phrase": "P6",
+   "zoom": 1.1
+  }
  ],
  "sequences": [
   {
@@ -18,7 +43,13 @@
    "de": "P2:ce",
    "a": "P2:roubaix",
    "format": "4:5",
-   "photos": [{"fichier": "images/affiche-evenement.png", "nom": "SAMEDI 7 NOVEMBRE", "precision": "Condition Publique, Roubaix"}],
+   "photos": [
+    {
+     "fichier": "images/affiche-evenement.png",
+     "nom": "SAMEDI 7 NOVEMBRE",
+     "precision": "Condition Publique, Roubaix"
+    }
+   ],
    "_note": "Affiche entière (A10), étiquette lieu / date, dès « ce samedi » (mot qui ouvre l'idée)."
   },
   {
@@ -26,9 +57,21 @@
    "de": "P3:un",
    "a": "P3:stands",
    "lignes": [
-    {"texte": "un village de créateurs", "largeur": 0.84, "gauche": 0.08},
-    {"texte": "avec une trentaine", "largeur": 0.66, "gauche": 0.26},
-    {"texte": "de stands", "largeur": 0.36, "gauche": 0.2}
+    {
+     "texte": "un village de créateurs",
+     "largeur": 0.84,
+     "gauche": 0.08
+    },
+    {
+     "texte": "avec une trentaine",
+     "largeur": 0.66,
+     "gauche": 0.26
+    },
+    {
+     "texte": "de stands",
+     "largeur": 0.36,
+     "gauche": 0.2
+    }
    ],
    "_note": "Texte en escalier sur fond rouge, phrase complète de « un village » à « stands » (A14, A15)."
   },
@@ -49,14 +92,27 @@
    "regulier": true,
    "declencheurDb": -6,
    "photos": [
-    {"fichier": "images/france-1-mehomies-tee-fra-v2.png"},
-    {"fichier": "images/usa-1-mehomies-tee-us-v2.png"}
+    {
+     "fichier": "images/boxy-france-detoure.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/boxy-usa-detoure.png",
+     "detoure": true
+    }
    ],
-   "_note": "Défilé régulier des Boxy France et USA (stock validé par Michael) sur « de la collection Mehomies Flag »."
+   "_note": "Défilé régulier des Boxy France et USA détourés (scripts/detourer_fond_blanc.py), posés sur le rouge (retour v01)."
   }
  ],
  "sousTitres": {
-  "masquer": [["P2:ce", "P2:roubaix"]]
+  "masquer": [
+   [
+    "P2:ce",
+    "P2:roubaix"
+   ]
+  ]
  },
- "sons": {"clicDb": -4}
+ "sons": {
+  "clicDb": -4
+ }
 }
