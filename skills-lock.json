@@ -198,6 +198,12 @@
       "sourceType": "github",
       "skillPath": "skills/talking-head-recut/SKILL.md",
       "computedHash": "4aa2002d41525492e8b50b8250eb9a659330ce577630c2a0670ddd0d203c15e2"
+    },
+    "earshot": {
+      "source": "Leonxlnx/earshot",
+      "sourceType": "github",
+      "skillPath": "skills/earshot/SKILL.md",
+      "computedHash": "72c8dfc6401343cdb92f4f3c2df732f04575bd0f24e8b0b6b0bde028916ee15e"
     }
   }
 }
