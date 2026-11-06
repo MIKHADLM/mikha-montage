@@ -71,6 +71,7 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 | 2026-11-05 | 5 | Rush converti HLG → SDR : ffmpeg (swscale) recopie les étiquettes couleur de l'entrée (bt2020 / HLG) malgré `-color_*` ; le navigateur du rendu lit alors l'image en HDR (visage rouge, écart 46/255). Réétiqueter sans réencoder (`h264_metadata`) et vérifier avec `ffprobe` | Contrôle de la couleur | Skill (pièges) | appliquée |
 | 2026-11-05 | 5 | Sous-titre du hook ou d'un texte en escalier qui réapparaît après le masque | Planche image par image | Outil (`MontageFacecam.tsx`, `grouperLong`), règle A18 | en attente |
 | 2026-11-05 | 5 | Produits sur fond blanc pur (photos du site) posés sur le rouge : les détourer. Le masque de Vision (macOS) laisse un bord flou et un halo ; un détourage par le fond blanc relié au bord, bord de 2 px décontaminé, est net | Retour v01 (« détourer les T-shirts ») | Outil `detourer_fond_blanc.py` | appliquée |
+| 2026-11-06 | 5 | Tout le son des MP4 rendus par Remotion arrive 42,7 ms (2048 échantillons, ≈ 1,3 image) après l'image : délai de l'encodeur AAC non signalé dans le MP4 (voix, clics, riser, musique ; le mix WAV de Remotion, lui, est juste). Trouvé grâce à earshot (clics mesurés à -40 ms au lieu de -87 ms). v04 test = image v03 + son du rendu WAV réencodé par ffmpeg (écart 0 ms). Correction de la chaîne à valider (rendu audio WAV séparé + mux ffmpeg) | Test earshot sur la v03 | Outil (`finaliser_son.py` ou rendu) | en attente |
 
 ## 3. Bilan par vidéo
 
