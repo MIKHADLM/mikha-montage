@@ -23,6 +23,8 @@ Toutes les commandes se lancent depuis `MONTAGE/remotion/`. `<N>` = numéro de l
 | whisper-cli + modèle `~/.cache/whisper-cpp/ggml-large-v3-turbo.bin` | Homebrew / cache | Transcription (français) |
 | Node + Remotion 4.0.530 | `remotion/node_modules` | Montage et rendu |
 | Python 3 + Pillow | système | Scripts |
+| numpy (+ scipy) | venv d'earshot `~/agent/outils/earshot/.venv`, pris tout seul par `verifier_livraison.py` | Contrôle avant livraison (corrélations) |
+| earshot 0.4 | `~/agent/outils/earshot` | Deuxième avis sur la synchro des bruitages (`timeline --cues`) ; facultatif (`--sans-earshot`) |
 
 ## 2. Dossier d'une vidéo
 
@@ -55,10 +57,13 @@ a_monter/<N>/
 | Données seules | `python3 scripts/preparer_medias.py ../a_monter/<N> v<N> --donnees` | recopie des JSON après une retouche de `plan.json` ou du découpage |
 | Image fixe | `npx remotion still Montage /tmp/…/f.png --frame=<n> --props='{"video":"v<N>"}'` | contrôle d'une image |
 | Aperçu interactif | `npm run dev` (Remotion Studio, composition `Montage`, propriété `video`) | |
-| Rendu | `npx remotion render Montage ../a_monter/<N>/export/<nom>_v01.mp4 --props='{"video":"v<N>"}'` | MP4 1080×1920, 30 i/s, H.264, BT.709 |
-| Son final | `python3 scripts/finaliser_son.py <export>` | pic vrai ramené à -1 dBTP si besoin (image copiée) |
-| Contrôle | `python3 scripts/controler_export.py <export> --rush ../a_monter/<N>/<rush> --image-montage <n> --image-rush <m>` | OK / À CORRIGER par critère |
-| Raccords | `python3 scripts/detecter_frames_isolees.py <export>` | OK, ou les images isolées entre deux coupes (frame parasite) |
+| Rendu | `python3 scripts/rendre.py <N> <nom>_vNN` | MP4 1080×1920, 30 i/s, H.264, BT.709 : image (`--muted`) et son (WAV, `remotion.son.config.ts`) rendus à part, assemblés par ffmpeg, puis `finaliser_son.py` ; copies `_decoupage.json` et `_plan.json` de la version |
+| Son final | `python3 scripts/finaliser_son.py <export>` | pic vrai ramené à -1 dBTP si besoin (image copiée) ; déjà lancé par `rendre.py` |
+| **Contrôle avant livraison** | `python3 scripts/verifier_livraison.py <export>` (ou `../a_monter/<N> vNN`) | OK / PAS OK + problèmes ; `export/<nom>_vNN_controle.json` (lu par le hook de livraison) ; seuils `scripts/seuils_livraison.json` |
+| Relecture | `python3 scripts/planche_relecture.py <export>` | `export/<nom>_vNN_planche_NN.png` : 5 images à chaque coupe, entrée / sortie de séquence, photo, fin du hook |
+| Repères | `node scripts/reperes_montage.mjs <decoupage> <mots_montage> <plan>` | JSON des coupes, séquences, bruitages prévus (même code que la composition : `src/montage/donnees.ts`, `sons.ts`) |
+| Couleur | `python3 scripts/controler_export.py <export> --rush ../a_monter/<N>/<rush> --image-montage <n> --image-rush <m>` | écart de couleur avec le rush (+ format, loudness, silences) |
+| Raccords | `python3 scripts/detecter_frames_isolees.py <export>` | OK, ou les images isolées entre deux coupes (frame parasite) ; déjà lancé par `verifier_livraison.py` |
 | Téléphone | `python3 scripts/apercu_telephone.py <export>` | copie de moins de 29 Mo |
 
 `--image-montage` / `--image-rush` : le même instant dans le montage et dans le rush, sur un plan à
@@ -228,4 +233,5 @@ sous-titres ne sont dans l'export que si l'incrustation est activée dans Delive
 | `Phrase introuvable dans le découpage` | Identifiant de phrase erroné | Identifiants de `choix.json` |
 | Erreur de chargement de police | Police absente de `public/charte/polices` | Relancer `preparer_medias.py` (il copie `CHARTE/07_typographies`) |
 | Pic vrai au-dessus de -1 dBTP | Bruitages ou musique sur la voix limitée | `finaliser_son.py` (baisse le plafond par paliers de 0,5 dB si l'AAC fait remonter le pic) |
+| Son en retard d'environ 43 ms (`verifier_livraison.py` : « son de l'export décalé de +42.7 ms ») | Export rendu directement par `npx remotion render …mp4` : Remotion encode l'AAC en flux ADTS, le MP4 annonce 1024 échantillons d'amorçage pour 3072 réels | `scripts/rendre.py` (son en WAV, AAC par ffmpeg) |
 | Rendu ProRes refusé (« does not support the --crf option ») | Configuration H.264 par défaut | `--config=remotion.asset.config.ts` |

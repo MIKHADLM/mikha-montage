@@ -49,6 +49,11 @@
 - **Pic vrai au-dessus de -1 dBTP** quand des bruitages s'ajoutent à la voix limitée : toujours
   `finaliser_son.py` puis `controler_export.py`. L'encodage AAC fait remonter le pic vrai (vidéo 2 :
   -0,8 avec un plafond à -2 dBFS) : l'outil baisse alors le plafond par paliers.
+- **Son en retard de 42,7 ms sur l'image** (vidéos 4 et 5, trouvé le 2026-11-06 grâce à earshot) :
+  tout le son d'un MP4 rendu par Remotion (voix, clics, musique) arrive 2048 échantillons après
+  l'image ; l'AAC passe par un flux ADTS (`compress-audio.js`, `-f adts`) qui perd le délai
+  d'amorçage de l'encodeur (3072 échantillons réels, 1024 annoncés dans le MP4). Parade : toujours
+  `scripts/rendre.py` ; `verifier_livraison.py` mesure le décalage son ↔ rush à chaque export.
 - **Bruitages mal calés :** le son d'un fichier ne commence pas à 0 (clic 0,08 s, déclencheur
   0,23 s) ; la composition `Montage` en tient compte.
 

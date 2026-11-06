@@ -55,6 +55,8 @@ dossier de ce skill (`MONTAGE/.claude/skills/montage-facecam/`).
 | `remotion/src/charte/` | Composants du style actuel (titre, sous-titres, fond blanc, photo, étiquette, cadrage) |
 | `motion_design/` | Banque de motion design : `CATALOGUE.md`, un dossier par asset |
 | `apprentissage/JOURNAL.md` | Mémoire des retours et des leçons, règles en attente de validation |
+| `apprentissage/STATS.md` | Stats Metricool à J+7 de chaque vidéo publiée, et ce qu'on en retient |
+| `.claude/agents/relecteur-montage.md`, `.claude/hooks/` | Relecteur indépendant (étape 5) ; garde-fou de livraison (étape 6) |
 
 ## Déroulé d'un montage
 
@@ -66,7 +68,7 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
   version, retours, charte, skill, journal) : `./synchro.sh "vidéo N : <ce qui a changé>"`. Les
   rushes et assets ne passent pas par là : s'ils manquent sur ce Mac, les demander à Michaël.
 - Lire la charte dans l'ordre de `CHARTE/README.md`, puis `apprentissage/JOURNAL.md` (leçons,
-  règles en attente), `references/pieges.md` et `motion_design/CATALOGUE.md`.
+  règles en attente), `apprentissage/STATS.md` (ce qui a marché), `references/pieges.md` et `motion_design/CATALOGUE.md`.
 - Si `CHARTE/a_ranger/` contient des fichiers : les ranger (polices dans `07_typographies/`, sons dans
   `06_assets/sfx/`, logos et étiquettes dans `06_assets/…`) et mettre à jour les README. Un fichier
   utilisé par un projet DaVinci de Michaël se **copie** au lieu de se déplacer, et on le lui dit.
@@ -122,24 +124,45 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
 - Vérifier sur images fixes avant le rendu complet : hook, chaque séquence, un sous-titre **sur le
   face cam** (lisible sur la tenue ? sinon `sousTitres.ombreSurFacecam`, charte `SOUS-TITRES.md`) :
   `npx remotion still Montage <image>.png --frame=<n> --props='{"video":"v<N>"}'`.
-- Rendu : `npx remotion render Montage ../a_monter/<N>/export/<nom>_v01.mp4 --props='{"video":"v<N>"}'`.
+- Rendu : **toujours** `python3 scripts/rendre.py <N> <nom>_v01` (image et son rendus à part,
+  assemblés par ffmpeg, son finalisé à -1 dBTP, copie du découpage et du plan de la version). Jamais
+  `npx remotion render Montage …mp4` seul : son AAC arrive 42,7 ms après l'image (`references/pieges.md`).
 - Un besoin que les types de séquence ne couvrent pas : ajouter le composant (voir
   `references/chaine-technique.md`, « Étendre le montage »), pas de montage écrit à la main.
 
-### 5. Contrôles
-- `python3 scripts/finaliser_son.py <export>` (pic vrai à -1 dBTP au plus), puis
-  `python3 scripts/controler_export.py <export> --rush <rush> --image-montage <n> --image-rush <m>`.
-- `python3 scripts/detecter_frames_isolees.py <export>` : aucune image isolée aux raccords (« frame
-  parasite », vidéo 4). Michaël regarde à l'image près : regarder aussi image par image chaque raccord
-  et chaque entrée de texte.
-- Regarder une planche d'images clés : hook, entrée et sortie de chaque séquence, sous-titres dans la
-  zone sûre, fin.
-- `a_monter/<N>/CHECKLIST_VALIDATION.md` (copie de `CHARTE/09_templates/`) : case cochée = vérifié
-  par une mesure ; ce qui se juge à l'écoute ou au visionnage reste à Michaël.
+### 5. Contrôles et relecture (avant de montrer quoi que ce soit à Michaël)
+1. **Contrôle mesuré, obligatoire** : `python3 scripts/verifier_livraison.py <export>`. Verdict OK /
+   PAS OK et liste des problèmes : format, -14 LUFS, pic vrai, écrêtage, silences, décalage son ↔ rush
+   (ms, plan par plan), clics aux coupes, bruitages à leur temps prévu (et `earshot timeline --cues`),
+   zone sûre des séquences sur fond, images isolées (A13). Seuils : `scripts/seuils_livraison.json`.
+   Preuve : `export/<nom>_vNN_controle.json`. Couleur comparée au rush : `controler_export.py
+   <export> --rush <rush> --image-montage <n> --image-rush <m>` (à faire à la première version).
+2. **Relecture image par image** : `python3 scripts/planche_relecture.py <export>` → pages
+   `export/<nom>_vNN_planche_NN.png` (5 images à chaque coupe, entrée / sortie de séquence, photo,
+   fin du hook, avec les mots dits). Les **regarder toutes** (outil Read) : image isolée, texte en
+   avance ou en retard sur le mot, sous-titre faux ou qui revient, affiche recadrée, étiquette fausse,
+   texte hors zone, illustration qui ne montre pas ce qui est dit (A10, A13 à A16, A18, A19).
+3. **Boucle** : un défaut trouvé → corriger la cause (`plan.json`, découpage, composant), relancer
+   `rendre.py` (même version tant que Michaël ne l'a pas vue), puis 1 et 2. **3 tours au plus** ; au-delà,
+   livrer en disant clairement ce qui reste et pourquoi.
+4. **Relecteur indépendant** : lancer le sous-agent `relecteur-montage` (`.claude/agents/`) avec les
+   chemins de l'export, des planches, du `_controle.json`, de `plan.json`, `PLAN_MONTAGE.md`,
+   `choix.json`, `RETOURS.md` et `apprentissage/JOURNAL.md`. Il n'a pas vu le montage et rend des
+   défauts classés (bloquant, à corriger, à regarder). Corriger les bloquants (retour en 3), trancher le
+   reste ; ce qui reste ouvert est dit à Michaël.
+5. `a_monter/<N>/CHECKLIST_VALIDATION.md` (copie de `CHARTE/09_templates/`) : case cochée = vérifié
+   par une mesure ou par la relecture ; ce qui se juge à l'écoute reste à Michaël.
 
 ### 6. Livraison
-- Donner le lien de l'export, ce qui a été vérifié et ce qui reste à juger. Envoyer aussi la copie
-  légère (`python3 scripts/apercu_telephone.py <export>`), surtout s'il est loin de son Mac.
+- **Garde-fou (hook du projet, `.claude/hooks/controle_livraison.py`)** : l'envoi d'un export ou de
+  son aperçu sur Telegram, et sa copie vers `syncro_drive`, sont refusés tant que
+  `<nom>_vNN_controle.json` n'est pas au statut OK pour ce fichier exact (un nouveau rendu ou
+  `finaliser_son.py` après le contrôle le rend périmé). En fin de tour, il rappelle une fois le contrôle
+  si une version récente en manque. Si Michaël accepte un point PAS OK : mettre `"statut": "ACCEPTE"`
+  et ses mots dans `"accepte"` du `_controle.json`, jamais de soi-même.
+- Donner le lien de l'export, le verdict du contrôle, ce que la relecture a corrigé et ce qui reste à
+  juger. Envoyer aussi la copie légère (`python3 scripts/apercu_telephone.py <export>`), surtout s'il
+  est loin de son Mac.
 - S'il veut finir dans DaVinci : `exporter_facecam.py` (face cam seul + EDL) et
   `exporter_sous_titres.py` (SRT par groupe ou mot à mot).
 
@@ -180,6 +203,17 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
   `createScheduledPost` (`media` + `videoThumbnailUrl`). On laisse le partage par lien ensuite.
   Le dossier Drive n'est pas lisible depuis le terminal (File Provider) : vérifier par le MCP.
   TikTok exige un `title` dans `tiktokData`.
+
+### 9. Stats à J+7 (apprendre ce qui marche)
+- À la programmation : `~/agent/scripts/rappel-ajout.sh "<J+7> 10:00" "MONTAGE : relever stats
+  Metricool vidéo <N> <titre>"` (jamais CronCreate).
+- À J+7 : MCP Metricool `getAnalyticsDataByMetrics` en **lecture seule** (blogId 3680334, du jour de
+  publication à J+7 ; champs dans `apprentissage/STATS.md`) : vues, portée, j'aime, commentaires,
+  partages, enregistrements, temps moyen vu, part des vues de plus de 3 s (Instagram), vidéo vue en
+  entier (TikTok), YouTube si disponible.
+- Une ligne par réseau dans `apprentissage/STATS.md`, puis 1 ou 2 phrases « ce qu'on en retient »
+  (hook, durée, type de séquence) ; une piste qui se confirme sur plusieurs vidéos devient une règle
+  proposée à Michaël (`JOURNAL.md`). Lire `STATS.md` avant d'écrire un plan de montage.
 
 ## Le style en bref (la charte fait foi)
 

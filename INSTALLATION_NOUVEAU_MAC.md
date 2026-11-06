@@ -25,6 +25,7 @@ Le zip contient déjà l'historique Git (`MONTAGE/.git`). Les médias lourds (ru
    - Homebrew (s'il manque, donne-moi la commande officielle : elle demande mon mot de passe) ;
    - `brew install ffmpeg whisper-cpp node jq` ;
    - Python 3 et Pillow : `pip3 install Pillow` ;
+   - numpy pour le contrôle avant livraison (`remotion/scripts/verifier_livraison.py`) : soit earshot installé dans `~/agent/outils/earshot` (le script prend son python), soit `pip3 install numpy` ; sans earshot, lancer le contrôle avec `--sans-earshot` ;
    - les modules Remotion : `npm install` dans `MONTAGE/remotion` (Remotion 4.0.530, la version est dans `package.json`) ;
    - le modèle de transcription : `ggml-large-v3-turbo.bin` dans `~/.cache/whisper-cpp/` (téléchargement depuis la page officielle des modèles whisper.cpp sur Hugging Face, `ggerganov/whisper.cpp`, environ 1,6 Go).
 
@@ -42,6 +43,7 @@ Le zip contient déjà l'historique Git (`MONTAGE/.git`). Les médias lourds (ru
    - Puis, dans `MONTAGE` : `git status` (le zip contient le dépôt), `git remote -v` (doit montrer l'adresse ci-dessus), et `./synchro.sh` pour récupérer les changements faits depuis le zip.
 
 5. **Ce qui ne marchera pas ici, et c'est voulu** :
+   - Le garde-fou de livraison (`.claude/hooks/controle_livraison.py`, dans `settings.json`) marche partout : il refuse d'envoyer ou de copier vers Drive une version sans contrôle OK.
    - `MONTAGE/.claude/settings.json` lance après chaque réponse un script de mon dossier `AUTOMATISATIONS`, qui n'existe que sur mon Mac principal. Il échoue sans bruit : n'y touche pas (le fichier est partagé par la synchro ; le modifier casserait le Mac principal).
    - Pas de dossier `AUTOMATISATIONS` ici : la publication (copie dans `syncro_drive`, Metricool, bot Telegram) se fait depuis le Mac principal ou par les routines cloud.
 
