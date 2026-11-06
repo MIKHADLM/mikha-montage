@@ -1,7 +1,7 @@
 {
  "_comment": "Temps des mots par l'aligneur (Qwen3-ForcedAligner), en temps rush, prise par prise. Généré par remotion/scripts/aligner_mots.py depuis choix.json ; lu par decouper_transcription.py (repli sur whisper pour une prise en échec ou périmée). whisper*S = temps de whisper pour comparaison.",
  "rush": "IMG_8398_sdr.mp4",
- "genereLe": "2026-11-06T16:37:48",
+ "genereLe": "2026-11-06T17:12:37",
  "aligneur": "/Users/michaelphilibert/agent/outils/aligneur/aligner",
  "phrases": [
   {
@@ -489,109 +489,110 @@
    "id": "P5",
    "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go !",
    "morceaux": [
-    "c13"
+    "c13b"
    ],
    "parMorceau": [
     {
-     "morceau": "c13",
-     "start": 47.88,
+     "morceau": "c13b",
+     "start": 48.8,
      "end": 51.46,
      "fenetreS": [
-      47.71,
+      48.68,
       51.81
      ],
      "statut": "ok",
      "mots": [
       {
        "mot": "Bref,",
-       "debutS": 47.87,
-       "finS": 48.19,
-       "debutBrutS": 47.87,
-       "whisperDebutS": 47.91,
-       "whisperFinS": 48.07
+       "debutS": 48.68,
+       "finS": 49.24,
+       "debutBrutS": 48.84,
+       "whisperDebutS": 48.89,
+       "whisperFinS": 48.9
       },
       {
        "mot": "on",
-       "debutS": 48.19,
-       "finS": 48.35,
-       "whisperDebutS": 48.22,
-       "whisperFinS": 48.22
+       "debutS": 49.32,
+       "finS": 49.4,
+       "whisperDebutS": 48.9,
+       "whisperFinS": 48.97
       },
       {
        "mot": "espère",
-       "debutS": 48.35,
-       "finS": 48.67,
-       "whisperDebutS": 48.23,
-       "whisperFinS": 48.6
+       "debutS": 49.4,
+       "finS": 49.64,
+       "whisperDebutS": 49.07,
+       "whisperFinS": 49.24
       },
       {
        "mot": "vous",
-       "debutS": 48.67,
-       "finS": 48.67,
-       "whisperDebutS": 48.6,
-       "whisperFinS": 48.85
+       "debutS": 49.64,
+       "finS": 49.8,
+       "whisperDebutS": 49.24,
+       "whisperFinS": 49.38
       },
       {
        "mot": "voir",
-       "debutS": 48.83,
-       "finS": 49.87,
-       "whisperDebutS": 48.85,
-       "whisperFinS": 49.1
+       "debutS": 49.8,
+       "finS": 49.8,
+       "whisperDebutS": 49.53,
+       "whisperFinS": 49.58
       },
       {
        "mot": "nombreux.",
-       "debutS": 49.87,
-       "finS": 50.27,
-       "whisperDebutS": 49.1,
-       "whisperFinS": 49.73
+       "debutS": 49.8,
+       "finS": 50.28,
+       "whisperDebutS": 49.58,
+       "whisperFinS": 50.13
       },
       {
        "mot": "Merci",
-       "debutS": 50.27,
-       "finS": 50.51,
-       "whisperDebutS": 49.73,
-       "whisperFinS": 50.04
+       "debutS": 50.28,
+       "finS": 50.52,
+       "whisperDebutS": 50.35,
+       "whisperFinS": 50.36
       },
       {
        "mot": "pour",
-       "debutS": 50.51,
-       "finS": 50.67,
-       "whisperDebutS": 50.04,
-       "whisperFinS": 50.22
+       "debutS": 50.52,
+       "finS": 50.68,
+       "whisperDebutS": 50.36,
+       "whisperFinS": 50.54
       },
       {
        "mot": "la",
-       "debutS": 50.67,
-       "finS": 50.75,
-       "whisperDebutS": 50.31,
-       "whisperFinS": 50.42
+       "debutS": 50.68,
+       "finS": 50.76,
+       "whisperDebutS": 50.54,
+       "whisperFinS": 50.58
       },
       {
        "mot": "force.",
-       "debutS": 50.75,
-       "finS": 51.07,
-       "whisperDebutS": 50.42,
-       "whisperFinS": 50.77
+       "debutS": 50.76,
+       "finS": 51.08,
+       "whisperDebutS": 50.65,
+       "whisperFinS": 51.03
       },
       {
        "mot": "Let's",
-       "debutS": 51.15,
-       "finS": 51.31,
-       "whisperDebutS": 50.87,
-       "whisperFinS": 51.17
+       "debutS": 51.16,
+       "finS": 51.32,
+       "whisperDebutS": 51.17,
+       "whisperFinS": 51.23
       },
       {
        "mot": "go!",
-       "debutS": 51.31,
-       "finS": 51.46,
-       "finBrutS": 51.55,
-       "whisperDebutS": 51.17,
-       "whisperFinS": 51.29
+       "debutS": 51.32,
+       "finS": 51.5,
+       "finBrutS": 51.56,
+       "whisperDebutS": 51.24,
+       "whisperFinS": 51.4
       }
      ],
      "premierJeton": 0
     }
-   ]
+   ],
+   "debutForceS": 48.78
   }
  ]
 }

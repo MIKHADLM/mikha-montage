@@ -16,3 +16,7 @@
 - Corrigé pendant la boucle : sous-titres blancs illisibles sur le t-shirt blanc du plan de coupe → texte en escalier rouge (tour 1) ; « à la Condition / Publique de Roubaix » coupé en deux (relecteur) → « à la Condition Publique » puis « de Roubaix » (tour 3).
 - Laissé tel quel, comme la vidéo 5 (non relevé par Michael) : « Mehomies Flag » reste 3 images sur le face cam après le défilé (336-338) et les derniers sous-titres débordent de 2 images aux coupes ; une image rouge vide entre les deux t-shirts du défilé (312, fondu « Pose ») ; à partir de l'image 280 le texte rouge passe sur le drapeau (moins contrasté) ; « FRÈRES » à moitié derrière les cheveux (contour lisible).
 - Suggestions du relecteur, à trancher par Michael : étiquette « AUJOURD'HUI, 15H » au lieu de « SAMEDI 7 NOVEMBRE, 15H » ; un visuel sur « C'est gratuit ».
+
+## v02 (2026-11-06, retour de Michael sur la v01 : un « bref on espère » en trop)
+- Faux départ « Bref, on esp… » retiré au début de la dernière phrase (sous-morceau c13b, début forcé sur l'attaque du 2e « Bref ») : 19,5 → 18,6 s. Rien d'autre ne change.
+- Contrôle : **PAS OK** sur un seul point, l'avis d'earshot (écart médian des bruitages 29 ms pour un seuil de 25). Seul le déclencheur à 9,43 s a bougé chez earshot (-4 → +28 ms) ; le son de v01 et v02 est identique à cet endroit (corrélation : 0 ms, +0,12 dB, le gain de voix est passé de +5,4 à +5,6 dB). Mesure principale des bruitages : 0 ms. Fausse alerte à faire accepter par Michael.

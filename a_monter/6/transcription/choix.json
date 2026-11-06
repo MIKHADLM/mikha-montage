@@ -45,9 +45,10 @@
   {
    "id": "P5",
    "morceaux": [
-    "c13"
+    "c13b"
    ],
-   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go !"
+   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go !",
+   "debutForceS": 48.78
   }
  ],
  "coupes": {
@@ -59,7 +60,8 @@
   "c07": "faux départ",
   "c08": "bruit (raclement de gorge)",
   "c09": "faux départ",
-  "c12": "reprise (« nombreux » mal prononcé)"
+  "c12": "reprise (« nombreux » mal prononcé)",
+  "c13-debut": "faux départ (« Bref, on esp… » avant la prise complète) — retour de Michael sur la v01"
  },
  "musique": {
   "fichier": "assets/musique_fakhomies.mp3",

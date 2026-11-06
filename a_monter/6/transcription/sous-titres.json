@@ -386,86 +386,86 @@
  },
  {
   "text": " Bref",
-  "startMs": 15803,
-  "endMs": 16123,
+  "startMs": 15793,
+  "endMs": 16273,
   "timestampMs": null,
-  "confidence": 0.971
+  "confidence": 0.99
  },
  {
   "text": " on",
-  "startMs": 16123,
-  "endMs": 16283,
+  "startMs": 16353,
+  "endMs": 16433,
   "timestampMs": null,
   "confidence": 0.999
  },
  {
   "text": " espère",
-  "startMs": 16283,
-  "endMs": 16603,
+  "startMs": 16433,
+  "endMs": 16673,
   "timestampMs": null,
-  "confidence": 0.992
+  "confidence": 0.996
  },
  {
   "text": " vous",
-  "startMs": 16603,
-  "endMs": 16683,
-  "timestampMs": null,
-  "confidence": 0.976
- },
- {
-  "text": " voir",
-  "startMs": 16763,
-  "endMs": 17803,
+  "startMs": 16673,
+  "endMs": 16833,
   "timestampMs": null,
   "confidence": 0.998
  },
  {
-  "text": " nombreux",
-  "startMs": 17803,
-  "endMs": 18203,
+  "text": " voir",
+  "startMs": 16833,
+  "endMs": 16913,
   "timestampMs": null,
-  "confidence": 0.259
+  "confidence": 0.999
+ },
+ {
+  "text": " nombreux",
+  "startMs": 16833,
+  "endMs": 17313,
+  "timestampMs": null,
+  "confidence": 0.932
  },
  {
   "text": " Merci",
-  "startMs": 18203,
-  "endMs": 18443,
+  "startMs": 17313,
+  "endMs": 17553,
   "timestampMs": null,
-  "confidence": 0.989
+  "confidence": 1.0
  },
  {
   "text": " pour",
-  "startMs": 18443,
-  "endMs": 18603,
+  "startMs": 17553,
+  "endMs": 17713,
   "timestampMs": null,
   "confidence": 1.0
  },
  {
   "text": " la",
-  "startMs": 18603,
-  "endMs": 18683,
+  "startMs": 17713,
+  "endMs": 17793,
+  "timestampMs": null,
+  "confidence": 1.0
+ },
+ {
+  "text": " force",
+  "startMs": 17793,
+  "endMs": 18113,
+  "timestampMs": null,
+  "confidence": 0.965
+ },
+ {
+  "text": " Let's",
+  "startMs": 18193,
+  "endMs": 18353,
   "timestampMs": null,
   "confidence": 0.999
  },
  {
-  "text": " force",
-  "startMs": 18683,
-  "endMs": 19003,
-  "timestampMs": null,
-  "confidence": 0.945
- },
- {
-  "text": " Let's",
-  "startMs": 19083,
-  "endMs": 19243,
-  "timestampMs": null,
-  "confidence": 0.994
- },
- {
   "text": " go",
-  "startMs": 19243,
-  "endMs": 19393,
+  "startMs": 18353,
+  "endMs": 18533,
   "timestampMs": null,
-  "confidence": 1.0
+  "confidence": 0.477
  }
 ]

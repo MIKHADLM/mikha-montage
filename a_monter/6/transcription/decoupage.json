@@ -7,8 +7,8 @@
   "seuilDb": -40,
   "dureeMinS": 0.3
  },
- "dureeMontageS": 19.467,
- "dureeMontageFrames": 584,
+ "dureeMontageS": 18.6,
+ "dureeMontageFrames": 558,
  "phrases": [
   {
    "id": "P1",
@@ -37,7 +37,7 @@
   {
    "id": "P5",
    "montageDebutS": 15.733,
-   "montageFinS": 19.467,
+   "montageFinS": 18.6,
    "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go!"
   }
  ],
@@ -105,17 +105,17 @@
   {
    "id": 5,
    "phrase": "P5",
-   "morceau": "c13",
-   "paroleDebutS": 47.87,
-   "paroleFinS": 51.46,
-   "sourceDebutFrame": 1434,
-   "sourceFinFrame": 1546,
-   "dureeFrames": 112,
+   "morceau": "c13b",
+   "paroleDebutS": 48.78,
+   "paroleFinS": 51.5,
+   "sourceDebutFrame": 1461,
+   "sourceFinFrame": 1547,
+   "dureeFrames": 86,
    "montageDebutFrame": 472,
-   "sourceDebutS": 47.8,
-   "sourceFinS": 51.533,
+   "sourceDebutS": 48.7,
+   "sourceFinS": 51.567,
    "montageDebutS": 15.733,
-   "montageFinS": 19.467
+   "montageFinS": 18.6
   }
  ],
  "coupes": [
@@ -181,6 +181,13 @@
    "sourceFinS": 47.54,
    "texte": "Bref, on espère vous voir en nom bleu.",
    "raison": "reprise (« nombreux » mal prononcé)"
+  },
+  {
+   "morceau": "c13-debut",
+   "sourceDebutS": 47.88,
+   "sourceFinS": 48.8,
+   "texte": "Bref, on espère vous voir nombreux, merci pour la force, let's go !",
+   "raison": "faux départ (« Bref, on esp… » avant la prise complète) — retour de Michael sur la v01"
   }
  ]
 }

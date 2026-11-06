@@ -967,7 +967,7 @@
    "finS": 48.07,
    "confiance": 0.971,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "on",
@@ -975,7 +975,7 @@
    "finS": 48.22,
    "confiance": 0.999,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "espère",
@@ -983,7 +983,7 @@
    "finS": 48.6,
    "confiance": 0.992,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "vous",
@@ -991,7 +991,7 @@
    "finS": 48.85,
    "confiance": 0.976,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "voir",
@@ -999,7 +999,7 @@
    "finS": 49.1,
    "confiance": 0.998,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "nombreux,",
@@ -1007,7 +1007,7 @@
    "finS": 49.73,
    "confiance": 0.259,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "merci",
@@ -1015,7 +1015,7 @@
    "finS": 50.04,
    "confiance": 0.989,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "pour",
@@ -1023,7 +1023,7 @@
    "finS": 50.22,
    "confiance": 1.0,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "la",
@@ -1031,7 +1031,7 @@
    "finS": 50.42,
    "confiance": 0.999,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "force,",
@@ -1039,7 +1039,7 @@
    "finS": 50.77,
    "confiance": 0.945,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "let's",
@@ -1047,7 +1047,7 @@
    "finS": 51.17,
    "confiance": 0.994,
    "morceau": "c13",
-   "garde": true
+   "garde": false
   },
   {
    "brut": "go",
@@ -1055,6 +1055,102 @@
    "finS": 51.29,
    "confiance": 1.0,
    "morceau": "c13",
+   "garde": false
+  },
+  {
+   "brut": "Bref,",
+   "debutS": 48.89,
+   "finS": 48.9,
+   "confiance": 0.99,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "on",
+   "debutS": 48.9,
+   "finS": 48.97,
+   "confiance": 0.999,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "espère",
+   "debutS": 49.07,
+   "finS": 49.24,
+   "confiance": 0.996,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "vous",
+   "debutS": 49.24,
+   "finS": 49.38,
+   "confiance": 0.998,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "voir",
+   "debutS": 49.53,
+   "finS": 49.58,
+   "confiance": 0.999,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "nombreux.",
+   "debutS": 49.58,
+   "finS": 50.13,
+   "confiance": 0.932,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "Merci",
+   "debutS": 50.35,
+   "finS": 50.36,
+   "confiance": 1.0,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "pour",
+   "debutS": 50.36,
+   "finS": 50.54,
+   "confiance": 1.0,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "la",
+   "debutS": 50.54,
+   "finS": 50.58,
+   "confiance": 1.0,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "force.",
+   "debutS": 50.65,
+   "finS": 51.03,
+   "confiance": 0.965,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "Let's",
+   "debutS": 51.17,
+   "finS": 51.23,
+   "confiance": 0.999,
+   "morceau": "c13b",
+   "garde": true
+  },
+  {
+   "brut": "go.",
+   "debutS": 51.24,
+   "finS": 51.4,
+   "confiance": 0.477,
+   "morceau": "c13b",
    "garde": true
   }
  ]
