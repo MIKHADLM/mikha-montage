@@ -15,7 +15,13 @@
   -nfa`) ; attention aux fins en « s » ou « f », plus faibles.
 - **Sous-titres en avance** : quand une prise commence par un souffle, ou quand la reconnaissance a
   fusionné deux prises, les temps de mots d'origine sont faux (P4 de la vidéo 2 : 0,4 s d'avance).
-  Retranscrire la prise dès le premier mot (`redecouper_morceau.py`).
+  Retranscrire la prise dès le premier mot (`redecouper_morceau.py`). Même sur une prise propre,
+  whisper place mal certains mots (vidéo 5 : « Bref, » de 70 ms, la fin de P6 0,25 s trop tôt) :
+  toujours caler les mots avec `aligner_mots.py` avant le découpage (depuis le 2026-11-06).
+- **Aligneur : il aligne le texte qu'on lui donne, sans score de confiance.** Si le texte relu
+  n'est pas celui de la prise, il ne prévient pas ; `aligner_mots.py` met la prise en ÉCHEC quand le
+  1er ou le dernier mot tombe à plus de 0,4 s de la prise. Il travaille par pas de 80 ms : à
+  l'intérieur d'une phrase, un mot peut bouger de 2 images ; les bords sont recalés sur l'énergie.
 - **Rush transcrit d'un bloc :** whisper saute les reprises. Toujours `transcrire.py` (morceau par
   morceau).
 - **Phrases inventées sur du bruit** (« Merci d'avoir regardé », « Sous-titrage Société

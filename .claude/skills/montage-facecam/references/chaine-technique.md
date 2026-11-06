@@ -24,6 +24,7 @@ Toutes les commandes se lancent depuis `MONTAGE/remotion/`. `<N>` = numéro de l
 | Node + Remotion 4.0.530 | `remotion/node_modules` | Montage et rendu |
 | Python 3 + Pillow | système | Scripts |
 | numpy (+ scipy) | venv d'earshot `~/agent/outils/earshot/.venv`, pris tout seul par `verifier_livraison.py` | Contrôle avant livraison (corrélations) |
+| Aligneur Qwen3-ForcedAligner-0.6B (8 bit, Apache 2.0) | `~/agent/outils/aligneur/` (venv + modèle, 1,6 Go ; lanceur `aligner`) | Temps des mots (`aligner_mots.py`) ; facultatif : sans lui, temps de whisper |
 | earshot 0.4 | `~/agent/outils/earshot` | Deuxième avis sur la synchro des bruitages (`timeline --cues`) ; facultatif (`--sans-earshot`) |
 
 ## 2. Dossier d'une vidéo
@@ -37,6 +38,7 @@ a_monter/<N>/
 ├── transcription/
 │   ├── brut/                  sortie de transcrire.py (morceaux.json, morceaux/cNN.json)
 │   ├── choix.json             prises gardées et texte relu (écrit par l'agent, validé)
+│   ├── mots_alignes.json      temps des mots par l'aligneur (aligner_mots.py), lu par le découpage
 │   └── decoupage.json, mots_montage.json, sous-titres.json, mots_rush.json   (générés)
 ├── PLAN_MONTAGE.md            plan à faire valider
 ├── plan.json                  traduction du plan validé, lue par le montage
@@ -52,7 +54,8 @@ a_monter/<N>/
 | Transcription | `python3 scripts/transcrire.py ../a_monter/<N>` | `transcription/brut/` + tableau des morceaux |
 | Hésitations | `python3 scripts/reperer_hesitations.py ../a_monter/<N> [--phrases P3,P5]` | bouts de chaque prise gardée, répétitions, « euh », mots longs, blancs (rien n'est coupé) |
 | Sous-morceau | `python3 scripts/redecouper_morceau.py ../a_monter/<N> <morceau> <débutS> [<finS>] [--id c11b]` | partie propre d'un morceau, retranscrite seule (`brut/sous-morceaux.json`) |
-| Découpage | `python3 scripts/decouper_transcription.py ../a_monter/<N>` | segments, mots, groupes de sous-titres (affichés) |
+| Temps des mots | `python3 scripts/aligner_mots.py ../a_monter/<N> [-o <fichier>] [--phrases P1,P3]` | `transcription/mots_alignes.json` : début / fin de chaque mot relu, prise par prise (aligneur), comparés à whisper ; prises en ÉCHEC listées |
+| Découpage | `python3 scripts/decouper_transcription.py ../a_monter/<N> [--whisper] [--alignes <fichier>] [--sortie <dossier>]` | segments, mots, groupes de sous-titres (affichés) ; temps des mots de l'aligneur s'il y a `mots_alignes.json` à jour, sinon whisper (ligne « temps des mots ») |
 | Médias | `python3 scripts/preparer_medias.py ../a_monter/<N> v<N>` | `public/v<N>/` : rush (voix à -14 LUFS, image copiée), musique, images, vidéos, JSON |
 | Données seules | `python3 scripts/preparer_medias.py ../a_monter/<N> v<N> --donnees` | recopie des JSON après une retouche de `plan.json` ou du découpage |
 | Image fixe | `npx remotion still Montage /tmp/…/f.png --frame=<n> --props='{"video":"v<N>"}'` | contrôle d'une image |
@@ -84,6 +87,14 @@ a_monter/<N>/
 | `phrases[].garderApresMot` + `debutForceS` | Deux prises dans un même morceau : on garde ce qui suit le mot indiqué, à partir de l'attaque mesurée sur le son (exemple : P1 de la vidéo 1) |
 | `coupes` | `{ "c00": "bruit", "c02": "faux départ", "c01-debut": "1re prise" }` : raison de chaque passage coupé ; avec un sous-morceau, `"c11-debut"` / `"c11-fin"` = ce qui reste hors de `c11b` |
 | Sous-morceau (`c11b`) | Dans `morceaux` à la place du morceau : seule la partie propre est gardée, avec des temps de mots justes (mieux que `garderApresMot` quand la reconnaissance a fusionné des prises). Créé par `redecouper_morceau.py` |
+
+**Temps des mots :** avec `mots_alignes.json` (`aligner_mots.py`), chaque mot relu prend les temps
+de l'aligneur, et chaque segment commence à l'attaque de son 1er mot et finit à la fin de son
+dernier (recalées sur l'énergie), si elles restent à 0,3 s au plus de la borne mesurée par
+`transcrire.py` (sinon la borne est gardée et le découpage le signale). `debutForceS` reste
+prioritaire. Une prise en échec, ou dont le texte relu, les prises ou les bornes ont changé depuis
+l'alignement, garde les temps de whisper. Sans `mots_alignes.json` (vidéos 1 à 5), rien ne change.
+Les mots calés par l'aligneur portent `"temps": "aligneur"` dans `mots_montage.json`.
 
 **Texte relu :** il doit avoir **autant de mots** que la reconnaissance (sinon le découpage s'arrête et
 affiche les deux listes). Il fixe l'orthographe et la casse des sous-titres. Nombres en chiffres.
@@ -229,6 +240,9 @@ sous-titres ne sont dans l'export que si l'incrustation est activée dans Delive
 | Message ou symptôme | Cause | Remède |
 |---|---|---|
 | `P… : n mots reconnus pour m mots relus` | Le texte relu n'a pas le même nombre de mots | Aligner le texte relu sur les mots reconnus affichés (un mot relu par mot reconnu) |
+| `aligner_mots.py` : « ÉCHEC … aligneur absent » | Aligneur non installé sur ce Mac (`~/agent/outils/aligneur/aligner`) | Le découpage prend whisper : on peut monter ; ou installer l'aligneur (`INSTALLATION_NOUVEAU_MAC.md`) |
+| `aligner_mots.py` : « ÉCHEC … bords loin de la prise » | Le texte relu ne correspond pas à la prise (l'aligneur aligne n'importe quel texte sans prévenir) | Vérifier le texte relu et les prises de la phrase, relancer |
+| Découpage : « mots_alignes.json périmé » | Texte relu, prises ou sous-morceaux changés après l'alignement | Relancer `aligner_mots.py` |
 | `Mot introuvable pour l'ancre « … »` | Mot absent de la phrase ou mal écrit | Chercher le mot exact dans `transcription/mots_montage.json` (champ `texte`) |
 | `Phrase introuvable dans le découpage` | Identifiant de phrase erroné | Identifiants de `choix.json` |
 | Erreur de chargement de police | Police absente de `public/charte/polices` | Relancer `preparer_medias.py` (il copie `CHARTE/07_typographies`) |

@@ -98,14 +98,25 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
    ../a_monter/<N>` redécoupe chaque prise gardée aux micro-pauses et signale : répétition,
    hésitation, mot trop long, bruit, **début lent** (souffle avant le premier mot), **fin qui
    traîne** (blanc après le dernier mot, regard vers les notes). Pour chaque cas, mesurer sur le son
-   l'attaque du premier mot et la fin du dernier, puis `python3 scripts/redecouper_morceau.py
+   l'attaque du premier mot et la fin du dernier (à peu près : l'aligneur, en 6, affine), puis `python3 scripts/redecouper_morceau.py
    ../a_monter/<N> <morceau> <début> [<fin>]` : un sous-morceau retranscrit seul, avec des temps de
    mots justes, à mettre dans `choix.json`.
 5. Règles de coupe : **chaque plan commence sur le premier mot et finit sur le dernier** ; deux
    phrases enchaînées gardent ≈ 0,15 s de blanc ; jamais de mot coupé.
-6. `python3 scripts/decouper_transcription.py ../a_monter/<N>`, puis relire la liste des groupes de
-   sous-titres affichée : un « | » dans le texte relu force une coupure là où un groupe casse le sens.
-   Relancer `reperer_hesitations.py` : il ne doit plus rien signaler.
+6. **Caler les mots avec l'aligneur** : `python3 scripts/aligner_mots.py ../a_monter/<N>` (après
+   `choix.json` relu et les sous-morceaux faits ; environ 5 s). Whisper a transcrit ; l'aligneur
+   (Qwen3-ForcedAligner, local) reprend le texte relu prise par prise et donne le début et la fin de
+   chaque mot, plus justes que whisper (vidéo 5 : jusqu'à 0,3 s d'écart, l'aligneur tombe sur les
+   pauses). L'attaque du 1er mot et la fin du dernier sont recalées sur l'énergie du son : ce sont
+   les points de coupe, à la place de la mesure à la main. Produit `transcription/mots_alignes.json`.
+   Une prise ratée (aligneur absent, mots en nombre différent, bords loin de la prise) est notée
+   ÉCHEC et garde les temps de whisper : la lire dans le résumé affiché. À relancer après toute
+   retouche du texte relu ou des prises (sinon le découpage signale « périmé » et reprend whisper).
+7. `python3 scripts/decouper_transcription.py ../a_monter/<N>` (il lit `mots_alignes.json` ;
+   `--whisper` pour l'ignorer), puis relire la liste des groupes de sous-titres affichée et la ligne
+   « temps des mots » (aligneur ou whisper, phrase par phrase) : un « | » dans le texte relu force une
+   coupure là où un groupe casse le sens. Relancer `reperer_hesitations.py` : il ne doit plus rien
+   signaler.
 
 ### 3. Plan de montage, à faire valider
 - `PLAN_MONTAGE.md` (modèle `modeles/PLAN_MONTAGE.md`) : titre d'accroche (2 ou 3 propositions, avec

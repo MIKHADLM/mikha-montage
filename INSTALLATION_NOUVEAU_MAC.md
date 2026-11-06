@@ -26,6 +26,7 @@ Le zip contient déjà l'historique Git (`MONTAGE/.git`). Les médias lourds (ru
    - `brew install ffmpeg whisper-cpp node jq` ;
    - Python 3 et Pillow : `pip3 install Pillow` ;
    - numpy pour le contrôle avant livraison (`remotion/scripts/verifier_livraison.py`) : soit earshot installé dans `~/agent/outils/earshot` (le script prend son python), soit `pip3 install numpy` ; sans earshot, lancer le contrôle avec `--sans-earshot` ;
+   - facultatif, l'aligneur mot à mot (`remotion/scripts/aligner_mots.py`) : copier `~/agent/outils/aligneur/` du serveur (venv Python 3.12 avec mlx-audio 0.6.4, modèle `mlx-community/Qwen3-ForcedAligner-0.6B-8bit` dans `hf/`, 1,6 Go, Apple Silicon) ; sans lui, le découpage prend les temps de whisper ;
    - les modules Remotion : `npm install` dans `MONTAGE/remotion` (Remotion 4.0.530, la version est dans `package.json`) ;
    - le modèle de transcription : `ggml-large-v3-turbo.bin` dans `~/.cache/whisper-cpp/` (téléchargement depuis la page officielle des modèles whisper.cpp sur Hugging Face, `ggerganov/whisper.cpp`, environ 1,6 Go).
 
