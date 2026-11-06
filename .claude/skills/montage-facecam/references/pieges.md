@@ -9,6 +9,11 @@
   syllabes par seconde), mots de plus de 0,6 s, mots aux temps collés. Toujours
   `reperer_hesitations.py`, puis `redecouper_morceau.py`. Les petites fenêtres de transcription
   inventent des fins de phrase : se fier aux bouts entre micro-pauses et à l'énergie du son.
+- **Faux départ collé à la prise complète** (vidéo 6, v01) : « Bref. » / « On esp… » / « Bref, on
+  espère… » avec 0,16 s de blanc ; whisper, sur le morceau entier, ne l'écrit qu'une fois, et le
+  2e « Bref » a été pris pour une invention. Un mot de début de phrase qui revient dans un des bouts
+  suivants est une reprise : `reperer_hesitations.py` le signale `[doublon]` (A20), couper avant la
+  reprise (`redecouper_morceau.py` + `debutForceS`).
 - **Souffle ou blanc en bout de prise** (vidéo 2) : le seuil de -36 dB laisse passer un souffle
   (≈ -30 dB) avant le premier mot et de petits bruits après le dernier (jusqu'à 0,6 s de blanc gardé).
   Mesurer la voix franche (-27 dB) et l'alignement mot par mot (`whisper-cli --dtw large.v3.turbo

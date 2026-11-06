@@ -96,7 +96,9 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
 4. **Chasser les hésitations, obligatoire.** La reconnaissance efface les « euh » et les bouts de
    phrase redits (vidéo 2 : 12 s d'hésitations sur 46 s). `python3 scripts/reperer_hesitations.py
    ../a_monter/<N>` redécoupe chaque prise gardée aux micro-pauses et signale : répétition,
-   hésitation, mot trop long, bruit, **début lent** (souffle avant le premier mot), **fin qui
+   **doublon** (A20, validée le 2026-11-06 : mot ou début de phrase redit d'un bout, d'un morceau
+   ou d'une phrase au suivant, faux départ type « Bref, on esp… » repris ; résumé en fin de
+   sortie, toujours couper avant la reprise), hésitation, mot trop long, bruit, **début lent** (souffle avant le premier mot), **fin qui
    traîne** (blanc après le dernier mot, regard vers les notes). Pour chaque cas, mesurer sur le son
    l'attaque du premier mot et la fin du dernier (à peu près : l'aligneur, en 6, affine), puis `python3 scripts/redecouper_morceau.py
    ../a_monter/<N> <morceau> <début> [<fin>]` : un sous-morceau retranscrit seul, avec des temps de
@@ -152,7 +154,7 @@ Détail des commandes et des formats de fichiers : `references/chaine-technique.
    `export/<nom>_vNN_planche_NN.png` (5 images à chaque coupe, entrée / sortie de séquence, photo,
    fin du hook, avec les mots dits). Les **regarder toutes** (outil Read) : image isolée, texte en
    avance ou en retard sur le mot, sous-titre faux ou qui revient, affiche recadrée, étiquette fausse,
-   texte hors zone, illustration qui ne montre pas ce qui est dit (A10, A13 à A16, A18, A19).
+   texte hors zone, illustration qui ne montre pas ce qui est dit (A10, A13 à A16, A18, A19, A20).
 3. **Boucle** : un défaut trouvé → corriger la cause (`plan.json`, découpage, composant), relancer
    `rendre.py` (même version tant que Michaël ne l'a pas vue), puis 1 et 2. **3 tours au plus** ; au-delà,
    livrer en disant clairement ce qui reste et pourquoi.

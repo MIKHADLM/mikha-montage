@@ -15,7 +15,7 @@ montage se faire : tu juges seulement ce que tu vois et mesures. Michaël regard
 - `<nom>_vNN_controle.json` (contrôle mesuré : son, synchro, zone sûre, images isolées) ;
 - `plan.json` (ou `<nom>_vNN_plan.json`), `PLAN_MONTAGE.md` validé, `transcription/choix.json`
   (texte relu = orthographe), `RETOURS.md` (ce que Michaël a déjà demandé) ;
-- les règles : `apprentissage/JOURNAL.md` (§1, règles A1 à A19, et leurs statuts), la checklist
+- les règles : `apprentissage/JOURNAL.md` (§1, règles A1 à A20, et leurs statuts), la checklist
   `CHARTE/09_templates/CHECKLIST_VALIDATION.md`, la charte `CHARTE/` si besoin.
 Tous les chemins partent de `/Users/michaelphilibert/Documents/MIKHA/IA STUDIO/MONTAGE`.
 
@@ -28,7 +28,9 @@ Tous les chemins partent de `/Users/michaelphilibert/Documents/MIKHA/IA STUDIO/M
      réapparaît après un masque (A18), présents ou masqués comme le plan le dit (A19 si appliquée) ;
    - affiche entière, jamais recadrée, avec étiquette lieu / date (A10) ; étiquette = produit montré ;
    - zone sûre (rien sous y = 1 365 ni au-delà de x = 885 sous y = 1 088) ; texte lisible sur la tenue ;
-   - illustration qui montre ce qui est dit à ce moment (consigne de Michaël, vidéo 2).
+   - illustration qui montre ce qui est dit à ce moment (consigne de Michaël, vidéo 2) ;
+   - aucun mot ni début de phrase redit d'un plan au suivant, faux départ type « Bref, on esp… »
+     (A20) : comparer la fin de chaque plan et le début du suivant dans les sous-titres et le son.
 3. Pour un doute, extrais toi-même les images (lecture seule, dans `$TMPDIR`) :
    `ffmpeg -v error -i <export> -vf "select=between(n\,A\,B),scale=360:640,tile=6x1" -frames:v 1 $TMPDIR/r.png`.
 4. Lis `_controle.json` : un statut PAS OK ou un avertissement non expliqué est un défaut.

@@ -52,7 +52,7 @@ a_monter/<N>/
 | Étape | Commande | Produit |
 |---|---|---|
 | Transcription | `python3 scripts/transcrire.py ../a_monter/<N>` | `transcription/brut/` + tableau des morceaux |
-| Hésitations | `python3 scripts/reperer_hesitations.py ../a_monter/<N> [--phrases P3,P5]` | bouts de chaque prise gardée, répétitions, « euh », mots longs, blancs (rien n'est coupé) |
+| Hésitations | `python3 scripts/reperer_hesitations.py ../a_monter/<N> [--phrases P3,P5]` | bouts de chaque prise gardée, répétitions, doublons d'un bout ou d'un morceau au suivant (A20, `--choix` pour une ancienne version), « euh », mots longs, blancs (rien n'est coupé) |
 | Sous-morceau | `python3 scripts/redecouper_morceau.py ../a_monter/<N> <morceau> <débutS> [<finS>] [--id c11b]` | partie propre d'un morceau, retranscrite seule (`brut/sous-morceaux.json`) |
 | Temps des mots | `python3 scripts/aligner_mots.py ../a_monter/<N> [-o <fichier>] [--phrases P1,P3]` | `transcription/mots_alignes.json` : début / fin de chaque mot relu, prise par prise (aligneur), comparés à whisper ; prises en ÉCHEC listées |
 | Découpage | `python3 scripts/decouper_transcription.py ../a_monter/<N> [--whisper] [--alignes <fichier>] [--sortie <dossier>]` | segments, mots, groupes de sous-titres (affichés) ; temps des mots de l'aligneur s'il y a `mots_alignes.json` à jour, sinon whisper (ligne « temps des mots ») |
