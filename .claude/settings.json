@@ -1,5 +1,17 @@
 {
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__plugin_telegram_telegram__reply|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/controle_livraison.py\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
     "Stop": [
       {
         "hooks": [
@@ -8,6 +20,22 @@
             "command": "/bin/bash \"/Users/michaelphilibert/Documents/MIKHA/IA STUDIO/AUTOMATISATIONS/scripts/publier_etat_montage.sh\" >/dev/null 2>&1 || true",
             "async": true,
             "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/controle_livraison.py\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/controle_livraison.py\"",
+            "timeout": 20
           }
         ]
       }

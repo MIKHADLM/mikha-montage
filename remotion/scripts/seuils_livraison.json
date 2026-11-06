@@ -1,0 +1,57 @@
+{
+ "_role": "Seuils du contrôle avant livraison (scripts/verifier_livraison.py). Un point « bloquant » rend le verdict PAS OK ; un « avertissement » est listé mais ne bloque pas. Modifier ici, pas dans le script.",
+
+ "format": {
+  "_aide": "Format de la charte (05_formats/FORMATS.md)",
+  "largeur": 1080, "hauteur": 1920, "cadence": "30/1", "codec_video": "h264", "pixels": "yuv420p",
+  "codec_son": "aac", "frequence_son": 48000
+ },
+
+ "loudness": {
+  "_aide": "Loudness intégrée en LUFS (04_son/SON.md) : -14 à ± 1 près ; pic vrai -1 dBTP au plus",
+  "cible_lufs": -14.0, "tolerance_lu": 1.0, "pic_vrai_max_dbtp": -1.0
+ },
+
+ "saturation": {
+  "_aide": "Échantillons écrêtés : |x| ≥ niveau sur au moins `suite_min` échantillons de suite. Au-delà de `max_suites` suites : bloquant",
+  "niveau": 0.999, "suite_min": 3, "max_suites": 0
+ },
+
+ "silences": {
+  "_aide": "Aucun passage d'au moins `duree_min_s` sous `seuil_db` (tous les silences sont coupés)",
+  "seuil_db": -40, "duree_min_s": 0.3
+ },
+
+ "synchro_rush": {
+  "_aide": "Décalage du son de l'export par rapport au rush, mesuré par corrélation croisée sur chaque plan (ms, positif = son en retard sur l'image). Bloquant si la médiane ou un plan dépasse",
+  "mediane_max_ms": 10, "plan_max_ms": 20, "correlation_min": 0.5, "plan_min_s": 0.6
+ },
+
+ "bruitages": {
+  "_aide": "Bruitages (clic, déclencheur) retrouvés dans l'export par corrélation avec leur fichier, comparés aux temps prévus par plan.json (code du montage). Bloquant au-delà de `ecart_max_ms` ; non mesurable sous `correlation_min` (avertissement)",
+  "ecart_max_ms": 10, "fenetre_ms": 120, "correlation_min": 0.15
+ },
+
+ "earshot": {
+  "_aide": "Deuxième avis : earshot timeline --cues (temps d'attaque prévus). Bloquant si la médiane des écarts (en valeur absolue) dépasse `mediane_max_ms`. Jamais `earshot llm`",
+  "commande": "~/agent/outils/earshot/.venv/bin/earshot",
+  "mediane_max_ms": 25
+ },
+
+ "clics": {
+  "_aide": "Clic parasite à une coupe du face cam : pic de la dérivée seconde du son dans ± `fenetre_ms` autour de la coupe, rapporté au 99,5e centile de la seconde autour (hors fenêtre). Les coupes où tombe un bruitage prévu sont ignorées. Étalonné le 2026-11-06 : coupes propres 0,02 à 0,9 (vidéos 4 et 5), clic ajouté à -30 dBFS = 1,6",
+  "fenetre_ms": 20, "contexte_ms": 500, "rapport_max": 1.5, "rapport_avertissement": 1.2
+ },
+
+ "zone_sure": {
+  "_aide": "Zone sûre TikTok / Instagram (src/charte/tokens.ts ZONE_SURE, pieges.md) : contrôlée sur la dernière image de chaque séquence sur fond plein (texte, photo, produit, partenaire, motion sur fond). Pixels « encre » = écart de couleur > `ecart_couleur` avec le fond. Bloquant au-delà de `pixels_max` pixels hors zone",
+  "haut": 219, "gauche": 85, "droite_haute": 1018, "droite_basse": 885, "limite_basse_y": 1088, "bas": 1365,
+  "ecart_couleur": 70, "pixels_max": 150,
+  "types_exclus": ["site"]
+ },
+
+ "frames_isolees": {
+  "_aide": "scripts/detecter_frames_isolees.py (règle A13) : bloquant si une image isolée est trouvée",
+  "seuil": 12, "ecart": 3
+ }
+}
