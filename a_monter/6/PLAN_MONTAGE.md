@@ -1,5 +1,7 @@
 # Plan de montage : vidéo 6 (jour J Space Jam), DA rouge
 
+> **Publication :** programmée le 07/11/2026 à 11:30 (IG Reel + TikTok + YT Short), Metricool post 419140292, texte A, miniature = image à 1 s.
+
 > Monté directement en v01 sans validation préalable (consigne de la mission, publication le 7/11 vers 11h30). Tout est proposition. Traduction exacte : `plan.json`. Base : vidéo 5.
 
 - **Hook (P1, 1,1 s) :** titre en bloc « C'EST / **AUJOURD'HUI** / **LES FRÈRES** » (les mots dits), mots rouges derrière la tête avec contour, face cam × 1, riser. Autre titre possible : « C'EST / **AUJOURD'HUI** / **SPACE JAM** » (non dit).
