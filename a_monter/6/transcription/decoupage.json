@@ -1,0 +1,186 @@
+{
+ "_comment": "Découpage du rush : segments gardés, dans l'ordre du montage. Généré par remotion/scripts/decouper_transcription.py depuis choix.json. Temps en secondes et en images.",
+ "source": "a_monter/6/IMG_8398_sdr.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "dureeMontageS": 19.467,
+ "dureeMontageFrames": 584,
+ "phrases": [
+  {
+   "id": "P1",
+   "montageDebutS": 0.0,
+   "montageFinS": 1.133,
+   "texte": "C'est aujourd'hui les frères."
+  },
+  {
+   "id": "P2",
+   "montageDebutS": 1.133,
+   "montageFinS": 7.7,
+   "texte": "On vous donne rendez-vous cet après-midi à 15h à la Condition Publique de Roubaix pour le premier événement physique auquel participe Mehomies."
+  },
+  {
+   "id": "P3",
+   "montageDebutS": 7.7,
+   "montageFinS": 14.133,
+   "texte": "C'est gratuit, sur place vous retrouverez du stock pour la collection Mehomies Flag, mais aussi la possibilité de voir nos derniers prototypes."
+  },
+  {
+   "id": "P4",
+   "montageDebutS": 14.133,
+   "montageFinS": 15.733,
+   "texte": "Des petites surprises sur lesquelles on travaille."
+  },
+  {
+   "id": "P5",
+   "montageDebutS": 15.733,
+   "montageFinS": 19.467,
+   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go!"
+  }
+ ],
+ "segments": [
+  {
+   "id": 1,
+   "phrase": "P1",
+   "morceau": "c00",
+   "paroleDebutS": 0.91,
+   "paroleFinS": 1.89,
+   "sourceDebutFrame": 25,
+   "sourceFinFrame": 59,
+   "dureeFrames": 34,
+   "montageDebutFrame": 0,
+   "sourceDebutS": 0.833,
+   "sourceFinS": 1.967,
+   "montageDebutS": 0.0,
+   "montageFinS": 1.133
+  },
+  {
+   "id": 2,
+   "phrase": "P2",
+   "morceau": "c01",
+   "paroleDebutS": 2.26,
+   "paroleFinS": 8.64,
+   "sourceDebutFrame": 65,
+   "sourceFinFrame": 262,
+   "dureeFrames": 197,
+   "montageDebutFrame": 34,
+   "sourceDebutS": 2.167,
+   "sourceFinS": 8.733,
+   "montageDebutS": 1.133,
+   "montageFinS": 7.7
+  },
+  {
+   "id": 3,
+   "phrase": "P3",
+   "morceau": "c10",
+   "paroleDebutS": 37.08,
+   "paroleFinS": 43.37,
+   "sourceDebutFrame": 1110,
+   "sourceFinFrame": 1303,
+   "dureeFrames": 193,
+   "montageDebutFrame": 231,
+   "sourceDebutS": 37.0,
+   "sourceFinS": 43.433,
+   "montageDebutS": 7.7,
+   "montageFinS": 14.133
+  },
+  {
+   "id": 4,
+   "phrase": "P4",
+   "morceau": "c11",
+   "paroleDebutS": 43.93,
+   "paroleFinS": 45.39,
+   "sourceDebutFrame": 1316,
+   "sourceFinFrame": 1364,
+   "dureeFrames": 48,
+   "montageDebutFrame": 424,
+   "sourceDebutS": 43.867,
+   "sourceFinS": 45.467,
+   "montageDebutS": 14.133,
+   "montageFinS": 15.733
+  },
+  {
+   "id": 5,
+   "phrase": "P5",
+   "morceau": "c13",
+   "paroleDebutS": 47.87,
+   "paroleFinS": 51.46,
+   "sourceDebutFrame": 1434,
+   "sourceFinFrame": 1546,
+   "dureeFrames": 112,
+   "montageDebutFrame": 472,
+   "sourceDebutS": 47.8,
+   "sourceFinS": 51.533,
+   "montageDebutS": 15.733,
+   "montageFinS": 19.467
+  }
+ ],
+ "coupes": [
+  {
+   "morceau": "c02",
+   "sourceDebutS": 12.2,
+   "sourceFinS": 12.74,
+   "texte": "Vous avez...",
+   "raison": "faux départ (« Vous avez… »)"
+  },
+  {
+   "morceau": "c03",
+   "sourceDebutS": 14.66,
+   "sourceFinS": 16.96,
+   "texte": "C'est gratuit, vous aurez donc la possibilité de vous...",
+   "raison": "faux départ (« C'est gratuit, vous aurez donc la possibilité de vous… »)"
+  },
+  {
+   "morceau": "c04",
+   "sourceDebutS": 18.28,
+   "sourceFinS": 24.88,
+   "texte": "C'est gratuit, vous aurez donc la possibilité de venir voir en vrai les t-shirts de la collection Mehomie's Flag, ainsi que les derniers prop...",
+   "raison": "reprise (« venir voir en vrai les t-shirts de la collection Mehomies Flag, ainsi que les derniers prop… », coupée)"
+  },
+  {
+   "morceau": "c05",
+   "sourceDebutS": 26.52,
+   "sourceFinS": 28.8,
+   "texte": "C'est gratuit, vous aurez donc la possibilité, c'est gratuit.",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c06",
+   "sourceDebutS": 30.28,
+   "sourceFinS": 30.98,
+   "texte": "C'est gratuit.",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c07",
+   "sourceDebutS": 32.54,
+   "sourceFinS": 33.3,
+   "texte": "C'est gratuit sur...",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c08",
+   "sourceDebutS": 33.7,
+   "sourceFinS": 34.0,
+   "texte": "Ahem.",
+   "raison": "bruit (raclement de gorge)"
+  },
+  {
+   "morceau": "c09",
+   "sourceDebutS": 34.54,
+   "sourceFinS": 36.08,
+   "texte": "C'est gratuit, sur place vous retrouvez juste",
+   "raison": "faux départ"
+  },
+  {
+   "morceau": "c12",
+   "sourceDebutS": 45.86,
+   "sourceFinS": 47.54,
+   "texte": "Bref, on espère vous voir en nom bleu.",
+   "raison": "reprise (« nombreux » mal prononcé)"
+  }
+ ]
+}

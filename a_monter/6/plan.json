@@ -1,0 +1,94 @@
+{
+ "_comment": "Vidéo 6 (jour J Space Jam, samedi 7/11), DA rouge reprise de la vidéo 5. v01 sans validation préalable du plan (consigne de la mission, publication le 7/11 vers 11h30).",
+ "da": "rouge",
+ "accroche": {
+  "phrase": "P1",
+  "titre": {
+   "avant": [
+    "C'EST"
+   ],
+   "cle": "AUJOURD'HUI",
+   "apres": "LES FRÈRES"
+  }
+ },
+ "cadrages": [
+  {
+   "phrase": "P2",
+   "zoom": 1.12
+  },
+  {
+   "phrase": "P4",
+   "zoom": 1.18
+  },
+  {
+   "phrase": "P5",
+   "zoom": 1.1
+  }
+ ],
+ "sequences": [
+  {
+   "type": "photo",
+   "de": "P2:rendez-vous",
+   "a": "P2:roubaix",
+   "format": "4:5",
+   "photos": [
+    {
+     "fichier": "images/affiche-evenement.png",
+     "nom": "SAMEDI 7 NOVEMBRE, 15H",
+     "precision": "Condition Publique, Roubaix"
+    }
+   ],
+   "_note": "Affiche entière (A10) dès « rendez-vous » (A11), étiquette date / heure / lieu ; sous-titres gardés sous l'étiquette (comme la v03 de la vidéo 5, A19)."
+  },
+  {
+   "type": "texte",
+   "de": "P3:sur",
+   "a": "P3:stock",
+   "video": "videos/esteban-crash-zoom-kling3.mp4",
+   "videoDebutS": 0,
+   "lignes": [
+    {
+     "texte": "sur place",
+     "largeur": 0.5,
+     "gauche": 0.1
+    },
+    {
+     "texte": "vous retrouverez",
+     "largeur": 0.84,
+     "gauche": 0.08
+    },
+    {
+     "texte": "du stock",
+     "largeur": 0.56,
+     "gauche": 0.34
+    }
+   ],
+   "_note": "Plan de coupe de la vidéo 5 (crash zoom Boxy Brésil, collection Flag) ; texte en escalier rouge sur l'image, mots dits (A14, A15) : les sous-titres blancs étaient illisibles sur le t-shirt blanc (relecture v01, tour 1)."
+  },
+  {
+   "type": "photo",
+   "de": "P3:pour",
+   "a": "P3:flag",
+   "format": "4:5",
+   "regulier": true,
+   "declencheurDb": -6,
+   "photos": [
+    {
+     "fichier": "images/boxy-france-detoure.png",
+     "detoure": true
+    },
+    {
+     "fichier": "images/boxy-usa-detoure.png",
+     "detoure": true
+    }
+   ],
+   "_note": "Défilé régulier Boxy France puis USA détourés sur le rouge, comme la vidéo 5."
+  }
+ ],
+ "sousTitres": {
+  "masquer": []
+ },
+ "sons": {
+  "clicDb": -4
+ }
+}

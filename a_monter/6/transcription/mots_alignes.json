@@ -1,0 +1,597 @@
+{
+ "_comment": "Temps des mots par l'aligneur (Qwen3-ForcedAligner), en temps rush, prise par prise. Généré par remotion/scripts/aligner_mots.py depuis choix.json ; lu par decouper_transcription.py (repli sur whisper pour une prise en échec ou périmée). whisper*S = temps de whisper pour comparaison.",
+ "rush": "IMG_8398_sdr.mp4",
+ "genereLe": "2026-11-06T16:37:48",
+ "aligneur": "/Users/michaelphilibert/agent/outils/aligneur/aligner",
+ "phrases": [
+  {
+   "id": "P1",
+   "texte": "C'est aujourd'hui les frères.",
+   "morceaux": [
+    "c00"
+   ],
+   "parMorceau": [
+    {
+     "morceau": "c00",
+     "start": 0.9,
+     "end": 1.9,
+     "fenetreS": [
+      0.65,
+      2.08
+     ],
+     "statut": "ok",
+     "mots": [
+      {
+       "mot": "C'est",
+       "debutS": 0.91,
+       "finS": 1.13,
+       "debutBrutS": 0.89,
+       "whisperDebutS": 0.8,
+       "whisperFinS": 1.0
+      },
+      {
+       "mot": "aujourd'hui",
+       "debutS": 1.13,
+       "finS": 1.53,
+       "whisperDebutS": 1.0,
+       "whisperFinS": 1.56
+      },
+      {
+       "mot": "les",
+       "debutS": 1.53,
+       "finS": 1.61,
+       "whisperDebutS": 1.56,
+       "whisperFinS": 1.64
+      },
+      {
+       "mot": "frères.",
+       "debutS": 1.61,
+       "finS": 1.89,
+       "finBrutS": 2.09,
+       "whisperDebutS": 1.74,
+       "whisperFinS": 2.04
+      }
+     ],
+     "premierJeton": 0
+    }
+   ]
+  },
+  {
+   "id": "P2",
+   "texte": "On vous donne rendez-vous cet après-midi à 15h | à la | Condition Publique | de Roubaix | pour le premier événement physique | auquel participe Mehomies.",
+   "morceaux": [
+    "c01"
+   ],
+   "parMorceau": [
+    {
+     "morceau": "c01",
+     "start": 2.26,
+     "end": 8.62,
+     "fenetreS": [
+      2.08,
+      8.97
+     ],
+     "statut": "ok",
+     "mots": [
+      {
+       "mot": "On",
+       "debutS": 2.26,
+       "finS": 2.32,
+       "debutBrutS": 2.24,
+       "whisperDebutS": 2.22,
+       "whisperFinS": 2.22
+      },
+      {
+       "mot": "vous",
+       "debutS": 2.32,
+       "finS": 2.48,
+       "whisperDebutS": 2.27,
+       "whisperFinS": 2.45
+      },
+      {
+       "mot": "donne",
+       "debutS": 2.48,
+       "finS": 2.64,
+       "whisperDebutS": 2.45,
+       "whisperFinS": 2.74
+      },
+      {
+       "mot": "rendez-vous",
+       "debutS": 2.64,
+       "finS": 3.04,
+       "whisperDebutS": 2.74,
+       "whisperFinS": 3.36
+      },
+      {
+       "mot": "cet",
+       "debutS": 3.04,
+       "finS": 3.28,
+       "whisperDebutS": 3.37,
+       "whisperFinS": 3.54
+      },
+      {
+       "mot": "après-midi",
+       "debutS": 3.28,
+       "finS": 3.92,
+       "whisperDebutS": 3.54,
+       "whisperFinS": 4.1
+      },
+      {
+       "mot": "à",
+       "debutS": 4.0,
+       "finS": 4.08,
+       "whisperDebutS": 4.1,
+       "whisperFinS": 4.1
+      },
+      {
+       "mot": "15h",
+       "debutS": 4.08,
+       "finS": 4.72,
+       "whisperDebutS": 4.23,
+       "whisperFinS": 4.62
+      },
+      {
+       "mot": "à",
+       "debutS": 4.72,
+       "finS": 4.8,
+       "whisperDebutS": 4.7,
+       "whisperFinS": 4.7
+      },
+      {
+       "mot": "la",
+       "debutS": 4.8,
+       "finS": 4.88,
+       "whisperDebutS": 4.73,
+       "whisperFinS": 4.8
+      },
+      {
+       "mot": "Condition",
+       "debutS": 4.88,
+       "finS": 5.28,
+       "whisperDebutS": 4.8,
+       "whisperFinS": 5.25
+      },
+      {
+       "mot": "Publique",
+       "debutS": 5.28,
+       "finS": 5.68,
+       "whisperDebutS": 5.25,
+       "whisperFinS": 5.64
+      },
+      {
+       "mot": "de",
+       "debutS": 5.68,
+       "finS": 5.68,
+       "whisperDebutS": 5.72,
+       "whisperFinS": 5.75
+      },
+      {
+       "mot": "Roubaix",
+       "debutS": 5.76,
+       "finS": 6.16,
+       "whisperDebutS": 5.75,
+       "whisperFinS": 6.13
+      },
+      {
+       "mot": "pour",
+       "debutS": 6.16,
+       "finS": 6.48,
+       "whisperDebutS": 6.28,
+       "whisperFinS": 6.31
+      },
+      {
+       "mot": "le",
+       "debutS": 6.48,
+       "finS": 6.56,
+       "whisperDebutS": 6.31,
+       "whisperFinS": 6.4
+      },
+      {
+       "mot": "premier",
+       "debutS": 6.56,
+       "finS": 6.8,
+       "whisperDebutS": 6.4,
+       "whisperFinS": 6.72
+      },
+      {
+       "mot": "événement",
+       "debutS": 6.88,
+       "finS": 7.2,
+       "whisperDebutS": 6.72,
+       "whisperFinS": 7.01
+      },
+      {
+       "mot": "physique",
+       "debutS": 7.2,
+       "finS": 7.6,
+       "whisperDebutS": 7.14,
+       "whisperFinS": 7.48
+      },
+      {
+       "mot": "auquel",
+       "debutS": 7.68,
+       "finS": 7.92,
+       "whisperDebutS": 7.48,
+       "whisperFinS": 7.75
+      },
+      {
+       "mot": "participe",
+       "debutS": 7.92,
+       "finS": 8.32,
+       "whisperDebutS": 7.75,
+       "whisperFinS": 8.13
+      },
+      {
+       "mot": "Mehomies.",
+       "debutS": 8.32,
+       "finS": 8.64,
+       "finBrutS": 8.72,
+       "whisperDebutS": 8.24,
+       "whisperFinS": 8.64
+      }
+     ],
+     "premierJeton": 0
+    }
+   ]
+  },
+  {
+   "id": "P3",
+   "texte": "C'est gratuit, | sur place vous retrouverez du stock | pour la collection Mehomies Flag, | mais aussi la possibilité de voir nos derniers prototypes.",
+   "morceaux": [
+    "c10"
+   ],
+   "parMorceau": [
+    {
+     "morceau": "c10",
+     "start": 37.08,
+     "end": 43.34,
+     "fenetreS": [
+      36.83,
+      43.64
+     ],
+     "statut": "ok",
+     "mots": [
+      {
+       "mot": "C'est",
+       "debutS": 37.08,
+       "finS": 37.23,
+       "debutBrutS": 36.99,
+       "whisperDebutS": 36.97,
+       "whisperFinS": 37.14
+      },
+      {
+       "mot": "gratuit,",
+       "debutS": 37.23,
+       "finS": 37.63,
+       "whisperDebutS": 37.16,
+       "whisperFinS": 37.54
+      },
+      {
+       "mot": "sur",
+       "debutS": 37.63,
+       "finS": 37.87,
+       "whisperDebutS": 37.54,
+       "whisperFinS": 37.67
+      },
+      {
+       "mot": "place",
+       "debutS": 37.87,
+       "finS": 38.03,
+       "whisperDebutS": 37.67,
+       "whisperFinS": 37.89
+      },
+      {
+       "mot": "vous",
+       "debutS": 38.03,
+       "finS": 38.11,
+       "whisperDebutS": 37.89,
+       "whisperFinS": 38.07
+      },
+      {
+       "mot": "retrouverez",
+       "debutS": 38.11,
+       "finS": 38.43,
+       "whisperDebutS": 38.07,
+       "whisperFinS": 38.56
+      },
+      {
+       "mot": "du",
+       "debutS": 38.43,
+       "finS": 38.59,
+       "whisperDebutS": 38.56,
+       "whisperFinS": 38.59
+      },
+      {
+       "mot": "stock",
+       "debutS": 38.59,
+       "finS": 38.91,
+       "whisperDebutS": 38.71,
+       "whisperFinS": 38.84
+      },
+      {
+       "mot": "pour",
+       "debutS": 38.91,
+       "finS": 39.15,
+       "whisperDebutS": 39.0,
+       "whisperFinS": 39.15
+      },
+      {
+       "mot": "la",
+       "debutS": 39.15,
+       "finS": 39.23,
+       "whisperDebutS": 39.15,
+       "whisperFinS": 39.25
+      },
+      {
+       "mot": "collection",
+       "debutS": 39.23,
+       "finS": 39.63,
+       "whisperDebutS": 39.33,
+       "whisperFinS": 39.81
+      },
+      {
+       "mot": "Mehomies",
+       "debutS": 39.63,
+       "finS": 40.03,
+       "whisperDebutS": 39.81,
+       "whisperFinS": 40.3
+      },
+      {
+       "mot": "Flag,",
+       "debutS": 40.03,
+       "finS": 40.51,
+       "whisperDebutS": 40.3,
+       "whisperFinS": 40.53
+      },
+      {
+       "mot": "mais",
+       "debutS": 40.59,
+       "finS": 40.83,
+       "whisperDebutS": 40.7,
+       "whisperFinS": 40.77
+      },
+      {
+       "mot": "aussi",
+       "debutS": 40.83,
+       "finS": 41.39,
+       "whisperDebutS": 40.77,
+       "whisperFinS": 41.0
+      },
+      {
+       "mot": "la",
+       "debutS": 41.47,
+       "finS": 41.63,
+       "whisperDebutS": 41.12,
+       "whisperFinS": 41.19
+      },
+      {
+       "mot": "possibilité",
+       "debutS": 41.63,
+       "finS": 42.11,
+       "whisperDebutS": 41.19,
+       "whisperFinS": 41.84
+      },
+      {
+       "mot": "de",
+       "debutS": 42.11,
+       "finS": 42.19,
+       "whisperDebutS": 41.86,
+       "whisperFinS": 41.97
+      },
+      {
+       "mot": "voir",
+       "debutS": 42.19,
+       "finS": 42.35,
+       "whisperDebutS": 41.97,
+       "whisperFinS": 42.19
+      },
+      {
+       "mot": "nos",
+       "debutS": 42.35,
+       "finS": 42.51,
+       "whisperDebutS": 42.31,
+       "whisperFinS": 42.39
+      },
+      {
+       "mot": "derniers",
+       "debutS": 42.51,
+       "finS": 42.83,
+       "whisperDebutS": 42.39,
+       "whisperFinS": 42.85
+      },
+      {
+       "mot": "prototypes.",
+       "debutS": 42.83,
+       "finS": 43.37,
+       "finBrutS": 43.39,
+       "whisperDebutS": 42.92,
+       "whisperFinS": 43.49
+      }
+     ],
+     "premierJeton": 0
+    }
+   ]
+  },
+  {
+   "id": "P4",
+   "texte": "Des petites surprises sur lesquelles on travaille.",
+   "morceaux": [
+    "c11"
+   ],
+   "parMorceau": [
+    {
+     "morceau": "c11",
+     "start": 43.94,
+     "end": 45.36,
+     "fenetreS": [
+      43.69,
+      45.61
+     ],
+     "statut": "ok",
+     "mots": [
+      {
+       "mot": "Des",
+       "debutS": 43.93,
+       "finS": 44.01,
+       "debutBrutS": 43.93,
+       "whisperDebutS": 43.91,
+       "whisperFinS": 43.91
+      },
+      {
+       "mot": "petites",
+       "debutS": 44.01,
+       "finS": 44.17,
+       "whisperDebutS": 43.94,
+       "whisperFinS": 44.17
+      },
+      {
+       "mot": "surprises",
+       "debutS": 44.17,
+       "finS": 44.49,
+       "whisperDebutS": 44.2,
+       "whisperFinS": 44.5
+      },
+      {
+       "mot": "sur",
+       "debutS": 44.49,
+       "finS": 44.57,
+       "whisperDebutS": 44.55,
+       "whisperFinS": 44.65
+      },
+      {
+       "mot": "lesquelles",
+       "debutS": 44.57,
+       "finS": 44.81,
+       "whisperDebutS": 44.65,
+       "whisperFinS": 45.03
+      },
+      {
+       "mot": "on",
+       "debutS": 44.81,
+       "finS": 44.89,
+       "whisperDebutS": 45.03,
+       "whisperFinS": 45.1
+      },
+      {
+       "mot": "travaille.",
+       "debutS": 44.89,
+       "finS": 45.39,
+       "finBrutS": 45.45,
+       "whisperDebutS": 45.11,
+       "whisperFinS": 45.5
+      }
+     ],
+     "premierJeton": 0
+    }
+   ]
+  },
+  {
+   "id": "P5",
+   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go !",
+   "morceaux": [
+    "c13"
+   ],
+   "parMorceau": [
+    {
+     "morceau": "c13",
+     "start": 47.88,
+     "end": 51.46,
+     "fenetreS": [
+      47.71,
+      51.81
+     ],
+     "statut": "ok",
+     "mots": [
+      {
+       "mot": "Bref,",
+       "debutS": 47.87,
+       "finS": 48.19,
+       "debutBrutS": 47.87,
+       "whisperDebutS": 47.91,
+       "whisperFinS": 48.07
+      },
+      {
+       "mot": "on",
+       "debutS": 48.19,
+       "finS": 48.35,
+       "whisperDebutS": 48.22,
+       "whisperFinS": 48.22
+      },
+      {
+       "mot": "espère",
+       "debutS": 48.35,
+       "finS": 48.67,
+       "whisperDebutS": 48.23,
+       "whisperFinS": 48.6
+      },
+      {
+       "mot": "vous",
+       "debutS": 48.67,
+       "finS": 48.67,
+       "whisperDebutS": 48.6,
+       "whisperFinS": 48.85
+      },
+      {
+       "mot": "voir",
+       "debutS": 48.83,
+       "finS": 49.87,
+       "whisperDebutS": 48.85,
+       "whisperFinS": 49.1
+      },
+      {
+       "mot": "nombreux.",
+       "debutS": 49.87,
+       "finS": 50.27,
+       "whisperDebutS": 49.1,
+       "whisperFinS": 49.73
+      },
+      {
+       "mot": "Merci",
+       "debutS": 50.27,
+       "finS": 50.51,
+       "whisperDebutS": 49.73,
+       "whisperFinS": 50.04
+      },
+      {
+       "mot": "pour",
+       "debutS": 50.51,
+       "finS": 50.67,
+       "whisperDebutS": 50.04,
+       "whisperFinS": 50.22
+      },
+      {
+       "mot": "la",
+       "debutS": 50.67,
+       "finS": 50.75,
+       "whisperDebutS": 50.31,
+       "whisperFinS": 50.42
+      },
+      {
+       "mot": "force.",
+       "debutS": 50.75,
+       "finS": 51.07,
+       "whisperDebutS": 50.42,
+       "whisperFinS": 50.77
+      },
+      {
+       "mot": "Let's",
+       "debutS": 51.15,
+       "finS": 51.31,
+       "whisperDebutS": 50.87,
+       "whisperFinS": 51.17
+      },
+      {
+       "mot": "go!",
+       "debutS": 51.31,
+       "finS": 51.46,
+       "finBrutS": 51.55,
+       "whisperDebutS": 51.17,
+       "whisperFinS": 51.29
+      }
+     ],
+     "premierJeton": 0
+    }
+   ]
+  }
+ ]
+}

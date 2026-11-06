@@ -1,0 +1,70 @@
+{
+ "_comment": "Vidéo 6 (jour J Space Jam, samedi 7/11), v01 montée sans validation préalable du plan (consigne de la mission, publication le 7/11 vers 11h30). Rush : IMG_8398_sdr.mp4 (HLG converti en SDR comme la vidéo 5, hlg_vers_sdr_lut.py .5 .8, étiquettes couleur réécrites en bt709).",
+ "rush": "IMG_8398_sdr.mp4",
+ "fps": 30,
+ "margeS": 0.08,
+ "silence": {
+  "seuilDb": -40,
+  "dureeMinS": 0.3
+ },
+ "sousTitres": {
+  "police": "CHARTE/07_typographies/Gilroy/Gilroy-ExtraBold.ttf",
+  "taillePx": 75,
+  "largeurMaxPx": 880,
+  "motsMax": 3
+ },
+ "phrases": [
+  {
+   "id": "P1",
+   "morceaux": [
+    "c00"
+   ],
+   "texte": "C'est aujourd'hui les frères."
+  },
+  {
+   "id": "P2",
+   "morceaux": [
+    "c01"
+   ],
+   "texte": "On vous donne rendez-vous cet après-midi à 15h | à la | Condition Publique | de Roubaix | pour le premier événement physique | auquel participe Mehomies."
+  },
+  {
+   "id": "P3",
+   "morceaux": [
+    "c10"
+   ],
+   "texte": "C'est gratuit, | sur place vous retrouverez du stock | pour la collection Mehomies Flag, | mais aussi la possibilité de voir nos derniers prototypes."
+  },
+  {
+   "id": "P4",
+   "morceaux": [
+    "c11"
+   ],
+   "texte": "Des petites surprises sur lesquelles on travaille."
+  },
+  {
+   "id": "P5",
+   "morceaux": [
+    "c13"
+   ],
+   "texte": "Bref, on espère vous voir nombreux. Merci pour la force. Let's go !"
+  }
+ ],
+ "coupes": {
+  "c02": "faux départ (« Vous avez… »)",
+  "c03": "faux départ (« C'est gratuit, vous aurez donc la possibilité de vous… »)",
+  "c04": "reprise (« venir voir en vrai les t-shirts de la collection Mehomies Flag, ainsi que les derniers prop… », coupée)",
+  "c05": "faux départ",
+  "c06": "faux départ",
+  "c07": "faux départ",
+  "c08": "bruit (raclement de gorge)",
+  "c09": "faux départ",
+  "c12": "reprise (« nombreux » mal prononcé)"
+ },
+ "musique": {
+  "fichier": "assets/musique_fakhomies.mp3",
+  "debutDansLaPisteS": 0.0,
+  "niveauLufs": -22.7,
+  "_note": "Même musique que les vidéos 4 et 5 (DA de la vidéo 5), départ 0 s."
+ }
+}

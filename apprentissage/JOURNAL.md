@@ -75,6 +75,7 @@ Statuts : **appliquée** (dans la charte, le skill ou les outils) · **en attent
 
 ## 3. Bilan par vidéo
 
+- **Vidéo 6 (jour J Space Jam, DA rouge)** : v01 le 2026-11-06 (19,5 s), sans validation préalable du plan ; aligneur 5/5 prises ; 3 tours de correction (texte rouge sur le plan de coupe au lieu de sous-titres blancs illisibles sur t-shirt blanc ; « Condition Publique » coupé en deux) ; relecteur : sous-titre qui déborde de 3 images après une séquence photo (même comportement que la vidéo 5, piste A18 étendue aux photos à proposer).
 - **Vidéo 5 (annonce Space Jam, DA rouge)** : v01 le 2026-11-05 (20,5 s), plan de coupe de Michaël, affiche de la vidéo 4, stock t-shirts. v02 : t-shirts détourés (retour v01) ; v03 : sous-titres gardés sur l'affiche (retour v02, A19).
 - **Vidéo 4 (Fakhomies, DA rouge pilote)** : validée en v04 le 2026-11-03 après 3 tours (v01 placement des illustrations, v02 retours à l'image, v03 clics). Leçon : Michaël juge à l'image près (règles A13 à A16).
 
